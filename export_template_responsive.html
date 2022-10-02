@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Notion Export Template Responsive</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css" integrity="sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js" integrity="sha384-Qsn9KnoKISj6dI8g7p1HBlNpVx0I8p1SvlwOldgi3IorMle61nQy4zEahWYtljaz" crossorigin="anonymous"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+	        onload="renderMathInElement(document.body);"></script>
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="styles_responsive.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital@0;1&family=Barlow+Semi+Condensed:ital@1&family=Istok+Web&family=Roboto+Condensed:ital,wght@0,400;1,300;1,400&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+	</head>
+
+	<body>
+
+        <div class="page-container">
+
+			<div class="page-contents-container">
+
+				<div class="accordion-toc-container">
+					<button class="accordion-button" id="accordionButtonTOC" onclick="toggleAccordionTOC(this)">On This Page
+						<img src="https://img.icons8.com/fluency-systems-regular/24/000000/expand-arrows.png"/>
+					</button>
+					<div class="accordion-panel">
+						<nav>
+							<ul class="accordion-list-container" id="accordionListContainer">
+							</ul>
+						</nav>
+					</div>
+				</div>
+				
+
+				<div class="math-block">
+					<div class="block-equation">
+						<span>
+							$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$
+						</span>
+					</div>
+					<div class="copy-clipboard">
+						<button class="btn-clipboard" onclick="copyMathToClipboard(1)">
+							<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
+								<path fill="#fff" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+							</svg>
+						</button>
+					</div>
+				</div>
+		
+				<div class="math-block" style="height: 100px;">
+					<div class="block-equation">
+						<span>
+							$$$$
+						</span>
+					</div>
+					<div class="copy-clipboard">
+						<button class="btn-clipboard" onclick="copyMathToClipboard(1)">
+							<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
+								<path fill="#fff" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+							</svg>
+						</button>
+					</div>
+				</div>
+
+				<div class="block-equation">
+					<span>
+						$$\tilde f(\omega)=\frac{1}{2\pi}\int_{-\infty}^\infty f(x)e^{-i\omega x}\,dx\,,$$
+					</span>
+				</div>
+
+				
+				<div class="code-block">
+					<div class="code-snippet">
+						<pre class="line-numbers"><code class="language-python"># Instantiate an optimizer.
+@tf.function
+def train_step(x, y):
+	with tf.GradientTape() as tape:
+		logits = model(x, training=True)
+		loss_value = loss_fn(y, logits)
+	grads = tape.gradient(loss_value, model.trainable_weights)
+	optimizer.apply_gradients(zip(grads, model.trainable_weights))
+	train_acc_metric.update_state(y, logits)
+	return loss_value</code></pre>
+					</div>
+					<div class="copy-code-clipboard">
+						<button class="btn-code-clipboard" onclick="copyCodeToClipboard(2)">
+							<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
+								<path fill="blue" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+							</svg>
+						</button>
+					</div>
+				</div>
+
+				<div class="image-block">
+					<img class="image-container" src="scrapper_out/404.gif" alt="Text" onclick="openModal(this)" />
+				</div>
+				
+				<div class="image-block" id="box">
+					<img class="image-container" src="scrapper_out/Image_75.png" alt="Text" onclick="openModal(this)" />
+				</div>
+		
+				<div class="image-block">
+					<img class="image-container" src="scrapper_out/raycast-untitled.png" alt="Text" onclick="openModal(this)" />
+				</div>
+		
+				<div class="video-container">
+					<iframe class="video-player" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+				</div>
+		
+
+
+
+				<div>
+					<h1 id="dsd.jksjkjskdj" class="heading-1">Heading 1 1</h1>
+				</div>
+		
+				<div>
+					<h2 id="rwewewe" class="heading-2">Heading 2 1 dsjsjdksjd</h2>
+				</div>
+		
+				<div>
+					<h3 id="dsd4324324" class="heading-3">Heading 3 1 jljklajskajskjksjaks</h3>
+				</div>
+		
+				<div>
+					<h3 id="605406hkfgkh" class="heading-3">Heading 3 2 jljklajskajskjksjaks</h3>
+				</div>
+		
+				<div>
+					<h3 id="po4peitoiro" class="heading-3">Heading 3 3 jljklajskajskjksjaks</h3>
+				</div>
+		
+				<div>
+					<h2 id="rwewew23e" class="heading-2">Heading 2 2 Wrinting a loop that does nothing</h2>
+				</div>
+		
+				<div>
+					<h3 id="dsd43sa24" class="heading-3">Heading 3 4 jljklajskajskjksjaks</h3>
+				</div>
+		
+
+
+
+
+            </div>
+
+
+
+			<div class="table-of-contents-container">
+				<div class="table-of-contents">
+					<div class="toc-container">
+						<p class="on-this-page">On This Page</p>
+						<nav>
+							<div class="page-nav">
+								<a class="page-nav-text" href="#urlrws5l1_1664059431169">How to instantiate an optimizer How to instantiate an optimizer  How to instantiate an optimizer  How to instantiate an optimizer</a>
+							</div>
+							<div class="page-nav page-nav-active">
+								<a class="page-nav-text" href="#iwwmaii43_1664059466034">Preparing the activation function</a><br>
+							</div>
+							<div class="page-nav">
+								<a class="page-nav-text" href="#kyjrpbs1d_1664059483218">Training the Neural Net</a>
+							</div>
+						</nav>	
+					</div>
+				</div>		
+			</div>
+
+		</div>
+
+
+		<script>
+
+			document.addEventListener("DOMContentLoaded", function() {
+				renderMathInElement(document.body, {
+				// customised options
+				// • auto-render specific keys, e.g.:
+				delimiters: [
+					{left: '$$', right: '$$', display: true},
+					{left: '$', right: '$', display: false},
+					{left: '\\(', right: '\\)', display: false},
+					{left: '\\[', right: '\\]', display: true}
+				],
+				// • rendering keys, e.g.:
+				throwOnError : false
+				});
+			});
+			
+			function generateId() {
+				let x = Math.random().toString(36).substr(2, 9);
+				let y = Date.now();
+				return x + '_' + y;
+			}
+
+			function toggleAccordionTOC(btnElement) {
+				btnElement.classList.toggle("active");
+				let panel = btnElement.nextElementSibling;
+				if (panel.style.maxHeight) {
+					panel.style.maxHeight = null;
+					panel.style.borderColor = "transparent";
+				} else {
+					panel.style.maxHeight = panel.scrollHeight + "px";
+					panel.style.borderColor = "lightgray";
+				}
+			}
+
+			// Alternate way of doing toggleAccordionTOC() thing without using onlick on button
+			// let accordionButton = document.getElementById("accordionButtonTOC");
+			// accordionButton.addEventListener("click", function() {
+			// 	this.classList.toggle("active");
+			// 	let panel = this.nextElementSibling;
+			// 	if (panel.style.maxHeight) {
+			// 		panel.style.maxHeight = null;
+			// 	} else {
+			// 		panel.style.maxHeight = panel.scrollHeight + "px";
+			// 	} 
+			// });
+
+
+			window.onscroll = function() {myFunction()};
+			function myFunction() {
+				var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+				var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+				var scrolled = (winScroll / height) * 100;
+				document.getElementById("progressBar").style.width = scrolled + "%";
+			}
+
+
+			let mathArray = [];
+			mathArray.push("$$p(x,\\lambda)=P(X=x)=\\left\\{\\begin{array}{l}\\frac{e^{-\\lambda}{\\lambda^x}}{x!}; \\quad x = 0,1,2,\\ldots; \\quad \\lambda>0 \\\\0, \\text { otherwise }\\end{array}\\right.$$");
+			mathArray.push("");
+			mathArray.push("$$|001\\rangle + \\langle110| = \\psi(|001\\rangle)$$");
+			mathArray.push("$$\\begin{align*}y = y(x,t) &= A e^{i\\theta} \\\\&= A (\\cos \\theta + i \\sin \\theta) \\\\&= A (\\cos(kx - \\omega t) + i \\sin(kx - \\omega t)) \\\\&= A\\cos(kx - \\omega t) + i A\\sin(kx - \\omega t)  \\\\&= A\\cos \\Big(\\frac{2\\pi}{\\lambda}x - \\frac{2\\pi v}{\\lambda} t \\Big) + i A\\sin \\Big(\\frac{2\\pi}{\\lambda}x - \\frac{2\\pi v}{\\lambda} t \\Big)  \\\\&= A\\cos \\frac{2\\pi}{\\lambda} (x - v t) + i A\\sin \\frac{2\\pi}{\\lambda} (x - v t)\\end{align*}$$");
+			mathArray.push("$$\\begin{matrix}                -2 & 1 & 0 & 0 & \\cdots & 0  \\\\                1 & -2 & 1 & 0 & \\cdots & 0  \\\\                0 & 1 & -2 & 1 & \\cdots & 0  \\\\                0 & 0 & 1 & -2 & \\ddots & \\vdots \\\\                \\vdots & \\vdots & \\vdots & \\ddots & \\ddots & 1  \\\\                0 & 0 & 0 & \\cdots & 1 & -2        \\end{matrix}$$");
+
+			// let modal = document.getElementById("imageModal");
+			// modal.onkeydown = function(event) {
+			// 	if (event.key === "Escape") {
+			// 		closeModal(modal);
+			// 	}
+			// }
+
+			function openModal(imageElement) {
+				var modal = document.getElementById("imageModal");
+				var modalImage = document.getElementById("modalImage");
+				console.log(imageElement.src);
+				modal.style.display = "flex";
+				modalImage.src = imageElement.src;
+				modal.focus();				
+			}
+
+			function closeModal(modalElement) {
+				modalElement.style.display = "none";
+			}
+
+			function copyMathToClipboard(index) {
+				console.log(mathArray[index - 1]);
+				navigator.clipboard.writeText(mathArray[index - 1]);
+				// console.log("\nClicked Here", element.parentElement.previousElementSibling.textContent);
+				copiedToClipboard("Equation Copied to Clipboard!!");
+			}
+
+			function copiedToClipboard(message) {
+				var snackbarElement = document.getElementById("snackbar");
+				snackbarElement.className = "show";
+				snackbarElement.textContent = message;
+				setTimeout(function() { 
+					snackbarElement.className = snackbarElement.className.replace("show", ""); 
+				}, 2000);
+			}
+
+			function copyCodeToClipboard(index) {
+				let codeElements = document.getElementsByTagName("code");
+				navigator.clipboard.writeText(codeElements[index - 1].textContent);
+				copiedToClipboard("Code Copied to Clipboard!!");
+			}
+
+
+
+			// window.onload = function createTOC() {
+			// 	console.clear();
+			// 	console.log("Populating the TOC");
+			// 	const data = Array.from(document.querySelectorAll(".heading-1, .heading-2, .heading-3")).map((element) => ({
+			// 		id: element.id,
+			// 		text: element.innerText,
+			// 		level: Number(element.nodeName.charAt(1))
+			// 	}));
+
+			// 	tocNav = document.getElementsByClassName("toc-container")[0].getElementsByTagName("nav")[0];
+			// 	for (element of data) {
+			// 		divElement = document.createElement("div");
+			// 		divElement.className = "page-nav";
+			// 		anchorElement = document.createElement("a");
+			// 		hierarchyClass = "toc-head-" + element.level;
+			// 		anchorElement.className = "page-nav-text " + hierarchyClass;
+			// 		anchorElement.href = "#" + element.id;
+			// 		textNode = document.createTextNode(element.text);
+			// 		anchorElement.appendChild(textNode);
+			// 		divElement.appendChild(anchorElement);
+			// 		tocNav.appendChild(divElement);
+			// 	}
+			// }
+
+			// window.onload = function createMobileTOC() {
+			// 	console.clear();
+			// 	console.log("Populating the TOC");
+			// 	const data = Array.from(document.querySelectorAll(".heading-1, .heading-2, .heading-3")).map((element) => ({
+			// 		id: element.id,
+			// 		text: element.innerText,
+			// 		level: Number(element.nodeName.charAt(1))
+			// 	}));
+
+			// 	tocNav = document.getElementById("accordionListContainer");
+			// 	for (element of data) {
+			// 		liElement = document.createElement("li");
+			// 		liElement.className = "accordion-list";
+			// 		anchorElement = document.createElement("a");
+			// 		hierarchyClass = "toc-head-" + element.level;
+			// 		anchorElement.className = "accordion-text " + hierarchyClass;
+			// 		anchorElement.href = "#" + element.id;
+			// 		textNode = document.createTextNode(element.text);
+			// 		anchorElement.appendChild(textNode);
+			// 		liElement.appendChild(anchorElement);
+			// 		tocNav.appendChild(liElement);
+			// 	}
+			// }
+
+
+			// This is the combined version of above 2 mthods as at a time only one window.onload works
+			window.onload = function createTOC() {
+				console.clear();
+				console.log("Populating the TOC");
+				const data = Array.from(document.querySelectorAll(".heading-1, .heading-2, .heading-3")).map((element) => ({
+					id: element.id,
+					text: element.innerText,
+					level: Number(element.nodeName.charAt(1))
+				}));
+
+				tocNav = document.getElementsByClassName("toc-container")[0].getElementsByTagName("nav")[0];
+				mobileNav = document.getElementById("accordionListContainer");
+				for (element of data) {
+					divElement = document.createElement("div");
+					divElement.className = "page-nav";
+					anchorElement = document.createElement("a");
+
+					liElement = document.createElement("li");
+					liElement.className = "accordion-list";
+					anchorMobElement = document.createElement("a");
+
+					hierarchyClass = "toc-head-" + element.level;
+					anchorElement.className = "page-nav-text " + hierarchyClass;
+					anchorMobElement.className = "accordion-text " + hierarchyClass;
+
+					anchorElement.href = "#" + element.id;
+					anchorMobElement.href = "#" + element.id;
+
+					textNode = document.createTextNode(element.text);
+					anchorElement.appendChild(textNode);
+					textNode = document.createTextNode(element.text);
+					anchorMobElement.appendChild(textNode);
+					divElement.appendChild(anchorElement);
+					tocNav.appendChild(divElement);
+					liElement.appendChild(anchorMobElement);
+					mobileNav.appendChild(liElement);
+				}
+			}
+
+
+			window.addEventListener("load", (event) => {
+				createObserver();
+			}, false);
+
+			function createObserver() {
+				// console.clear();
+				console.log("Create Observer Invoked!!");
+				let options = {
+					root: null,
+					rootMargin: "-20% 0% -30% 0px",
+					threshold: 1.0
+				}
+				let observer = new IntersectionObserver(handleIntersectCallback, options);
+				const elements = Array.from(document.querySelectorAll(".heading-1, .heading-2, .heading-3"));
+				elements.forEach((element) => observer.observe(element));
+			}
+
+			function handleIntersectCallback(entries, observer) {
+				entries.forEach((entry) => {
+					if(entry.isIntersecting) {
+						highlightActiveHeading(entry.target.id)
+					}
+				})
+			}
+
+			function highlightActiveHeading(id) {
+				tocNav = document.getElementsByClassName("toc-container")[0].getElementsByTagName("nav")[0];				
+				navHeaders = Array.from(tocNav.getElementsByTagName("div"));
+				console.log("Id : ", id);
+				navHeaders.forEach((element) => {
+					element.classList.remove("page-nav-active");
+					url = element.children[0].href;
+					if(!url.startsWith("http")) {
+						if (url.split("#").at(-1) === id) {
+							element.classList.add("page-nav-active");
+						}
+					}
+				})
+			}
+		</script>
+
+
+
+	</body>
+</html>
+    
