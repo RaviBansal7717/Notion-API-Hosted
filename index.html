@@ -592,7 +592,8 @@ def train_step(x, y):
 				});
 			});
 
-			alert("THeme Mode : " + window.localStorage.getItem("notion_theme_mode"));
+			// alert("THeme Mode : " + window.localStorage.getItem("notion_theme_mode"));
+			console.log("THeme Mode : ", window.localStorage.getItem("notion_theme_mode"));
 			window.localStorage.setItem("notion_theme_mode", "light");
 
 			// function scrollToHeading(event, element) {
