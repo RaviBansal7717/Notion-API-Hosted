@@ -1,3 +1,7 @@
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     border: 5px solid purple;
 }
@@ -66,6 +70,18 @@ body {
   .block-equation::-webkit-scrollbar-thumb:hover {
     background: #555; 
   } */
+
+.page-title {
+    text-decoration: none;
+    font-size: 50px;
+    white-space: wrap;
+    background-color: tan;
+    margin-bottom: 15px;
+    font-family: 'Alegreya SC', serif;
+    font-weight: 400;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
 
 .page-container {
     display: flex;
@@ -255,6 +271,7 @@ body {
     padding-bottom: 4px;
     font-family: 'Istok Web', sans-serif;
     background-color: wheat;
+    scroll-margin: 15px;
 }
   
 .heading-2 {
@@ -264,6 +281,7 @@ body {
     padding-bottom: 4px;
     font-family: 'Istok Web', sans-serif;
     background-color: wheat;
+    scroll-margin: 15px;
 }
   
 .heading-3 {
@@ -273,6 +291,7 @@ body {
     padding-bottom: 4px;
     font-family: 'Istok Web', sans-serif;
     background-color: wheat;
+    scroll-margin: 15px;
 }
 
 .table-of-contents {
@@ -551,7 +570,11 @@ blockquote .twitter-tweet {
         width: 100%;
     }
  */
-    
+
+    .page-title {
+        font-size: 30px;
+    }
+
     .math-block {
         font-size: small;
     }
@@ -588,7 +611,7 @@ blockquote .twitter-tweet {
 
     .code-block {
         font-size: small;
-        max-height: 300px;
+        max-height: 350px;
     }
     
 

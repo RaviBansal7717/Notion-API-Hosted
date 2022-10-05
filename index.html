@@ -17,7 +17,8 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital@0;1&family=Barlow+Semi+Condensed:ital@1&family=Istok+Web&family=Roboto+Condensed:ital,wght@0,400;1,300;1,400&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+		<!-- <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital@0;1&family=Barlow+Semi+Condensed:ital@1&family=Istok+Web&family=Roboto+Condensed:ital,wght@0,400;1,300;1,400&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet"> -->
+		<link href="https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Barlow+Condensed:ital@0;1&family=Barlow+Semi+Condensed:ital@1&family=Istok+Web&family=Roboto+Condensed:ital,wght@0,400;1,300;1,400&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
 	</head>
 
 	<body>
@@ -25,6 +26,10 @@
         <div class="page-container">
 
 			<div class="page-contents-container">
+
+				<div class="page-title">
+					<span>Quantum Generative Adversarial Networks for Quantum Art Generation</span>
+				</div>
 
 				<div class="accordion-toc-container">
 					<button class="accordion-button" id="accordionButtonTOC" onclick="toggleAccordionTOC(this)">On This Page
@@ -557,7 +562,10 @@ def train_step(x, y):
 							<div class="page-nav">
 								<a class="page-nav-text" href="#kyjrpbs1d_1664059483218">Training the Neural Net</a>
 							</div>
-						</nav>	
+							<div class="page-nav" onclick="scrollToHeading(event, this)">
+								<a class="page-nav-text toc-head-3" href="#605406hkfgkh">Heading 3 2 jljklajskajskjksjaks</a>
+							</div>
+						</nav>
 					</div>
 				</div>		
 			</div>
@@ -582,7 +590,32 @@ def train_step(x, y):
 				// • rendering keys, e.g.:
 				throwOnError : false
 				});
-			});	
+			});
+
+			alert("THeme Mode : " + window.localStorage.getItem("notion_theme_mode"));
+			window.localStorage.setItem("notion_theme_mode", "light");
+
+			// function scrollToHeading(event, element) {
+			// 	event.preventDefault();
+			// 	console.clear();
+			// 	console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEvent : ", event);
+			// 	const targetId = element.children[0].href.split("#").at(-1);
+			// 	console.log("Scroll Id : ", targetId);
+			// 	console.log("ELement : ", document.getElementById(targetId));
+			// 	let position = document.getElementById(targetId).getBoundingClientRect();
+			// 	console.log(position);
+			// 	console.log(window.scrollX, window.scrollY);
+			// 	// window.scrollTo(window.scrollX, window.scrollY - 100);
+			// 	window.location.hash = "#" + targetId;
+			// 	window.scrollTo({
+			// 		left: position.left, 
+			// 		top: position.top - 20,
+			// 		behavior: 'smooth'
+			// 	});
+			// 	// document.getElementById("#" + targetId).scrollIntoView( {
+			// 	// 	behavior: "smooth"
+			// 	// });
+			// }
 
 			function handleTabletChange(flag) {
 				if(flag.matches) {
