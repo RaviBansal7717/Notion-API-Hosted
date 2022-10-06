@@ -38,12 +38,13 @@
 				</div>
 				<div class="notion-container">
 					<a href="https://www.google.com" target="_blank">
-						<img src="https://img.icons8.com/color/42/000000/notion--v1.png"/>
+						<img id="notionIcon" src="https://img.icons8.com/color/40/000000/notion--v1.png"/>
 					</a>	
 				</div>
 				<div class="github-container">
 					<a href="https://www.google.com" target="_blank">
 						<img style="background-color: white;" src="https://img.icons8.com/ios-glyphs/42/000000/github.png"/>
+
 						<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 						width="42" height="42"
 						viewBox="0 0 30 30"
@@ -657,16 +658,21 @@ def train_step(x, y):
 					// alert("On Smaller Screen");
 					sizeBef = largeFileIconSize;
 					sizeAft = smallFileIconSize;
+					notioniconSize = "26";
 				} else {
 					// alert("On Larger Screen");
 					sizeBef = smallFileIconSize;
 					sizeAft = largeFileIconSize;
+					notioniconSize = "40";
 				}
 				let fileIcons = document.getElementsByClassName("file-icon");
 				for (element of fileIcons) {
 					console.log(element.children[0].src);
 					element.children[0].src = element.children[0].src.replace(sizeBef, sizeAft);
 				}
+				
+				let notionIcon = document.getElementById("notionIcon");
+				notionIcon.width = notioniconSize;
 			}
 
 			var isSmallScreen = window.matchMedia("(max-width: 768px)");			
