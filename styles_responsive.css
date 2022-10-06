@@ -6,6 +6,77 @@ body {
     border: 5px solid purple;
 }
 
+.page-loader {
+    position: absolute;
+    margin: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.page-loader-message {
+    font-size: 20px;
+}
+
+.page-loader-wrap {
+    margin: 0 10px 10px 0;
+    padding: 20px 20px 20px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #d8d8d8;
+    padding-bottom: 30px;
+}
+
+.page-loader-spinner {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+  
+.page-loader-bubble-1, .page-loader-bubble-2 {
+    position: absolute;
+    top: 0;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background-color: #4b9cdb;
+}
+
+.page-loader-bubble-2 {
+    top: auto;
+    bottom: 0;
+}
+
+.page-loader-load .page-loader-spinner {
+    animation: loadingI 2s linear infinite;
+}
+
+.page-loader-load .page-loader-bubble-1,
+.page-loader-load .page-loader-bubble-2 {
+    animation: bounce 2s ease-in-out infinite;
+}
+  
+.page-loader-load .page-loader-bubble-2 {
+    animation-delay: -1s;
+}
+
+@keyframes loadingI {
+    100% {
+      transform: rotate(360deg);
+    }
+}
+  
+@keyframes bounce {
+    0%,
+    100% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1);
+    }
+}
 
 .block-equation::-webkit-scrollbar-track
 {
@@ -84,7 +155,7 @@ body {
 }
 
 .page-container {
-    display: flex;
+    display: none;
     flex-direction: row;
     gap: 1vh;
     padding: 2vh;
@@ -100,7 +171,7 @@ body {
     left: 0;
     width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    display: flex;
+    display: none;
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
