@@ -88,7 +88,106 @@ body {
     flex-direction: row;
     gap: 1vh;
     padding: 2vh;
+    border: 3px solid yellow;
+    margin-top: 60px;
 }
+
+.top-fixed-taksbar {
+    background-color: royalblue;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.top-taskbar-container-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* background-color: burlywood; */
+    margin-left: 10px;
+}
+
+.created-by-container {
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+}
+
+.top-taskbar-container-2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    /* background-color: tomato; */
+    margin-right: 10px;
+}
+
+
+.dark-mode-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+  
+.dark-mode-switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+.dark-mode-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+  
+.dark-mode-slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+  
+.dark-mode-input:checked + .dark-mode-slider {
+    background-color: #2196F3;
+}
+  
+.dark-mode-input:focus + .dark-mode-slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+  
+.dark-mode-input:checked + .dark-mode-slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+  
+
+
+
 
 .page-contents-container {
     flex-grow: 7.7;
