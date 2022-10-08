@@ -18,9 +18,10 @@
     --fsize-nav-text: 0.82rem;
     --fsize-file-link: 0.85rem;
     --fsize-hyperlink: 1.0rem;
-    --fsize-sm-h1: 2.0rem;
-    --fsize-sm-h2: 1.6rem;
-    --fsize-sm-h3: 1.2rem;
+    --fsize-sm-title: 2.2rem;
+    --fsize-sm-h1: 1.9rem;
+    --fsize-sm-h2: 1.5rem;
+    --fsize-sm-h3: 1.1rem;
     --fsize-sm-p: 0.85rem;
     --fsize-sm-math: 0.85rem;
     --fsize-sm-code: 0.8rem;
@@ -876,7 +877,7 @@ blockquote .twitter-tweet {
     }
 
     .page-title {
-        font-size: 30px;
+        font-size: var(--fsize-sm-title);
     }
 
     .math-block {
@@ -910,7 +911,7 @@ blockquote .twitter-tweet {
     }
 
     .file-link {
-        font-size: small;
+        font-size: var(--fsize-file-link);
     }
 
     .code-block {
@@ -919,7 +920,7 @@ blockquote .twitter-tweet {
     }
     
     .created-by-container {
-        font-size: 20px;
+        font-size: var(--fsize-creator);
     }
 
     .github-container {
