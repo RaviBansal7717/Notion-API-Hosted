@@ -1,9 +1,47 @@
-html{
+:root {
+    --fsize-root-min: 15px;
+    --fsize-root-max: 22px;
+    --fsize-title: 2.7rem;
+    --fsize-h1: 2.2rem;
+    --fsize-h2: 1.8rem;
+    --fsize-h3: 1.4rem;
+    --fsize-p: 0.92rem;
+    --fsize-math: 0.95rem;
+    --fsize-code: 0.85rem;
+    --fsize-quote: 0.92rem;
+    --fsize-standout: 1.02rem;
+    --fsize-table: 0.8rem;
+    --fsize-snackbar: 0.86rem;
+    --fsize-page-loader: 0.9rem;
+    --fsize-creator: 1.2rem;
+    --fsize-nav-title: 1.1rem;
+    --fsize-nav-text: 0.82rem;
+    --fsize-file-link: 0.85rem;
+    --fsize-hyperlink: 1.0rem;
+    --fsize-sm-h1: 2.0rem;
+    --fsize-sm-h2: 1.6rem;
+    --fsize-sm-h3: 1.2rem;
+    --fsize-sm-p: 0.85rem;
+    --fsize-sm-math: 0.85rem;
+    --fsize-sm-code: 0.8rem;
+    --fsize-sm-nav-text: 0.95rem;
+
+    --font-title: 'Alegreya SC', serif;
+    --font-body: arial, sans-serif;
+    --font-heading: 'Istok Web', sans-serif;
+    --font-standout: 'Roboto Condensed', sans-serif;
+    --font-nav: 'Barlow Semi Condensed', sans-serif;
+}
+
+html {
     scroll-behavior: smooth;
+    font-size: clamp(var(--fsize-root-min), 15px + 0.390625vw, var(--fsize-root-max));
 }
 
 body {
     border: 5px solid purple;
+    font-size: var(--fsize-p);
+    font-family: var(--font-body);
 }
 
 .image-modal {
@@ -58,7 +96,7 @@ body {
     z-index: 1;
     left: 50%;
     bottom: 30px;
-    font-size: 17px;
+    font-size: var(--fsize-snackbar);
 }
   
 #snackbar.show {
@@ -96,7 +134,7 @@ body {
 }
 
 .page-loader-message {
-    font-size: 20px;
+    font-size: var(--fsize-page-loader);
 }
 
 .page-loader-wrap {
@@ -225,11 +263,11 @@ body {
 
 .page-title {
     text-decoration: none;
-    font-size: 50px;
+    font-size: var(--fsize-title);
     white-space: wrap;
     background-color: tan;
     margin-bottom: 15px;
-    font-family: 'Alegreya SC', serif;
+    font-family: var(--font-title);
     font-weight: 400;
     padding-bottom: 10px;
     padding-left: 10px;
@@ -258,6 +296,7 @@ body {
     justify-content: space-between;
     padding-top: 5px;
     padding-bottom: 5px;
+    margin-top: 7px;
 }
 
 .top-taskbar-container-1 {
@@ -270,7 +309,7 @@ body {
 
 .created-by-container {
     text-decoration: none;
-    font-size: 25px;
+    font-size: var(--fsize-creator);
     color: white;
 }
 
@@ -365,9 +404,9 @@ body {
     border-radius: 5px;
     max-width: 100%;
     background-color: white;
-    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-family: var(--font-nav);
     font-weight: 400;
-    font-size: large;
+    font-size: var(--fsize-nav-title);
     padding-left: 7px;
     padding-right: 3px;
     border: 2px solid #872bff;
@@ -404,9 +443,9 @@ body {
     display: inline-block;
     text-decoration: none;
     color: #551a8b;
-    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-family: var(--font-nav);
     font-weight: 400;
-    font-size: medium;
+    font-size: var(--fsize-sm-nav-text);
 }
   
 .accordion-text:hover {
@@ -423,7 +462,7 @@ body {
     background-color: blueviolet;
     padding-top: 3px;
     padding-bottom: 3px;
-    font-size: large;
+    font-size: var(--fsize-math);
     margin-top: 10px;
     display: flex;
     color: #fff;
@@ -458,7 +497,7 @@ body {
 }
 
 .code-block {
-    font-size: medium;
+    font-size: var(--fsize-code);
     display: flex;
     margin-top: 20px;
     max-height: 500px;
@@ -529,9 +568,10 @@ body {
     color: seagreen;
     padding-top: 7px;
     padding-bottom: 4px;
-    font-family: 'Istok Web', sans-serif;
+    font-family: var(--font-heading);
     background-color: wheat;
     scroll-margin: 15px;
+    font-size: var(--fsize-h1);
 }
   
 .heading-2 {
@@ -539,9 +579,10 @@ body {
     color: slateblue;
     padding-top: 7px;
     padding-bottom: 4px;
-    font-family: 'Istok Web', sans-serif;
+    font-family: var(--font-heading);
     background-color: wheat;
     scroll-margin: 15px;
+    font-size: var(--fsize-h2);
 }
   
 .heading-3 {
@@ -549,9 +590,10 @@ body {
     color: coral;
     padding-top: 7px;
     padding-bottom: 4px;
-    font-family: 'Istok Web', sans-serif;
+    font-family: var(--font-heading);
     background-color: wheat;
     scroll-margin: 15px;
+    font-size: var(--fsize-h3);
 }
 
 .table-of-contents {
@@ -569,15 +611,15 @@ body {
 }
   
 .on-this-page {
-    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-family: var(--font-nav);
     font-weight: 900;
-    font-size: large;
+    font-size: var(--fsize-nav-title);
 }
   
 .page-nav {
-    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-family: var(--font-nav);
     font-weight: 400;
-    font-size: medium;
+    font-size: var(--fsize-nav-text);
     padding-top: 5px;
     padding-bottom: 10px;
     padding-left: 15px;
@@ -629,10 +671,10 @@ body {
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 15px;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: var(--font-standout);
     font-weight: 400;
     font-style: italic;
-    font-size: large;
+    font-size: var(--fsize-quote);
     padding-left: 20px;
 }
   
@@ -661,8 +703,8 @@ body {
     flex: auto;
     /* background-color: royalblue; */
     margin-left: 15px;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: larger;
+    font-family: var(--font-standout);
+    font-size: var(--fsize-standout);
     font-weight: 400;
 }
   
@@ -690,10 +732,10 @@ body {
     max-width: 100%;
     overflow: auto;
     text-align: center;
+    font-size: var(--fsize-table);
 }
   
 table {
-    font-family: arial, sans-serif;
     border-collapse: collapse;
     border: 5px solid yellow;
     margin: 0 auto;
@@ -743,8 +785,7 @@ tr:nth-child(even) {
   
 .file-link {
     text-decoration: none;
-    font-size: medium;
-    font-family: arial, sans-serif;
+    font-size: var(--fsize-file-link);
     color: black;
     display: contents;
 }
@@ -763,7 +804,7 @@ tr:nth-child(even) {
 }
 
 .hyperlink {
-    font-size: larger;
+    font-size: var(--fsize-hyperlink);
     text-decoration: none;
     color: seagreen;
     transition: .3s;
@@ -772,7 +813,7 @@ tr:nth-child(even) {
     padding-right: 25px;
     -webkit-transition: -webkit-transform 0.2s;
     transition: transform 0.2s;
-    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-family: var(--font-nav);
     font-weight: 400;
     font-style: italic;
 }
@@ -817,7 +858,6 @@ tr:nth-child(even) {
 
 blockquote .twitter-tweet {
     display: inline-block;
-    font-size: 100px;
 }
 
 @media (max-width: 768px){
@@ -831,12 +871,16 @@ blockquote .twitter-tweet {
     }
  */
 
+    body {
+        font-size: var(--fsize-sm-p);
+    }
+
     .page-title {
         font-size: 30px;
     }
 
     .math-block {
-        font-size: small;
+        font-size: var(--fsize-sm-math);
     }
 
     .block-equation::-webkit-scrollbar {
@@ -870,8 +914,8 @@ blockquote .twitter-tweet {
     }
 
     .code-block {
-        font-size: small;
-        max-height: 350px;
+        font-size: var(--fsize-sm-code);
+        max-height: 400px;
     }
     
     .created-by-container {
@@ -906,6 +950,18 @@ blockquote .twitter-tweet {
 
     .accordion-toc-container {
         display: block;
-    }    
+    }
+
+    .heading-1 {
+        font-size: var(--fsize-sm-h1);
+    }
+    
+    .heading-2 {
+        font-size: var(--fsize-sm-h2);
+    }
+    
+    .heading-3 {
+        font-size: var(--fsize-sm-h3);
+    }
 
 }
