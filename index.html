@@ -22,6 +22,15 @@
 	</head>
 
 	<body>
+		<div id="imageModal" class="image-modal" onclick="closeModal(this)" tabindex="-1">
+			<img src="" id="modalImage" class="modal-content" />
+		</div>
+
+		<div class="progress-container" id="progressBarContainer">
+			<div class="progress-bar" id="progressBar"></div>
+		</div>
+
+		<div id="snackbar">Copied to Clipboard!!</div>
 
 		<div id="pageWaitLoader" class="page-loader">
 			<div class="page-loader-wrap">
@@ -75,9 +84,9 @@
 				</div>
 
 				<div class="accordion-toc-container">
-					<button class="accordion-button" id="accordionButtonTOC" onclick="toggleAccordionTOC(this)">On This Page
-						<img src="https://img.icons8.com/fluency-systems-regular/24/000000/expand-arrows.png"/>
-					</button>
+					<div class="accordion-button" id="accordionButtonTOC" onclick="toggleAccordionTOC(this)">On This Page
+						<img style="transform: rotate(90deg);" src="https://img.icons8.com/fluency-systems-regular/20/000000/expand-arrows.png"/>
+					</div>
 					<div class="accordion-panel">
 						<nav>
 							<ul class="accordion-list-container" id="accordionListContainer">
@@ -101,6 +110,7 @@
 						</button>
 					</div>
 				</div>
+				<div class="caption">The famous Schrodinger Equation</div>
 		
 				<div class="math-block">
 					<div class="block-equation">
@@ -176,6 +186,7 @@ def train_step(x, y):
 						</button>
 					</div>
 				</div>
+				<div class="caption">The famous Schrodinger Equation</div>
 
 
 				<div class="code-block">
@@ -333,6 +344,7 @@ def train_step(x, y):
 						</button>
 					</div>
 				</div>
+				<div class="caption">Instantiating an Optimizer in Python</div>
 
 
 
@@ -340,6 +352,7 @@ def train_step(x, y):
 				<div class="image-block">
 					<img class="image-container" src="scrapper_out/404.gif" alt="Text" onclick="openModal(this)" />
 				</div>
+				<div class="caption">A sample 404 gif</div>
 				
 				<div class="image-block" id="box">
 					<img class="image-container" src="scrapper_out/Image_75.png" alt="Text" onclick="openModal(this)" />
@@ -352,6 +365,7 @@ def train_step(x, y):
 				<div class="video-container">
 					<iframe class="video-player" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
 				</div>
+				<div class="caption">CNNs for Vision Lecture 1</div>
 		
 
 
@@ -387,6 +401,7 @@ def train_step(x, y):
 				<div class="video-container">
 					<iframe class="video-player" src="https://replit.com/@ctjlewis/BurnsidesLemma?embed=true"></iframe>
 				</div>
+				<div class="caption">Repl for burnside Lemma</div>
 		
 				<div class="quote">
 					<p>Success! Some text...</p>
@@ -414,9 +429,10 @@ def train_step(x, y):
 						Your browser does not support the audio element.
 					  </audio>			  
 				</div>
+				<div class="caption">The famous Einstien podcast</div>
 
 				
-				<!-- <div class="table-block">
+				<div class="table-block">
 					<table>
 						<tr>
 							<th>Company</th>
@@ -485,7 +501,7 @@ def train_step(x, y):
 							<td>Germany</td>
 						  </tr>
 					</table>
-				</div> -->
+				</div>
 
 
 
@@ -504,6 +520,7 @@ def train_step(x, y):
 							</tr>
 					</table>
 				</div>
+				<div class="caption">Table for Data</div>
 
 				
 
@@ -622,11 +639,13 @@ def train_step(x, y):
 					document.getElementById("pageWaitLoader").style.display = "block";
 					document.getElementById("mainPageContainer").style.display = "none";
 					document.getElementById("topFixedTaskbar").style.display = "none";
+					document.getElementById("progressBarContainer").style.display = "none";
 					console.log("\n\n\n\nNot complete");
 				} else {
 					document.getElementById("pageWaitLoader").style.display = "none";
 					document.getElementById("mainPageContainer").style.display = "flex";
 					document.getElementById("topFixedTaskbar").style.display = "flex";
+					document.getElementById("progressBarContainer").style.display = "block";
 					console.log("\n\n\n\Complete");
 				}
 			}
@@ -674,7 +693,7 @@ def train_step(x, y):
 				prismThemeElement = document.getElementById("prism-theme-file");
 				dummyMathElement = document.getElementById("dummyMathBlock");
 				if(pageTheme === "dark") {
-					prismThemeElement.href = "https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-dark.min.css";
+					prismThemeElement.href = "https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css";
 					dummyMathElement.style.backgroundColor = "black";
 					dummyMathElement.style.color = "white";
 				} else {
@@ -784,12 +803,12 @@ def train_step(x, y):
 			mathArray.push("$$\\begin{align*}y = y(x,t) &= A e^{i\\theta} \\\\&= A (\\cos \\theta + i \\sin \\theta) \\\\&= A (\\cos(kx - \\omega t) + i \\sin(kx - \\omega t)) \\\\&= A\\cos(kx - \\omega t) + i A\\sin(kx - \\omega t)  \\\\&= A\\cos \\Big(\\frac{2\\pi}{\\lambda}x - \\frac{2\\pi v}{\\lambda} t \\Big) + i A\\sin \\Big(\\frac{2\\pi}{\\lambda}x - \\frac{2\\pi v}{\\lambda} t \\Big)  \\\\&= A\\cos \\frac{2\\pi}{\\lambda} (x - v t) + i A\\sin \\frac{2\\pi}{\\lambda} (x - v t)\\end{align*}$$");
 			mathArray.push("$$\\begin{matrix}                -2 & 1 & 0 & 0 & \\cdots & 0  \\\\                1 & -2 & 1 & 0 & \\cdots & 0  \\\\                0 & 1 & -2 & 1 & \\cdots & 0  \\\\                0 & 0 & 1 & -2 & \\ddots & \\vdots \\\\                \\vdots & \\vdots & \\vdots & \\ddots & \\ddots & 1  \\\\                0 & 0 & 0 & \\cdots & 1 & -2        \\end{matrix}$$");
 
-			// let modal = document.getElementById("imageModal");
-			// modal.onkeydown = function(event) {
-			// 	if (event.key === "Escape") {
-			// 		closeModal(modal);
-			// 	}
-			// }
+			let modal = document.getElementById("imageModal");
+			modal.onkeydown = function(event) {
+				if (event.key === "Escape") {
+					closeModal(modal);
+				}
+			}
 
 			function openModal(imageElement) {
 				var modal = document.getElementById("imageModal");
