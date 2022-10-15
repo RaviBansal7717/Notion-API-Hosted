@@ -44,7 +44,7 @@
 			</div>
 		</div>
 
-		<div id="topFixedTaskbar" class="top-fixed-taksbar">
+		<div id="topFixedTaskbar" class="top-fixed-taskbar">
 			<div class="top-taskbar-container-1">
 				<div>
 					<img src="https://img.icons8.com/material-outlined/24/000000/menu--v1.png"/>		
@@ -116,7 +116,7 @@
 						</span>
 					</div>
 					<div class="copy-clipboard">
-						<button class="btn-clipboard" onclick="copyMathToClipboard(1)">
+						<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
 							<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
 								<path fill="#fff" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
 							</svg>
@@ -132,7 +132,7 @@
 						</span>
 					</div>
 					<div class="copy-clipboard">
-						<button class="btn-clipboard" onclick="copyMathToClipboard(1)">
+						<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
 							<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
 								<path fill="#fff" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
 							</svg>
@@ -147,7 +147,7 @@
 						</span>
 					</div>
 					<div class="copy-clipboard">
-						<button class="btn-clipboard" onclick="copyMathToClipboard(1)">
+						<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
 							<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
 								<path fill="#fff" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
 							</svg>
@@ -164,7 +164,7 @@
 						</span>
 					</div>
 					<div class="copy-clipboard">
-						<button class="btn-clipboard" onclick="copyMathToClipboard(1)">
+						<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
 							<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
 								<path fill="#fff" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
 							</svg>
@@ -376,11 +376,18 @@ def train_step(x, y):
 				</div>
 		
 				<div class="video-container">
-					<iframe class="video-player" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+					<iframe class="video-player" src="https://www.youtube.com/embed/tgbNymZ7vqY" allow="fullscreen;"></iframe>
 				</div>
 				<div class="caption">CNNs for Vision Lecture 1</div>
 		
-
+				<div class="video-container">
+					<iframe class="video-player" src="scrapper_out/CauchyIntegralFormula.mp4" allow="fullscreen;"></iframe>
+				</div>
+		
+				<div class="image-block">
+					<img class="image-container" src="scrapper_out/CauchyIntegralFormula_ManimCE_v0.15.0.gif" alt="Text" onclick="openModal(this)" />
+				</div>
+				
 
 
 				<div>
@@ -672,7 +679,7 @@ def train_step(x, y):
 						</span>
 					</div>
 					<div class="copy-clipboard">
-						<button class="btn-clipboard" onclick="copyMathToClipboard(4)">
+						<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
 							<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
 								<path fill="#fff" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
 							</svg>
@@ -683,9 +690,9 @@ def train_step(x, y):
 				<div>
 					<ul>
 						<li class="list-item">Instantiate the metric at the start of the loop</li>
-						<li class="list-item">Call metric.update_state() after each batch</li>
-						<li class="list-item">Call metric.result() when you need to display the current value of the metric</li>
-						<li class="list-item">Call metric.reset_states() when you need to clear the state of the metric (typically at the end of an epoch)</li>
+						<li class="list-item">Call <span class="inline-code">metric.update_state()</span> after each batch</li>
+						<li class="list-item">Call <span class="inline-code">metric.result()</span> when you need to display the current value of the metric</li>
+						<li class="list-item">Call <span class="inline-code">metric.reset_states()</span> when you need to clear the state of the metric (typically at the end of an epoch)</li>
 					</ul>
 				</div>
 		
@@ -740,6 +747,25 @@ def train_step(x, y):
 					</blockquote>
 					<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 				</div>
+
+
+
+
+				<div class="math-block">
+					<div class="block-equation">
+						<span>
+							$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$\begin{align*}y = y(x,t) &= A e^{i\theta} \\&= A (\cos \theta + i \sin \theta) \\&= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \\&= A\cos(kx - \omega t) + i A\sin(kx - \omega t)  \\&= A\cos \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) + i A\sin \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big)  \\&= A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)\end{align*}$$ $$\tilde f(\omega)=\frac{1}{2\pi}\int_{-\infty}^\infty f(x)e^{-i\omega x}\,dx\,,$$  
+						</span>
+					</div>
+					<div class="copy-clipboard">
+						<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+							<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
+								<path fill="#fff" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+							</svg>
+						</button>
+					</div>
+				</div>
+				<div class="caption">The famous Schrodinger Equation</div>
 
 
 
@@ -940,12 +966,13 @@ def train_step(x, y):
 			}
 
 
-			let mathArray = [];
-			mathArray.push("$$p(x,\\lambda)=P(X=x)=\\left\\{\\begin{array}{l}\\frac{e^{-\\lambda}{\\lambda^x}}{x!}; \\quad x = 0,1,2,\\ldots; \\quad \\lambda>0 \\\\0, \\text { otherwise }\\end{array}\\right.$$");
-			mathArray.push("");
-			mathArray.push("$$|001\\rangle + \\langle110| = \\psi(|001\\rangle)$$");
-			mathArray.push("$$\\begin{align*}y = y(x,t) &= A e^{i\\theta} \\\\&= A (\\cos \\theta + i \\sin \\theta) \\\\&= A (\\cos(kx - \\omega t) + i \\sin(kx - \\omega t)) \\\\&= A\\cos(kx - \\omega t) + i A\\sin(kx - \\omega t)  \\\\&= A\\cos \\Big(\\frac{2\\pi}{\\lambda}x - \\frac{2\\pi v}{\\lambda} t \\Big) + i A\\sin \\Big(\\frac{2\\pi}{\\lambda}x - \\frac{2\\pi v}{\\lambda} t \\Big)  \\\\&= A\\cos \\frac{2\\pi}{\\lambda} (x - v t) + i A\\sin \\frac{2\\pi}{\\lambda} (x - v t)\\end{align*}$$");
-			mathArray.push("$$\\begin{matrix}                -2 & 1 & 0 & 0 & \\cdots & 0  \\\\                1 & -2 & 1 & 0 & \\cdots & 0  \\\\                0 & 1 & -2 & 1 & \\cdots & 0  \\\\                0 & 0 & 1 & -2 & \\ddots & \\vdots \\\\                \\vdots & \\vdots & \\vdots & \\ddots & \\ddots & 1  \\\\                0 & 0 & 0 & \\cdots & 1 & -2        \\end{matrix}$$");
+			// Not needed now as we directly copy equation source from dom
+			// let mathArray = [];
+			// mathArray.push("$$p(x,\\lambda)=P(X=x)=\\left\\{\\begin{array}{l}\\frac{e^{-\\lambda}{\\lambda^x}}{x!}; \\quad x = 0,1,2,\\ldots; \\quad \\lambda>0 \\\\0, \\text { otherwise }\\end{array}\\right.$$");
+			// mathArray.push("");
+			// mathArray.push("$$|001\\rangle + \\langle110| = \\psi(|001\\rangle)$$");
+			// mathArray.push("$$\\begin{align*}y = y(x,t) &= A e^{i\\theta} \\\\&= A (\\cos \\theta + i \\sin \\theta) \\\\&= A (\\cos(kx - \\omega t) + i \\sin(kx - \\omega t)) \\\\&= A\\cos(kx - \\omega t) + i A\\sin(kx - \\omega t)  \\\\&= A\\cos \\Big(\\frac{2\\pi}{\\lambda}x - \\frac{2\\pi v}{\\lambda} t \\Big) + i A\\sin \\Big(\\frac{2\\pi}{\\lambda}x - \\frac{2\\pi v}{\\lambda} t \\Big)  \\\\&= A\\cos \\frac{2\\pi}{\\lambda} (x - v t) + i A\\sin \\frac{2\\pi}{\\lambda} (x - v t)\\end{align*}$$");
+			// mathArray.push("$$\\begin{matrix}                -2 & 1 & 0 & 0 & \\cdots & 0  \\\\                1 & -2 & 1 & 0 & \\cdots & 0  \\\\                0 & 1 & -2 & 1 & \\cdots & 0  \\\\                0 & 0 & 1 & -2 & \\ddots & \\vdots \\\\                \\vdots & \\vdots & \\vdots & \\ddots & \\ddots & 1  \\\\                0 & 0 & 0 & \\cdots & 1 & -2        \\end{matrix}$$");
 
 			let modal = document.getElementById("imageModal");
 			modal.onkeydown = function(event) {
@@ -969,12 +996,24 @@ def train_step(x, y):
 				document.body.style.overflowY = "auto";
 			}
 
-			function copyMathToClipboard(index) {
-				console.log(mathArray[index - 1]);
-				navigator.clipboard.writeText(mathArray[index - 1]);
-				// console.log("\nClicked Here", element.parentElement.previousElementSibling.textContent);
+			// Old way of copying, requiring to maintian additional array and populate it
+			// function copyMathToClipboard(index) {
+			// 	console.log(mathArray[index - 1]);
+			// 	navigator.clipboard.writeText(mathArray[index - 1]);
+			// 	// console.log("\nClicked Here", element.parentElement.previousElementSibling.textContent);
+			// 	copiedToClipboard("Equation Copied to Clipboard!!");
+			// }
+
+			function copyMathToClipboard(mathBlock) {
+				let equation= "";
+				for(element of mathBlock.children[0].children) {
+					equation = equation + "$$" + element.querySelector('[encoding="application/x-tex"]').textContent + "$$  ";
+				}
+				navigator.clipboard.writeText(equation);
 				copiedToClipboard("Equation Copied to Clipboard!!");
 			}
+
+
 
 			function copiedToClipboard(message) {
 				var snackbarElement = document.getElementById("snackbar");
