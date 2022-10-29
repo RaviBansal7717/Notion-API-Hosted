@@ -9,7 +9,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js" integrity="sha384-Qsn9KnoKISj6dI8g7p1HBlNpVx0I8p1SvlwOldgi3IorMle61nQy4zEahWYtljaz" crossorigin="anonymous"></script>
 		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
 	        onload="renderMathInElement(document.body);"></script>
-		<link id="prism-theme-file" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+		<link id="prism-theme-file" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-coldark-cold.min.css" rel="stylesheet" />
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="styles_responsive.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
@@ -19,9 +19,16 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<!-- <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital@0;1&family=Barlow+Semi+Condensed:ital@1&family=Istok+Web&family=Roboto+Condensed:ital,wght@0,400;1,300;1,400&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet"> -->
 		<!-- <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Barlow+Condensed:ital@0;1&family=Barlow+Semi+Condensed:ital@1&family=Istok+Web&family=Roboto+Condensed:ital,wght@0,400;1,300;1,400&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet"> -->
-		<link href="https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Barlow+Condensed:ital@0;1&family=Barlow+Semi+Condensed:ital@1&family=Istok+Web&family=Prompt&family=Roboto+Condensed:ital,wght@0,400;1,300;1,400&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+
+
+		<!-- Working one -->
+		<!-- <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Barlow+Condensed:ital@0;1&family=Barlow+Semi+Condensed:ital@1&family=Istok+Web&family=Prompt&family=Roboto+Condensed:ital,wght@0,400;1,300;1,400&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet"> -->
+
+		<link href="https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Barlow+Condensed:ital@0;1&family=Barlow+Semi+Condensed:ital@1&family=IBM+Plex+Sans+Hebrew&family=Istok+Web&family=Prompt&family=Roboto+Condensed:ital,wght@0,400;1,300;1,400&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+
+	</head>
 	
-	<body>
+	<body class="light-mode">
 		<div id="imageModal" class="image-modal" onclick="closeModal(this)" tabindex="-1">
 			<img src="" id="modalImage" class="modal-content" />
 		</div>
@@ -92,96 +99,97 @@
 
 			<div class="page-contents-container">
 
-				<div class="page-title">
-					<span>Quantum Generative Adversarial Networks for Quantum Art Generation</span>
-				</div>
-
-				<div class="accordion-toc-container">
-					<div class="accordion-button" id="accordionButtonTOC" onclick="toggleAccordionTOC(this)">On This Page
-						<img style="transform: rotate(90deg);" src="https://img.icons8.com/fluency-systems-regular/20/000000/expand-arrows.png"/>
+				<section class="text-container-section" id="*topSectionWithoutHeading">
+					<div class="page-title">
+						<span>Quantum Generative Adversarial Networks for Quantum Art Generation</span>
 					</div>
-					<div class="accordion-panel">
-						<nav>
-							<ul class="accordion-list-container" id="accordionListContainer">
-							</ul>
-						</nav>
-					</div>
-				</div>
-				
 
-				<div class="math-block">
-					<div class="block-equation">
+					<div class="accordion-toc-container">
+						<div class="accordion-button" id="accordionButtonTOC" onclick="toggleAccordionTOC(this)">On This Page
+							<img style="transform: rotate(90deg);" src="https://img.icons8.com/fluency-systems-regular/20/000000/expand-arrows.png"/>
+						</div>
+						<div class="accordion-panel">
+							<nav>
+								<ul class="accordion-list-container" id="accordionListContainer">
+								</ul>
+							</nav>
+						</div>
+					</div>
+					
+
+					<div class="math-block">
+						<div class="block-equation">
+							<span>
+								$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+					<div class="caption">The famous Schrodinger Equation</div>
+			
+					<div class="math-block">
+						<div class="block-equation">
+							<span>
+								$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+					<div class="math-block">
+						<div class="block-equation">
+							<span>
+								$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$ $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+
+
+					<div class="math-block" style="height: 100px;">
+						<div class="block-equation">
+							<span>
+								$$$$
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+					<div id="dummyMathBlock" class="block-equation">
 						<span>
-							$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$
+							$$\tilde f(\omega)=\frac{1}{2\pi}\int_{-\infty}^\infty f(x)e^{-i\omega x}\,dx\,,$$
 						</span>
 					</div>
-					<div class="copy-clipboard">
-						<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
-							<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
-								<path fill="#fff" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
-							</svg>
-						</button>
-					</div>
-				</div>
-				<div class="caption">The famous Schrodinger Equation</div>
-		
-				<div class="math-block">
-					<div class="block-equation">
-						<span>
-							$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$
-						</span>
-					</div>
-					<div class="copy-clipboard">
-						<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
-							<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
-								<path fill="#fff" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
-							</svg>
-						</button>
-					</div>
-				</div>
 
-				<div class="math-block">
-					<div class="block-equation">
-						<span>
-							$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$ $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$
-						</span>
-					</div>
-					<div class="copy-clipboard">
-						<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
-							<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
-								<path fill="#fff" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
-							</svg>
-						</button>
-					</div>
-				</div>
-
-
-
-				<div class="math-block" style="height: 100px;">
-					<div class="block-equation">
-						<span>
-							$$$$
-						</span>
-					</div>
-					<div class="copy-clipboard">
-						<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
-							<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
-								<path fill="#fff" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
-							</svg>
-						</button>
-					</div>
-				</div>
-
-				<div id="dummyMathBlock" class="block-equation">
-					<span>
-						$$\tilde f(\omega)=\frac{1}{2\pi}\int_{-\infty}^\infty f(x)e^{-i\omega x}\,dx\,,$$
-					</span>
-				</div>
-
-				
-				<div class="code-block">
-					<div class="code-snippet">
-						<pre class="line-numbers"><code class="language-python"># Instantiate an optimizer.
+					
+					<div class="code-block">
+						<div class="code-snippet">
+							<pre class="line-numbers"><code class="language-python"># Instantiate an optimizer.
 def train_step(x, y):
 	with tf.GradientTape() as tape:
 		logits = model(x, training=True)
@@ -190,21 +198,27 @@ def train_step(x, y):
 	optimizer.apply_gradients(zip(grads, model.trainable_weights))
 	train_acc_metric.update_state(y, logits)
 	return loss_value</code></pre>
+						</div>
+						<div class="copy-code-clipboard">
+							<button class="btn-code-clipboard" onclick="copyCodeToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
 					</div>
-					<div class="copy-code-clipboard">
-						<button class="btn-code-clipboard" onclick="copyCodeToClipboard(2)">
-							<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
-								<path fill="blue" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
-							</svg>
-						</button>
-					</div>
-				</div>
-				<div class="caption">The famous Schrodinger Equation</div>
+					<div class="caption">The famous Schrodinger Equation</div>
+				</section>
 
 
-				<div class="code-block">
-					<div class="code-snippet">
-						<pre class="line-numbers"><code class="language-python">import os
+				<section class="text-container-section" id="dsd.jksjkjskdj">
+					<div>
+						<h1 class="heading-1">Heading 1 1</h1>
+					</div>
+
+					<div class="code-block">
+						<div class="code-snippet">
+							<pre class="line-numbers"><code class="language-python">import os
 
 # Prepare the dataset. We use both the training & test MNIST digits.
 batch_size = 64
@@ -348,16 +362,16 @@ def train_step(x, y):
 	train_acc_metric.update_state(y, logits)
 	return loss_value
 </code></pre>
+						</div>
+						<div class="copy-code-clipboard">
+							<button class="btn-code-clipboard" onclick="copyCodeToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
 					</div>
-					<div class="copy-code-clipboard">
-						<button class="btn-code-clipboard" onclick="copyCodeToClipboard(2)">
-							<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
-								<path fill="blue" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
-							</svg>
-						</button>
-					</div>
-				</div>
-				<div class="caption">Instantiating an Optimizer in Python</div>
+					<div class="caption">Instantiating an Optimizer in Python</div>
 
 
 
@@ -366,7 +380,18 @@ def train_step(x, y):
 					<img class="image-container" src="scrapper_out/404.gif" alt="Text" onclick="openModal(this)" />
 				</div>
 				<div class="caption">A sample 404 gif</div>
-				
+
+			</section>
+
+
+			<section class="text-container-section" id="rwewewe3252653">
+
+				<div>
+					<h2 class="heading-2">Heading 2 1 dsjsjdksjd</h2>
+				</div>
+	
+		
+
 				<div class="image-block" id="box">
 					<img class="image-container" src="scrapper_out/Image_75.png" alt="Text" onclick="openModal(this)" />
 				</div>
@@ -380,393 +405,532 @@ def train_step(x, y):
 				</div>
 				<div class="caption">CNNs for Vision Lecture 1</div>
 		
-				<div class="video-container">
+				<!-- <div class="video-container">
 					<iframe class="video-player" src="scrapper_out/CauchyIntegralFormula.mp4" allow="fullscreen;"></iframe>
-				</div>
+				</div> -->
 		
 				<div class="image-block">
 					<img class="image-container" src="scrapper_out/CauchyIntegralFormula_ManimCE_v0.15.0.gif" alt="Text" onclick="openModal(this)" />
 				</div>
-				
-
-
-				<div>
-					<h1 id="dsd.jksjkjskdj" class="heading-1">Heading 1 1</h1>
-				</div>
-		
-				<div>
-					<h2 id="rwewewe" class="heading-2">Heading 2 1 dsjsjdksjd</h2>
-				</div>
-		
-				<div>
-					<h3 id="dsd4324324" class="heading-3">Heading 3 1 jljklajskajskjksjaks</h3>
-				</div>
-
-				<p>This is some paragraph text in here.To make font size responsive in steps, set the base font size at each breakpoint. To create fluid text that smoothly changes size, use the calc() function to calculate a ratio between pixels and viewport widths, this will make the base font size grow at the correct rate relative to the screen width.</p>
-		
-				<div>
-					<h3 id="605406hkfgkh" class="heading-3">Heading 3 2 jljklajskajskjksjaks</h3>
-				</div>
-		
-				<div>
-					<h3 id="po4peitoiro" class="heading-3">Heading 3 3 jljklajskajskjksjaks    Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks</h3>
-				</div>
-		
-				<div>
-					<h2 id="rwewew23e" class="heading-2">Heading 2 2 Wrinting a loop that does nothing</h2>
-				</div>
-		
-				<div>
-					<h3 id="dsd43sa24" class="heading-3">Heading 3 4 jljklajskajskjksjaks</h3>
-				</div>
-		
-				<div class="video-container">
-					<iframe class="video-player" src="https://replit.com/@ctjlewis/BurnsidesLemma?embed=true"></iframe>
-				</div>
-				<div class="caption">Repl for burnside Lemma</div>
-		
-				<div class="quote">
-					<p>Success! Some text...</p>
-				</div>
-				  
-				<div class="standout">
-					<div class="standout-container">
-						<div class="standout-icon">
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" height="30" width="30"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2l0 0c5.2-7.1 10.4-14.2 15.4-21.4c19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3c5 7.2 10.2 14.3 15.4 21.4l0 0c19.8 27.1 39.7 54.4 49.2 86.2H272zM192 512c44.2 0 80-35.8 80-80V416H112v16c0 44.2 35.8 80 80 80zM112 176c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112c8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80z"/></svg>
-							<img height="30" width="30" src="https://img.icons8.com/color/48/000000/light-on--v1.png"/>	
-							<img height="30" width="30" src="https://img.icons8.com/fluency/48/000000/exclamation-mark.png"/>				
-							<img height="30" width="30" src="https://img.icons8.com/color/48/000000/exclamation-mark.png"/>
-						</div>
-						<div class="standout-text">
-							<p>This is going to standout as imp text!!</p>
-						</div>
-					</div>
-				</div>
-		
-				<div class="standout">
-					<div class="standout-container">
-						<div class="standout-icon">
-							<img height="30" width="30" src="https://img.icons8.com/color/48/000000/light-on--v1.png"/>	
-						</div>
-						<div class="standout-text">
-							<p>This is going to standout as imp text!! This is going to standout as imp text!! This is going to standout as imp text!!</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="standout">
-					<div class="standout-container">
-						<div class="standout-icon">
-							<img height="30" width="30" src="https://img.icons8.com/fluency/48/000000/exclamation-mark.png"/>				
-						</div>
-						<div class="standout-text">
-							<p>This is going to standout as imp text!!</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="standout">
-					<div class="standout-container">
-						<div class="standout-icon">
-							<img height="30" width="30" src="https://img.icons8.com/color/48/000000/exclamation-mark.png"/>
-						</div>
-						<div class="standout-text">
-							<p>This is going to standout as imp text!!</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="standout">
-					<div class="standout-container">
-						<div class="standout-icon">
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" height="30" width="30"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2l0 0c5.2-7.1 10.4-14.2 15.4-21.4c19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3c5 7.2 10.2 14.3 15.4 21.4l0 0c19.8 27.1 39.7 54.4 49.2 86.2H272zM192 512c44.2 0 80-35.8 80-80V416H112v16c0 44.2 35.8 80 80 80zM112 176c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112c8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80z"/></svg>
-						</div>
-						<div class="standout-text">
-							<p>This is going to standout as imp text!!</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="audio-container">
-					<audio class="audio-player" controls>
-						<source src="horse.ogg" type="audio/ogg">
-						<source src="horse.mp3" type="audio/mpeg">
-						Your browser does not support the audio element.
-					  </audio>			  
-				</div>
-				<div class="caption">The famous Einstien podcast</div>
-
-				
-				<div>
-					<h3 id="605406hkfgkh" class="heading-3">Heading 3 2 jljklajskajskjksjaks</h3>
-				</div>
-		
-				<div>
-					<h3 id="po4peitoiro" class="heading-3">Heading 3 3 jljklajskajskjksjaks    Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks</h3>
-				</div>
-		
-				<div>
-					<h2 id="rwewew23e" class="heading-2">Heading 2 2 Wrinting a loop that does nothing</h2>
-				</div>
-		
-				<div>
-					<h3 id="dsd43sa24" class="heading-3">Heading 3 4 jljklajskajskjksjaks</h3>
-				</div>
-
-
-
-				<div>
-					<h3 id="605406hkfgkh" class="heading-3">Heading 3 2 jljklajskajskjksjaks</h3>
-				</div>
-		
-				<div>
-					<h3 id="po4peitoiro" class="heading-3">Heading 3 3 jljklajskajskjksjaks    Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks</h3>
-				</div>
-		
-				<div>
-					<h2 id="rwewew23e" class="heading-2">Heading 2 2 Wrinting a loop that does nothing</h2>
-				</div>
-		
-				<div>
-					<h3 id="dsd43sa24" class="heading-3">Heading 3 4 jljklajskajskjksjaks</h3>
-				</div>
-
-
-				<div class="table-block">
-					<table>
-						<tr>
-							<th>Company</th>
-							<th>Contact</th>
-							<th>Country</th>
-							<th>Company</th>
-							<th>Contact</th>
-							<th>Country</th>
-							<th>Company</th>
-							<th>Contact</th>
-							<th>Country</th>
-						  </tr>
-						  <tr>
-							<td>Alfreds Futterkiste</td>
-							<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
-							<td>Germany</td>
-							<td>Alfreds Futterkiste</td>
-							<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
-							<td>Germany</td>
-							<td>Alfreds Futterkiste</td>
-							<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
-							<td>Germany</td>
-						  </tr>
-						  <tr>
-							<td>Centro comercial Moctezuma</td>
-							<td>Francisco Chang</td>
-							<td>Mexico</td>
-							<td>Alfreds Futterkiste</td>
-							<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
-							<td>Germany</td>
-							<td>Alfreds Futterkiste</td>
-							<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
-							<td>Germany</td>
-						  </tr>
-						  <tr>
-							<td>Island Trading</td>
-							<td>Helen Bennett</td>
-							<td>UK</td>
-							<td>Alfreds Futterkiste  Maria Anders $\frac{1}{2}\sqrt{2}$ abc  Maria Anders $\frac{1}{2}\sqrt{2}$ abc  Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
-							<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
-							<td>Germany</td>
-							<td>Alfreds Futterkiste</td>
-							<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
-							<td>Germany</td>
-						  </tr>
-						  <tr>
-							<td>Laughing Bacchus Winecellars</td>
-							<td>Yoshi Tannamuri</td>
-							<td>Canada</td>
-							<td>Alfreds Futterkiste</td>
-							<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
-							<td>Germany</td>
-							<td>Alfreds Futterkiste</td>
-							<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
-							<td>Germany GermanyGermanyGermanyGermanyGermanyGermanyGermanyGermanyGermanyGermanyGermanyGermanyGermany</td>
-						  </tr>
-						  <tr>
-							<td>Magazzini Alimentari Riuniti</td>
-							<td>Giovanni Rovelli</td>
-							<td>Italy</td>
-							<td>Alfreds Futterkiste</td>
-							<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
-							<td>Germany</td>
-							<td>Alfreds Futterkiste</td>
-							<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc   Maria Anders $\frac{1}{2}\sqrt{2}$ abc  Maria Anders $\frac{1}{2}\sqrt{2}$ abc  Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
-							<td>Germany</td>
-						  </tr>
-					</table>
-				</div>
-
-
-
-				<div class="table-block">
-					<table>
-						<tr>
-							<th>Company</th>
-							<th>Contact</th>
-							<th>Country</th>
-							</tr>
-							<tr>
-							<td>Alfreds Futterkiste</td>
-							<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
-							<td>Germany</td>
-							<td>Germany</td>
-							</tr>
-					</table>
-				</div>
-				<div class="caption">Table for Data</div>
-
-				<div>
-					<hr class="horizontal-divider">
-				</div>
-						
-
-				<a class="file-link" target="_blank" href="scrapper_out/_8601ac9c05f6275f91bf168291ec49bc_AssemblerChallengeDec10Release.pdf">
-					<div class="file-container">
-						<div class="file-icon">
-							<img src="https://img.icons8.com/clouds/32/000000/file.png"/>
-						</div>
-						<div class="file-reference">
-							Assembler Challenge.pdf
-						</div>
-					</div>
-				</a>
 			
-				<a class="file-link" target="_blank" href="scrapper_out/CauchyIntegralFormula_ManimCE_v0.15.0.gif">
-					<div class="file-container">
-						<div class="file-icon">
-							<img src="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/32/000000/external-file-interface-kiranshastry-lineal-color-kiranshastry.png"/>
-						</div>
-						<div class="file-reference">
-							Assembler Challenge.pdf
-						</div>
-					</div>
-				</a>
-		
-				<a class="file-link" target="_blank" href="scrapper_out/_a9f1f2bef107e64cedaa288b9aedc28a_m1_l4_basic_graphs.pdf">
-					<div class="file-container">
-						<div class="file-icon">
-							<img src="https://img.icons8.com/parakeet/32/000000/experimental-file-parakeet.png"/>
-						</div>
-						<div class="file-reference">
-							Assembler Challenge.pdf
-						</div>
-					</div>
-				</a>
-		
-				<a class="file-link" target="_blank" href="scrapper_out/carbon.png">
-					<div class="file-container">
-						<div class="file-icon">
-							<img src="https://img.icons8.com/cute-clipart/32/000000/file.png"/>
-						</div>
-						<div class="file-reference">
-							Assembler Challenge.pdf
-						</div>
-					</div>
-				</a>
-		
-
-				<div class="math-block">
-					<div class="block-equation">
-						<span>
-							$$\begin{align*}y = y(x,t) &= A e^{i\theta} \\&= A (\cos \theta + i \sin \theta) \\&= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \\&= A\cos(kx - \omega t) + i A\sin(kx - \omega t)  \\&= A\cos \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) + i A\sin \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big)  \\&= A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)\end{align*}$$
-						</span>
-					</div>
-					<div class="copy-clipboard">
-						<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
-							<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
-								<path fill="#fff" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
-							</svg>
-						</button>
-					</div>
+			</section>
+			<section class="text-container-section" id="titleHeading3">
+				<div>
+					<h3 class="heading-3">Heading 3 1 jljklajskajskjksjaks</h3>
 				</div>
 
-				<div>
-					<ul>
-						<li class="list-item">Instantiate the metric at the start of the loop</li>
-						<li class="list-item">Call <span class="inline-code">metric.update_state()</span> after each batch</li>
-						<li class="list-item">Call <span class="inline-code">metric.result()</span> when you need to display the current value of the metric</li>
-						<li class="list-item">Call <span class="inline-code">metric.reset_states()</span> when you need to clear the state of the metric (typically at the end of an epoch)</li>
-					</ul>
-				</div>
+
+				
+					<div class="video-container">
+						<video class="video-player" controls>
+							<source src="scrapper_out/CauchyIntegralFormula.mp4">
+						</video>
+					</div>
+
+
+			
+					<!-- <div>
+						<h3 id="dsd4324324" class="heading-3">Heading 3 1 jljklajskajskjksjaks</h3>
+					</div> -->
+
+					<p>This is some paragraph text in here.To make font size responsive in steps, set the base font size at each breakpoint. To create fluid text that smoothly changes size, use the calc() function to calculate a ratio between pixels and viewport widths, this will make the base font size grow at the correct rate relative to the screen width.</p>
+			
+					<!-- <div>
+						<h3 id="605406hkfgkh" class="heading-3">Heading 3 2 jljklajskajskjksjaks</h3>
+					</div>
+			
+					<div>
+						<h3 id="po4peitoiro" class="heading-3">Heading 3 3 jljklajskajskjksjaks    Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks</h3>
+					</div>
+			
+					<div>
+						<h2 id="rwewew23e" class="heading-2">Heading 2 2 Wrinting a loop that does nothing</h2>
+					</div>
+			
+					<div>
+						<h3 id="dsd43sa24" class="heading-3">Heading 3 4 jljklajskajskjksjaks</h3>
+					</div> -->
+			
+					<div class="video-container">
+						<iframe class="video-player" src="https://replit.com/@ctjlewis/BurnsidesLemma?embed=true"></iframe>
+					</div>
+					<div class="caption">Repl for burnside Lemma</div>
+			
+					<div class="quote">
+						<p>Success! Some text...</p>
+					</div>
+					
+					<div class="standout">
+						<div class="standout-container">
+							<div class="standout-icon">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" height="30" width="30"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2l0 0c5.2-7.1 10.4-14.2 15.4-21.4c19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3c5 7.2 10.2 14.3 15.4 21.4l0 0c19.8 27.1 39.7 54.4 49.2 86.2H272zM192 512c44.2 0 80-35.8 80-80V416H112v16c0 44.2 35.8 80 80 80zM112 176c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112c8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80z"/></svg>
+								<img height="30" width="30" src="https://img.icons8.com/color/48/000000/light-on--v1.png"/>	
+								<img height="30" width="30" src="https://img.icons8.com/fluency/48/000000/exclamation-mark.png"/>				
+								<img height="30" width="30" src="https://img.icons8.com/color/48/000000/exclamation-mark.png"/>
+							</div>
+							<div class="standout-text">
+								<p>This is going to standout as imp text!!</p>
+							</div>
+						</div>
+					</div>
+
+				</section>
+				<section class="text-container-section" id="21625fadfdsf">
+					<div>
+						<h2  class="heading-2">Heading 2 2 does nothing</h2>
+					</div>
+
 		
-				<div>
-					<ol>
-						<li class="list-item">Instantiate the metric at the start of the loop</li>
-						<li class="list-item">Call metric.update_state() after each batch</li>
-						<li class="list-item">Call metric.result() when you need to display the current value of the metric</li>
-						<li class="list-item">Call metric.reset_states() when you need to clear the state of the metric (typically at the end of an epoch)</li>
-					</ol>
-				</div>
+					<div class="standout">
+						<div class="standout-container">
+							<div class="standout-icon">
+								<img height="30" width="30" src="https://img.icons8.com/color/48/000000/light-on--v1.png"/>	
+							</div>
+							<div class="standout-text">
+								<p>This is going to standout as imp text!! This is going to standout as imp text!! This is going to standout as imp text!!</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="standout">
+						<div class="standout-container">
+							<div class="standout-icon">
+								<img height="30" width="30" src="https://img.icons8.com/fluency/48/000000/exclamation-mark.png"/>				
+							</div>
+							<div class="standout-text">
+								<p>This is going to standout as imp text!!</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="standout">
+						<div class="standout-container">
+							<div class="standout-icon">
+								<img height="30" width="30" src="https://img.icons8.com/color/48/000000/exclamation-mark.png"/>
+							</div>
+							<div class="standout-text">
+								<p>This is going to standout as imp text!!</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="standout">
+						<div class="standout-container">
+							<div class="standout-icon">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" height="30" width="30"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2l0 0c5.2-7.1 10.4-14.2 15.4-21.4c19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3c5 7.2 10.2 14.3 15.4 21.4l0 0c19.8 27.1 39.7 54.4 49.2 86.2H272zM192 512c44.2 0 80-35.8 80-80V416H112v16c0 44.2 35.8 80 80 80zM112 176c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112c8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80z"/></svg>
+							</div>
+							<div class="standout-text">
+								<p>This is going to standout as imp text!!</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="audio-container">
+						<audio class="audio-player" controls>
+							<source src="horse.ogg" type="audio/ogg">
+							<source src="horse.mp3" type="audio/mpeg">
+							Your browser does not support the audio element.
+						</audio>			  
+					</div>
+					<div class="caption">The famous Einstien podcast</div>
+
+				</section>
+				<section class="text-container-section" id="605406hkfgkh" >
+					<div>
+						<h3 class="heading-3">Quantum GANs</h3>
+					</div>
 		
-				<div>
-					<p class="text-paragraph">If you want to customize the learning algorithm of your model $\frac{1}{2}$ while still leveraging the convenience of fit() (for instance, to train a GAN using fit()), you can subclass the Model class and implement your own train_step() method, which is called repeatedly during fit(). This is covered in the guide Customizing what happens in fit().</p>
-				</div>
-		
-				<p>The formula $a^2+b^2=c^2$ will be rendered inline, but $$a^2+b^2=c^2$$ will be rendered as a block element.</p>
-		
-				<div>
-					<hr class="horizontal-divider">
-				</div>
-		
-				<div class="hyperlink-container">
-					<a class="hyperlink" target="_blank" href="https://www.google.com">Course Website
-						<img src="https://img.icons8.com/stickers/24/000000/up-right-arrow.png"/>
+					<!-- <div>
+						<h3 id="po4peitoiro" class="heading-3">Heading 3 3 jljklajskajskjksjaks    Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks</h3>
+					</div>
+			
+					<div>
+						<h2 id="rwewew23e" class="heading-2">Heading 2 2 Wrinting a loop that does nothing</h2>
+					</div>
+			
+					<div>
+						<h3 id="dsd43sa24" class="heading-3">Heading 3 4 jljklajskajskjksjaks</h3>
+					</div>
+
+
+
+					<div>
+						<h3 id="605406hkfgkh" class="heading-3">Heading 3 2 jljklajskajskjksjaks</h3>
+					</div>
+			
+					<div>
+						<h3 id="po4peitoiro" class="heading-3">Heading 3 3 jljklajskajskjksjaks    Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks</h3>
+					</div>
+			
+					<div>
+						<h2 id="rwewew23e" class="heading-2">Heading 2 2 Wrinting a loop that does nothing</h2>
+					</div>
+			
+					<div>
+						<h3 id="dsd43sa24" class="heading-3">Heading 3 4 jljklajskajskjksjaks</h3>
+					</div> -->
+
+
+					<div class="table-block">
+						<table>
+							<thead>
+								<tr>
+									<th>Company</th>
+									<th>Contact</th>
+									<th>Country</th>
+									<th>Company</th>
+									<th>Contact</th>
+									<th>Country</th>
+									<th>Company</th>
+									<th>Contact</th>
+									<th>Country</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Alfreds Futterkiste</td>
+									<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+									<td>Germany</td>
+									<td>Alfreds Futterkiste</td>
+									<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+									<td>Germany</td>
+									<td>Alfreds Futterkiste</td>
+									<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+									<td>Germany</td>
+								</tr>
+								<tr>
+									<td>Centro comercial Moctezuma</td>
+									<td>Francisco Chang</td>
+									<td>Mexico</td>
+									<td>Alfreds Futterkiste</td>
+									<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+									<td>Germany</td>
+									<td>Alfreds Futterkiste</td>
+									<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+									<td>Germany</td>
+								</tr>
+								<tr>
+									<td>Island Trading</td>
+									<td>Helen Bennett</td>
+									<td>UK</td>
+									<td>Alfreds Futterkiste  Maria Anders $\frac{1}{2}\sqrt{2}$ abc  Maria Anders $\frac{1}{2}\sqrt{2}$ abc  Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+									<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+									<td>Germany</td>
+									<td>Alfreds Futterkiste</td>
+									<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+									<td>Germany</td>
+								</tr>
+								<tr>
+									<td>Laughing Bacchus Winecellars</td>
+									<td>Yoshi Tannamuri</td>
+									<td>Canada</td>
+									<td>Alfreds Futterkiste</td>
+									<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+									<td>Germany</td>
+									<td>Alfreds Futterkiste</td>
+									<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+									<td>Germany GermanyGermanyGermanyGermanyGermanyGermanyGermanyGermanyGermanyGermanyGermanyGermanyGermany</td>
+								</tr>
+								<tr>
+									<td>Magazzini Alimentari Riuniti</td>
+									<td>Giovanni Rovelli</td>
+									<td>Italy</td>
+									<td>Alfreds Futterkiste</td>
+									<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+									<td>Germany</td>
+									<td>Alfreds Futterkiste</td>
+									<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc   Maria Anders $\frac{1}{2}\sqrt{2}$ abc  Maria Anders $\frac{1}{2}\sqrt{2}$ abc  Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+									<td>Germany</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+
+					<div class="table-block">
+						<table>
+							<thead>
+								<tr>
+									<th>Company</th>
+									<th>Contact</th>
+									<th>Country</th>
+									<th>3434fsddf</th>
+								</tr>
+							</thead>
+							
+							<tbody>
+								<tr>
+									<td>Alfreds Futterkiste</td>
+									<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+									<td>Germany</td>
+									<td>Germany</td>
+								</tr>
+								<tr>
+									<td>Schrodinger Equation</td>
+									<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+									<td>lffsdfjh slkdlskd</td>
+									<td>India</td>
+								</tr>
+								<tr>
+									<td>Company</td>
+									<td>Contact</td>
+									<td>Country</td>
+									<td>3434fsddf</td>
+								</tr>
+								<tr>
+									<td>Alfreds Futterkiste</td>
+									<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+									<td>Germany</td>
+									<td>Germany</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="caption">Table for Data</div>
+
+					<div>
+						<hr class="horizontal-divider">
+					</div>
+							
+
+					<a class="file-link" target="_blank" href="scrapper_out/_8601ac9c05f6275f91bf168291ec49bc_AssemblerChallengeDec10Release.pdf">
+						<div class="file-container">
+							<div class="file-icon">
+								<img src="https://img.icons8.com/clouds/32/000000/file.png"/>
+							</div>
+							<div class="file-reference">
+								Assembler Challenge.pdf
+							</div>
+						</div>
 					</a>
-				</div>
-		
-		
-				<div class="hyperlink-container">
-					<a class="hyperlink" target="_blank" href="https://www.google.com">Course Website
-						<img src="https://img.icons8.com/nolan/24/up-right-arrow--v1.png"/>
-					</a>
-				</div>
-		
-				<div class="hyperlink-container">
-					<a class="hyperlink" target="_blank" href="https://www.google.com">Course Website
-						<img src="https://img.icons8.com/color/24/000000/up-right-arrow.png"/>
-					</a>
-				</div>
 
-				<div>
-					<p class="text-paragraph">If you want to customize the <a href="https://keras.io/guides/writing_a_training_loop_from_scratch/" class="inline-link" target="_blank">learning algorithm of</a> your model $\frac{1}{2}$ while still leveraging the convenience of fit() (for instance, to train a GAN using fit()), you can subclass the <span class="inline-code">Model</span> class and implement your own train_step() method, which is called repeatedly during fit(). This is covered in the guide Customizing what happens in <span class="inline-code">fit()</span>.</p>
-				</div>
-
-				<div class="tweet-block">
-					<blockquote class="twitter-tweet">
-						<p lang="en" dir="ltr">&quot;I see no reason to believe that a creator of protoplasm or primeval matter, if such there be, has any reason to be interested in our insignificant race in a tiny corner of the universe...&quot;--Rosalind Franklin, born this week, 1920. 
-							<a href="https://t.co/67g0JAlOTr">pic.twitter.com/67g0JAlOTr</a>
-						</p>&mdash; Brian Greene (@bgreene) 
-						<a href="https://twitter.com/bgreene/status/1420220919365177350?ref_src=twsrc%5Etfw">July 28, 2021</a>
-					</blockquote>
-					<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-				</div>
-
-
-
-
-				<div class="math-block">
-					<div class="block-equation">
-						<span>
-							$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$\begin{align*}y = y(x,t) &= A e^{i\theta} \\&= A (\cos \theta + i \sin \theta) \\&= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \\&= A\cos(kx - \omega t) + i A\sin(kx - \omega t)  \\&= A\cos \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) + i A\sin \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big)  \\&= A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)\end{align*}$$ $$\tilde f(\omega)=\frac{1}{2\pi}\int_{-\infty}^\infty f(x)e^{-i\omega x}\,dx\,,$$  
-						</span>
+				</section>
+				<section class="text-container-section" id="dd0ee;lw;el;we">
+					<div>
+						<h1 class="heading-1">AI Ethics</h1>
 					</div>
-					<div class="copy-clipboard">
-						<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
-							<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
-								<path fill="#fff" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
-							</svg>
-						</button>
-					</div>
-				</div>
-				<div class="caption">The famous Schrodinger Equation</div>
+			
+					<a class="file-link" target="_blank" href="scrapper_out/CauchyIntegralFormula_ManimCE_v0.15.0.gif">
+						<div class="file-container">
+							<div class="file-icon">
+								<img src="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/32/000000/external-file-interface-kiranshastry-lineal-color-kiranshastry.png"/>
+							</div>
+							<div class="file-reference">
+								Assembler Challenge.pdf
+							</div>
+						</div>
+					</a>
+			
+					<a class="file-link" target="_blank" href="scrapper_out/_a9f1f2bef107e64cedaa288b9aedc28a_m1_l4_basic_graphs.pdf">
+						<div class="file-container">
+							<div class="file-icon">
+								<img src="https://img.icons8.com/parakeet/32/000000/experimental-file-parakeet.png"/>
+							</div>
+							<div class="file-reference">
+								Assembler Challenge.pdf
+							</div>
+						</div>
+					</a>
 
+					<a class="file-link" target="_blank" href="scrapper_out/_a9f1f2bef107e64cedaa288b9aedc28a_m1_l4_basic_graphs.pdf">
+						<div class="file-container">
+							<div class="file-icon">
+								<img src="https://img.icons8.com/parakeet/32/000000/experimental-file-parakeet.png"/>
+							</div>
+							<div class="file-reference">
+								_8601ac9c05f6275f91bf168291ec49bc_AssemblerChallengeDec10Release.pdf
+							</div>
+						</div>
+					</a>
+					
+					<a class="file-link" target="_blank" href="scrapper_out/carbon.png">
+						<div class="file-container">
+							<div class="file-icon">
+								<img src="https://img.icons8.com/cute-clipart/32/000000/file.png"/>
+							</div>
+							<div class="file-reference">
+								Assembler Challenge.pdf
+							</div>
+						</div>
+					</a>
+			
+
+					<div class="math-block">
+						<div class="block-equation">
+							<span>
+								$$\begin{align*}y = y(x,t) &= A e^{i\theta} \\&= A (\cos \theta + i \sin \theta) \\&= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \\&= A\cos(kx - \omega t) + i A\sin(kx - \omega t)  \\&= A\cos \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) + i A\sin \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big)  \\&= A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)\end{align*}$$
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+					<div>
+						<ul>
+							<li class="list-item">Instantiate the metric at the start of the loop</li>
+							<li class="list-item">Call <span class="inline-code">metric.update_state()</span> after each batch</li>
+							<li class="list-item">Call <span class="inline-code">metric.result()</span> when you need to display the current value of the metric</li>
+							<li class="list-item">Call <span class="inline-code">metric.reset_states()</span> when you need to clear the state of the metric (typically at the end of an epoch)</li>
+						</ul>
+					</div>
+			
+					<div>
+						<ol>
+							<li class="list-item">Instantiate the metric at the start of the loop</li>
+							<li class="list-item">Call metric.update_state() after each batch</li>
+							<li class="list-item">Call metric.result() when you need to display the current value of the metric</li>
+							<li class="list-item">Call metric.reset_states() when you need to clear the state of the metric (typically at the end of an epoch)</li>
+						</ol>
+					</div>
+			
+					<div>
+						<p class="text-paragraph">If you want to customize the learning algorithm of your model $\frac{1}{2}$ while still leveraging the convenience of fit() (for instance, to train a GAN using fit()), you can subclass the Model class and implement your own train_step() method, which is called repeatedly during fit(). This is covered in the guide Customizing what happens in fit().</p>
+					</div>
+			
+					<p>The formula $a^2+b^2=c^2$ will be rendered inline, but $$a^2+b^2=c^2$$ will be rendered as a block element.</p>
+			
+					<div>
+						<hr class="horizontal-divider">
+					</div>
+			
+					<div class="hyperlink-container">
+						<a class="hyperlink" target="_blank" href="https://www.google.com">Course Website
+							<img src="https://img.icons8.com/stickers/24/000000/up-right-arrow.png"/>
+						</a>
+					</div>
+			
+			
+					<div class="hyperlink-container">
+						<a class="hyperlink" target="_blank" href="https://www.google.com">Course Website
+							<img src="https://img.icons8.com/nolan/24/up-right-arrow--v1.png"/>
+						</a>
+					</div>
+			
+					<div class="hyperlink-container">
+						<a class="hyperlink" target="_blank" href="https://www.google.com">Course Website
+							<img src="https://img.icons8.com/color/24/000000/up-right-arrow.png"/>
+						</a>
+					</div>
+
+					<div>
+						<p class="text-paragraph">If you want to customize the <a href="https://keras.io/guides/writing_a_training_loop_from_scratch/" class="inline-link" target="_blank">learning algorithm of</a> your model $\frac{1}{2}$ while still leveraging the convenience of fit() (for instance, to train a GAN using fit()), you can subclass the <span class="inline-code">Model</span> class and implement your own train_step() method, which is called repeatedly during fit(). This is covered in the guide Customizing what happens in <span class="inline-code">fit()</span>.</p>
+					</div>
+
+					<div class="tweet-block">
+						<blockquote class="twitter-tweet">
+							<p lang="en" dir="ltr">&quot;I see no reason to believe that a creator of protoplasm or primeval matter, if such there be, has any reason to be interested in our insignificant race in a tiny corner of the universe...&quot;--Rosalind Franklin, born this week, 1920. 
+								<a href="https://t.co/67g0JAlOTr">pic.twitter.com/67g0JAlOTr</a>
+							</p>&mdash; Brian Greene (@bgreene) 
+							<a href="https://twitter.com/bgreene/status/1420220919365177350?ref_src=twsrc%5Etfw">July 28, 2021</a>
+						</blockquote>
+						<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+					</div>
+
+
+
+
+					<div class="math-block">
+						<div class="block-equation">
+							<span>
+								$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$\begin{align*}y = y(x,t) &= A e^{i\theta} \\&= A (\cos \theta + i \sin \theta) \\&= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \\&= A\cos(kx - \omega t) + i A\sin(kx - \omega t)  \\&= A\cos \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) + i A\sin \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big)  \\&= A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)\end{align*}$$ $$\tilde f(\omega)=\frac{1}{2\pi}\int_{-\infty}^\infty f(x)e^{-i\omega x}\,dx\,,$$  
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+					<div class="caption">The famous Schrodinger Equation. The famous Schrodinger Equation. The famous Schrodinger Equation. The famous Schrodinger Equation</div>
+
+
+
+					<div class="adhoc-dialog-button-container">
+						<button class="adhoc-dialog-button" onclick="openAdhocDialog(this.parentElement.nextElementSibling)">Show Derivation of Riemann Zeta Funcion</button>
+					</div>
+
+					<div class="adhoc-dialog-outer">
+						<div class="adhoc-dialog-inner">
+							<div class="adhoc-dialog-header">
+								<div class="adhoc-dialog-header-title">
+									<h2>Derivation of Riemann Zeta Funcion</h2>
+								</div>
+								<div class="adhoc-dialog-header-close">
+									<img src="https://img.icons8.com/flat-round/30/FAB005/delete-sign.png"/ onclick="closeAdhocDialog(this.parentElement.parentElement.parentElement.parentElement)">
+								</div>
+							</div>
+
+							<div class="math-block">
+								<div class="block-equation">
+									<span>
+										$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$\begin{align*}y = y(x,t) &= A e^{i\theta} \\&= A (\cos \theta + i \sin \theta) \\&= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \\&= A\cos(kx - \omega t) + i A\sin(kx - \omega t)  \\&= A\cos \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) + i A\sin \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big)  \\&= A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)\end{align*}$$ $$\tilde f(\omega)=\frac{1}{2\pi}\int_{-\infty}^\infty f(x)e^{-i\omega x}\,dx\,,$$  
+									</span>
+								</div>
+								<div class="copy-clipboard">
+									<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+										<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
+											<path fill="#fff" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+										</svg>
+									</button>
+								</div>
+							</div>
+			
+							<div class="math-block">
+								<div class="block-equation">
+									<span>
+										$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$\begin{align*}y = y(x,t) &= A e^{i\theta} \\&= A (\cos \theta + i \sin \theta) \\&= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \\&= A\cos(kx - \omega t) + i A\sin(kx - \omega t)  \\&= A\cos \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) + i A\sin \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big)  \\&= A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)\end{align*}$$ $$\tilde f(\omega)=\frac{1}{2\pi}\int_{-\infty}^\infty f(x)e^{-i\omega x}\,dx\,,$$  
+									</span>
+								</div>
+								<div class="copy-clipboard">
+									<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+										<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
+											<path fill="#fff" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+										</svg>
+									</button>
+								</div>
+							</div>
+
+
+							<div class="math-block">
+								<div class="block-equation">
+									<span>
+										$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$\begin{align*}y = y(x,t) &= A e^{i\theta} \\&= A (\cos \theta + i \sin \theta) \\&= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \\&= A\cos(kx - \omega t) + i A\sin(kx - \omega t)  \\&= A\cos \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) + i A\sin \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big)  \\&= A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)\end{align*}$$ $$\tilde f(\omega)=\frac{1}{2\pi}\int_{-\infty}^\infty f(x)e^{-i\omega x}\,dx\,,$$  
+									</span>
+								</div>
+								<div class="copy-clipboard">
+									<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+										<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+											<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+										</svg>
+									</button>
+								</div>
+							</div>
+
+
+							<div class="math-block">
+								<div class="block-equation">
+									<span>
+										$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$\begin{align*}y = y(x,t) &= A e^{i\theta} \\&= A (\cos \theta + i \sin \theta) \\&= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \\&= A\cos(kx - \omega t) + i A\sin(kx - \omega t)  \\&= A\cos \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) + i A\sin \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big)  \\&= A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)\end{align*}$$ $$\tilde f(\omega)=\frac{1}{2\pi}\int_{-\infty}^\infty f(x)e^{-i\omega x}\,dx\,,$$  
+									</span>
+								</div>
+								<div class="copy-clipboard">
+									<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+										<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+											<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+										</svg>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
 
 
 
@@ -782,7 +946,7 @@ def train_step(x, y):
 						<p class="on-this-page">On This Page</p>
 						<div class="toc-items-container">
 							<nav>
-								<div class="page-nav">
+								<!-- <div class="page-nav">
 									<a class="page-nav-text" href="#urlrws5l1_1664059431169">How to instantiate an optimizer How to instantiate an optimizer  How to instantiate an optimizer  How to instantiate an optimizer</a>
 								</div>
 								<div class="page-nav page-nav-active">
@@ -793,7 +957,7 @@ def train_step(x, y):
 								</div>
 								<div class="page-nav" onclick="scrollToHeading(event, this)">
 									<a class="page-nav-text toc-head-3" href="#605406hkfgkh">Heading 3 2 jljklajskajskjksjaks</a>
-								</div>
+								</div> -->
 							</nav>	
 						</div>
 					</div>
@@ -819,6 +983,35 @@ def train_step(x, y):
 					console.log("\n\n\n\Complete");
 				}
 			}
+
+			let currentOpenDialogElement = "*NoDialog";
+			function openAdhocDialog(dialogElement) {
+				dialogElement.style.display = "block";
+				currentOpenDialogElement = dialogElement;
+			}
+
+			function closeAdhocDialog(dialogElement) {
+				dialogElement.style.display = "none";
+				currentOpenDialogElement = "*NoDialog";
+			}
+
+			// Close the dialog when clicked outside dialog
+			window.onclick = function(event) {
+				console.log("\n\n\n\n\nHere clicked : ", currentOpenDialogElement);
+				if (event.target == currentOpenDialogElement) {
+					closeAdhocDialog(currentOpenDialogElement);
+				}
+			}
+
+			// Have to bind key on document. Close any dialog if opened
+			document.onkeydown = function(event) {
+				if (event.key === "Escape") {
+					if(currentOpenDialogElement != "*NoDialog") {
+						closeAdhocDialog(currentOpenDialogElement);
+					}
+				}
+			}
+
 
 			var largeFileIconSize = 32;
 			var smallFileIconSize = 20;
@@ -862,14 +1055,20 @@ def train_step(x, y):
 			function applyPageTheme() {
 				prismThemeElement = document.getElementById("prism-theme-file");
 				dummyMathElement = document.getElementById("dummyMathBlock");
+				taskbarElement = document.getElementById("topFixedTaskbar");
 				if(pageTheme === "dark") {
 					prismThemeElement.href = "https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css";
 					dummyMathElement.style.backgroundColor = "black";
 					dummyMathElement.style.color = "white";
+					taskbarElement.classList.add("dark-mode");
+					document.body.classList.add("dark-mode");
+					// taskbarElement.style.backgroundColor = "#00695c";
 				} else {
-					prismThemeElement.href = "https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css";
+					prismThemeElement.href = "https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-coldark-cold.min.css";
 					dummyMathElement.style.backgroundColor = "white";
 					dummyMathElement.style.color = "black";
+					taskbarElement.classList.remove("dark-mode");
+					document.body.classList.remove("dark-mode");
 				}
 			}
 
@@ -1024,11 +1223,21 @@ def train_step(x, y):
 				}, 2000);
 			}
 
-			function copyCodeToClipboard(index) {
-				let codeElements = document.getElementsByTagName("code");
-				navigator.clipboard.writeText(codeElements[index - 1].textContent);
+
+			function copyCodeToClipboard(codeBlock) {
+				let codeElement = codeBlock.getElementsByTagName("code")[0];
+				navigator.clipboard.writeText(codeElement.textContent);
 				copiedToClipboard("Code Copied to Clipboard!!");
 			}
+
+			// Previous function that gets passed index or count of code elements on page on its call like
+			// copyCodeToClipboard(1), copyCodeToClipboard(2) etc. We change it above to directly pass the 
+			// element, so easy to write such a file from python script as no need to write indexes for each code
+			// function copyCodeToClipboard(index) {
+			// 	let codeElements = document.getElementsByTagName("code");
+			// 	navigator.clipboard.writeText(codeElements[index - 1].textContent);
+			// 	copiedToClipboard("Code Copied to Clipboard!!");
+			// }
 
 
 
@@ -1086,7 +1295,7 @@ def train_step(x, y):
 				// console.clear();
 				console.log("Populating the TOC");
 				const data = Array.from(document.querySelectorAll(".heading-1, .heading-2, .heading-3")).map((element) => ({
-					id: element.id,
+					id: element.parentElement.parentElement.id,
 					text: element.innerText,
 					level: Number(element.nodeName.charAt(1))
 				}));
@@ -1130,24 +1339,26 @@ def train_step(x, y):
 				console.log("Create Observer Invoked!!");
 				let options = {
 					root: null,
-					rootMargin: "-20% 0% -30% 0px",
-					threshold: 1.0
+					rootMargin: "-20px 0px -40% 0px",
+					threshold: 0
 				}
 				let observer = new IntersectionObserver(handleIntersectCallback, options);
-				const elements = Array.from(document.querySelectorAll(".heading-1, .heading-2, .heading-3"));
+				const elements = Array.from(document.querySelectorAll(".text-container-section"));
 				elements.forEach((element) => observer.observe(element));
 			}
 
 			function handleIntersectCallback(entries, observer) {
 				entries.forEach((entry) => {
 					if(entry.isIntersecting) {
-						highlightActiveHeading(entry.target.id)
+						// console.log("Target : ", entry.target, " | ", entry.target.id);
+						console.log("Target : ", entry.target.id);
+						highlightActiveHeading(entry.target.id);
 					}
 				})
 			}
 
 			function highlightActiveHeading(id) {
-				tocNav = document.getElementsByClassName("toc-container")[0].getElementsByTagName("nav")[0];				
+				tocNav = document.getElementsByClassName("toc-container")[0].getElementsByTagName("nav")[0];
 				navHeaders = Array.from(tocNav.getElementsByTagName("div"));
 				console.log("Id : ", id);
 				navHeaders.forEach((element) => {
@@ -1160,6 +1371,31 @@ def train_step(x, y):
 					}
 				})
 			}
+
+
+			document.onkeydown = function(event) {
+				if (event.key === "Home") {
+					timeoutId = setTimeout(() => {
+						highlightActiveHeading(document.querySelector(".text-container-section:first-child").id);
+						console.log("Home Highlight done");
+					}, 500);
+				}
+				if (event.key === "End") {
+					setTimeout(() => {
+						highlightActiveHeading(document.querySelector(".text-container-section:last-child").id);
+						console.log("End Highlight done");
+					}, 500);
+				}
+			}
+
+			function hideEmptyOnThisPage() {
+				let textSectionElements = document.querySelectorAll(".text-container-section");
+				if(textSectionElements.length === 1) {
+					document.getElementsByClassName("table-of-contents-container")[0].style.display = "none";
+					document.getElementsByClassName("accordion-toc-container")[0].style.display = "none";
+				}
+			}
+
 		</script>
 
 

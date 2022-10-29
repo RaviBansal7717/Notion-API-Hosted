@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Notion Export Template Responsive</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css" integrity="sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js" integrity="sha384-Qsn9KnoKISj6dI8g7p1HBlNpVx0I8p1SvlwOldgi3IorMle61nQy4zEahWYtljaz" crossorigin="anonymous"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+	        onload="renderMathInElement(document.body);"></script>
+		<link id="prism-theme-file" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="styles_responsive.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<!-- <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital@0;1&family=Barlow+Semi+Condensed:ital@1&family=Istok+Web&family=Roboto+Condensed:ital,wght@0,400;1,300;1,400&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet"> -->
+		<!-- <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Barlow+Condensed:ital@0;1&family=Barlow+Semi+Condensed:ital@1&family=Istok+Web&family=Roboto+Condensed:ital,wght@0,400;1,300;1,400&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet"> -->
+		<link href="https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Barlow+Condensed:ital@0;1&family=Barlow+Semi+Condensed:ital@1&family=Istok+Web&family=Prompt&family=Roboto+Condensed:ital,wght@0,400;1,300;1,400&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+	
+	<body>
+		<div id="imageModal" class="image-modal" onclick="closeModal(this)" tabindex="-1">
+			<img src="" id="modalImage" class="modal-content" />
+		</div>
+
+		<div class="progress-container" id="progressBarContainer">
+			<div class="progress-bar" id="progressBar"></div>
+		</div>
+
+		<div id="snackbar">Copied to Clipboard!!</div>
+
+		<div id="pageWaitLoader" class="page-loader">
+			<div class="page-loader-wrap">
+				<div class="page-loader-load">
+				  	<span class="page-loader-message">Loading your notes</span>
+				  	<div class="page-loader-spinner">
+						<div class="page-loader-bubble-1"></div>
+						<div class="page-loader-bubble-2"></div>
+				  	</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="topFixedTaskbar" class="top-fixed-taskbar">
+			<div class="top-taskbar-container-1">
+				<div>
+					<img src="https://img.icons8.com/material-outlined/24/000000/menu--v1.png"/>		
+				</div>
+				<div class="created-by-container">
+					<span>Notion Export</span>
+				</div>
+			</div>
+			<div class="top-taskbar-container-2">
+
+				<div class="dark-mode-toggle-container">
+					<input type="checkbox" id="dark-mode-check" onclick="togglePageTheme(this)">
+					<span></span>
+				</div>
+	  
+
+				<!-- Old dark-mode slider -->
+				<!-- <div class="dark-mode-container">
+					<label class="dark-mode-switch">
+						<input type="checkbox" class="dark-mode-input" id="dark-mode-check" onclick="togglePageTheme(this)">
+						<span class="dark-mode-slider"></span>
+					</label>
+				</div> -->
+
+				<div class="notion-container">
+					<a href="https://www.google.com" target="_blank">
+						<img id="notionIcon" src="https://img.icons8.com/color/40/000000/notion--v1.png"/>
+					</a>	
+				</div>
+				<div class="github-container">
+					<a href="https://www.google.com" target="_blank">
+						<img style="background-color: white;" src="https://img.icons8.com/ios-glyphs/42/000000/github.png"/>
+
+						<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+						width="42" height="42"
+						viewBox="0 0 30 30"
+						style=" fill:#000000;">    <path fill="white" d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"></path></svg>
+					</a>
+				</div>	
+			</div>
+		</div>
+	
+		<div id="mainPageContainer" class="page-container">
+
+
+			<div class="page-contents-container">
+
+				<div class="page-title">
+					<span>Quantum Generative Adversarial Networks for Quantum Art Generation</span>
+				</div>
+
+				<div class="accordion-toc-container">
+					<div class="accordion-button" id="accordionButtonTOC" onclick="toggleAccordionTOC(this)">On This Page
+						<img style="transform: rotate(90deg);" src="https://img.icons8.com/fluency-systems-regular/20/000000/expand-arrows.png"/>
+					</div>
+					<div class="accordion-panel">
+						<nav>
+							<ul class="accordion-list-container" id="accordionListContainer">
+							</ul>
+						</nav>
+					</div>
+				</div>
+				
+
+				<div class="math-block">
+					<div class="block-equation">
+						<span>
+							$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$
+						</span>
+					</div>
+					<div class="copy-clipboard">
+						<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+							<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
+								<path fill="#fff" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+							</svg>
+						</button>
+					</div>
+				</div>
+				<div class="caption">The famous Schrodinger Equation</div>
+		
+				<div class="math-block">
+					<div class="block-equation">
+						<span>
+							$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$
+						</span>
+					</div>
+					<div class="copy-clipboard">
+						<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+							<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
+								<path fill="#fff" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+							</svg>
+						</button>
+					</div>
+				</div>
+
+				<div class="math-block">
+					<div class="block-equation">
+						<span>
+							$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$ $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$
+						</span>
+					</div>
+					<div class="copy-clipboard">
+						<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+							<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
+								<path fill="#fff" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+							</svg>
+						</button>
+					</div>
+				</div>
+
+
+
+				<div class="math-block" style="height: 100px;">
+					<div class="block-equation">
+						<span>
+							$$$$
+						</span>
+					</div>
+					<div class="copy-clipboard">
+						<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+							<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
+								<path fill="#fff" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+							</svg>
+						</button>
+					</div>
+				</div>
+
+				<div id="dummyMathBlock" class="block-equation">
+					<span>
+						$$\tilde f(\omega)=\frac{1}{2\pi}\int_{-\infty}^\infty f(x)e^{-i\omega x}\,dx\,,$$
+					</span>
+				</div>
+
+				
+				<div class="code-block">
+					<div class="code-snippet">
+						<pre class="line-numbers"><code class="language-python"># Instantiate an optimizer.
+def train_step(x, y):
+	with tf.GradientTape() as tape:
+		logits = model(x, training=True)
+		loss_value = loss_fn(y, logits)
+	grads = tape.gradient(loss_value, model.trainable_weights)
+	optimizer.apply_gradients(zip(grads, model.trainable_weights))
+	train_acc_metric.update_state(y, logits)
+	return loss_value</code></pre>
+					</div>
+					<div class="copy-code-clipboard">
+						<button class="btn-code-clipboard" onclick="copyCodeToClipboard(2)">
+							<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
+								<path fill="blue" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+							</svg>
+						</button>
+					</div>
+				</div>
+				<div class="caption">The famous Schrodinger Equation</div>
+
+
+				<div class="code-block">
+					<div class="code-snippet">
+						<pre class="line-numbers"><code class="language-python">import os
+
+# Prepare the dataset. We use both the training & test MNIST digits.
+batch_size = 64
+(x_train, _), (x_test, _) = keras.datasets.mnist.load_data()
+all_digits = np.concatenate([x_train, x_test])
+all_digits = all_digits.astype("float32") / 255.0
+all_digits = np.reshape(all_digits, (-1, 28, 28, 1))
+dataset = tf.data.Dataset.from_tensor_slices(all_digits)
+dataset = dataset.shuffle(buffer_size=1024).batch(batch_size)
+
+epochs = 1  # In practice you need at least 20 epochs to generate nice digits.
+save_dir = "./"
+
+for epoch in range(epochs):
+	print("\nStart epoch", epoch)
+
+	for step, real_images in enumerate(dataset):
+		# Train the discriminator & generator on one batch of real images.
+		d_loss, g_loss, generated_images = train_step(real_images)
+
+		# Logging.
+		if step % 200 == 0:
+			# Print metrics
+			print("discriminator loss at step %d: %.2f" % (step, d_loss))
+			print("adversarial loss at step %d: %.2f" % (step, g_loss))
+
+			# Save one generated image
+			img = keras.utils.array_to_img(generated_images[0] * 255.0, scale=False)
+			img.save(os.path.join(save_dir, "generated_img" + str(step) + ".png"))
+
+		# To limit execution time we stop after 10 steps.
+		# Remove the lines below to actually train the model!
+		if step > 10:
+			break
+		
+# Instantiate one optimizer for the discriminator and another for the generator.
+d_optimizer = keras.optimizers.Adam(learning_rate=0.0003)
+g_optimizer = keras.optimizers.Adam(learning_rate=0.0004)
+
+# Instantiate a loss function.
+loss_fn = keras.losses.BinaryCrossentropy(from_logits=True)
+
+
+@tf.function
+def train_step(real_images):
+	# Sample random points in the latent space
+	random_latent_vectors = tf.random.normal(shape=(batch_size, latent_dim))
+	# Decode them to fake images
+	generated_images = generator(random_latent_vectors)
+	# Combine them with real images
+	combined_images = tf.concat([generated_images, real_images], axis=0)
+
+	# Assemble labels discriminating real from fake images
+	labels = tf.concat(
+		[tf.ones((batch_size, 1)), tf.zeros((real_images.shape[0], 1))], axis=0
+	)
+	# Add random noise to the labels - important trick!
+	labels += 0.05 * tf.random.uniform(labels.shape)
+
+	# Train the discriminator
+	with tf.GradientTape() as tape:
+		predictions = discriminator(combined_images)
+		d_loss = loss_fn(labels, predictions)
+	grads = tape.gradient(d_loss, discriminator.trainable_weights)
+	d_optimizer.apply_gradients(zip(grads, discriminator.trainable_weights))
+			
+# Sample random points in the latent space
+random_latent_vectors = tf.random.normal(shape=(batch_size, latent_dim))
+# Assemble labels that say "all real images"
+misleading_labels = tf.zeros((batch_size, 1))
+
+# Train the generator (note that we should *not* update the weights
+# of the discriminator)!
+with tf.GradientTape() as tape:
+	predictions = discriminator(generator(random_latent_vectors))
+	g_loss = loss_fn(misleading_labels, predictions)
+grads = tape.gradient(g_loss, generator.trainable_weights)
+g_optimizer.apply_gradients(zip(grads, generator.trainable_weights))
+return d_loss, g_loss, generated_images		
+
+latent_dim = 128
+
+generator = keras.Sequential(
+	[
+		keras.Input(shape=(latent_dim,)),
+		# We want to generate 128 coefficients to reshape into a 7x7x128 map
+		layers.Dense(7 * 7 * 128),
+		layers.LeakyReLU(alpha=0.2),
+		layers.Reshape((7, 7, 128)),
+		layers.Conv2DTranspose(128, (4, 4), strides=(2, 2), padding="same"),
+		layers.LeakyReLU(alpha=0.2),
+		layers.Conv2DTranspose(128, (4, 4), strides=(2, 2), padding="same"),
+		layers.LeakyReLU(alpha=0.2),
+		layers.Conv2D(1, (7, 7), padding="same", activation="sigmoid"),
+	],
+	name="generator",
+)
+			
+import time
+
+epochs = 2
+for epoch in range(epochs):
+	print("\nStart of epoch %d" % (epoch,))
+	start_time = time.time()
+
+	# Iterate over the batches of the dataset.
+	for step, (x_batch_train, y_batch_train) in enumerate(train_dataset):
+		loss_value = train_step(x_batch_train, y_batch_train)
+
+		# Log every 200 batches.
+		if step % 200 == 0:
+			print(
+				"Training loss (for one batch) at step %d: %.4f"
+				% (step, float(loss_value))
+			)
+			print("Seen so far: %d samples" % ((step + 1) * batch_size))
+				
+# Display metrics at the end of each epoch.
+train_acc = train_acc_metric.result()
+print("Training acc over epoch: %.4f" % (float(train_acc),))
+
+# Reset training metrics at the end of each epoch
+train_acc_metric.reset_states()
+
+# Run a validation loop at the end of each epoch.
+for x_batch_val, y_batch_val in val_dataset:
+	test_step(x_batch_val, y_batch_val)
+
+val_acc = val_acc_metric.result()
+val_acc_metric.reset_states()
+print("Validation acc: %.4f" % (float(val_acc),))
+print("Time taken: %.2fs" % (time.time() - start_time))
+				
+@tf.function
+def train_step(x, y):
+	with tf.GradientTape() as tape:
+		logits = model(x, training=True)
+		loss_value = loss_fn(y, logits)
+	grads = tape.gradient(loss_value, model.trainable_weights)
+	optimizer.apply_gradients(zip(grads, model.trainable_weights))
+	train_acc_metric.update_state(y, logits)
+	return loss_value
+</code></pre>
+					</div>
+					<div class="copy-code-clipboard">
+						<button class="btn-code-clipboard" onclick="copyCodeToClipboard(2)">
+							<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
+								<path fill="blue" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+							</svg>
+						</button>
+					</div>
+				</div>
+				<div class="caption">Instantiating an Optimizer in Python</div>
+
+
+
+
+				<div class="image-block">
+					<img class="image-container" src="scrapper_out/404.gif" alt="Text" onclick="openModal(this)" />
+				</div>
+				<div class="caption">A sample 404 gif</div>
+				
+				<div class="image-block" id="box">
+					<img class="image-container" src="scrapper_out/Image_75.png" alt="Text" onclick="openModal(this)" />
+				</div>
+		
+				<div class="image-block">
+					<img class="image-container" src="scrapper_out/raycast-untitled.png" alt="Text" onclick="openModal(this)" />
+				</div>
+		
+				<div class="video-container">
+					<iframe class="video-player" src="https://www.youtube.com/embed/tgbNymZ7vqY" allow="fullscreen;"></iframe>
+				</div>
+				<div class="caption">CNNs for Vision Lecture 1</div>
+		
+				<div class="video-container">
+					<iframe class="video-player" src="scrapper_out/CauchyIntegralFormula.mp4" allow="fullscreen;"></iframe>
+				</div>
+		
+				<div class="image-block">
+					<img class="image-container" src="scrapper_out/CauchyIntegralFormula_ManimCE_v0.15.0.gif" alt="Text" onclick="openModal(this)" />
+				</div>
+				
+
+
+				<div>
+					<h1 id="dsd.jksjkjskdj" class="heading-1">Heading 1 1</h1>
+				</div>
+		
+				<div>
+					<h2 id="rwewewe" class="heading-2">Heading 2 1 dsjsjdksjd</h2>
+				</div>
+		
+				<div>
+					<h3 id="dsd4324324" class="heading-3">Heading 3 1 jljklajskajskjksjaks</h3>
+				</div>
+
+				<p>This is some paragraph text in here.To make font size responsive in steps, set the base font size at each breakpoint. To create fluid text that smoothly changes size, use the calc() function to calculate a ratio between pixels and viewport widths, this will make the base font size grow at the correct rate relative to the screen width.</p>
+		
+				<div>
+					<h3 id="605406hkfgkh" class="heading-3">Heading 3 2 jljklajskajskjksjaks</h3>
+				</div>
+		
+				<div>
+					<h3 id="po4peitoiro" class="heading-3">Heading 3 3 jljklajskajskjksjaks    Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks</h3>
+				</div>
+		
+				<div>
+					<h2 id="rwewew23e" class="heading-2">Heading 2 2 Wrinting a loop that does nothing</h2>
+				</div>
+		
+				<div>
+					<h3 id="dsd43sa24" class="heading-3">Heading 3 4 jljklajskajskjksjaks</h3>
+				</div>
+		
+				<div class="video-container">
+					<iframe class="video-player" src="https://replit.com/@ctjlewis/BurnsidesLemma?embed=true"></iframe>
+				</div>
+				<div class="caption">Repl for burnside Lemma</div>
+		
+				<div class="quote">
+					<p>Success! Some text...</p>
+				</div>
+				  
+				<div class="standout">
+					<div class="standout-container">
+						<div class="standout-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" height="30" width="30"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2l0 0c5.2-7.1 10.4-14.2 15.4-21.4c19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3c5 7.2 10.2 14.3 15.4 21.4l0 0c19.8 27.1 39.7 54.4 49.2 86.2H272zM192 512c44.2 0 80-35.8 80-80V416H112v16c0 44.2 35.8 80 80 80zM112 176c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112c8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80z"/></svg>
+							<img height="30" width="30" src="https://img.icons8.com/color/48/000000/light-on--v1.png"/>	
+							<img height="30" width="30" src="https://img.icons8.com/fluency/48/000000/exclamation-mark.png"/>				
+							<img height="30" width="30" src="https://img.icons8.com/color/48/000000/exclamation-mark.png"/>
+						</div>
+						<div class="standout-text">
+							<p>This is going to standout as imp text!!</p>
+						</div>
+					</div>
+				</div>
+		
+				<div class="standout">
+					<div class="standout-container">
+						<div class="standout-icon">
+							<img height="30" width="30" src="https://img.icons8.com/color/48/000000/light-on--v1.png"/>	
+						</div>
+						<div class="standout-text">
+							<p>This is going to standout as imp text!! This is going to standout as imp text!! This is going to standout as imp text!!</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="standout">
+					<div class="standout-container">
+						<div class="standout-icon">
+							<img height="30" width="30" src="https://img.icons8.com/fluency/48/000000/exclamation-mark.png"/>				
+						</div>
+						<div class="standout-text">
+							<p>This is going to standout as imp text!!</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="standout">
+					<div class="standout-container">
+						<div class="standout-icon">
+							<img height="30" width="30" src="https://img.icons8.com/color/48/000000/exclamation-mark.png"/>
+						</div>
+						<div class="standout-text">
+							<p>This is going to standout as imp text!!</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="standout">
+					<div class="standout-container">
+						<div class="standout-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" height="30" width="30"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2l0 0c5.2-7.1 10.4-14.2 15.4-21.4c19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3c5 7.2 10.2 14.3 15.4 21.4l0 0c19.8 27.1 39.7 54.4 49.2 86.2H272zM192 512c44.2 0 80-35.8 80-80V416H112v16c0 44.2 35.8 80 80 80zM112 176c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112c8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80z"/></svg>
+						</div>
+						<div class="standout-text">
+							<p>This is going to standout as imp text!!</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="audio-container">
+					<audio class="audio-player" controls>
+						<source src="horse.ogg" type="audio/ogg">
+						<source src="horse.mp3" type="audio/mpeg">
+						Your browser does not support the audio element.
+					  </audio>			  
+				</div>
+				<div class="caption">The famous Einstien podcast</div>
+
+				
+				<div>
+					<h3 id="605406hkfgkh" class="heading-3">Heading 3 2 jljklajskajskjksjaks</h3>
+				</div>
+		
+				<div>
+					<h3 id="po4peitoiro" class="heading-3">Heading 3 3 jljklajskajskjksjaks    Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks</h3>
+				</div>
+		
+				<div>
+					<h2 id="rwewew23e" class="heading-2">Heading 2 2 Wrinting a loop that does nothing</h2>
+				</div>
+		
+				<div>
+					<h3 id="dsd43sa24" class="heading-3">Heading 3 4 jljklajskajskjksjaks</h3>
+				</div>
+
+
+
+				<div>
+					<h3 id="605406hkfgkh" class="heading-3">Heading 3 2 jljklajskajskjksjaks</h3>
+				</div>
+		
+				<div>
+					<h3 id="po4peitoiro" class="heading-3">Heading 3 3 jljklajskajskjksjaks    Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks</h3>
+				</div>
+		
+				<div>
+					<h2 id="rwewew23e" class="heading-2">Heading 2 2 Wrinting a loop that does nothing</h2>
+				</div>
+		
+				<div>
+					<h3 id="dsd43sa24" class="heading-3">Heading 3 4 jljklajskajskjksjaks</h3>
+				</div>
+
+
+				<div class="table-block">
+					<table>
+						<tr>
+							<th>Company</th>
+							<th>Contact</th>
+							<th>Country</th>
+							<th>Company</th>
+							<th>Contact</th>
+							<th>Country</th>
+							<th>Company</th>
+							<th>Contact</th>
+							<th>Country</th>
+						  </tr>
+						  <tr>
+							<td>Alfreds Futterkiste</td>
+							<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+							<td>Germany</td>
+							<td>Alfreds Futterkiste</td>
+							<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+							<td>Germany</td>
+							<td>Alfreds Futterkiste</td>
+							<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+							<td>Germany</td>
+						  </tr>
+						  <tr>
+							<td>Centro comercial Moctezuma</td>
+							<td>Francisco Chang</td>
+							<td>Mexico</td>
+							<td>Alfreds Futterkiste</td>
+							<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+							<td>Germany</td>
+							<td>Alfreds Futterkiste</td>
+							<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+							<td>Germany</td>
+						  </tr>
+						  <tr>
+							<td>Island Trading</td>
+							<td>Helen Bennett</td>
+							<td>UK</td>
+							<td>Alfreds Futterkiste  Maria Anders $\frac{1}{2}\sqrt{2}$ abc  Maria Anders $\frac{1}{2}\sqrt{2}$ abc  Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+							<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+							<td>Germany</td>
+							<td>Alfreds Futterkiste</td>
+							<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+							<td>Germany</td>
+						  </tr>
+						  <tr>
+							<td>Laughing Bacchus Winecellars</td>
+							<td>Yoshi Tannamuri</td>
+							<td>Canada</td>
+							<td>Alfreds Futterkiste</td>
+							<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+							<td>Germany</td>
+							<td>Alfreds Futterkiste</td>
+							<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+							<td>Germany GermanyGermanyGermanyGermanyGermanyGermanyGermanyGermanyGermanyGermanyGermanyGermanyGermany</td>
+						  </tr>
+						  <tr>
+							<td>Magazzini Alimentari Riuniti</td>
+							<td>Giovanni Rovelli</td>
+							<td>Italy</td>
+							<td>Alfreds Futterkiste</td>
+							<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+							<td>Germany</td>
+							<td>Alfreds Futterkiste</td>
+							<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc   Maria Anders $\frac{1}{2}\sqrt{2}$ abc  Maria Anders $\frac{1}{2}\sqrt{2}$ abc  Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+							<td>Germany</td>
+						  </tr>
+					</table>
+				</div>
+
+
+
+				<div class="table-block">
+					<table>
+						<tr>
+							<th>Company</th>
+							<th>Contact</th>
+							<th>Country</th>
+							</tr>
+							<tr>
+							<td>Alfreds Futterkiste</td>
+							<td>Maria Anders $\frac{1}{2}\sqrt{2}$ abc</td>
+							<td>Germany</td>
+							<td>Germany</td>
+							</tr>
+					</table>
+				</div>
+				<div class="caption">Table for Data</div>
+
+				<div>
+					<hr class="horizontal-divider">
+				</div>
+						
+
+				<a class="file-link" target="_blank" href="scrapper_out/_8601ac9c05f6275f91bf168291ec49bc_AssemblerChallengeDec10Release.pdf">
+					<div class="file-container">
+						<div class="file-icon">
+							<img src="https://img.icons8.com/clouds/32/000000/file.png"/>
+						</div>
+						<div class="file-reference">
+							Assembler Challenge.pdf
+						</div>
+					</div>
+				</a>
+			
+				<a class="file-link" target="_blank" href="scrapper_out/CauchyIntegralFormula_ManimCE_v0.15.0.gif">
+					<div class="file-container">
+						<div class="file-icon">
+							<img src="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/32/000000/external-file-interface-kiranshastry-lineal-color-kiranshastry.png"/>
+						</div>
+						<div class="file-reference">
+							Assembler Challenge.pdf
+						</div>
+					</div>
+				</a>
+		
+				<a class="file-link" target="_blank" href="scrapper_out/_a9f1f2bef107e64cedaa288b9aedc28a_m1_l4_basic_graphs.pdf">
+					<div class="file-container">
+						<div class="file-icon">
+							<img src="https://img.icons8.com/parakeet/32/000000/experimental-file-parakeet.png"/>
+						</div>
+						<div class="file-reference">
+							Assembler Challenge.pdf
+						</div>
+					</div>
+				</a>
+		
+				<a class="file-link" target="_blank" href="scrapper_out/carbon.png">
+					<div class="file-container">
+						<div class="file-icon">
+							<img src="https://img.icons8.com/cute-clipart/32/000000/file.png"/>
+						</div>
+						<div class="file-reference">
+							Assembler Challenge.pdf
+						</div>
+					</div>
+				</a>
+		
+
+				<div class="math-block">
+					<div class="block-equation">
+						<span>
+							$$\begin{align*}y = y(x,t) &= A e^{i\theta} \\&= A (\cos \theta + i \sin \theta) \\&= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \\&= A\cos(kx - \omega t) + i A\sin(kx - \omega t)  \\&= A\cos \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) + i A\sin \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big)  \\&= A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)\end{align*}$$
+						</span>
+					</div>
+					<div class="copy-clipboard">
+						<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+							<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
+								<path fill="#fff" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+							</svg>
+						</button>
+					</div>
+				</div>
+
+				<div>
+					<ul>
+						<li class="list-item">Instantiate the metric at the start of the loop</li>
+						<li class="list-item">Call <span class="inline-code">metric.update_state()</span> after each batch</li>
+						<li class="list-item">Call <span class="inline-code">metric.result()</span> when you need to display the current value of the metric</li>
+						<li class="list-item">Call <span class="inline-code">metric.reset_states()</span> when you need to clear the state of the metric (typically at the end of an epoch)</li>
+					</ul>
+				</div>
+		
+				<div>
+					<ol>
+						<li class="list-item">Instantiate the metric at the start of the loop</li>
+						<li class="list-item">Call metric.update_state() after each batch</li>
+						<li class="list-item">Call metric.result() when you need to display the current value of the metric</li>
+						<li class="list-item">Call metric.reset_states() when you need to clear the state of the metric (typically at the end of an epoch)</li>
+					</ol>
+				</div>
+		
+				<div>
+					<p class="text-paragraph">If you want to customize the learning algorithm of your model $\frac{1}{2}$ while still leveraging the convenience of fit() (for instance, to train a GAN using fit()), you can subclass the Model class and implement your own train_step() method, which is called repeatedly during fit(). This is covered in the guide Customizing what happens in fit().</p>
+				</div>
+		
+				<p>The formula $a^2+b^2=c^2$ will be rendered inline, but $$a^2+b^2=c^2$$ will be rendered as a block element.</p>
+		
+				<div>
+					<hr class="horizontal-divider">
+				</div>
+		
+				<div class="hyperlink-container">
+					<a class="hyperlink" target="_blank" href="https://www.google.com">Course Website
+						<img src="https://img.icons8.com/stickers/24/000000/up-right-arrow.png"/>
+					</a>
+				</div>
+		
+		
+				<div class="hyperlink-container">
+					<a class="hyperlink" target="_blank" href="https://www.google.com">Course Website
+						<img src="https://img.icons8.com/nolan/24/up-right-arrow--v1.png"/>
+					</a>
+				</div>
+		
+				<div class="hyperlink-container">
+					<a class="hyperlink" target="_blank" href="https://www.google.com">Course Website
+						<img src="https://img.icons8.com/color/24/000000/up-right-arrow.png"/>
+					</a>
+				</div>
+
+				<div>
+					<p class="text-paragraph">If you want to customize the <a href="https://keras.io/guides/writing_a_training_loop_from_scratch/" class="inline-link" target="_blank">learning algorithm of</a> your model $\frac{1}{2}$ while still leveraging the convenience of fit() (for instance, to train a GAN using fit()), you can subclass the <span class="inline-code">Model</span> class and implement your own train_step() method, which is called repeatedly during fit(). This is covered in the guide Customizing what happens in <span class="inline-code">fit()</span>.</p>
+				</div>
+
+				<div class="tweet-block">
+					<blockquote class="twitter-tweet">
+						<p lang="en" dir="ltr">&quot;I see no reason to believe that a creator of protoplasm or primeval matter, if such there be, has any reason to be interested in our insignificant race in a tiny corner of the universe...&quot;--Rosalind Franklin, born this week, 1920. 
+							<a href="https://t.co/67g0JAlOTr">pic.twitter.com/67g0JAlOTr</a>
+						</p>&mdash; Brian Greene (@bgreene) 
+						<a href="https://twitter.com/bgreene/status/1420220919365177350?ref_src=twsrc%5Etfw">July 28, 2021</a>
+					</blockquote>
+					<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+				</div>
+
+
+
+
+				<div class="math-block">
+					<div class="block-equation">
+						<span>
+							$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$\begin{align*}y = y(x,t) &= A e^{i\theta} \\&= A (\cos \theta + i \sin \theta) \\&= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \\&= A\cos(kx - \omega t) + i A\sin(kx - \omega t)  \\&= A\cos \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) + i A\sin \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big)  \\&= A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)\end{align*}$$ $$\tilde f(\omega)=\frac{1}{2\pi}\int_{-\infty}^\infty f(x)e^{-i\omega x}\,dx\,,$$  
+						</span>
+					</div>
+					<div class="copy-clipboard">
+						<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+							<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
+								<path fill="#fff" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+							</svg>
+						</button>
+					</div>
+				</div>
+				<div class="caption">The famous Schrodinger Equation</div>
+
+
+
+
+
+			</div>
+		
+
+
+
+			<div class="table-of-contents-container">
+				<div class="table-of-contents">
+					<div class="toc-container">
+						<p class="on-this-page">On This Page</p>
+						<div class="toc-items-container">
+							<nav>
+								<div class="page-nav">
+									<a class="page-nav-text" href="#urlrws5l1_1664059431169">How to instantiate an optimizer How to instantiate an optimizer  How to instantiate an optimizer  How to instantiate an optimizer</a>
+								</div>
+								<div class="page-nav page-nav-active">
+									<a class="page-nav-text" href="#iwwmaii43_1664059466034">Preparing the activation function</a><br>
+								</div>
+								<div class="page-nav">
+									<a class="page-nav-text" href="#kyjrpbs1d_1664059483218">Training the Neural Net</a>
+								</div>
+								<div class="page-nav" onclick="scrollToHeading(event, this)">
+									<a class="page-nav-text toc-head-3" href="#605406hkfgkh">Heading 3 2 jljklajskajskjksjaks</a>
+								</div>
+							</nav>	
+						</div>
+					</div>
+				</div>		
+			</div>
+
+		</div>
+
+
+		<script>
+			document.onreadystatechange = function() {
+				if(document.readyState != "complete") {
+					document.getElementById("pageWaitLoader").style.display = "block";
+					document.getElementById("mainPageContainer").style.display = "none";
+					document.getElementById("topFixedTaskbar").style.display = "none";
+					document.getElementById("progressBarContainer").style.display = "none";
+					console.log("\n\n\n\nNot complete");
+				} else {
+					document.getElementById("pageWaitLoader").style.display = "none";
+					document.getElementById("mainPageContainer").style.display = "flex";
+					document.getElementById("topFixedTaskbar").style.display = "flex";
+					document.getElementById("progressBarContainer").style.display = "block";
+					console.log("\n\n\n\Complete");
+				}
+			}
+
+			var largeFileIconSize = 32;
+			var smallFileIconSize = 20;
+			var pageTheme = "light";
+			let theme = window.localStorage.getItem("notion_export_theme_mode");
+			if(!theme) {
+				window.localStorage.setItem("notion_export_theme_mode", pageTheme);
+			} else {
+				pageTheme = theme;
+			}
+			document.getElementById("dark-mode-check").checked = (pageTheme === "light" ? false : true);
+			applyPageTheme();
+
+
+			document.addEventListener("DOMContentLoaded", function() {
+				renderMathInElement(document.body, {
+				// customised options
+				// • auto-render specific keys, e.g.:
+				delimiters: [
+					{left: '$$', right: '$$', display: true},
+					{left: '$', right: '$', display: false},
+					{left: '\\(', right: '\\)', display: false},
+					{left: '\\[', right: '\\]', display: true}
+				],
+				// • rendering keys, e.g.:
+				throwOnError : false
+				});
+			});
+
+			function togglePageTheme(modeElement) {
+				console.log("is Checked : ", modeElement.checked);
+				if (modeElement.checked) {
+					pageTheme = "dark";
+				} else {
+					pageTheme = "light";
+				}
+				window.localStorage.setItem("notion_export_theme_mode", pageTheme);
+				applyPageTheme();
+			}
+
+			function applyPageTheme() {
+				prismThemeElement = document.getElementById("prism-theme-file");
+				dummyMathElement = document.getElementById("dummyMathBlock");
+				if(pageTheme === "dark") {
+					prismThemeElement.href = "https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css";
+					dummyMathElement.style.backgroundColor = "black";
+					dummyMathElement.style.color = "white";
+				} else {
+					prismThemeElement.href = "https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css";
+					dummyMathElement.style.backgroundColor = "white";
+					dummyMathElement.style.color = "black";
+				}
+			}
+
+			// alert("THeme Mode : " + window.localStorage.getItem("notion_theme_mode"));
+			console.log("THeme Mode : ", window.localStorage.getItem("notion_theme_mode"));
+			window.localStorage.setItem("notion_theme_mode", "light");
+
+			// function scrollToHeading(event, element) {
+			// 	event.preventDefault();
+			// 	console.clear();
+			// 	console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEvent : ", event);
+			// 	const targetId = element.children[0].href.split("#").at(-1);
+			// 	console.log("Scroll Id : ", targetId);
+			// 	console.log("ELement : ", document.getElementById(targetId));
+			// 	let position = document.getElementById(targetId).getBoundingClientRect();
+			// 	console.log(position);
+			// 	console.log(window.scrollX, window.scrollY);
+			// 	// window.scrollTo(window.scrollX, window.scrollY - 100);
+			// 	window.location.hash = "#" + targetId;
+			// 	window.scrollTo({
+			// 		left: position.left, 
+			// 		top: position.top - 20,
+			// 		behavior: 'smooth'
+			// 	});
+			// 	// document.getElementById("#" + targetId).scrollIntoView( {
+			// 	// 	behavior: "smooth"
+			// 	// });
+			// }
+
+			function handleTabletChange(flag) {
+				if(flag.matches) {
+					// alert("On Smaller Screen");
+					sizeBef = largeFileIconSize;
+					sizeAft = smallFileIconSize;
+					notioniconSize = "26";
+				} else {
+					// alert("On Larger Screen");
+					sizeBef = smallFileIconSize;
+					sizeAft = largeFileIconSize;
+					notioniconSize = "40";
+				}
+				let fileIcons = document.getElementsByClassName("file-icon");
+				for (element of fileIcons) {
+					console.log(element.children[0].src);
+					element.children[0].src = element.children[0].src.replace(sizeBef, sizeAft);
+				}
+				
+				let notionIcon = document.getElementById("notionIcon");
+				notionIcon.width = notioniconSize;
+			}
+
+			var isSmallScreen = window.matchMedia("(max-width: 768px)");			
+			isSmallScreen.addListener(handleTabletChange);
+			// Initial Screen size check
+			handleTabletChange(isSmallScreen);
+
+			function generateId() {
+				let x = Math.random().toString(36).substr(2, 9);
+				let y = Date.now();
+				return x + '_' + y;
+			}
+
+			function toggleAccordionTOC(btnElement) {
+				btnElement.classList.toggle("active");
+				let panel = btnElement.nextElementSibling;
+				if (panel.style.maxHeight) {
+					panel.style.maxHeight = null;
+					panel.style.borderColor = "transparent";
+				} else {
+					panel.style.maxHeight = panel.scrollHeight + "px";
+					panel.style.borderColor = "lightgray";
+				}
+			}
+
+			// Alternate way of doing toggleAccordionTOC() thing without using onlick on button
+			// let accordionButton = document.getElementById("accordionButtonTOC");
+			// accordionButton.addEventListener("click", function() {
+			// 	this.classList.toggle("active");
+			// 	let panel = this.nextElementSibling;
+			// 	if (panel.style.maxHeight) {
+			// 		panel.style.maxHeight = null;
+			// 	} else {
+			// 		panel.style.maxHeight = panel.scrollHeight + "px";
+			// 	} 
+			// });
+
+
+			window.onscroll = function() {myFunction()};
+			function myFunction() {
+				var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+				var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+				var scrolled = (winScroll / height) * 100;
+				document.getElementById("progressBar").style.width = scrolled + "%";
+			}
+
+
+			// Not needed now as we directly copy equation source from dom
+			// let mathArray = [];
+			// mathArray.push("$$p(x,\\lambda)=P(X=x)=\\left\\{\\begin{array}{l}\\frac{e^{-\\lambda}{\\lambda^x}}{x!}; \\quad x = 0,1,2,\\ldots; \\quad \\lambda>0 \\\\0, \\text { otherwise }\\end{array}\\right.$$");
+			// mathArray.push("");
+			// mathArray.push("$$|001\\rangle + \\langle110| = \\psi(|001\\rangle)$$");
+			// mathArray.push("$$\\begin{align*}y = y(x,t) &= A e^{i\\theta} \\\\&= A (\\cos \\theta + i \\sin \\theta) \\\\&= A (\\cos(kx - \\omega t) + i \\sin(kx - \\omega t)) \\\\&= A\\cos(kx - \\omega t) + i A\\sin(kx - \\omega t)  \\\\&= A\\cos \\Big(\\frac{2\\pi}{\\lambda}x - \\frac{2\\pi v}{\\lambda} t \\Big) + i A\\sin \\Big(\\frac{2\\pi}{\\lambda}x - \\frac{2\\pi v}{\\lambda} t \\Big)  \\\\&= A\\cos \\frac{2\\pi}{\\lambda} (x - v t) + i A\\sin \\frac{2\\pi}{\\lambda} (x - v t)\\end{align*}$$");
+			// mathArray.push("$$\\begin{matrix}                -2 & 1 & 0 & 0 & \\cdots & 0  \\\\                1 & -2 & 1 & 0 & \\cdots & 0  \\\\                0 & 1 & -2 & 1 & \\cdots & 0  \\\\                0 & 0 & 1 & -2 & \\ddots & \\vdots \\\\                \\vdots & \\vdots & \\vdots & \\ddots & \\ddots & 1  \\\\                0 & 0 & 0 & \\cdots & 1 & -2        \\end{matrix}$$");
+
+			let modal = document.getElementById("imageModal");
+			modal.onkeydown = function(event) {
+				if (event.key === "Escape") {
+					closeModal(modal);
+				}
+			}
+
+			function openModal(imageElement) {
+				var modal = document.getElementById("imageModal");
+				var modalImage = document.getElementById("modalImage");
+				console.log(imageElement.src);
+				modal.style.display = "flex";
+				modalImage.src = imageElement.src;
+				modal.focus();
+				document.body.style.overflowY = "hidden";
+			}
+
+			function closeModal(modalElement) {
+				modalElement.style.display = "none";
+				document.body.style.overflowY = "auto";
+			}
+
+			// Old way of copying, requiring to maintian additional array and populate it
+			// function copyMathToClipboard(index) {
+			// 	console.log(mathArray[index - 1]);
+			// 	navigator.clipboard.writeText(mathArray[index - 1]);
+			// 	// console.log("\nClicked Here", element.parentElement.previousElementSibling.textContent);
+			// 	copiedToClipboard("Equation Copied to Clipboard!!");
+			// }
+
+			function copyMathToClipboard(mathBlock) {
+				let equation= "";
+				for(element of mathBlock.children[0].children) {
+					equation = equation + "$$" + element.querySelector('[encoding="application/x-tex"]').textContent + "$$  ";
+				}
+				navigator.clipboard.writeText(equation);
+				copiedToClipboard("Equation Copied to Clipboard!!");
+			}
+
+
+
+			function copiedToClipboard(message) {
+				var snackbarElement = document.getElementById("snackbar");
+				snackbarElement.className = "show";
+				snackbarElement.textContent = message;
+				setTimeout(function() { 
+					snackbarElement.className = snackbarElement.className.replace("show", ""); 
+				}, 2000);
+			}
+
+			function copyCodeToClipboard(index) {
+				let codeElements = document.getElementsByTagName("code");
+				navigator.clipboard.writeText(codeElements[index - 1].textContent);
+				copiedToClipboard("Code Copied to Clipboard!!");
+			}
+
+
+
+			// window.onload = function createTOC() {
+			// 	console.clear();
+			// 	console.log("Populating the TOC");
+			// 	const data = Array.from(document.querySelectorAll(".heading-1, .heading-2, .heading-3")).map((element) => ({
+			// 		id: element.id,
+			// 		text: element.innerText,
+			// 		level: Number(element.nodeName.charAt(1))
+			// 	}));
+
+			// 	tocNav = document.getElementsByClassName("toc-container")[0].getElementsByTagName("nav")[0];
+			// 	for (element of data) {
+			// 		divElement = document.createElement("div");
+			// 		divElement.className = "page-nav";
+			// 		anchorElement = document.createElement("a");
+			// 		hierarchyClass = "toc-head-" + element.level;
+			// 		anchorElement.className = "page-nav-text " + hierarchyClass;
+			// 		anchorElement.href = "#" + element.id;
+			// 		textNode = document.createTextNode(element.text);
+			// 		anchorElement.appendChild(textNode);
+			// 		divElement.appendChild(anchorElement);
+			// 		tocNav.appendChild(divElement);
+			// 	}
+			// }
+
+			// window.onload = function createMobileTOC() {
+			// 	console.clear();
+			// 	console.log("Populating the TOC");
+			// 	const data = Array.from(document.querySelectorAll(".heading-1, .heading-2, .heading-3")).map((element) => ({
+			// 		id: element.id,
+			// 		text: element.innerText,
+			// 		level: Number(element.nodeName.charAt(1))
+			// 	}));
+
+			// 	tocNav = document.getElementById("accordionListContainer");
+			// 	for (element of data) {
+			// 		liElement = document.createElement("li");
+			// 		liElement.className = "accordion-list";
+			// 		anchorElement = document.createElement("a");
+			// 		hierarchyClass = "toc-head-" + element.level;
+			// 		anchorElement.className = "accordion-text " + hierarchyClass;
+			// 		anchorElement.href = "#" + element.id;
+			// 		textNode = document.createTextNode(element.text);
+			// 		anchorElement.appendChild(textNode);
+			// 		liElement.appendChild(anchorElement);
+			// 		tocNav.appendChild(liElement);
+			// 	}
+			// }
+
+
+			// This is the combined version of above 2 mthods as at a time only one window.onload works
+			window.onload = function createTOC() {
+				// console.clear();
+				console.log("Populating the TOC");
+				const data = Array.from(document.querySelectorAll(".heading-1, .heading-2, .heading-3")).map((element) => ({
+					id: element.id,
+					text: element.innerText,
+					level: Number(element.nodeName.charAt(1))
+				}));
+
+				tocNav = document.getElementsByClassName("toc-container")[0].getElementsByTagName("nav")[0];
+				mobileNav = document.getElementById("accordionListContainer");
+				for (element of data) {
+					divElement = document.createElement("div");
+					divElement.className = "page-nav";
+					anchorElement = document.createElement("a");
+
+					liElement = document.createElement("li");
+					liElement.className = "accordion-list";
+					anchorMobElement = document.createElement("a");
+
+					hierarchyClass = "toc-head-" + element.level;
+					anchorElement.className = "page-nav-text " + hierarchyClass;
+					anchorMobElement.className = "accordion-text " + hierarchyClass;
+
+					anchorElement.href = "#" + element.id;
+					anchorMobElement.href = "#" + element.id;
+
+					textNode = document.createTextNode(element.text);
+					anchorElement.appendChild(textNode);
+					textNode = document.createTextNode(element.text);
+					anchorMobElement.appendChild(textNode);
+					divElement.appendChild(anchorElement);
+					tocNav.appendChild(divElement);
+					liElement.appendChild(anchorMobElement);
+					mobileNav.appendChild(liElement);
+				}
+			}
+
+
+			window.addEventListener("load", (event) => {
+				createObserver();
+			}, false);
+
+			function createObserver() {
+				// console.clear();
+				console.log("Create Observer Invoked!!");
+				let options = {
+					root: null,
+					rootMargin: "-20% 0% -30% 0px",
+					threshold: 1.0
+				}
+				let observer = new IntersectionObserver(handleIntersectCallback, options);
+				const elements = Array.from(document.querySelectorAll(".heading-1, .heading-2, .heading-3"));
+				elements.forEach((element) => observer.observe(element));
+			}
+
+			function handleIntersectCallback(entries, observer) {
+				entries.forEach((entry) => {
+					if(entry.isIntersecting) {
+						highlightActiveHeading(entry.target.id)
+					}
+				})
+			}
+
+			function highlightActiveHeading(id) {
+				tocNav = document.getElementsByClassName("toc-container")[0].getElementsByTagName("nav")[0];				
+				navHeaders = Array.from(tocNav.getElementsByTagName("div"));
+				console.log("Id : ", id);
+				navHeaders.forEach((element) => {
+					element.classList.remove("page-nav-active");
+					url = element.children[0].href;
+					if(!url.startsWith("http")) {
+						if (url.split("#").at(-1) === id) {
+							element.classList.add("page-nav-active");
+						}
+					}
+				})
+			}
+		</script>
+
+
+
+	</body>
+</html>
+    
