@@ -15,7 +15,7 @@
     --fsize-page-loader: 0.9rem;
     --fsize-creator: 1.2rem;
     --fsize-nav-title: 1.1rem;
-    --fsize-nav-text: 0.82rem;
+    --fsize-nav-text: 0.80rem;
     --fsize-file-link: 0.85rem;
     --fsize-hyperlink: 1.05rem;
     --fsize-sm-title: 2.2rem;
@@ -53,22 +53,33 @@
     --core-color-teal-main: #00695c;
     --core-color-teal-dark: #003d33;
 
+    --core-color-purple-very-very-light: #f8eff9;
     --core-color-purple-very-light: #e6d4f7;
     --core-color-purple-light: #d3b3f1;
     --core-color-purple-main: #872bff;
     --core-color-purple-dark: #551a8b;
-
+    --core-color-purple-very-dark: #2a0d45;
 
     --core-color-seagreen-light: #ddffdd;
     --core-color-seagreen-main: #04AA6D;
     --core-color-bisque-main: bisque;
     --core-color-slateblue-main: slateblue;
     --core-color-coral-main: coral;
+    /* --core-color-cornsilk-light: #fffbed; */
 
     --core-color-orangered-main: orangered;
     --core-color-whitesmoke-main: whitesmoke;
     --core-color-gray-light: #dddddd;
 
+    --core-color-white-main: #ffffff;
+    --core-color-black-main: #000000;
+
+    --core-color-gray-main: #121212;
+    --core-color-gray-blue: #292c35;
+
+    --core-color-blue-very-dark: #00060a;
+    --core-color-indigo-light: #6f74dd;
+    --core-color-gold-light: #ffe973;
 }
 
 
@@ -81,28 +92,31 @@ body {
     border: 5px solid purple;
     font-size: var(--fsize-body);
     font-family: var(--font-body);
+    background-color: var(--color-bg-body);
+    color: var(--color-text-body);
     /* margin-left: 0;
     margin-right: 0; */
 }
 
 .light-mode {
-    --color-text-body: black;
+    --color-bg-body: var(--core-color-white-main);
+    --color-text-body: var(--core-color-black-main);
     --color-bg-progressbar: var(--core-color-purple-light);
     --color-fill-progressbar: var(--core-color-teal-light);
     --color-bg-taskbar: var(--core-color-teal-main);
     --color-text-title: var(--core-color-teal-dark);
     --color-bg-math: var(--core-color-seagreen-light);
-    --color-text-math: black;
+    --color-text-math: var(--core-color-black-main);
     --color-button-clipboard: var(--core-color-purple-main);
     --color-bg-standout: var(--core-color-bisque-main);
-    --color-text-standout: black;
+    --color-text-standout: var(--core-color-black-main);
     --color-bg-quote: var(--core-color-seagreen-light);
     --color-border-quote: var(--core-color-seagreen-main);
-    --color-text-quote: black;
+    --color-text-quote: var(--core-color-black-main);
     --color-bg-divider: var(--core-color-purple-dark);
     --color-bg-file: var(--core-color-teal-very-light);
-    --color-text-file: black;
-    --color-border-file: black;
+    --color-text-file: var(--core-color-black-main);
+    --color-border-file: var(--core-color-black-main);
 
     --color-text-toc: var(--core-color-purple-dark);
     --color-text-hover-toc: var(--core-color-teal-main);
@@ -120,22 +134,90 @@ body {
 
     --color-text-hyperlink: var(--core-color-teal-main);
     --color-bg-table-header: var(--core-color-teal-light);
-    --color-text-table-header: black;
+    --color-text-table-header: var(--core-color-black-main);
     --color-bg-hover-table: var(--core-color-purple-very-light);
     --color-bg-even-table: var(--core-color-whitesmoke-main);
     --color-border-table: var(--core-color-gray-light);
+
+    --color-bg-prism: var(--core-color-purple-very-very-light);
+
+    --color-scroll-track-math: var(--core-color-purple-main);
+    --color-scroll-thumb-math: var(--core-color-black-main);
+
+    --color-scroll-track-code: var(--core-color-purple-main);
+    --color-scroll-thumb-code: var(--core-color-black-main);
+
+    --color-scroll-track-table: var(--core-color-teal-very-light);
+    --color-scroll-thumb-table: var(--core-color-teal-main);
+
+    --color-scroll-track-toc: var(--core-color-teal-very-light);
+    --color-scroll-thumb-toc: var(--core-color-teal-light);
 }
 
 .dark-mode {
-    --taskbar-bg-color: var(--color-secondary-main);
-    --title-text-color: 
+    --color-bg-body: var(--core-color-gray-main);
+    --color-text-body: var(--core-color-white-main);
+    --color-bg-progressbar: var(--core-color-teal-light);
+    --color-fill-progressbar: var(--core-color-purple-main);
+    --color-bg-taskbar: var(--core-color-purple-very-dark);
+    --color-text-title: var(--core-color-teal-light);
+    --color-bg-math: var(--core-color-purple-dark);
+    --color-text-math: var(--core-color-white-main);
+    --color-button-clipboard: var(--core-color-whitesmoke-main);
+    --color-bg-standout: var(--core-color-indigo-light);
+    --color-text-standout: var(--core-color-whitesmoke-main);
+    --color-bg-quote: var(--core-color-teal-dark);
+    --color-border-quote: var(--core-color-teal-light);
+    --color-text-quote: var(--core-color-white-main);
+    --color-bg-divider: var(--core-color-purple-dark);
+    --color-bg-file: var(--core-color-teal-very-light);
+    --color-text-file: var(--core-color-black-main);
+    --color-border-file: var(--core-color-black-main);
+
+    --color-text-toc: var(--core-color-whitesmoke-main);
+    --color-text-hover-toc: var(--core-color-seagreen-main);
+    --color-border-toc: var(--core-color-teal-light);
+    --color-border-active-toc: var(--core-color-teal-main);
+    --color-bg-active-toc: var(--core-color-teal-dark);
+
+    --color-text-heading-1: var(--core-color-teal-light);
+    --color-text-heading-2: var(--core-color-slateblue-main);
+    --color-text-heading-3: var(--core-color-coral-main);
+
+    --color-bg-inline-code: var(--core-color-gray-blue);
+    --color-text-inline-code: var(--core-color-gold-light);
+    --color-text-inline-link: var(--core-color-seagreen-main);
+
+    --color-text-hyperlink: var(--core-color-purple-very-very-light);
+    --color-bg-table-header: var(--core-color-teal-light);
+    --color-text-table-header: var(--core-color-black-main);
+    --color-bg-hover-table: var(--core-color-purple-dark);
+    --color-bg-even-table: var(--core-color-gray-blue);
+    --color-border-table: var(--core-color-gray-light);
+
+    --color-bg-prism: var(--core-color-blue-very-dark);
+
+    --color-scroll-track-math: var(--core-color-whitesmoke-main);
+    --color-scroll-thumb-math: var(--core-color-teal-light);
+
+    --color-scroll-track-code: var(--core-color-whitesmoke-main);
+    --color-scroll-thumb-code: var(--core-color-teal-light);
 
 }
 
-body.dark-mode {
+/* body.dark-mode {
     color: white;
-    background-color: #292c35;
+    background-color: ;
+} */
+
+.prevent-select {
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+    -o-user-select: none;
 }
+
 
 .image-modal {
     display: none;
@@ -293,8 +375,8 @@ body.dark-mode {
 .block-equation::-webkit-scrollbar-track
 {
     /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
-	background-color: blueviolet;
-	border-radius: 10px;
+	background-color: var(--color-scroll-track-math);
+	/* border-radius: 3px; */
 }
 
 .block-equation::-webkit-scrollbar
@@ -305,8 +387,8 @@ body.dark-mode {
 
 .block-equation::-webkit-scrollbar-thumb
 {
-	background-color: black;
-    border-radius: 3px;
+	background-color: var(--color-scroll-thumb-math);
+    /* border-radius: 3px; */
 	/* background-image: -webkit-gradient(linear,
 									   left bottom,
 									   left top,
@@ -316,26 +398,63 @@ body.dark-mode {
 }
 
 
-/* .code-snippet::-webkit-scrollbar-track
+.code-snippet::-webkit-scrollbar-track
 {
-	background-color: blueviolet;
-	border-radius: 10px;
-    margin-top: 8px;
+	background-color: var(--color-scroll-track-code);
+	/* border-radius: 10px; */
+    margin-top: 9px;
     margin-bottom: 10px;
 }
 
 .code-snippet::-webkit-scrollbar
 {
-	width: 6px;
+	width: 7px;
+	height: 7px;
 }
 
 .code-snippet::-webkit-scrollbar-thumb
 {
-	background-color: black;
-    border-radius: 3px;
-} */
+	background-color: var(--color-scroll-thumb-code);
+    /* border-radius: 3px; */
+}
 
 
+
+
+.table-block::-webkit-scrollbar-track
+{
+	background-color: var(--color-scroll-track-table);
+    margin-top: 1px;
+}
+
+.table-block::-webkit-scrollbar
+{
+	width: 7px;
+	height: 7px;
+}
+
+.table-block::-webkit-scrollbar-thumb
+{
+	background-color: var(--color-scroll-thumb-table);
+}
+
+
+
+.toc-items-container::-webkit-scrollbar-track
+{
+	background-color: var(--color-scroll-track-toc);
+}
+
+.toc-items-container::-webkit-scrollbar
+{
+	width: 7px;
+	height: 7px;
+}
+
+.toc-items-container::-webkit-scrollbar-thumb
+{
+	background-color: var(--color-scroll-thumb-toc);
+}
 
 
 /* .block-equation::-webkit-scrollbar {
@@ -391,10 +510,6 @@ body.dark-mode {
     padding-top: 5px;
     padding-bottom: 5px;
     margin-top: 7px;
-}
-
-.top-fixed-taskbar.dark-mode {
-    background-color: var(--color-secondary-main);
 }
 
 .top-taskbar-container-1 {
@@ -827,7 +942,7 @@ body.dark-mode {
 
 .page-nav {
     font-family: var(--font-nav);
-    font-weight: 400;
+    font-weight: bold;
     font-size: var(--fsize-nav-text);
     padding-top: 5px;
     padding-bottom: 10px;
@@ -1158,9 +1273,21 @@ blockquote .twitter-tweet {
     align-items: center;
 }
 
+/* body.dark-mode pre[class*=language-]{
+    background: red;
+}
+ */
+body.light-mode pre[class*=language-]{
+    background: var(--color-bg-prism);
+}
 
+body.light-mode .line-numbers.line-numbers .line-numbers-rows{
+    background: var(--color-bg-prism);
+}
 
-
+body.dark-mode pre[class*=language-]{
+    background: var(--color-bg-prism);
+}
 
 
 @media (max-width: 768px){
