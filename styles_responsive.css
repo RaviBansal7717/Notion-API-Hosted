@@ -27,6 +27,8 @@
     --fsize-sm-code: 0.8rem;
     --fsize-sm-nav-text: 0.96rem;
     --size-clipboard-icon: 18px;
+    --width-scrollbar: 6px;
+    --height-scrollbar: 6px;
 
     --font-title: 'Alegreya SC', serif;
     --font-body: arial, sans-serif;
@@ -140,12 +142,17 @@ body {
     --color-border-table: var(--core-color-gray-light);
 
     --color-bg-prism: var(--core-color-purple-very-very-light);
+    --color-bg-accordion: var(--core-color-whitesmoke-main);
+    --color-text-accordion: var(--core-color-black-main);
+    --color-border-accordion: var(--core-color-purple-main);
+    --color-bg-accordion-panel: var(--core-color-whitesmoke-main);
+    --color-text-accordion-panel: var(--core-color-purple-main);
 
     --color-scroll-track-math: var(--core-color-purple-main);
     --color-scroll-thumb-math: var(--core-color-black-main);
 
-    --color-scroll-track-code: var(--core-color-purple-main);
-    --color-scroll-thumb-code: var(--core-color-black-main);
+    --color-scroll-track-code: var(--core-color-teal-light);
+    --color-scroll-thumb-code: var(--core-color-gray-blue);
 
     --color-scroll-track-table: var(--core-color-teal-very-light);
     --color-scroll-thumb-table: var(--core-color-teal-main);
@@ -169,7 +176,7 @@ body {
     --color-bg-quote: var(--core-color-teal-dark);
     --color-border-quote: var(--core-color-teal-light);
     --color-text-quote: var(--core-color-white-main);
-    --color-bg-divider: var(--core-color-purple-dark);
+    --color-bg-divider: var(--core-color-coral-main);
     --color-bg-file: var(--core-color-teal-very-light);
     --color-text-file: var(--core-color-black-main);
     --color-border-file: var(--core-color-black-main);
@@ -196,6 +203,11 @@ body {
     --color-border-table: var(--core-color-gray-light);
 
     --color-bg-prism: var(--core-color-blue-very-dark);
+    --color-bg-accordion: var(--core-color-blue-very-dark);
+    --color-text-accordion: var(--core-color-whitesmoke-main);
+    --color-border-accordion: var(--core-color-teal-main);
+    --color-bg-accordion-panel: var(--core-color-blue-very-dark);
+    --color-text-accordion-panel: var(--core-color-whitesmoke-main);
 
     --color-scroll-track-math: var(--core-color-whitesmoke-main);
     --color-scroll-thumb-math: var(--core-color-teal-light);
@@ -203,6 +215,11 @@ body {
     --color-scroll-track-code: var(--core-color-whitesmoke-main);
     --color-scroll-thumb-code: var(--core-color-teal-light);
 
+    --color-scroll-track-table: var(--core-color-whitesmoke-main);
+    --color-scroll-thumb-table: var(--core-color-teal-main);
+
+    --color-scroll-track-toc: var(--core-color-teal-very-light);
+    --color-scroll-thumb-toc: var(--core-color-slateblue-main);
 }
 
 /* body.dark-mode {
@@ -381,8 +398,8 @@ body {
 
 .block-equation::-webkit-scrollbar
 {
-	width: 6px;
-	height: 6px;
+	width: var(--width-scrollbar);
+	height: var(--height-scrollbar);
 }
 
 .block-equation::-webkit-scrollbar-thumb
@@ -402,14 +419,14 @@ body {
 {
 	background-color: var(--color-scroll-track-code);
 	/* border-radius: 10px; */
-    margin-top: 9px;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
 .code-snippet::-webkit-scrollbar
 {
-	width: 7px;
-	height: 7px;
+	width: var(--width-scrollbar);
+	height: var(--height-scrollbar);
 }
 
 .code-snippet::-webkit-scrollbar-thumb
@@ -429,8 +446,8 @@ body {
 
 .table-block::-webkit-scrollbar
 {
-	width: 7px;
-	height: 7px;
+	width: var(--width-scrollbar);
+	height: var(--height-scrollbar);
 }
 
 .table-block::-webkit-scrollbar-thumb
@@ -447,8 +464,8 @@ body {
 
 .toc-items-container::-webkit-scrollbar
 {
-	width: 7px;
-	height: 7px;
+	width: var(--width-scrollbar);
+	height: var(--height-scrollbar);
 }
 
 .toc-items-container::-webkit-scrollbar-thumb
@@ -502,6 +519,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    height: calc(var(--fsize-creator) + 25px);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: none;
     align-items: center;
@@ -701,13 +719,14 @@ body {
     height: 40px;
     border-radius: 5px;
     max-width: 100%;
-    background-color: white;
+    background-color: var(--color-bg-accordion);
+    color: var(--color-text-accordion);
     font-family: var(--font-nav);
     font-weight: 400;
     font-size: var(--fsize-nav-title);
     padding-left: 7px;
     padding-right: 3px;
-    border: 2px solid #872bff;
+    border: 2px solid var(--color-border-accordion);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -716,7 +735,7 @@ body {
 .accordion-panel {
     margin-top: 10px;
     padding-left: 0px;
-    background-color: white;
+    background-color: var(--color-bg-accordion-panel);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
@@ -742,7 +761,7 @@ body {
 .accordion-text {
     display: inline-block;
     text-decoration: none;
-    color: #551a8b;
+    color: var(--color-text-accordion-panel);
     font-family: var(--font-nav);
     font-weight: 400;
     font-size: var(--fsize-sm-nav-text);
@@ -1229,54 +1248,7 @@ blockquote .twitter-tweet {
     display: inline-block;
 }
 
-.adhoc-dialog-button-container {
-    text-align: center;
-    margin-top: 25px;
-}
 
-.adhoc-dialog-button {
-    height: 40px;
-    width: 90%;
-    background-color: #872bff;
-    font-size: 20px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-}
-
-.adhoc-dialog-outer {
-    display: none;
-    position: fixed;
-    z-index: 50;
-    left: 0;
-    top: 0;
-    width: 100%;
-    max-height: 700px;
-    overflow: hidden auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
-}
-
-.adhoc-dialog-inner {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-.adhoc-dialog-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: #04AA6D;
-    align-items: center;
-}
-
-/* body.dark-mode pre[class*=language-]{
-    background: red;
-}
- */
 body.light-mode pre[class*=language-]{
     background: var(--color-bg-prism);
 }

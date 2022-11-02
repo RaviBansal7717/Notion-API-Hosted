@@ -11,10 +11,14 @@
 	        onload="renderMathInElement(document.body);"></script>
 		<link id="prism-theme-file" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-coldark-cold.min.css" rel="stylesheet" />
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/match-braces/prism-match-braces.min.css" integrity="sha512-SwPHdIEEQ3lKazpLV9+r1UH4HnpNVlYVdKYgBwD/8QuougtQj6xm5x2xladh3mC/bz+jVWkvYTpKCI1KWD1MWQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<link rel="stylesheet" type="text/css" href="styles_responsive.css">
+
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/match-braces/prism-match-braces.min.js" integrity="sha512-1V2DjbHHHr8KzGoafg/R5GoT/+5A5WJBvno03LEL1unbfCLy4PLTQ2Trcrp+qfvTEtyI9Uj825deuInXoRkOyA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-SkmBfuA2hqjzEVpmnMt/LINrjop3GKWqsuLSSB3e7iBmYK7JuWw4ldmmxwD9mdm2IRTTi0OxSAfEGvgEi0i2Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<!-- <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital@0;1&family=Barlow+Semi+Condensed:ital@1&family=Istok+Web&family=Roboto+Condensed:ital,wght@0,400;1,300;1,400&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet"> -->
@@ -79,7 +83,13 @@
 				<div class="notion-container">
 					<a href="https://www.google.com" target="_blank">
 						<img id="notionIcon" src="https://img.icons8.com/color/40/000000/notion--v1.png"/>
-					</a>	
+
+						<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 48 48" style=" fill:#000000;">
+							<path fill="#fff" fill-rule="evenodd" d="M11.553,11.099c1.232,1.001,1.694,0.925,4.008,0.77 l21.812-1.31c0.463,0,0.078-0.461-0.076-0.538l-3.622-2.619c-0.694-0.539-1.619-1.156-3.391-1.002l-21.12,1.54 c-0.77,0.076-0.924,0.461-0.617,0.77L11.553,11.099z" clip-rule="evenodd"></path>
+							<path fill="#fff" fill-rule="evenodd" d="M12.862,16.182v22.95c0,1.233,0.616,1.695,2.004,1.619 l23.971-1.387c1.388-0.076,1.543-0.925,1.543-1.927V14.641c0-1-0.385-1.54-1.234-1.463l-25.05,1.463 C13.171,14.718,12.862,15.181,12.862,16.182L12.862,16.182z" clip-rule="evenodd"></path>
+							<path fill="#424242" fill-rule="evenodd" d="M11.553,11.099c1.232,1.001,1.694,0.925,4.008,0.77 l21.812-1.31c0.463,0,0.078-0.461-0.076-0.538l-3.622-2.619c-0.694-0.539-1.619-1.156-3.391-1.002l-21.12,1.54 c-0.77,0.076-0.924,0.461-0.617,0.77L11.553,11.099z M12.862,16.182v22.95c0,1.233,0.616,1.695,2.004,1.619l23.971-1.387 c1.388-0.076,1.543-0.925,1.543-1.927V14.641c0-1-0.385-1.54-1.234-1.463l-25.05,1.463C13.171,14.718,12.862,15.181,12.862,16.182 L12.862,16.182z M36.526,17.413c0.154,0.694,0,1.387-0.695,1.465l-1.155,0.23v16.943c-1.003,0.539-1.928,0.847-2.698,0.847 c-1.234,0-1.543-0.385-2.467-1.54l-7.555-11.86v11.475l2.391,0.539c0,0,0,1.386-1.929,1.386l-5.317,0.308 c-0.154-0.308,0-1.078,0.539-1.232l1.388-0.385V20.418l-1.927-0.154c-0.155-0.694,0.23-1.694,1.31-1.772l5.704-0.385l7.862,12.015 V19.493l-2.005-0.23c-0.154-0.848,0.462-1.464,1.233-1.54L36.526,17.413z M7.389,5.862l21.968-1.618 c2.698-0.231,3.392-0.076,5.087,1.155l7.013,4.929C42.614,11.176,43,11.407,43,12.33v27.032c0,1.694-0.617,2.696-2.775,2.849 l-25.512,1.541c-1.62,0.077-2.391-0.154-3.239-1.232l-5.164-6.7C5.385,34.587,5,33.664,5,32.585V8.556 C5,7.171,5.617,6.015,7.389,5.862z" clip-rule="evenodd"></path>
+						</svg>
+					</a>
 				</div>
 				<div class="github-container">
 					<a href="https://www.google.com" target="_blank">
@@ -107,6 +117,22 @@
 					<div class="accordion-toc-container">
 						<div class="accordion-button" id="accordionButtonTOC" onclick="toggleAccordionTOC(this)">On This Page
 							<img style="transform: rotate(90deg);" src="https://img.icons8.com/fluency-systems-regular/20/000000/expand-arrows.png"/>
+
+							<img style="transform: rotate(90deg);" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAABDklEQVRoge2YSw6CQBBEX/Qkatyr0QMZz+BV/UXda0SOgAshIUgIA3S3k/RbU11VwdgzgOM4juM4dowHmDEHtsADSFtqZsAOeALvATJ0ZgUkQAYcA3TnXJPkM0woh8+AQ4D2VNKZlKiGT4BlgH5Zo1crsQBeJfMU2BjOMTVVLSFlplJC2kR0vtZrFvGpG7ruOzTQr3MJ7fBNvsElrMI3+bcuUbdkQpbUUHTOce0iEqJa4lJ9YFQjyoRD9aFVtuh/QmB0Thna36qE+C6QLKG2jaM5SqgMV5gvahL1nSDqW5npX3XUl/qCaomfc0oDF4zDF5RL3AJ0d/4gfMEU2PP9xNiWea6ZiCRyHMdxHEeJD2iZ1W9Rj7RfAAAAAElFTkSuQmCC">
+
+							<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+							width="20.000000pt" height="20.000000pt" viewBox="0 0 20.000000 20.000000"
+							preserveAspectRatio="xMidYMid meet">
+						   
+						   <g transform="translate(0.000000,20.000000) scale(0.100000,-0.100000)"
+						   fill="#000000" stroke="none">
+						   <path d="M40 125 l-23 -25 23 -25 c13 -14 28 -25 33 -25 6 0 0 11 -13 25 l-23
+						   25 23 25 c13 14 19 25 13 25 -5 0 -20 -11 -33 -25z"/>
+						   <path d="M140 125 l23 -25 -23 -25 c-13 -14 -19 -25 -13 -25 5 0 20 11 33 25
+						   l23 25 -23 25 c-13 14 -28 25 -33 25 -6 0 0 -11 13 -25z"/>
+						   </g>
+						   </svg>
+
 						</div>
 						<div class="accordion-panel">
 							<nav>
@@ -189,7 +215,7 @@
 					
 					<div class="code-block">
 						<div class="code-snippet">
-							<pre class="line-numbers"><code class="language-python"># Instantiate an optimizer.
+							<pre class="line-numbers"><code class="language-python match-braces"># Instantiate an optimizer.
 def train_step(x, y):
 	with tf.GradientTape() as tape:
 		logits = model(x, training=True)
@@ -218,7 +244,7 @@ def train_step(x, y):
 
 					<div class="code-block">
 						<div class="code-snippet">
-							<pre class="line-numbers"><code class="language-python">import os
+							<pre class="line-numbers"><code class="language-python match-braces">import os
 
 # Prepare the dataset. We use both the training & test MNIST digits.
 batch_size = 64
@@ -465,7 +491,14 @@ def train_step(x, y):
 							<div class="standout-icon">
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" height="30" width="30"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2l0 0c5.2-7.1 10.4-14.2 15.4-21.4c19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3c5 7.2 10.2 14.3 15.4 21.4l0 0c19.8 27.1 39.7 54.4 49.2 86.2H272zM192 512c44.2 0 80-35.8 80-80V416H112v16c0 44.2 35.8 80 80 80zM112 176c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112c8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80z"/></svg>
 								<img height="30" width="30" src="https://img.icons8.com/color/48/000000/light-on--v1.png"/>	
-								<img height="30" width="30" src="https://img.icons8.com/fluency/48/000000/exclamation-mark.png"/>				
+
+								<img height="30" width="30" src="https://img.icons8.com/fluency/48/000000/exclamation-mark.png"/>
+
+
+								<img height="30" width="30" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAAY0lEQVRoge3ZQRGDAAwAQcAMdhCBLETUTtWAAX5QbpjuPvNI5t4ZBvhv4y+WbvNnP5uv3+X2e9PdC58moCagJqAmoCagJqAmoCagJqAmoCagJqAmoCag9voAuMiHpiagJgBoHW3lCEkC8sBeAAAAAElFTkSuQmCC">
+								<img height="30" width="30" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAACk0lEQVRoge1ZzWoUQRD+ambNQVk0kEfQGPFm8KoHH8BbwCfwbIiHoCBI8CBCzFvoOwQPeQAhB8EcYnyDmEN64s50fR5mpudvRQ+10MtuwexO9wz91dfVVdXVAyxlKYstYjnY5pfzbUDeg0gZegk0DQ/Bztcnqx+tMEdWAwGAUjaFTIFKZ3afE0jh+dAS05QAPDNKrfxQe5Z/l5aQxhagE/Ymnu1bAgpniWlrASIrZ7nPAsECIhIvAZLZNN3r5USUVrLEtCbgOgT6bkAAiNgC8HCUvv+yG0klagtopmylFk65VY2YAMSF2e+F0brJmJ1YvWbsJ/da8eqGPmICBBzDVPeeVe2EPl4CSnHQQRAFyMBHGXEiS4oi85I0HX1jEKCPeCvhFY4JBomg7c+jUcQ+kFOyVIexs72oJkXEBNJcHK/VWncqgsBi5SqJl8AoT7NJmnc7QxYuf0/Ga6YEkn+/8v9yMl5zJEES1OoKbYCK39gSb4lpSgBb4qmYUMsVFK6GiOnsA9abOaBWcqVsDIqbeSCADMStqtWvjeeAgLaWycACaprEgFlZoKV5N6fZhlBgBgRU6dr7UXYYzIETg3D8mwVkHnzAI6tLgpDAQpFjT8A2DwAg/BFJbZJZyAceikNrvKUsZdHF9PtALav7p88APgfkPogbAI8BHJxv3/5kjWVO4Ob+6Tshd6d8G4CQb3/t3HljiWdKYPzhbCOB/4Z+eGbY1nkZcf3ixfoPK0zTPJAwf0wymV7UAFSkmuORJabtuRASLTVt93YPd0mqJabtuRCKQ69JEcYdnkoUHnpki2koFy83zqh4VdW/TT3cLKe9q917Py0xZxJGr+99fwqRHYAPqq5jUg6y13c/zwJvKUtZZPkD50mqvFCMkykAAAAASUVORK5CYII=">
+
+								<img height="30" width="30" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABmJLR0QA/wD/AP+gvaeTAAAE1klEQVR4nO3cXUxbZRzH8e9DW1rWwoAx9sbsBkUWh2NzIW6LXroL3aJbNrfMxbgrLxbvje7CxMR47Z0vmTGZJjOymTi8IDHxLWo3hTFBGCtvg+Ggc1Bg4+XQHi8KuAiNE0rP8zT/T9KkPec5yS/55Tk9p3AeEEIIIYQQQgghhBDCDMrpAP9XKBTyTs/4XlXKPgFUz25uAc4FVvFBa2vrtIPxls2oQsrKaja5PDP1QE2KIVfjlvtAf3/zrUzmSidjCgmFQl4r7g0DNd4iP5XH91G8vQyA4T9uEam7zMTgCEBTYBV7TJ0pLqcDPKxAwcbTSvGKt8hP7VtHyA+WkON2keN2sWpDIev2hBgKR5iZtDZMWwzGRqJXnM68FDlOB3hoyn4JoPL4Pjx+74LdHr+XimN75wafzGS0dDKmEAWPAfOnqcWsqZ7bZ2/PRKaVYEwhQADA5fOkHODy5c69zc9AnhVhUiEp/fLGeacjpE1WFJJNsqKQPe8cczpC2mRFIXLK0szEUMzpCGmTFYVkEylEM1KIZrKikLzS1U5HSJusKEQue8WKkUI0kxWFyI2hZuTGUKwYKUQzUohmpBDNSCGakUI0I4VoRgrRjBSiGSlEM1KIZqQQzUghmpFCNCOFaEYK0YwUohkpRDNSiGakEM1IIZqRQjQjhWhGCtGMFKIZKUQzWVGIPB+iGXk+xBnjAPFJK+WAmYn5FZnGMpBnRZhUSCsk18ZK5YF9LRnIsyKMKcTG/hSg80IY697Ugv3WvSk66y4nPyjOZTRcGhmzgNnaktXNCdt9wBqfWj8UjuAtDuAr9mPPxPmr+Sat73+TfE5EqcZAHqej0Wjc6cxLYcwSfzC/5uIlYOeiA5RqTFjWwb6+6wOZTZY+xswQgNHRwbGyTaUfT1sMAUWzr2ngNxTvBvI4HYm0jTibUgghhBBCCPEfjLoxBKio2FE6k4i/BhwAKmc3dwD1Hlfue5FIU9S5dMtnVCGPbN1+RMFZUi+UPIpSp3q7Wi5kMlc6GVPIbBmfA6qkJsjm/TvI37IWgLHuIfoarnHn2k2ABEodNbUUIwqZPU1FgPzyw7UEn9216Lje+ia6Ll4BiHlcuZUmnr6M+C2roLDkdeCZkpogj558an57+Mx5bn7djDU2SWHVBgqrNjLeE+X+YMxnE58YGY5+61zqpTHl7yEHATbv3wFA5xdhBn5o58m3X+SJN19grP8uXV/+CkDZ/scBsO3kMaYxpZAKgMCWEgBG2gdYU70ZlMJX5Gfby08z+PMNAAq2lM4dE3Ii6HK5nQ7wkOwHP+w+c2jhCGX/e6i9cJD+TJkhnQDj3f98R//543Wmhu8zNXyP9k++Z/3eKgBGe2bHKBXJfMzlM2WGfAXs7Gu4RuG2jUByWb8rdWFy3Dms31vF1ud3A9DX8DsAKnmMcYy47A2Fdq214tMRoKD8UC3B5xa/7O251Eh38ss9Znms0EBHx51M5kwHIy577969fb+weF0HcHS4fUCN90TJXZ2HJz+PRDxBLHKbG5/9xMB3bQAJZSdO9HVeb3Q49pIYMUPmBMurD2PbZ4FU/zsaI6FO9fa2XMxkrnQyYobMiQ0PtflLiz5y265JlMon+ZvWFEq1KsWHlsc62d/VZuTMEEIIIYQQQgghhBDCNH8DQZ5Zf2Srd6UAAAAASUVORK5CYII=">								
 								<img height="30" width="30" src="https://img.icons8.com/color/48/000000/exclamation-mark.png"/>
 							</div>
 							<div class="standout-text">
@@ -853,84 +886,6 @@ def train_step(x, y):
 
 
 
-					<div class="adhoc-dialog-button-container">
-						<button class="adhoc-dialog-button" onclick="openAdhocDialog(this.parentElement.nextElementSibling)">Show Derivation of Riemann Zeta Funcion</button>
-					</div>
-
-					<div class="adhoc-dialog-outer">
-						<div class="adhoc-dialog-inner">
-							<div class="adhoc-dialog-header">
-								<div class="adhoc-dialog-header-title">
-									<h2>Derivation of Riemann Zeta Funcion</h2>
-								</div>
-								<div class="adhoc-dialog-header-close">
-									<img src="https://img.icons8.com/flat-round/30/FAB005/delete-sign.png"/ onclick="closeAdhocDialog(this.parentElement.parentElement.parentElement.parentElement)">
-								</div>
-							</div>
-
-							<div class="math-block prevent-select">
-								<div class="block-equation">
-									<span>
-										$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$\begin{align*}y = y(x,t) &= A e^{i\theta} \\&= A (\cos \theta + i \sin \theta) \\&= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \\&= A\cos(kx - \omega t) + i A\sin(kx - \omega t)  \\&= A\cos \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) + i A\sin \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big)  \\&= A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)\end{align*}$$ $$\tilde f(\omega)=\frac{1}{2\pi}\int_{-\infty}^\infty f(x)e^{-i\omega x}\,dx\,,$$  
-									</span>
-								</div>
-								<div class="copy-clipboard">
-									<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
-										<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
-											<path fill="#fff" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
-										</svg>
-									</button>
-								</div>
-							</div>
-			
-							<div class="math-block prevent-select">
-								<div class="block-equation">
-									<span>
-										$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$\begin{align*}y = y(x,t) &= A e^{i\theta} \\&= A (\cos \theta + i \sin \theta) \\&= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \\&= A\cos(kx - \omega t) + i A\sin(kx - \omega t)  \\&= A\cos \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) + i A\sin \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big)  \\&= A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)\end{align*}$$ $$\tilde f(\omega)=\frac{1}{2\pi}\int_{-\infty}^\infty f(x)e^{-i\omega x}\,dx\,,$$  
-									</span>
-								</div>
-								<div class="copy-clipboard">
-									<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
-										<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
-											<path fill="#fff" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
-										</svg>
-									</button>
-								</div>
-							</div>
-
-
-							<div class="math-block prevent-select">
-								<div class="block-equation">
-									<span>
-										$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$\begin{align*}y = y(x,t) &= A e^{i\theta} \\&= A (\cos \theta + i \sin \theta) \\&= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \\&= A\cos(kx - \omega t) + i A\sin(kx - \omega t)  \\&= A\cos \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) + i A\sin \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big)  \\&= A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)\end{align*}$$ $$\tilde f(\omega)=\frac{1}{2\pi}\int_{-\infty}^\infty f(x)e^{-i\omega x}\,dx\,,$$  
-									</span>
-								</div>
-								<div class="copy-clipboard">
-									<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
-										<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
-											<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
-										</svg>
-									</button>
-								</div>
-							</div>
-
-
-							<div class="math-block prevent-select">
-								<div class="block-equation">
-									<span>
-										$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$\begin{align*}y = y(x,t) &= A e^{i\theta} \\&= A (\cos \theta + i \sin \theta) \\&= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \\&= A\cos(kx - \omega t) + i A\sin(kx - \omega t)  \\&= A\cos \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) + i A\sin \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big)  \\&= A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)\end{align*}$$ $$\tilde f(\omega)=\frac{1}{2\pi}\int_{-\infty}^\infty f(x)e^{-i\omega x}\,dx\,,$$  
-									</span>
-								</div>
-								<div class="copy-clipboard">
-									<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
-										<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
-											<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
-										</svg>
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
 				</section>
 
 
