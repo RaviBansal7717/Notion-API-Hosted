@@ -15,7 +15,7 @@
     --fsize-page-loader: 0.9rem;
     --fsize-creator: 1.2rem;
     --fsize-nav-title: 1.1rem;
-    --fsize-nav-text: 0.80rem;
+    --fsize-nav-text: 0.82rem;
     --fsize-file-link: 0.85rem;
     --fsize-hyperlink: 1.05rem;
     --fsize-sm-title: 2.2rem;
@@ -29,6 +29,15 @@
     --size-clipboard-icon: 18px;
     --width-scrollbar: 6px;
     --height-scrollbar: 6px;
+    --width-taskbar-icon: 42px;
+    --height-taskbar-icon: 42px;
+    --width-sm-taskbar-icon: 26px;
+    --height-sm-taskbar-icon: 26px;
+    --width-icon: 32px;
+    --height-icon: 32px;
+    --width-sm-icon: 20px;
+    --height-sm-icon: 20px;
+
 
     --font-title: 'Alegreya SC', serif;
     --font-body: arial, sans-serif;
@@ -159,6 +168,9 @@ body {
 
     --color-scroll-track-toc: var(--core-color-teal-very-light);
     --color-scroll-thumb-toc: var(--core-color-teal-light);
+
+    --color-icon-accordion: var(--core-color-black-main);
+    --color-icon-standout: var(--core-color-purple-dark);
 }
 
 .dark-mode {
@@ -220,6 +232,9 @@ body {
 
     --color-scroll-track-toc: var(--core-color-teal-very-light);
     --color-scroll-thumb-toc: var(--core-color-slateblue-main);
+
+    --color-icon-accordion: var(--core-color-white-main);
+    --color-icon-standout: var(--core-color-blue-very-dark);
 }
 
 /* body.dark-mode {
@@ -415,25 +430,24 @@ body {
 }
 
 
-.code-snippet::-webkit-scrollbar-track
+
+
+.code-block-prism::-webkit-scrollbar-track
 {
 	background-color: var(--color-scroll-track-code);
-	/* border-radius: 10px; */
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 
-.code-snippet::-webkit-scrollbar
+.code-block-prism::-webkit-scrollbar
 {
 	width: var(--width-scrollbar);
 	height: var(--height-scrollbar);
 }
 
-.code-snippet::-webkit-scrollbar-thumb
+.code-block-prism::-webkit-scrollbar-thumb
 {
 	background-color: var(--color-scroll-thumb-code);
-    /* border-radius: 3px; */
 }
+
 
 
 
@@ -731,7 +745,11 @@ body {
     align-items: center;
     justify-content: space-between;
 }
-  
+
+.accordion-toc-icon {
+    fill: var(--color-icon-accordion);
+}
+
 .accordion-panel {
     margin-top: 10px;
     padding-left: 0px;
@@ -778,10 +796,21 @@ body {
     font-weight: 400;
 }
 
+.taskbar-icon {
+    width: var(--width-taskbar-icon);
+    height: var(--height-taskbar-icon);
+}
+
+.body-icon {
+    width: var(--width-icon);
+    height: var(--height-icon);
+}
+
 .katex {
     font-family: var(--font-math);
     font-weight: 400;
 }
+
 
 .math-block {
     flex-grow: 1;
@@ -832,7 +861,6 @@ body {
     font-size: var(--fsize-code);
     display: flex;
     margin-top: 20px;
-    max-height: 500px;
     /* background-color: #551a8b; */
 }
   
@@ -840,6 +868,10 @@ body {
     max-width: calc(100% - 20px);
     overflow-y: auto;
     flex-grow: 1;
+}
+
+.code-block-prism {
+    max-height: 500px;
 }
   
 .copy-code-clipboard {
@@ -961,7 +993,7 @@ body {
 
 .page-nav {
     font-family: var(--font-nav);
-    font-weight: bold;
+    font-weight: 600;
     font-size: var(--fsize-nav-text);
     padding-top: 5px;
     padding-bottom: 10px;
@@ -1048,7 +1080,7 @@ body {
 }
   
 .standout-icon {
-    /* background-color: #333; */
+    fill: var(--color-icon-standout);
 }
   
 .standout-text {
@@ -1366,5 +1398,16 @@ body.dark-mode pre[class*=language-]{
     .heading-3 {
         font-size: var(--fsize-sm-h3);
     }
+
+    .taskbar-icon {
+        width: var(--width-sm-taskbar-icon);
+        height: var(--height-sm-taskbar-icon);
+    }
+
+    .body-icon {
+        width: var(--width-sm-icon);
+        height: var(--height-sm-icon);
+    }
+        
 
 }
