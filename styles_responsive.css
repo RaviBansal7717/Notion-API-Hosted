@@ -12,7 +12,7 @@
     --fsize-standout: 1.02rem;
     --fsize-table: 0.86rem;
     --fsize-snackbar: 0.86rem;
-    --fsize-page-loader: 0.9rem;
+    --fsize-page-loader: 1.1rem;
     --fsize-creator: 1.2rem;
     --fsize-nav-title: 1.1rem;
     --fsize-nav-text: 0.82rem;
@@ -26,13 +26,15 @@
     --fsize-sm-math: 0.85rem;
     --fsize-sm-code: 0.8rem;
     --fsize-sm-nav-text: 0.96rem;
+    --fsize-sm-table: 0.82rem;
+    --fsize-sm-page-loader: 1.05rem;
     --size-clipboard-icon: 18px;
     --width-scrollbar: 6px;
     --height-scrollbar: 6px;
     --width-taskbar-icon: 42px;
     --height-taskbar-icon: 42px;
-    --width-sm-taskbar-icon: 26px;
-    --height-sm-taskbar-icon: 26px;
+    --width-sm-taskbar-icon: 28px;
+    --height-sm-taskbar-icon: 28px;
     --width-icon: 32px;
     --height-icon: 32px;
     --width-sm-icon: 20px;
@@ -171,6 +173,10 @@ body {
 
     --color-icon-accordion: var(--core-color-black-main);
     --color-icon-standout: var(--core-color-purple-dark);
+
+    --color-bg-page-loader: var(--core-color-teal-very-light);
+    --color-text-page-loader: var(--core-color-blue-very-dark);
+    --color-bubble-page-loader: var(--core-color-slateblue-main);
 }
 
 .dark-mode {
@@ -235,6 +241,10 @@ body {
 
     --color-icon-accordion: var(--core-color-white-main);
     --color-icon-standout: var(--core-color-blue-very-dark);
+
+    --color-bg-page-loader: var(--core-color-gray-blue);
+    --color-text-page-loader: var(--core-color-whitesmoke-main);
+    --color-bubble-page-loader: var(--core-color-coral-main);
 }
 
 /* body.dark-mode {
@@ -346,28 +356,30 @@ body {
 
 .page-loader-wrap {
     margin: 0 10px 10px 0;
-    padding: 20px 20px 20px;
+    padding: 25px 40px 25px 40px;
     border-radius: 5px;
     text-align: center;
-    background-color: #d8d8d8;
+    white-space: nowrap;
+    background-color: var(--color-bg-page-loader);
+    color: var(--color-text-page-loader);
     padding-bottom: 30px;
 }
 
 .page-loader-spinner {
     position: relative;
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     margin: 0 auto;
-    margin-top: 15px;
+    margin-top: 20px;
 }
   
 .page-loader-bubble-1, .page-loader-bubble-2 {
     position: absolute;
     top: 0;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     border-radius: 100%;
-    background-color: #4b9cdb;
+    background-color: var(--color-bubble-page-loader);
 }
 
 .page-loader-bubble-2 {
@@ -563,7 +575,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
     /* background-color: tomato; */
     margin-right: 10px;
 }
@@ -645,7 +657,9 @@ body {
     transform: translate(32px, 0px);
 }
 
-
+.github-container {
+    padding-top: 5px;
+}
 
 
 
@@ -1338,8 +1352,13 @@ body.dark-mode pre[class*=language-]{
 
     .table-block {
         max-height: 300px;
+        font-size: var(--fsize-sm-table);
     }
 
+    td, th {
+        padding: 8px 15px;
+    }
+    
     .file-container {
         width: 65%;
     }
@@ -1357,9 +1376,9 @@ body.dark-mode pre[class*=language-]{
         font-size: var(--fsize-creator);
     }
 
-    .github-container {
+    /* .github-container {
         display: none;
-    }
+    } */
 
     .dark-mode-switch {
         width: 40px;
@@ -1408,6 +1427,46 @@ body.dark-mode pre[class*=language-]{
         width: var(--width-sm-icon);
         height: var(--height-sm-icon);
     }
-        
+
+
+
+    .dark-mode-toggle-container {
+        width: 42px;
+        height: 22px;
+    }
+
+    .dark-mode-toggle-container span:before,
+    .dark-mode-toggle-container span:after {
+        top: 3px;
+        width: 16px;
+        height: 16px;
+    }
+
+    .dark-mode-toggle-container span:before {
+        transform: translate(-16px, 0px);
+    }
+
+    .dark-mode-toggle-container span:after {
+        transform: translate(3px, 0px);
+    }
+
+    .dark-mode-toggle-container input[type="checkbox"]:checked + span:before {
+        background-color: #000;
+        transform: translate(18px, -7px);
+    }
+
+    .dark-mode-toggle-container input[type="checkbox"]:checked + span:after {
+        background-color: #fff;
+        transform: translate(23px, 0px);
+    }
+
+    .page-loader-message {
+        font-size: var(--fsize-sm-page-loader);
+    }
+    
+    .top-taskbar-container-2 {
+        gap: 2px;
+    }
+    
 
 }
