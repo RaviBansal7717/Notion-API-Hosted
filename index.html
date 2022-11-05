@@ -12,12 +12,14 @@
 		<link id="prism-theme-file" href="prism_coldark_cold_theme.css" rel="stylesheet" />
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/match-braces/prism-match-braces.min.css" integrity="sha512-SwPHdIEEQ3lKazpLV9+r1UH4HnpNVlYVdKYgBwD/8QuougtQj6xm5x2xladh3mC/bz+jVWkvYTpKCI1KWD1MWQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/unescaped-markup/prism-unescaped-markup.min.css" integrity="sha512-g33HCZ23fueSK96JEeoy9DelAlu7Ry5mtxqLk+zlEiPj7NIpFI6T9mybOvQxjBN50FALFDCviMXiLqWJcFwzaA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<link rel="stylesheet" type="text/css" href="styles_responsive.css">
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/match-braces/prism-match-braces.min.js" integrity="sha512-1V2DjbHHHr8KzGoafg/R5GoT/+5A5WJBvno03LEL1unbfCLy4PLTQ2Trcrp+qfvTEtyI9Uj825deuInXoRkOyA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-SkmBfuA2hqjzEVpmnMt/LINrjop3GKWqsuLSSB3e7iBmYK7JuWw4ldmmxwD9mdm2IRTTi0OxSAfEGvgEi0i2Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/unescaped-markup/prism-unescaped-markup.min.js" integrity="sha512-QaQkFkE1LvUW6IaC7zLY4EsrNHuMWwepQv2RWyg4q/3+KI7K2WwtNEe6IPuYE7ZWkNxdKEnLJRuyuSnvbTUB3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,9 +52,6 @@
 
 		<div id="topFixedTaskbar" class="top-fixed-taskbar">
 			<div class="top-taskbar-container-1">
-				<div>
-					<img src="https://img.icons8.com/material-outlined/24/000000/menu--v1.png"/>		
-				</div>
 				<div class="created-by-container">
 					<span>Notion Export</span>
 				</div>
@@ -127,7 +126,7 @@
 							</button>
 						</div>
 					</div>
-					<div class="caption">The famous Schrodinger Equation</div>
+					<div class="block-caption">The famous Schrodinger Equation</div>
 			
 					<div class="math-block prevent-select">
 						<div class="block-equation">
@@ -221,7 +220,7 @@ def train_step(x, y):
 							</button>
 						</div>
 					</div>
-					<div class="caption">The famous Schrodinger Equation</div>
+					<div class="block-caption">The famous Schrodinger Equation</div>
 				</section>
 
 
@@ -385,15 +384,15 @@ def train_step(x, y):
 							</button>
 						</div>
 					</div>
-					<div class="caption">Instantiating an Optimizer in Python</div>
+					<div class="block-caption">Instantiating an Optimizer in Python</div>
 
 
 
 
 				<div class="image-block">
-					<img class="image-container" src="scrapper_out/404.gif" alt="Text" onclick="openModal(this)" />
+					<img class="image-container" loading="lazy" src="scrapper_out/404.gif" alt="Text" onclick="openModal(this)" />
 				</div>
-				<div class="caption">A sample 404 gif</div>
+				<div class="block-caption">A sample 404 gif</div>
 
 			</section>
 
@@ -407,20 +406,20 @@ def train_step(x, y):
 		
 
 				<div class="image-block" id="box">
-					<img class="image-container" src="scrapper_out/Image_75.png" alt="Text" onclick="openModal(this)" />
+					<img class="image-container" loading="lazy" src="scrapper_out/Image_75.png" alt="Text" onclick="openModal(this)" />
 				</div>
 		
 				<div class="image-block">
-					<img class="image-container" src="scrapper_out/raycast-untitled.png" alt="Text" onclick="openModal(this)" />
+					<img class="image-container" loading="lazy" src="scrapper_out/raycast-untitled.png" alt="Text" onclick="openModal(this)" />
 				</div>
 		
 				<div class="video-container">
-					<iframe class="video-player" src="https://www.youtube.com/embed/tgbNymZ7vqY" allow="fullscreen;"></iframe>
+					<iframe class="video-player" loading="lazy" src="https://www.youtube.com/embed/tgbNymZ7vqY" allow="fullscreen;"></iframe>
 				</div>
-				<div class="caption">CNNs for Vision Lecture 1</div>
+				<div class="block-caption">CNNs for Vision Lecture 1</div>
 		
 				<div class="image-block">
-					<img class="image-container" src="scrapper_out/CauchyIntegralFormula_ManimCE_v0.15.0.gif" alt="Text" onclick="openModal(this)" />
+					<img class="image-container" loading="lazy" src="scrapper_out/CauchyIntegralFormula_ManimCE_v0.15.0.gif" alt="Text" onclick="openModal(this)" />
 				</div>
 			
 			</section>
@@ -432,7 +431,7 @@ def train_step(x, y):
 
 				
 				<div class="video-container">
-					<video class="video-player" controls>
+					<video class="video-player" preload="none" autoplay="false" controls>
 						<source src="scrapper_out/CauchyIntegralFormula.mp4">
 					</video>
 				</div>
@@ -534,7 +533,9 @@ def train_step(x, y):
 					
 
 
-				<p>This is some paragraph text in here.To make font size responsive in steps, set the base font size at each breakpoint. To create fluid text that smoothly changes size, use the calc() function to calculate a ratio between pixels and viewport widths, this will make the base font size grow at the correct rate relative to the screen width.</p>
+				<div class="text-paragraph">
+					<p>This is some paragraph text in here.To make font size responsive in steps, set the base font size at each breakpoint. To create fluid text that smoothly changes size, use the calc() function to calculate a ratio between pixels and viewport widths, this will make the base font size grow at the correct rate relative to the screen width.</p>
+				</div>
 		
 				<div>
 					<h3 id="605406hkfgkh" class="heading-3">Heading 3 2 jljklajskajskjksjaks</h3>
@@ -555,7 +556,7 @@ def train_step(x, y):
 				<div class="video-container">
 					<iframe class="video-player" src="https://replit.com/@ctjlewis/BurnsidesLemma?embed=true"></iframe>
 				</div>
-				<div class="caption">Repl for burnside Lemma</div>
+				<div class="block-caption">Repl for burnside Lemma</div>
 		
 				<div class="quote">
 					<p>Success! Some text...</p>
@@ -608,7 +609,7 @@ def train_step(x, y):
 						Your browser does not support the audio element.
 					</audio>			  
 				</div>
-				<div class="caption">The famous Einstien podcast</div>
+				<div class="block-caption">The famous Einstien podcast</div>
 
 			</section>
 				<section class="text-container-section" id="605406hkfgkh" >
@@ -762,7 +763,7 @@ def train_step(x, y):
 							</tbody>
 						</table>
 					</div>
-					<div class="caption">Table for Data</div>
+					<div class="block-caption">Table for Data</div>
 
 					<div>
 						<hr class="horizontal-divider">
@@ -848,7 +849,9 @@ def train_step(x, y):
 						<p class="text-paragraph">If you want to customize the learning algorithm of your model $\frac{1}{2}$ while still leveraging the convenience of fit() (for instance, to train a GAN using fit()), you can subclass the Model class and implement your own train_step() method, which is called repeatedly during fit(). This is covered in the guide Customizing what happens in fit().</p>
 					</div>
 			
-					<p>The formula $a^2+b^2=c^2$ will be rendered inline, but $$a^2+b^2=c^2$$ will be rendered as a block element.</p>
+					<div>
+						<p class="text-paragraph">The formula $a^2+b^2=c^2$ will be rendered inline, but $$a^2+b^2=c^2$$ will be rendered as a block element.</p>
+					</div>
 			
 					<div>
 						<hr class="horizontal-divider">
@@ -907,17 +910,15 @@ def train_step(x, y):
 							</button>
 						</div>
 					</div>
-					<div class="caption">The famous Schrodinger Equation. The famous Schrodinger Equation. The famous Schrodinger Equation. The famous Schrodinger Equation</div>
+					<div class="block-caption">The famous Schrodinger Equation. The famous Schrodinger Equation. The famous Schrodinger Equation. The famous Schrodinger Equation</div>
 
-
-
-					<h2> Final File Icon Selection </h2>
 
 
 					<a class="file-link" target="_blank" href="scrapper_out/carbon.png">
 						<div class="file-container">
 							<div class="file-icon">
-								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEh0lEQVR4nO2bXWgcVRTH/+fO7CZ1TTbZZltXtHWlmkRfLDUtiB8klGhiitWl9CEIFVrxQfriWwWhgoog+qAUoeCTIrpIETS0KrYq2NZYpRUsja2SGtGitMHsYnZ35l4fltnstLvJmendTTKZ39OdmXvux3/uPefe+QBCQlY05NVgaGi0vUSFvSBsB9ADIKapLaXNYtW3L7WmHuJk3lf486tx+7/7ABQBnIWij6wY3jqWzea8VOpJgMHhzBZJdAhAyosdl4hpFsei66KcvMPFi8WSZbnyEjBlE2W+/CT7HbdOwc04uC3TI4mOoEGdN00TmcdHWJ0HgCe2j0RN03SdU8AtQqnPBrdletj1cjNKKQ4AKg4AbW03Ys9TT2LLvRuRSHRyi+Dx6RlWtt27RrF71yguX76CE+OncPCdd5HL5wEgXm4rBjjlsEbA1kd39gKqHwAMw8ArLz6PocEB/Z33QSLRieGHt+Ll/fsghNMd1V9u88Iwp4B8wEn1bdqI7js2eG5oo+ntuRN9m+6ZO0HW/Rw7ngBKrXGS6fW3emxa80jftm7uQNJajg1PADHnK8wI2200nUgkUn1ocGzYUWA5oJSqpIlIzZO1QqAEqEZCrUABWF12EygBVJUCpHhyBEoAPyxdlw4AyU7g2Z2AVMCBD4G/r8ybvdoJYtk7wa4O4IWngd40cPftwP5ngLUJ7dUsPQHWp4BU17UddgS5aXU5Tw1cA4AZBZbeFHh1b9mbGzXuTbITeOO5+rZVfZbEc4JLTwCxwKA0WAs8fnVaS1tkXGFQLncn2CQCJcBVUTAcARyCJYCPKBAoAUIn6AOt6wDblpjOzcKWPvalDAxB6GhrhVFnreBye4vhBAslu2GdBwBbKhSKttYytQrQEjHq3h0dGEKgJVp/Jeh6JMZ8PKJ1ChiGwOr4Kp1FNpxgOUFXGFyBUcDlAyXPGQVKAD9o3w7PFi0wxfeMEITWaP0m+3kkplWA2aKFf/MFnUXWZD4RvBKoKeDnzZDWEeDcGcuWOoutYBqCffclcx5q9wE6h2czWPFTIFAC+CFQAix6GJRSYTo369sJCkGIx1oRMd33xdlmK6Dm9etB6wgoWvZ1RQApFQol65rzzja73nWHRV8KR00DZq03OkyEILTU+ATH2WbXu17Bx2ZI6xQQgpBo178dbuQ2O7BOkBCGQRaBEsAdBcPnASwCJkBVFFiJL0bCvYAPeAJIVJZflqX3xYROSlb1KlHWXzJWwfxYWl1ykpMXf/fWqiYyOTlVSRPhL44NSwBB+MZJnxz/Ab+c/9Vz4xrNj6d/wsT5C85hKapajnPsWF8cXZg4+0+6+64HCUgrpXD85PdIJruwJtl19SfqTWdmJocvjn6N1998G8ViqXxS4b0jYx+8z7Fn/zXW/8iObsNQJwB0VIyJEIvd4LHJesnl8q5jAqZKivqOjWVZU8DTb3MDIzs2C6UOAbjZi13TIJyzLXrs6OHsOa6Jp4/ufpv4+Y9U74aDJowZUtQOQhwA+1e3BjEN0CkAr0Vkfs/nhz++tKBFSEiIw//bwHNNwJUmSQAAAABJRU5ErkJggg==">
+								<img style="display: none;" width="30" height="30" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEh0lEQVR4nO2bXWgcVRTH/+fO7CZ1TTbZZltXtHWlmkRfLDUtiB8klGhiitWl9CEIFVrxQfriWwWhgoog+qAUoeCTIrpIETS0KrYq2NZYpRUsja2SGtGitMHsYnZ35l4fltnstLvJmendTTKZ39OdmXvux3/uPefe+QBCQlY05NVgaGi0vUSFvSBsB9ADIKapLaXNYtW3L7WmHuJk3lf486tx+7/7ABQBnIWij6wY3jqWzea8VOpJgMHhzBZJdAhAyosdl4hpFsei66KcvMPFi8WSZbnyEjBlE2W+/CT7HbdOwc04uC3TI4mOoEGdN00TmcdHWJ0HgCe2j0RN03SdU8AtQqnPBrdletj1cjNKKQ4AKg4AbW03Ys9TT2LLvRuRSHRyi+Dx6RlWtt27RrF71yguX76CE+OncPCdd5HL5wEgXm4rBjjlsEbA1kd39gKqHwAMw8ArLz6PocEB/Z33QSLRieGHt+Ll/fsghNMd1V9u88Iwp4B8wEn1bdqI7js2eG5oo+ntuRN9m+6ZO0HW/Rw7ngBKrXGS6fW3emxa80jftm7uQNJajg1PADHnK8wI2200nUgkUn1ocGzYUWA5oJSqpIlIzZO1QqAEqEZCrUABWF12EygBVJUCpHhyBEoAPyxdlw4AyU7g2Z2AVMCBD4G/r8ybvdoJYtk7wa4O4IWngd40cPftwP5ngLUJ7dUsPQHWp4BU17UddgS5aXU5Tw1cA4AZBZbeFHh1b9mbGzXuTbITeOO5+rZVfZbEc4JLTwCxwKA0WAs8fnVaS1tkXGFQLncn2CQCJcBVUTAcARyCJYCPKBAoAUIn6AOt6wDblpjOzcKWPvalDAxB6GhrhVFnreBye4vhBAslu2GdBwBbKhSKttYytQrQEjHq3h0dGEKgJVp/Jeh6JMZ8PKJ1ChiGwOr4Kp1FNpxgOUFXGFyBUcDlAyXPGQVKAD9o3w7PFi0wxfeMEITWaP0m+3kkplWA2aKFf/MFnUXWZD4RvBKoKeDnzZDWEeDcGcuWOoutYBqCffclcx5q9wE6h2czWPFTIFAC+CFQAix6GJRSYTo369sJCkGIx1oRMd33xdlmK6Dm9etB6wgoWvZ1RQApFQol65rzzja73nWHRV8KR00DZq03OkyEILTU+ATH2WbXu17Bx2ZI6xQQgpBo178dbuQ2O7BOkBCGQRaBEsAdBcPnASwCJkBVFFiJL0bCvYAPeAJIVJZflqX3xYROSlb1KlHWXzJWwfxYWl1ykpMXf/fWqiYyOTlVSRPhL44NSwBB+MZJnxz/Ab+c/9Vz4xrNj6d/wsT5C85hKapajnPsWF8cXZg4+0+6+64HCUgrpXD85PdIJruwJtl19SfqTWdmJocvjn6N1998G8ViqXxS4b0jYx+8z7Fn/zXW/8iObsNQJwB0VIyJEIvd4LHJesnl8q5jAqZKivqOjWVZU8DTb3MDIzs2C6UOAbjZi13TIJyzLXrs6OHsOa6Jp4/ufpv4+Y9U74aDJowZUtQOQhwA+1e3BjEN0CkAr0Vkfs/nhz++tKBFSEiIw//bwHNNwJUmSQAAAABJRU5ErkJggg==">
+								<img width="30" height="30" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEh0lEQVR4nO2bXWgcVRTH/+fO7CZ1TTbZZltXtHWlmkRfLDUtiB8klGhiitWl9CEIFVrxQfriWwWhgoog+qAUoeCTIrpIETS0KrYq2NZYpRUsja2SGtGitMHsYnZ35l4fltnstLvJmendTTKZ39OdmXvux3/uPefe+QBCQlY05NVgaGi0vUSFvSBsB9ADIKapLaXNYtW3L7WmHuJk3lf486tx+7/7ABQBnIWij6wY3jqWzea8VOpJgMHhzBZJdAhAyosdl4hpFsei66KcvMPFi8WSZbnyEjBlE2W+/CT7HbdOwc04uC3TI4mOoEGdN00TmcdHWJ0HgCe2j0RN03SdU8AtQqnPBrdletj1cjNKKQ4AKg4AbW03Ys9TT2LLvRuRSHRyi+Dx6RlWtt27RrF71yguX76CE+OncPCdd5HL5wEgXm4rBjjlsEbA1kd39gKqHwAMw8ArLz6PocEB/Z33QSLRieGHt+Ll/fsghNMd1V9u88Iwp4B8wEn1bdqI7js2eG5oo+ntuRN9m+6ZO0HW/Rw7ngBKrXGS6fW3emxa80jftm7uQNJajg1PADHnK8wI2200nUgkUn1ocGzYUWA5oJSqpIlIzZO1QqAEqEZCrUABWF12EygBVJUCpHhyBEoAPyxdlw4AyU7g2Z2AVMCBD4G/r8ybvdoJYtk7wa4O4IWngd40cPftwP5ngLUJ7dUsPQHWp4BU17UddgS5aXU5Tw1cA4AZBZbeFHh1b9mbGzXuTbITeOO5+rZVfZbEc4JLTwCxwKA0WAs8fnVaS1tkXGFQLncn2CQCJcBVUTAcARyCJYCPKBAoAUIn6AOt6wDblpjOzcKWPvalDAxB6GhrhVFnreBye4vhBAslu2GdBwBbKhSKttYytQrQEjHq3h0dGEKgJVp/Jeh6JMZ8PKJ1ChiGwOr4Kp1FNpxgOUFXGFyBUcDlAyXPGQVKAD9o3w7PFi0wxfeMEITWaP0m+3kkplWA2aKFf/MFnUXWZD4RvBKoKeDnzZDWEeDcGcuWOoutYBqCffclcx5q9wE6h2czWPFTIFAC+CFQAix6GJRSYTo369sJCkGIx1oRMd33xdlmK6Dm9etB6wgoWvZ1RQApFQol65rzzja73nWHRV8KR00DZq03OkyEILTU+ATH2WbXu17Bx2ZI6xQQgpBo178dbuQ2O7BOkBCGQRaBEsAdBcPnASwCJkBVFFiJL0bCvYAPeAJIVJZflqX3xYROSlb1KlHWXzJWwfxYWl1ykpMXf/fWqiYyOTlVSRPhL44NSwBB+MZJnxz/Ab+c/9Vz4xrNj6d/wsT5C85hKapajnPsWF8cXZg4+0+6+64HCUgrpXD85PdIJruwJtl19SfqTWdmJocvjn6N1998G8ViqXxS4b0jYx+8z7Fn/zXW/8iObsNQJwB0VIyJEIvd4LHJesnl8q5jAqZKivqOjWVZU8DTb3MDIzs2C6UOAbjZi13TIJyzLXrs6OHsOa6Jp4/ufpv4+Y9U74aDJowZUtQOQhwA+1e3BjEN0CkAr0Vkfs/nhz++tKBFSEiIw//bwHNNwJUmSQAAAABJRU5ErkJggg==">
 							</div>
 							<div class="file-reference">
 								Assembler Challenge.pdf
@@ -929,7 +930,8 @@ def train_step(x, y):
 					<a class="file-link" target="_blank" href="scrapper_out/carbon.png">
 						<div class="file-container">
 							<div class="file-icon">
-								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEh0lEQVR4nO2bXWgcVRTH/+fO7CZ1TTbZZltXtHWlmkRfLDUtiB8klGhiitWl9CEIFVrxQfriWwWhgoog+qAUoeCTIrpIETS0KrYq2NZYpRUsja2SGtGitMHsYnZ35l4fltnstLvJmendTTKZ39OdmXvux3/uPefe+QBCQlY05NVgaGi0vUSFvSBsB9ADIKapLaXNYtW3L7WmHuJk3lf486tx+7/7ABQBnIWij6wY3jqWzea8VOpJgMHhzBZJdAhAyosdl4hpFsei66KcvMPFi8WSZbnyEjBlE2W+/CT7HbdOwc04uC3TI4mOoEGdN00TmcdHWJ0HgCe2j0RN03SdU8AtQqnPBrdletj1cjNKKQ4AKg4AbW03Ys9TT2LLvRuRSHRyi+Dx6RlWtt27RrF71yguX76CE+OncPCdd5HL5wEgXm4rBjjlsEbA1kd39gKqHwAMw8ArLz6PocEB/Z33QSLRieGHt+Ll/fsghNMd1V9u88Iwp4B8wEn1bdqI7js2eG5oo+ntuRN9m+6ZO0HW/Rw7ngBKrXGS6fW3emxa80jftm7uQNJajg1PADHnK8wI2200nUgkUn1ocGzYUWA5oJSqpIlIzZO1QqAEqEZCrUABWF12EygBVJUCpHhyBEoAPyxdlw4AyU7g2Z2AVMCBD4G/r8ybvdoJYtk7wa4O4IWngd40cPftwP5ngLUJ7dUsPQHWp4BU17UddgS5aXU5Tw1cA4AZBZbeFHh1b9mbGzXuTbITeOO5+rZVfZbEc4JLTwCxwKA0WAs8fnVaS1tkXGFQLncn2CQCJcBVUTAcARyCJYCPKBAoAUIn6AOt6wDblpjOzcKWPvalDAxB6GhrhVFnreBye4vhBAslu2GdBwBbKhSKttYytQrQEjHq3h0dGEKgJVp/Jeh6JMZ8PKJ1ChiGwOr4Kp1FNpxgOUFXGFyBUcDlAyXPGQVKAD9o3w7PFi0wxfeMEITWaP0m+3kkplWA2aKFf/MFnUXWZD4RvBKoKeDnzZDWEeDcGcuWOoutYBqCffclcx5q9wE6h2czWPFTIFAC+CFQAix6GJRSYTo369sJCkGIx1oRMd33xdlmK6Dm9etB6wgoWvZ1RQApFQol65rzzja73nWHRV8KR00DZq03OkyEILTU+ATH2WbXu17Bx2ZI6xQQgpBo178dbuQ2O7BOkBCGQRaBEsAdBcPnASwCJkBVFFiJL0bCvYAPeAJIVJZflqX3xYROSlb1KlHWXzJWwfxYWl1ykpMXf/fWqiYyOTlVSRPhL44NSwBB+MZJnxz/Ab+c/9Vz4xrNj6d/wsT5C85hKapajnPsWF8cXZg4+0+6+64HCUgrpXD85PdIJruwJtl19SfqTWdmJocvjn6N1998G8ViqXxS4b0jYx+8z7Fn/zXW/8iObsNQJwB0VIyJEIvd4LHJesnl8q5jAqZKivqOjWVZU8DTb3MDIzs2C6UOAbjZi13TIJyzLXrs6OHsOa6Jp4/ufpv4+Y9U74aDJowZUtQOQhwA+1e3BjEN0CkAr0Vkfs/nhz++tKBFSEiIw//bwHNNwJUmSQAAAABJRU5ErkJggg==">
+								<img style="display: none;" width="30" height="30" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEh0lEQVR4nO2bXWgcVRTH/+fO7CZ1TTbZZltXtHWlmkRfLDUtiB8klGhiitWl9CEIFVrxQfriWwWhgoog+qAUoeCTIrpIETS0KrYq2NZYpRUsja2SGtGitMHsYnZ35l4fltnstLvJmendTTKZ39OdmXvux3/uPefe+QBCQlY05NVgaGi0vUSFvSBsB9ADIKapLaXNYtW3L7WmHuJk3lf486tx+7/7ABQBnIWij6wY3jqWzea8VOpJgMHhzBZJdAhAyosdl4hpFsei66KcvMPFi8WSZbnyEjBlE2W+/CT7HbdOwc04uC3TI4mOoEGdN00TmcdHWJ0HgCe2j0RN03SdU8AtQqnPBrdletj1cjNKKQ4AKg4AbW03Ys9TT2LLvRuRSHRyi+Dx6RlWtt27RrF71yguX76CE+OncPCdd5HL5wEgXm4rBjjlsEbA1kd39gKqHwAMw8ArLz6PocEB/Z33QSLRieGHt+Ll/fsghNMd1V9u88Iwp4B8wEn1bdqI7js2eG5oo+ntuRN9m+6ZO0HW/Rw7ngBKrXGS6fW3emxa80jftm7uQNJajg1PADHnK8wI2200nUgkUn1ocGzYUWA5oJSqpIlIzZO1QqAEqEZCrUABWF12EygBVJUCpHhyBEoAPyxdlw4AyU7g2Z2AVMCBD4G/r8ybvdoJYtk7wa4O4IWngd40cPftwP5ngLUJ7dUsPQHWp4BU17UddgS5aXU5Tw1cA4AZBZbeFHh1b9mbGzXuTbITeOO5+rZVfZbEc4JLTwCxwKA0WAs8fnVaS1tkXGFQLncn2CQCJcBVUTAcARyCJYCPKBAoAUIn6AOt6wDblpjOzcKWPvalDAxB6GhrhVFnreBye4vhBAslu2GdBwBbKhSKttYytQrQEjHq3h0dGEKgJVp/Jeh6JMZ8PKJ1ChiGwOr4Kp1FNpxgOUFXGFyBUcDlAyXPGQVKAD9o3w7PFi0wxfeMEITWaP0m+3kkplWA2aKFf/MFnUXWZD4RvBKoKeDnzZDWEeDcGcuWOoutYBqCffclcx5q9wE6h2czWPFTIFAC+CFQAix6GJRSYTo369sJCkGIx1oRMd33xdlmK6Dm9etB6wgoWvZ1RQApFQol65rzzja73nWHRV8KR00DZq03OkyEILTU+ATH2WbXu17Bx2ZI6xQQgpBo178dbuQ2O7BOkBCGQRaBEsAdBcPnASwCJkBVFFiJL0bCvYAPeAJIVJZflqX3xYROSlb1KlHWXzJWwfxYWl1ykpMXf/fWqiYyOTlVSRPhL44NSwBB+MZJnxz/Ab+c/9Vz4xrNj6d/wsT5C85hKapajnPsWF8cXZg4+0+6+64HCUgrpXD85PdIJruwJtl19SfqTWdmJocvjn6N1998G8ViqXxS4b0jYx+8z7Fn/zXW/8iObsNQJwB0VIyJEIvd4LHJesnl8q5jAqZKivqOjWVZU8DTb3MDIzs2C6UOAbjZi13TIJyzLXrs6OHsOa6Jp4/ufpv4+Y9U74aDJowZUtQOQhwA+1e3BjEN0CkAr0Vkfs/nhz++tKBFSEiIw//bwHNNwJUmSQAAAABJRU5ErkJggg==">
+								<img width="30" height="30" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEh0lEQVR4nO2bXWgcVRTH/+fO7CZ1TTbZZltXtHWlmkRfLDUtiB8klGhiitWl9CEIFVrxQfriWwWhgoog+qAUoeCTIrpIETS0KrYq2NZYpRUsja2SGtGitMHsYnZ35l4fltnstLvJmendTTKZ39OdmXvux3/uPefe+QBCQlY05NVgaGi0vUSFvSBsB9ADIKapLaXNYtW3L7WmHuJk3lf486tx+7/7ABQBnIWij6wY3jqWzea8VOpJgMHhzBZJdAhAyosdl4hpFsei66KcvMPFi8WSZbnyEjBlE2W+/CT7HbdOwc04uC3TI4mOoEGdN00TmcdHWJ0HgCe2j0RN03SdU8AtQqnPBrdletj1cjNKKQ4AKg4AbW03Ys9TT2LLvRuRSHRyi+Dx6RlWtt27RrF71yguX76CE+OncPCdd5HL5wEgXm4rBjjlsEbA1kd39gKqHwAMw8ArLz6PocEB/Z33QSLRieGHt+Ll/fsghNMd1V9u88Iwp4B8wEn1bdqI7js2eG5oo+ntuRN9m+6ZO0HW/Rw7ngBKrXGS6fW3emxa80jftm7uQNJajg1PADHnK8wI2200nUgkUn1ocGzYUWA5oJSqpIlIzZO1QqAEqEZCrUABWF12EygBVJUCpHhyBEoAPyxdlw4AyU7g2Z2AVMCBD4G/r8ybvdoJYtk7wa4O4IWngd40cPftwP5ngLUJ7dUsPQHWp4BU17UddgS5aXU5Tw1cA4AZBZbeFHh1b9mbGzXuTbITeOO5+rZVfZbEc4JLTwCxwKA0WAs8fnVaS1tkXGFQLncn2CQCJcBVUTAcARyCJYCPKBAoAUIn6AOt6wDblpjOzcKWPvalDAxB6GhrhVFnreBye4vhBAslu2GdBwBbKhSKttYytQrQEjHq3h0dGEKgJVp/Jeh6JMZ8PKJ1ChiGwOr4Kp1FNpxgOUFXGFyBUcDlAyXPGQVKAD9o3w7PFi0wxfeMEITWaP0m+3kkplWA2aKFf/MFnUXWZD4RvBKoKeDnzZDWEeDcGcuWOoutYBqCffclcx5q9wE6h2czWPFTIFAC+CFQAix6GJRSYTo369sJCkGIx1oRMd33xdlmK6Dm9etB6wgoWvZ1RQApFQol65rzzja73nWHRV8KR00DZq03OkyEILTU+ATH2WbXu17Bx2ZI6xQQgpBo178dbuQ2O7BOkBCGQRaBEsAdBcPnASwCJkBVFFiJL0bCvYAPeAJIVJZflqX3xYROSlb1KlHWXzJWwfxYWl1ykpMXf/fWqiYyOTlVSRPhL44NSwBB+MZJnxz/Ab+c/9Vz4xrNj6d/wsT5C85hKapajnPsWF8cXZg4+0+6+64HCUgrpXD85PdIJruwJtl19SfqTWdmJocvjn6N1998G8ViqXxS4b0jYx+8z7Fn/zXW/8iObsNQJwB0VIyJEIvd4LHJesnl8q5jAqZKivqOjWVZU8DTb3MDIzs2C6UOAbjZi13TIJyzLXrs6OHsOa6Jp4/ufpv4+Y9U74aDJowZUtQOQhwA+1e3BjEN0CkAr0Vkfs/nhz++tKBFSEiIw//bwHNNwJUmSQAAAABJRU5ErkJggg==">
 							</div>
 							<div class="file-reference">
 								Assembler Challenge.pdf
@@ -941,13 +943,49 @@ def train_step(x, y):
 					<a class="file-link" target="_blank" href="scrapper_out/carbon.png">
 						<div class="file-container">
 							<div class="file-icon">
-								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEh0lEQVR4nO2bXWgcVRTH/+fO7CZ1TTbZZltXtHWlmkRfLDUtiB8klGhiitWl9CEIFVrxQfriWwWhgoog+qAUoeCTIrpIETS0KrYq2NZYpRUsja2SGtGitMHsYnZ35l4fltnstLvJmendTTKZ39OdmXvux3/uPefe+QBCQlY05NVgaGi0vUSFvSBsB9ADIKapLaXNYtW3L7WmHuJk3lf486tx+7/7ABQBnIWij6wY3jqWzea8VOpJgMHhzBZJdAhAyosdl4hpFsei66KcvMPFi8WSZbnyEjBlE2W+/CT7HbdOwc04uC3TI4mOoEGdN00TmcdHWJ0HgCe2j0RN03SdU8AtQqnPBrdletj1cjNKKQ4AKg4AbW03Ys9TT2LLvRuRSHRyi+Dx6RlWtt27RrF71yguX76CE+OncPCdd5HL5wEgXm4rBjjlsEbA1kd39gKqHwAMw8ArLz6PocEB/Z33QSLRieGHt+Ll/fsghNMd1V9u88Iwp4B8wEn1bdqI7js2eG5oo+ntuRN9m+6ZO0HW/Rw7ngBKrXGS6fW3emxa80jftm7uQNJajg1PADHnK8wI2200nUgkUn1ocGzYUWA5oJSqpIlIzZO1QqAEqEZCrUABWF12EygBVJUCpHhyBEoAPyxdlw4AyU7g2Z2AVMCBD4G/r8ybvdoJYtk7wa4O4IWngd40cPftwP5ngLUJ7dUsPQHWp4BU17UddgS5aXU5Tw1cA4AZBZbeFHh1b9mbGzXuTbITeOO5+rZVfZbEc4JLTwCxwKA0WAs8fnVaS1tkXGFQLncn2CQCJcBVUTAcARyCJYCPKBAoAUIn6AOt6wDblpjOzcKWPvalDAxB6GhrhVFnreBye4vhBAslu2GdBwBbKhSKttYytQrQEjHq3h0dGEKgJVp/Jeh6JMZ8PKJ1ChiGwOr4Kp1FNpxgOUFXGFyBUcDlAyXPGQVKAD9o3w7PFi0wxfeMEITWaP0m+3kkplWA2aKFf/MFnUXWZD4RvBKoKeDnzZDWEeDcGcuWOoutYBqCffclcx5q9wE6h2czWPFTIFAC+CFQAix6GJRSYTo369sJCkGIx1oRMd33xdlmK6Dm9etB6wgoWvZ1RQApFQol65rzzja73nWHRV8KR00DZq03OkyEILTU+ATH2WbXu17Bx2ZI6xQQgpBo178dbuQ2O7BOkBCGQRaBEsAdBcPnASwCJkBVFFiJL0bCvYAPeAJIVJZflqX3xYROSlb1KlHWXzJWwfxYWl1ykpMXf/fWqiYyOTlVSRPhL44NSwBB+MZJnxz/Ab+c/9Vz4xrNj6d/wsT5C85hKapajnPsWF8cXZg4+0+6+64HCUgrpXD85PdIJruwJtl19SfqTWdmJocvjn6N1998G8ViqXxS4b0jYx+8z7Fn/zXW/8iObsNQJwB0VIyJEIvd4LHJesnl8q5jAqZKivqOjWVZU8DTb3MDIzs2C6UOAbjZi13TIJyzLXrs6OHsOa6Jp4/ufpv4+Y9U74aDJowZUtQOQhwA+1e3BjEN0CkAr0Vkfs/nhz++tKBFSEiIw//bwHNNwJUmSQAAAABJRU5ErkJggg==">
+								<img style="display: none;" width="30" height="30" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEh0lEQVR4nO2bXWgcVRTH/+fO7CZ1TTbZZltXtHWlmkRfLDUtiB8klGhiitWl9CEIFVrxQfriWwWhgoog+qAUoeCTIrpIETS0KrYq2NZYpRUsja2SGtGitMHsYnZ35l4fltnstLvJmendTTKZ39OdmXvux3/uPefe+QBCQlY05NVgaGi0vUSFvSBsB9ADIKapLaXNYtW3L7WmHuJk3lf486tx+7/7ABQBnIWij6wY3jqWzea8VOpJgMHhzBZJdAhAyosdl4hpFsei66KcvMPFi8WSZbnyEjBlE2W+/CT7HbdOwc04uC3TI4mOoEGdN00TmcdHWJ0HgCe2j0RN03SdU8AtQqnPBrdletj1cjNKKQ4AKg4AbW03Ys9TT2LLvRuRSHRyi+Dx6RlWtt27RrF71yguX76CE+OncPCdd5HL5wEgXm4rBjjlsEbA1kd39gKqHwAMw8ArLz6PocEB/Z33QSLRieGHt+Ll/fsghNMd1V9u88Iwp4B8wEn1bdqI7js2eG5oo+ntuRN9m+6ZO0HW/Rw7ngBKrXGS6fW3emxa80jftm7uQNJajg1PADHnK8wI2200nUgkUn1ocGzYUWA5oJSqpIlIzZO1QqAEqEZCrUABWF12EygBVJUCpHhyBEoAPyxdlw4AyU7g2Z2AVMCBD4G/r8ybvdoJYtk7wa4O4IWngd40cPftwP5ngLUJ7dUsPQHWp4BU17UddgS5aXU5Tw1cA4AZBZbeFHh1b9mbGzXuTbITeOO5+rZVfZbEc4JLTwCxwKA0WAs8fnVaS1tkXGFQLncn2CQCJcBVUTAcARyCJYCPKBAoAUIn6AOt6wDblpjOzcKWPvalDAxB6GhrhVFnreBye4vhBAslu2GdBwBbKhSKttYytQrQEjHq3h0dGEKgJVp/Jeh6JMZ8PKJ1ChiGwOr4Kp1FNpxgOUFXGFyBUcDlAyXPGQVKAD9o3w7PFi0wxfeMEITWaP0m+3kkplWA2aKFf/MFnUXWZD4RvBKoKeDnzZDWEeDcGcuWOoutYBqCffclcx5q9wE6h2czWPFTIFAC+CFQAix6GJRSYTo369sJCkGIx1oRMd33xdlmK6Dm9etB6wgoWvZ1RQApFQol65rzzja73nWHRV8KR00DZq03OkyEILTU+ATH2WbXu17Bx2ZI6xQQgpBo178dbuQ2O7BOkBCGQRaBEsAdBcPnASwCJkBVFFiJL0bCvYAPeAJIVJZflqX3xYROSlb1KlHWXzJWwfxYWl1ykpMXf/fWqiYyOTlVSRPhL44NSwBB+MZJnxz/Ab+c/9Vz4xrNj6d/wsT5C85hKapajnPsWF8cXZg4+0+6+64HCUgrpXD85PdIJruwJtl19SfqTWdmJocvjn6N1998G8ViqXxS4b0jYx+8z7Fn/zXW/8iObsNQJwB0VIyJEIvd4LHJesnl8q5jAqZKivqOjWVZU8DTb3MDIzs2C6UOAbjZi13TIJyzLXrs6OHsOa6Jp4/ufpv4+Y9U74aDJowZUtQOQhwA+1e3BjEN0CkAr0Vkfs/nhz++tKBFSEiIw//bwHNNwJUmSQAAAABJRU5ErkJggg==">
+								<img width="30" height="30" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEh0lEQVR4nO2bXWgcVRTH/+fO7CZ1TTbZZltXtHWlmkRfLDUtiB8klGhiitWl9CEIFVrxQfriWwWhgoog+qAUoeCTIrpIETS0KrYq2NZYpRUsja2SGtGitMHsYnZ35l4fltnstLvJmendTTKZ39OdmXvux3/uPefe+QBCQlY05NVgaGi0vUSFvSBsB9ADIKapLaXNYtW3L7WmHuJk3lf486tx+7/7ABQBnIWij6wY3jqWzea8VOpJgMHhzBZJdAhAyosdl4hpFsei66KcvMPFi8WSZbnyEjBlE2W+/CT7HbdOwc04uC3TI4mOoEGdN00TmcdHWJ0HgCe2j0RN03SdU8AtQqnPBrdletj1cjNKKQ4AKg4AbW03Ys9TT2LLvRuRSHRyi+Dx6RlWtt27RrF71yguX76CE+OncPCdd5HL5wEgXm4rBjjlsEbA1kd39gKqHwAMw8ArLz6PocEB/Z33QSLRieGHt+Ll/fsghNMd1V9u88Iwp4B8wEn1bdqI7js2eG5oo+ntuRN9m+6ZO0HW/Rw7ngBKrXGS6fW3emxa80jftm7uQNJajg1PADHnK8wI2200nUgkUn1ocGzYUWA5oJSqpIlIzZO1QqAEqEZCrUABWF12EygBVJUCpHhyBEoAPyxdlw4AyU7g2Z2AVMCBD4G/r8ybvdoJYtk7wa4O4IWngd40cPftwP5ngLUJ7dUsPQHWp4BU17UddgS5aXU5Tw1cA4AZBZbeFHh1b9mbGzXuTbITeOO5+rZVfZbEc4JLTwCxwKA0WAs8fnVaS1tkXGFQLncn2CQCJcBVUTAcARyCJYCPKBAoAUIn6AOt6wDblpjOzcKWPvalDAxB6GhrhVFnreBye4vhBAslu2GdBwBbKhSKttYytQrQEjHq3h0dGEKgJVp/Jeh6JMZ8PKJ1ChiGwOr4Kp1FNpxgOUFXGFyBUcDlAyXPGQVKAD9o3w7PFi0wxfeMEITWaP0m+3kkplWA2aKFf/MFnUXWZD4RvBKoKeDnzZDWEeDcGcuWOoutYBqCffclcx5q9wE6h2czWPFTIFAC+CFQAix6GJRSYTo369sJCkGIx1oRMd33xdlmK6Dm9etB6wgoWvZ1RQApFQol65rzzja73nWHRV8KR00DZq03OkyEILTU+ATH2WbXu17Bx2ZI6xQQgpBo178dbuQ2O7BOkBCGQRaBEsAdBcPnASwCJkBVFFiJL0bCvYAPeAJIVJZflqX3xYROSlb1KlHWXzJWwfxYWl1ykpMXf/fWqiYyOTlVSRPhL44NSwBB+MZJnxz/Ab+c/9Vz4xrNj6d/wsT5C85hKapajnPsWF8cXZg4+0+6+64HCUgrpXD85PdIJruwJtl19SfqTWdmJocvjn6N1998G8ViqXxS4b0jYx+8z7Fn/zXW/8iObsNQJwB0VIyJEIvd4LHJesnl8q5jAqZKivqOjWVZU8DTb3MDIzs2C6UOAbjZi13TIJyzLXrs6OHsOa6Jp4/ufpv4+Y9U74aDJowZUtQOQhwA+1e3BjEN0CkAr0Vkfs/nhz++tKBFSEiIw//bwHNNwJUmSQAAAABJRU5ErkJggg==">
 							</div>
 							<div class="file-reference">
 								Assembler Challenge.pdf
 							</div>
 						</div>
 					</a>
+
+					<a class="file-link" target="_blank" href="scrapper_out/carbon.png">
+						<div class="file-container">
+							<div class="file-icon">
+								<img width="30" height="30" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAACvUlEQVR4nO2bz0uUQRyHn5l3dYkUWyWEgk5dsohyL0UWRacOHaJblw518wcd+gP8G9KCrl4L7NahoEMSREYqSRBJkBCh6e66WWvrvtNhVzOU5l15p+/70jyXfXf4DvOZZ2eWHdgBz/+Naqp62Gi+Fs8BJ1Gq1U0kwGBQ5gkjuTfOxmgQXUB/sRetxsAcdZhnK2sYdYXRjscuB4km4FbhBDX1HGhzGWYHnEuIIMAoBkuTQC9ASwA9B0P2tLgJNPVJU6n+0eRUgl3AUDGPYRIgE8D1vir7211EqXP/WYbC6rZYziRoa0Vojm88Hu4OnU5+BwqN1yzKjDNQuhT3AHYBSm9OuS1r4h7fMra5Csw13mVR5hGDy5fjHMIuQJJ1PU+tdoHfElpBP4xTQrIFANzrcioh+QLAqYR0CABnEtIjAJxISJcAiF1C+gRArBLSKQBik5BeARCLhIybZDGhw2MMFTusdaG5jVJjQDt1CQ8YKEU6OyRbgFLjRPn1rbYdnupnh/6lPHe7Zv/WNXFboDW+jyRLkDlvK0rcCrjYU2PifcDP9d31X6nA97XGijAEtvrECTjUZbh2epezB57OaiY/Wue9SeK2wL/GC5AOII0XIB1AGi9AOoA0XoB0AGm8AOkA0ngB0gGk8QKkA0jjBUgHkMYLkA4gjRcgHUAaL0A6gDRegHQAabwA6QDSeAHSAaTxAqQDSOMFSAeQxi7AhOWNx2+V5i6ZSVD+sWVKKizZ6u0CtJrZePywoFlcSa6EhbJibnFLg2ba1ifqpalXQB7ql6aOHAjp3GuavXXoDgPLq4p3nzXV2mbbS0b3nbJ1jfAnKWWgcAPUBNBWrcHMfOK/Osro8GaUwmgzGclNE5izYF9S4him0GEfdzrfRilv/ursUuEMqDxKdWMSsgkUhtB8ITCvyeVeMKxC6UietPALDcncTIDBFv4AAAAASUVORK5CYII=">							</div>
+							<div class="file-reference">
+								Assembler Challenge.pdf
+							</div>
+						</div>
+					</a>
+
+
+					<div class="code-block">
+						<div class="code-snippet">
+							<script type="text/plain" class="language-html line-numbers match-braces code-block-prism"><div class="code-block">
+	<div class="code-snippet">
+		<pre class="line-numbers"><code class="language-python match-braces"></code></pre>
+	</div>
+	<div class="copy-code-clipboard">
+		<button class="btn-code-clipboard" onclick="copyCodeToClipboard(this.parentElement.previousElementSibling)">
+			<svg style="width:16px;height:16px;" viewBox="0 0 24 24">
+				<path fill="blue" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+			</svg>
+		</button>
+	</div>
+</div></script>
+						</div>
+						<div class="copy-code-clipboard">
+							<button class="btn-code-clipboard" onclick="copyCodeToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
 
 
 
