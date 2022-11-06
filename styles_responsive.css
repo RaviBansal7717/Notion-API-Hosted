@@ -31,6 +31,8 @@
     --size-clipboard-icon: 18px;
     --width-scrollbar: 6px;
     --height-scrollbar: 6px;
+    --width-sm-scrollbar: 3px;
+    --height-sm-scrollbar: 3px;
     --width-taskbar-icon: 42px;
     --height-taskbar-icon: 42px;
     --width-sm-taskbar-icon: 28px;
@@ -193,6 +195,9 @@ body {
     --color-scroll-track-toc: var(--core-color-teal-very-light);
     --color-scroll-thumb-toc: var(--core-color-teal-light);
 
+    --color-scroll-track-tweet: var(--core-color-teal-very-light);
+    --color-scroll-thumb-tweet: var(--core-color-teal-light);
+
     --color-icon-accordion: var(--core-color-black-main);
     --color-icon-standout: var(--core-color-purple-main);
 
@@ -265,6 +270,9 @@ body {
 
     --color-scroll-track-toc: var(--core-color-teal-very-light);
     --color-scroll-thumb-toc: var(--core-color-slateblue-main);
+
+    --color-scroll-track-tweet: var(--core-color-teal-very-light);
+    --color-scroll-thumb-tweet: var(--core-color-slateblue-main);
 
     --color-icon-accordion: var(--core-color-white-main);
     --color-icon-standout: var(--core-color-blue-very-dark);
@@ -527,6 +535,22 @@ body {
 .toc-items-container::-webkit-scrollbar-thumb
 {
 	background-color: var(--color-scroll-thumb-toc);
+}
+
+.tweet-container::-webkit-scrollbar-track
+{
+	background-color: var(--color-scroll-track-tweet);
+}
+
+.tweet-container::-webkit-scrollbar
+{
+	width: var(--width-scrollbar);
+	height: var(--height-scrollbar);
+}
+
+.tweet-container::-webkit-scrollbar-thumb
+{
+	background-color: var(--color-scroll-thumb-tweet);
 }
 
 
@@ -1314,9 +1338,17 @@ tbody tr:hover {
     transform: scale(1.2);
 }
 
+.tweet-container {
+    margin-top: var(--gap-blocks-vertical);
+    max-height: 450px;
+    overflow-y: auto;
+}
+
 .tweet-block {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    /* margin-top: 30px;
+    margin-bottom: 30px; */
+    margin-top: 3px;
+    margin-bottom: 3px;
     /* background-color: mediumslateblue; */
     display: flex;
     align-items: center;
@@ -1365,11 +1397,24 @@ body.dark-mode pre[class*=language-]{
         max-height: var(--height-max-sm-math);
     }
 
-    .block-equation::-webkit-scrollbar {
-	    width: 3px;
-	    height: 3px;
+    .block-equation::-webkit-scrollbar
+    {
+        width: var(--width-sm-scrollbar);
+        height: var(--height-sm-scrollbar);
     }
-
+    
+    .code-block-prism::-webkit-scrollbar
+    {
+        width: var(--width-sm-scrollbar);
+        height: var(--height-sm-scrollbar);
+    }
+    
+    .table-block::-webkit-scrollbar
+    {
+        width: var(--width-sm-scrollbar);
+        height: var(--height-sm-scrollbar);
+    }
+    
     .table-of-contents-container {
         display: none;
     }

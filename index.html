@@ -387,10 +387,9 @@ def train_step(x, y):
 					<div class="block-caption">Instantiating an Optimizer in Python</div>
 
 
-
-
+				
 				<div class="image-block">
-					<img class="image-container" loading="lazy" src="scrapper_out/404.gif" alt="Text" onclick="openModal(this)" />
+					<img class="image-container lazy-load" data-src="scrapper_out/404.gif" alt="Text" onclick="openModal(this)" />
 				</div>
 				<div class="block-caption">A sample 404 gif</div>
 
@@ -402,24 +401,26 @@ def train_step(x, y):
 				<div>
 					<h2 class="heading-2">Heading 2 1 dsjsjdksjd</h2>
 				</div>
-	
+
+				
+				<button style="width: 50%; height: 40px; background-color: lightcoral;" onclick="lazyLoadResources()">Load Lazy Resources</button>
 		
 
 				<div class="image-block" id="box">
-					<img class="image-container" loading="lazy" src="scrapper_out/Image_75.png" alt="Text" onclick="openModal(this)" />
+					<img class="image-container lazy-load" data-src="scrapper_out/Image_75.png" alt="Text" onclick="openModal(this)" />
 				</div>
 		
 				<div class="image-block">
-					<img class="image-container" loading="lazy" src="scrapper_out/raycast-untitled.png" alt="Text" onclick="openModal(this)" />
+					<img class="image-container lazy-load" data-src="scrapper_out/raycast-untitled.png" alt="Text" onclick="openModal(this)" />
 				</div>
 		
 				<div class="video-container">
-					<iframe class="video-player" loading="lazy" src="https://www.youtube.com/embed/tgbNymZ7vqY" allow="fullscreen;"></iframe>
+					<iframe class="video-player lazy-load" data-src="https://www.youtube.com/embed/tgbNymZ7vqY" allow="fullscreen;"></iframe>
 				</div>
 				<div class="block-caption">CNNs for Vision Lecture 1</div>
 		
 				<div class="image-block">
-					<img class="image-container" loading="lazy" src="scrapper_out/CauchyIntegralFormula_ManimCE_v0.15.0.gif" alt="Text" onclick="openModal(this)" />
+					<img class="image-container lazy-load" data-src="scrapper_out/CauchyIntegralFormula_ManimCE_v0.15.0.gif" alt="Text" onclick="openModal(this)" />
 				</div>
 			
 			</section>
@@ -431,8 +432,8 @@ def train_step(x, y):
 
 				
 				<div class="video-container">
-					<video class="video-player" preload="none" autoplay="false" controls>
-						<source src="scrapper_out/CauchyIntegralFormula.mp4">
+					<video class="video-player lazy-load" preload="none" autoplay="false" controls>
+						<source data-src="scrapper_out/CauchyIntegralFormula.mp4">
 					</video>
 				</div>
 
@@ -554,7 +555,7 @@ def train_step(x, y):
 				</div>
 		
 				<div class="video-container">
-					<iframe class="video-player" src="https://replit.com/@ctjlewis/BurnsidesLemma?embed=true"></iframe>
+					<iframe class="video-player lazy-load" data-src="https://replit.com/@ctjlewis/BurnsidesLemma?embed=true"></iframe>
 				</div>
 				<div class="block-caption">Repl for burnside Lemma</div>
 		
@@ -603,9 +604,9 @@ def train_step(x, y):
 
 
 				<div class="audio-container">
-					<audio class="audio-player" controls>
-						<source src="horse.ogg" type="audio/ogg">
-						<source src="horse.mp3" type="audio/mpeg">
+					<audio class="audio-player lazy-load" controls>
+						<source data-src="scrapper_out/horse.ogv" type="audio/ogg">
+						<source data-src="scrapper_out/horse.mp3" type="audio/mpeg">
 						Your browser does not support the audio element.
 					</audio>			  
 				</div>
@@ -988,10 +989,34 @@ def train_step(x, y):
 					</div>
 
 
+					<div class="image-block">
+						<img class="image-container lazy-load" src="scrapper_out/placeholder_image.png" data-src="scrapper_out/404.gif" alt="Text" onclick="openModal(this)" />
+					</div>
+
+					<div class="tweet-container">
+						<div class="tweet-block lazy-load" data-src="https://twitter.com/omarsar0/status/1588883148657823744">
+						</div>
+					</div>
+
+					<!-- <img src="scrapper_out/placeholder_image.png"> -->
+						
+
+					<h1> Original embedded tweet from twitter</h1>
+					<div class="tweet-container">
+						<div class="tweet-block">
+							<blockquote class="twitter-tweet">
+								<p lang="en" dir="ltr">This new course by 
+									<a href="https://twitter.com/karpathy?ref_src=twsrc%5Etfw">@karpathy</a> is 🔥!<br><br>I like that it goes deep into how to implement and use neural networks. The content complements other courses where NN details are typically skipped.<a href="https://t.co/irhG0L14ZP">https://t.co/irhG0L14ZP</a> <a href="https://t.co/weSDs1o3lK">pic.twitter.com/weSDs1o3lK</a>
+								</p>&mdash; elvis (@omarsar0) 
+								<a href="https://twitter.com/omarsar0/status/1588883148657823744?ref_src=twsrc%5Etfw">November 5, 2022</a>
+							</blockquote> 
+							<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+						</div>
+					</div>
+
+
 
 				</section>
-
-
 
 
 			</div>
@@ -1176,7 +1201,7 @@ def train_step(x, y):
 				var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
 				var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 				var scrolled = (winScroll / height) * 100;
-				console.log("\nprogress : ", scrolled);
+				// console.log("\nprogress : ", scrolled);
 				document.getElementById("progressBar").style.width = scrolled + "%";
 			}
 
@@ -1275,6 +1300,7 @@ def train_step(x, y):
 
 			window.addEventListener("load", (event) => {
 				createObserver();
+				createLazyLoadObserver();
 			}, false);
 
 			function createObserver() {
@@ -1294,7 +1320,7 @@ def train_step(x, y):
 				entries.forEach((entry) => {
 					if(entry.isIntersecting) {
 						// console.log("Target : ", entry.target, " | ", entry.target.id);
-						console.log("Target : ", entry.target.id);
+						// console.log("Target : ", entry.target.id);
 						highlightActiveHeading(entry.target.id);
 					}
 				})
@@ -1303,7 +1329,7 @@ def train_step(x, y):
 			function highlightActiveHeading(id) {
 				tocNav = document.getElementsByClassName("toc-container")[0].getElementsByTagName("nav")[0];
 				navHeaders = Array.from(tocNav.getElementsByTagName("div"));
-				console.log("Id : ", id);
+				// console.log("Id : ", id);
 				navHeaders.forEach((element) => {
 					element.classList.remove("page-nav-active");
 					url = element.children[0].href;
@@ -1338,6 +1364,91 @@ def train_step(x, y):
 					document.getElementsByClassName("accordion-toc-container")[0].style.display = "none";
 				}
 			}
+
+			// function lazyLoadResources() {
+			// 	console.clear();
+			// 	console.log("\n\nLoading video");
+			// 	lazyLoadElements = document.getElementsByClassName("lazy-load");
+			// 	for (element of lazyLoadElements) {
+			// 		tag_name = element.nodeName.toLowerCase();
+			// 		if (tag_name === "video" || tag_name === "audio") {
+			// 			for (child of element.children) {
+			// 				if(typeof child.nodeName === "string" && child.nodeName.toLowerCase() === "source") {
+			// 					child.setAttribute("src", child.getAttribute("data-src"));
+			// 				}
+			// 			}
+			// 			element.load();
+			// 		} else {
+			// 			element.setAttribute("src", element.getAttribute("data-src"));
+			// 		}
+			// 	}
+			// 	console.log("\n\nDone Loading Lazy Resources");
+			// }
+
+
+			function createLazyLoadObserver() {
+				// console.clear();
+				console.log("Create Lazy Load Observer Invoked!!");
+				let options = {
+					root: null,
+					rootMargin: "0px 0px 0px 0px",
+					threshold: 0
+				}
+				let observer = new IntersectionObserver(handleLazyLoadIntersectCallback, options);
+				const elements = Array.from(document.querySelectorAll(".lazy-load"));
+				elements.forEach((element) => observer.observe(element));
+			}
+
+			function handleLazyLoadIntersectCallback(entries, observer) {
+				entries.forEach((entry) => {
+					if(entry.isIntersecting) {
+						tag_name = entry.target.nodeName.toLowerCase();
+						// console.log("\n**********************************Target : ", tag_name);
+						if (tag_name === "video" || tag_name === "audio") {
+							for (child of entry.target.children) {
+								if(typeof child.nodeName === "string" && child.nodeName.toLowerCase() === "source") {
+									child.setAttribute("src", child.getAttribute("data-src"));
+								}
+							}
+							entry.target.load();
+						} else if(entry.target.classList.contains("tweet-block")) {
+							createTwitterBlock(entry.target);
+						} else {
+							entry.target.setAttribute("src", entry.target.getAttribute("data-src"));
+						}
+
+						entry.target.classList.remove("lazy-load");
+						observer.unobserve(entry.target);
+					}
+				});
+			}
+
+			function createTwitterBlock(tweet_element) {
+				bq = document.createElement("blockquote");
+				bq.classList.add("twitter-tweet");
+
+				p = document.createElement("p");
+				p.setAttribute("lang", "en");
+				p.setAttribute("dir", "ltr");
+
+				a = document.createElement("a");
+				a.setAttribute("href", tweet_element.getAttribute("data-src"));
+
+				bq.appendChild(p);
+				bq.appendChild(a);
+
+				script = document.createElement("script");
+				script.setAttribute("src", "https://platform.twitter.com/widgets.js");
+				script.setAttribute("charset", "utf-8");
+				script.async = true;
+
+				tweet_element.insertAdjacentElement("beforeend", bq);
+				tweet_element.insertAdjacentElement("beforeend", script);
+			}
+
+
+
+
 
 		</script>
 
