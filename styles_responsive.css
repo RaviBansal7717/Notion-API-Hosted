@@ -1,33 +1,39 @@
+/* ################################################################################ 
+                CSS Global Variables for Colors, Fonts and Font Sizes
+   ################################################################################
+*/
+
 :root {
     --fsize-root-min: 14px;
     --fsize-root-max: 21px;
     --fsize-title: 2.7rem;
+    --fsize-sm-title: 2.2rem;
     --fsize-h1: 2.2rem;
+    --fsize-sm-h1: 2.0rem;
     --fsize-h2: 1.8rem;
+    --fsize-sm-h2: 1.6rem;
     --fsize-h3: 1.4rem;
+    --fsize-sm-h3: 1.2rem;
     --fsize-body: 0.9rem;
+    --fsize-sm-body: 0.85rem;
     --fsize-math: 0.92rem;
+    --fsize-sm-math: 0.82rem;
     --fsize-code: 0.85rem;
+    --fsize-sm-code: 0.8rem;
+    --fsize-table: 0.86rem;
+    --fsize-sm-table: 0.82rem;
+    --fsize-page-loader: 1.1rem;
+    --fsize-sm-page-loader: 1.05rem;
+    --fsize-nav-text: 0.82rem;
+    --fsize-sm-nav-text: 0.96rem;
     --fsize-quote: 0.92rem;
     --fsize-standout: 1.02rem;
-    --fsize-table: 0.86rem;
     --fsize-snackbar: 0.86rem;
-    --fsize-page-loader: 1.1rem;
     --fsize-creator: 1.2rem;
     --fsize-nav-title: 1.1rem;
-    --fsize-nav-text: 0.82rem;
     --fsize-file-link: 0.85rem;
     --fsize-hyperlink: 1.05rem;
-    --fsize-sm-title: 2.2rem;
-    --fsize-sm-h1: 2.0rem;
-    --fsize-sm-h2: 1.6rem;
-    --fsize-sm-h3: 1.2rem;
-    --fsize-sm-body: 0.85rem;
-    --fsize-sm-math: 0.82rem;
-    --fsize-sm-code: 0.8rem;
-    --fsize-sm-nav-text: 0.96rem;
-    --fsize-sm-table: 0.82rem;
-    --fsize-sm-page-loader: 1.05rem;
+    --fsize-sm-dropdown-text: 0.94rem;
     --size-clipboard-icon: 18px;
     --width-scrollbar: 6px;
     --height-scrollbar: 6px;
@@ -37,29 +43,30 @@
     --height-taskbar-icon: 42px;
     --width-sm-taskbar-icon: 28px;
     --height-sm-taskbar-icon: 28px;
+    --width-dropdown-icon: 36px;
+    --height-dropdown-icon: 36px;
+    --width-sm-dropdown-icon: 25px;
+    --height-sm-dropdown-icon: 25px;
+    --width-dropdown-item-icon: 26px;
+    --height-dropdown-item-icon: 26px;
+    --width-sm-dropdown-item-icon: 22px;
+    --height-sm-dropdown-item-icon: 22px;
     --width-icon: 32px;
     --height-icon: 32px;
     --width-sm-icon: 20px;
     --height-sm-icon: 20px;
-
     --height-max-math: 300px;
     --height-max-sm-math: 250px;
     --height-max-image: 500px;
     --height-max-sm-image: 250px;
     --height-max-video: 500px;
     --height-max-sm-video: 250px;
-
-
     --gap-left-math: 25px;
-
-
-
     --gap-blocks-horizontal: 10px;
     --gap-blocks-vertical: 25px;
     --gap-blocks-vertical-reduced: 20px;
     --gap-blocks-vertical-reduced-more: 15px;
     --gap-caption-vertical: 5px;
-
 
     --font-title: 'Alegreya SC', serif;
     --font-body: arial, sans-serif;
@@ -69,69 +76,39 @@
     --font-inline-code: 'Prompt', sans-serif;
     --font-math: 'IBM Plex Sans Hebrew', sans-serif;
 
-    /* --color-primary-main: #3949ab;
-    --color-primary-light: #6f74dd;
-    --color-primary-dark: #00227b;
-    --color-secondary-main: #00695c;
-    --color-secondary-light: #439889;
-    --color-secondary-dark: #003d33; */
-
-    /* --core-color-brown-light: #7b5e57;
-    --core-color-brown-main: #4e342e;
-    --core-color-brown-dark: #260e04; */
-
-
     --core-color-teal-very-light: #E0F2F1;
     --core-color-teal-light: #439889;
     --core-color-teal-main: #00695c;
     --core-color-teal-dark: #003d33;
-
     --core-color-purple-very-very-light: #faf5fb;
     --core-color-purple-very-light: #e6d4f7;
     --core-color-purple-light: #d3b3f1;
     --core-color-purple-main: #872bff;
     --core-color-purple-dark: #551a8b;
     --core-color-purple-very-dark: #2a0d45;
-
     --core-color-seagreen-light: #ddffdd;
     --core-color-seagreen-main: #04AA6D;
     --core-color-bisque-main: bisque;
     --core-color-slateblue-main: slateblue;
     --core-color-coral-main: coral;
-    /* --core-color-cornsilk-light: #fffbed; */
-
     --core-color-orangered-main: orangered;
     --core-color-whitesmoke-main: whitesmoke;
     --core-color-gray-light: #dddddd;
-
     --core-color-white-main: #ffffff;
     --core-color-black-main: #000000;
-
     --core-color-gray-main: #121212;
     --core-color-gray-light: #333333;
     --core-color-gray-blue: #292c35;
-
     --core-color-blue-very-dark: #00060a;
     --core-color-indigo-light: #6f74dd;
     --core-color-gold-light: #ffe973;
 }
 
 
-html {
-    scroll-behavior: smooth;
-    font-size: clamp(var(--fsize-root-min), var(--fsize-root-min) + 0.390625vw, var(--fsize-root-max));
-}
-
-body {
-    margin: 0px;
-    /* border: 5px solid purple; */
-    font-size: var(--fsize-body);
-    font-family: var(--font-body);
-    background-color: var(--color-bg-body);
-    color: var(--color-text-body);
-    /* margin-left: 0;
-    margin-right: 0; */
-}
+/* ################################################################################ 
+                    Color Palette for Dark and Light Modes
+   ################################################################################
+*/
 
 .light-mode {
     --color-bg-body: var(--core-color-white-main);
@@ -207,6 +184,14 @@ body {
 
     --color-text-snackbar: var(--core-color-black-main);
     --color-bg-snackbar: var(--core-color-purple-light);
+
+    --color-bg-scroll-top: var(--core-color-teal-main);
+    --color-fill-scroll-top: var(--core-color-white-main);
+
+    --color-bg-dropdown: var(--core-color-whitesmoke-main);
+    --color-fill-dropdown-top-icon: var(--core-color-slateblue-main);
+    --color-fill-dropdown-github-icon: var(--core-color-teal-main);
+    --color-hover-dropdown-item: var(--core-color-teal-very-light);
 }
 
 .dark-mode {
@@ -283,12 +268,39 @@ body {
 
     --color-text-snackbar: var(--core-color-whitesmoke-main);
     --color-bg-snackbar: var(--core-color-gray-light);
+
+    --color-bg-scroll-top: var(--core-color-slateblue-main);
+    --color-fill-scroll-top: var(--core-color-white-main);
+
+    --color-bg-dropdown: var(--core-color-gray-blue);
+    --color-fill-dropdown-top-icon: var(--core-color-slateblue-main);
+    --color-fill-dropdown-github-icon: var(--core-color-seagreen-main);
+    --color-hover-dropdown-item: var(--core-color-gray-main);
 }
 
-/* body.dark-mode {
-    color: white;
-    background-color: ;
-} */
+html {
+    scroll-behavior: smooth;
+    font-size: clamp(var(--fsize-root-min), var(--fsize-root-min) + 0.390625vw, var(--fsize-root-max));
+}
+
+body {
+    margin: 0px;
+    font-size: var(--fsize-body);
+    font-family: var(--font-body);
+    background-color: var(--color-bg-body);
+    color: var(--color-text-body);
+}
+
+.body-icon {
+    width: var(--width-icon);
+    height: var(--height-icon);
+}
+
+.copy-clipboard-svg {
+    fill: var(--color-button-clipboard);
+    width: var(--size-clipboard-icon);
+    height: var(--size-clipboard-icon);
+}
 
 .prevent-select {
     -moz-user-select: none; 
@@ -298,6 +310,10 @@ body {
     -o-user-select: none;
 }
 
+/* ################################################################################ 
+                            CSS for Image Modal
+   ################################################################################
+*/
 
 .image-modal {
     display: none;
@@ -321,7 +337,12 @@ body {
     max-width: 90%;
     object-fit: cover;
 }
-  
+
+/* ################################################################################ 
+                            CSS for Progress Bar
+   ################################################################################
+*/
+
 .progress-container {
     position: fixed;
     top: 0;
@@ -338,7 +359,12 @@ body {
     background: var(--color-fill-progressbar);
 }
 
-#snackbar {
+/* ################################################################################ 
+                            CSS for Snackbar For Copy to Clipboard
+   ################################################################################
+*/
+
+.copied-snackbar {
     visibility: hidden;
     min-width: 250px;
     margin-left: -125px;
@@ -353,8 +379,8 @@ body {
     bottom: 30px;
     font-size: var(--fsize-snackbar);
 }
-  
-#snackbar.show {
+
+.copied-snackbar.show {
     visibility: visible;
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
@@ -379,6 +405,12 @@ body {
     from {bottom: 30px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
 }
+
+
+/* ################################################################################ 
+                            CSS for Page Loading Animation
+   ################################################################################
+*/
 
 .page-loader {
     position: absolute;
@@ -454,142 +486,10 @@ body {
     }
 }
 
-.block-equation::-webkit-scrollbar-track
-{
-    /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
-	background-color: var(--color-scroll-track-math);
-	/* border-radius: 3px; */
-}
-
-.block-equation::-webkit-scrollbar
-{
-	width: var(--width-scrollbar);
-	height: var(--height-scrollbar);
-}
-
-.block-equation::-webkit-scrollbar-thumb
-{
-	background-color: var(--color-scroll-thumb-math);
-    /* border-radius: 3px; */
-	/* background-image: -webkit-gradient(linear,
-									   left bottom,
-									   left top,
-									   color-stop(0.44, rgb(122,153,217)),
-									   color-stop(0.72, rgb(73,125,189)),
-									   color-stop(0.86, rgb(28,58,148))); */
-}
-
-
-
-
-.code-block-prism::-webkit-scrollbar-track
-{
-	background-color: var(--color-scroll-track-code);
-}
-
-.code-block-prism::-webkit-scrollbar
-{
-	width: var(--width-scrollbar);
-	height: var(--height-scrollbar);
-}
-
-.code-block-prism::-webkit-scrollbar-thumb
-{
-	background-color: var(--color-scroll-thumb-code);
-}
-
-
-
-
-
-.table-block::-webkit-scrollbar-track
-{
-	background-color: var(--color-scroll-track-table);
-    margin-top: 1px;
-}
-
-.table-block::-webkit-scrollbar
-{
-	width: var(--width-scrollbar);
-	height: var(--height-scrollbar);
-}
-
-.table-block::-webkit-scrollbar-thumb
-{
-	background-color: var(--color-scroll-thumb-table);
-}
-
-
-
-.toc-items-container::-webkit-scrollbar-track
-{
-	background-color: var(--color-scroll-track-toc);
-}
-
-.toc-items-container::-webkit-scrollbar
-{
-	width: var(--width-scrollbar);
-	height: var(--height-scrollbar);
-}
-
-.toc-items-container::-webkit-scrollbar-thumb
-{
-	background-color: var(--color-scroll-thumb-toc);
-}
-
-.tweet-container::-webkit-scrollbar-track
-{
-	background-color: var(--color-scroll-track-tweet);
-}
-
-.tweet-container::-webkit-scrollbar
-{
-	width: var(--width-scrollbar);
-	height: var(--height-scrollbar);
-}
-
-.tweet-container::-webkit-scrollbar-thumb
-{
-	background-color: var(--color-scroll-thumb-tweet);
-}
-
-
-/* .block-equation::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  .block-equation::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-   
-  .block-equation::-webkit-scrollbar-thumb {
-    background: #888;
-  }
-  
-  .block-equation::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  } */
-
-.page-title {
-    text-decoration: none;
-    font-size: var(--fsize-title);
-    white-space: wrap;
-    /* background-color: tan; */
-    color: var(--color-text-title);
-    margin-bottom: calc(var(--gap-blocks-vertical) + 20px);
-    font-family: var(--font-title);
-    font-weight: 400;
-    padding-left: var(--gap-blocks-horizontal);
-}
-
-.page-container {
-    display: none;
-    flex-direction: row;
-    gap: 1vh;
-    padding: 1vh;
-    /* border: 3px solid yellow; */
-    margin-top: calc(var(--fsize-creator) + 5px + 5px + 7px + 15px);
-}
+/* ################################################################################ 
+                                CSS for Fixed Top Taskbar
+   ################################################################################
+*/
 
 .top-fixed-taskbar {
     background-color: var(--color-bg-taskbar);
@@ -614,7 +514,6 @@ body {
     flex-direction: row;
     align-items: center;
     gap: 10px;
-    /* background-color: burlywood; */
     margin-left: 10px;
 }
 
@@ -629,7 +528,6 @@ body {
     flex-direction: row;
     align-items: center;
     gap: 6px;
-    /* background-color: tomato; */
     margin-right: 10px;
 }
 
@@ -710,88 +608,140 @@ body {
     transform: translate(32px, 0px);
 }
 
+.taskbar-icon {
+    width: var(--width-taskbar-icon);
+    height: var(--height-taskbar-icon);
+}
+
 .github-container {
     padding-top: 5px;
     margin-left: -2px;
 }
 
-
-
-
-/* CSS for old dark mode slider */
-/* .dark-mode-switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-}
-  
-.dark-mode-switch input { 
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-  
-.dark-mode-slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-    border-radius: 34px;
-}
-  
-.dark-mode-slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-    border-radius: 50%;
-}
-  
-.dark-mode-input:checked + .dark-mode-slider {
-    background-color: #2196F3;
-}
-  
-.dark-mode-input:focus + .dark-mode-slider {
-    box-shadow: 0 0 1px #2196F3;
-}
-  
-.dark-mode-input:checked + .dark-mode-slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-} */
-  
 .notion-container {
-    /* background-color: #04AA6D; */
     padding-top: 5px;
 }
 
+.options-dropdown {
+    position: relative;
+    display: none;
+}
 
+.options-dropdown-icon {
+    cursor: pointer;
+    margin-left: -6px;
+    margin-top: 7px;
+    width: var(--width-dropdown-icon);
+    height: var(--height-dropdown-icon);
+}
+
+.options-dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    left: auto;
+    background-color: var(--color-bg-dropdown);
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin-right: 12px;
+    margin-top: -2px;
+}
+
+.options-dropdown-show {
+    display: block;
+}
+
+.options-dropdown-item {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+    font-size: large;
+    padding-left: 15px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    cursor: pointer;
+    font-size: var(--fsize-sm-dropdown-text);
+}
+
+.options-dropdown-item:hover {
+    background-color: var(--color-hover-dropdown-item);
+}
+
+.options-icon {
+    width: var(--width-dropdown-item-icon);
+    height: var(--height-dropdown-item-icon);
+}
+
+.options-icon-top-1, .options-icon-top-3 {
+    fill: none;
+    stroke: var(--color-fill-dropdown-top-icon);
+}
+
+.options-icon-top-1 {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2px;
+}
+
+.options-icon-top-2 {
+    fill: var(--color-fill-dropdown-top-icon);
+}
+
+.options-icon-top-3 {
+    stroke-miterlimit: 10;
+}
+
+.options-icon-github {
+    fill: var(--color-fill-dropdown-github-icon); 
+}
+
+
+/* ################################################################################ 
+                                CSS for Page Contents And Title
+   ################################################################################
+*/
+
+.page-container {
+    display: none;
+    flex-direction: row;
+    gap: 1vh;
+    padding: 1vh;
+    margin-top: calc(var(--fsize-creator) + 5px + 5px + 7px + 15px);
+}
 
 .page-contents-container {
     flex-grow: 7.7;
-    /* border: 2px solid tomato; */
     width: 77%;
 }
 
-.table-of-contents-container {
-    display: flex;
-    flex-grow: 2.3;
-    /* min-width: 200px; */
-    width: 22%;
-    /* max-width: 500px; */
+.page-title {
+    text-decoration: none;
+    font-size: var(--fsize-title);
+    white-space: wrap;
+    color: var(--color-text-title);
+    margin-bottom: calc(var(--gap-blocks-vertical) + 20px);
+    font-family: var(--font-title);
+    font-weight: 400;
+    padding-left: var(--gap-blocks-horizontal);
 }
+
+
+/* ################################################################################ 
+                    CSS for Text Containing Section
+   ################################################################################
+*/
+
+.text-container-section {
+    scroll-margin: calc(var(--fsize-creator) + 5px + 5px + 7px + 15px + 2vh + 10px);
+}
+
+
+/* ################################################################################ 
+                    CSS for Page Contents Accordion (Small Screens)
+   ################################################################################
+*/
 
 .accordion-toc-container {
     display: none;
@@ -856,29 +806,16 @@ body {
 .accordion-text:hover {
     color: #04AA6D;
 }
-  
-.block-caption {
-    text-align: center;
-    margin-top: var(--gap-caption-vertical);
-    font-family: var(--font-nav);
-    font-weight: 400;
-}
 
-.taskbar-icon {
-    width: var(--width-taskbar-icon);
-    height: var(--height-taskbar-icon);
-}
-
-.body-icon {
-    width: var(--width-icon);
-    height: var(--height-icon);
-}
+/* ################################################################################ 
+                                CSS for Math Block
+   ################################################################################
+*/
 
 .katex {
     font-family: var(--font-math);
     font-weight: 400;
 }
-
 
 .math-block {
     flex-grow: 1;
@@ -919,17 +856,33 @@ body {
     outline: none;
 }
 
-.copy-clipboard-svg {
-    fill: var(--color-button-clipboard);
-    width: var(--size-clipboard-icon);
-    height: var(--size-clipboard-icon);
+.block-equation::-webkit-scrollbar-track
+{
+	background-color: var(--color-scroll-track-math);
 }
+
+.block-equation::-webkit-scrollbar
+{
+	width: var(--width-scrollbar);
+	height: var(--height-scrollbar);
+}
+
+.block-equation::-webkit-scrollbar-thumb
+{
+	background-color: var(--color-scroll-thumb-math);
+}
+
+
+
+/* ################################################################################ 
+                                CSS for Code Block
+   ################################################################################
+*/
 
 .code-block {
     font-size: var(--fsize-code);
     display: flex;
     margin-top: var(--gap-blocks-vertical);
-    /* background-color: #551a8b; */
 }
   
 .code-snippet {
@@ -945,11 +898,8 @@ body {
 .copy-code-clipboard {
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     margin-top: 10px;
     margin-left: 0px;
-    /* background-color: #04AA6D; */
-    /* background-color: #272822; */
 }
   
 .btn-code-clipboard {
@@ -963,6 +913,42 @@ body {
     overflow: hidden;
     outline: none;
 }
+
+
+.code-block-prism::-webkit-scrollbar-track
+{
+	background-color: var(--color-scroll-track-code);
+}
+
+.code-block-prism::-webkit-scrollbar
+{
+	width: var(--width-scrollbar);
+	height: var(--height-scrollbar);
+}
+
+.code-block-prism::-webkit-scrollbar-thumb
+{
+	background-color: var(--color-scroll-thumb-code);
+}
+
+
+body.light-mode pre[class*=language-]{
+    background: var(--color-bg-prism);
+}
+
+body.light-mode .line-numbers.line-numbers .line-numbers-rows{
+    background: var(--color-bg-prism);
+}
+
+body.dark-mode pre[class*=language-]{
+    background: var(--color-bg-prism);
+}
+
+
+/* ################################################################################ 
+                                CSS for Image Block
+   ################################################################################
+*/
 
 .image-block {
     margin-top: var(--gap-blocks-vertical);
@@ -982,11 +968,78 @@ body {
     opacity: 0.8;
 }
 
-.video-container {
-    /* background-color: steelblue; */
+
+/* ################################################################################ 
+                                CSS for Table Block
+   ################################################################################
+*/
+
+.table-block {
+    margin-left: var(--gap-blocks-horizontal);
+    margin-right: var(--gap-blocks-horizontal);
     margin-top: var(--gap-blocks-vertical);
-    /* margin-left: 10px;
-    margin-right: 10px; */
+    max-height: 400px;
+    max-width: 100%;
+    overflow: auto;
+    text-align: center;
+    font-size: var(--fsize-table);
+}
+  
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    overflow: auto;
+    border: 1px solid var(--color-border-table);
+}
+
+tr {
+    border-bottom: 1px solid var(--color-border-table);
+}
+
+thead tr {
+    background-color: var(--color-bg-table-header);
+    color: var(--color-text-table-header);
+}
+
+td, th {
+    text-align: center;
+    padding: 15px 30px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--color-bg-even-table);
+}
+
+tbody tr:hover {
+    background-color: var(--color-bg-hover-table);
+}
+
+
+.table-block::-webkit-scrollbar-track
+{
+	background-color: var(--color-scroll-track-table);
+    margin-top: 1px;
+}
+
+.table-block::-webkit-scrollbar
+{
+	width: var(--width-scrollbar);
+	height: var(--height-scrollbar);
+}
+
+.table-block::-webkit-scrollbar-thumb
+{
+	background-color: var(--color-scroll-thumb-table);
+}
+
+
+/* ################################################################################ 
+                            CSS for Video and ReplIt Blocks
+   ################################################################################
+*/
+
+.video-container {
+    margin-top: var(--gap-blocks-vertical);
     margin-left: calc(2 * var(--gap-blocks-horizontal));
     margin-right: calc(2 * var(--gap-blocks-horizontal));
     text-align: center;
@@ -997,185 +1050,38 @@ body {
     width: 100%;
     border: none !important;
 }
-  
+
+
+/* ################################################################################ 
+                    CSS for Heading, Caption And Paragraph Blocks
+   ################################################################################
+*/
+
 .heading-1 {
     margin-left: var(--gap-blocks-horizontal);
     color: var(--color-text-heading-1);
-    /* padding-top: 7px;
-    padding-bottom: 4px; */
     font-family: var(--font-heading);
-    /* background-color: wheat; */
     font-size: var(--fsize-h1);
     
 }
 .heading-2 {
     margin-left: var(--gap-blocks-horizontal);
     color: var(--color-text-heading-2);
-    /* padding-top: 7px;
-    padding-bottom: 4px; */
     font-family: var(--font-heading);
-    /* background-color: wheat; */
     font-size: var(--fsize-h2);
 }
   
 .heading-3 {
     margin-left: var(--gap-blocks-horizontal);
     color: var(--color-text-heading-3);
-    /* padding-top: 7px;
-    padding-bottom: 4px; */
     font-family: var(--font-heading);
-    /* background-color: wheat; */
     font-size: var(--fsize-h3);
 }
 
-.text-container-section {
-    scroll-margin: calc(var(--fsize-creator) + 5px + 5px + 7px + 15px + 2vh + 10px);
-}
-
-.table-of-contents {
-    margin-bottom: 20px;
-    /* border: 2px solid blueviolet; */
-    /* border-left: 2px solid #cdcdcd; */
-    /* background-color: antiquewhite; */
-    position: fixed;
-    width: calc(22% - 4px);
-    height: calc(100% - (var(--fsize-creator) + 5px + 5px + 7px + 15px + 2vh + 25px + 10px));
-}
-  
-.toc-container {
-    margin-left: 10px;
-    margin-bottom: 10px;
-}
-
-.toc-items-container {
-    /* background-color: salmon; */
-    height: calc(100vh - (var(--fsize-creator) + 5px + 5px + 7px + 15px + 2vh + 25px + 3*var(--fsize-nav-title) + 6px + 10px));
-    overflow-y: auto;
-}
-
-.on-this-page {
-    font-family: var(--font-nav);
-    font-weight: 900;
-    font-size: var(--fsize-nav-title);
-    color: var(--color-text-toc-header);
-    /* background-color: seagreen; */
-}
-
-
-.page-nav {
-    font-family: var(--font-nav);
-    font-weight: 600;
-    font-size: var(--fsize-nav-text);
-    padding-top: 5px;
-    padding-bottom: 10px;
-    padding-left: 15px;
-    border-left: 2px solid var(--color-border-toc);
-}
-  
-.page-nav-active {
-    background-color: var(--color-bg-active-toc);
-    border-left: 2px solid var(--color-border-active-toc);
-}
-  
-.page-nav-text {
-    display: inline-block;
-    text-decoration: none;
-    color: var(--color-text-toc);
-    /* color: #333; */
-}
-  
-.page-nav-text:hover {
-    color: var(--color-text-hover-toc);
-}
-
-.toc-head-1 {
-    padding-left: 0px;
-}
-  
-.toc-head-2 {
-    padding-left: 11px;
-}
-  
-.toc-head-3 {
-    padding-left: 25px;
-}
-
-.list-item {
-    margin-bottom: 5px;
-}
-  
 .text-paragraph {
     margin-left: var(--gap-blocks-horizontal);
     margin-right: var(--gap-blocks-horizontal);
     margin-top: var(--gap-blocks-vertical-reduced);
-}
-
-.horizontal-divider {
-    margin-top: var(--gap-blocks-vertical-reduced);
-    margin-left: var(--gap-blocks-horizontal);
-    margin-right: var(--gap-blocks-horizontal);
-    height: 3px;
-    background-color: var(--color-bg-divider);
-    border: none;
-}
-  
-.quote {
-    background-color: var(--color-bg-quote);
-    border-left: 6px solid var(--color-border-quote);
-    color: var(--color-text-quote);
-    padding: 4px 12px;
-    margin-left: var(--gap-blocks-horizontal);
-    margin-right: var(--gap-blocks-horizontal);
-    margin-top: var(--gap-blocks-vertical);
-    font-family: var(--font-standout);
-    font-weight: 400;
-    font-style: italic;
-    font-size: var(--fsize-quote);
-    padding-left: 20px;
-}
-  
-.standout {
-    background-color: var(--color-bg-standout);
-    color: var(--color-text-standout);
-    padding: 4px 12px;
-    margin-left: var(--gap-blocks-horizontal);
-    margin-right: var(--gap-blocks-horizontal);
-    margin-top: var(--gap-blocks-vertical);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-  
-.standout-container {
-    /* background-color: #04AA6D; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-  
-.standout-icon {
-    fill: var(--color-icon-standout);
-}
-  
-.standout-text {
-    flex: auto;
-    /* background-color: royalblue; */
-    margin-left: 15px;
-    font-family: var(--font-standout);
-    font-size: var(--fsize-standout);
-    font-weight: 400;
-}
-  
-.audio-container {
-    background-color: cadetblue;
-    margin-left: var(--gap-blocks-horizontal);
-    margin-right: var(--gap-blocks-horizontal);
-    text-align: center;
-    margin-top: var(--gap-blocks-vertical);
-}
-  
-.audio-player {
-    padding-top: 10px;
-    padding-bottom: 6px;
-    width: 40%;
 }
 
 .inline-link {
@@ -1195,49 +1101,111 @@ body {
     font-weight: 400;
 }
 
-.table-block {
+.block-caption {
+    text-align: center;
+    margin-top: var(--gap-caption-vertical);
+    font-family: var(--font-nav);
+    font-weight: 400;
+}
+
+.list-item {
+    margin-bottom: 5px;
+}
+
+
+/* ################################################################################ 
+                            CSS for Quote Block
+   ################################################################################
+*/
+
+.quote {
+    background-color: var(--color-bg-quote);
+    border-left: 6px solid var(--color-border-quote);
+    color: var(--color-text-quote);
+    padding: 4px 12px;
     margin-left: var(--gap-blocks-horizontal);
     margin-right: var(--gap-blocks-horizontal);
     margin-top: var(--gap-blocks-vertical);
-    /* background-color: thistle; */
-    /* border: 5px solid black; */
-    max-height: 400px;
-    max-width: 100%;
-    overflow: auto;
-    text-align: center;
-    font-size: var(--fsize-table);
+    font-family: var(--font-standout);
+    font-weight: 400;
+    font-style: italic;
+    font-size: var(--fsize-quote);
+    padding-left: 20px;
+}
+
+/* ################################################################################ 
+                            CSS for Horizontal Divider
+   ################################################################################
+*/
+
+.horizontal-divider {
+    margin-top: var(--gap-blocks-vertical-reduced);
+    margin-left: var(--gap-blocks-horizontal);
+    margin-right: var(--gap-blocks-horizontal);
+    height: 3px;
+    background-color: var(--color-bg-divider);
+    border: none;
 }
   
-table {
-    border-collapse: collapse;
-    /* border: 5px solid yellow; */
-    margin: 0 auto;
-    overflow: auto;
-    border: 1px solid var(--color-border-table);
+
+/* ################################################################################ 
+                            CSS for Standout Block
+   ################################################################################
+*/
+
+.standout {
+    background-color: var(--color-bg-standout);
+    color: var(--color-text-standout);
+    padding: 4px 12px;
+    margin-left: var(--gap-blocks-horizontal);
+    margin-right: var(--gap-blocks-horizontal);
+    margin-top: var(--gap-blocks-vertical);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+  
+.standout-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-tr {
-    border-bottom: 1px solid var(--color-border-table);
+.standout-icon {
+    fill: var(--color-icon-standout);
+}
+  
+.standout-text {
+    flex: auto;
+    margin-left: 15px;
+    font-family: var(--font-standout);
+    font-size: var(--fsize-standout);
+    font-weight: 400;
 }
 
-thead tr {
-    background-color: var(--color-bg-table-header);
-    color: var(--color-text-table-header);
-}
 
-td, th {
+/* ################################################################################ 
+                            CSS for Audio Block
+   ################################################################################
+*/
+
+.audio-container {
+    background-color: cadetblue;
+    margin-left: var(--gap-blocks-horizontal);
+    margin-right: var(--gap-blocks-horizontal);
     text-align: center;
-    padding: 15px 30px;
-    /* min-width: 150px; */
+    margin-top: var(--gap-blocks-vertical);
+}
+  
+.audio-player {
+    padding-top: 10px;
+    padding-bottom: 6px;
+    width: 40%;
 }
 
-tbody tr:nth-child(even) {
-    background-color: var(--color-bg-even-table);
-}
 
-tbody tr:hover {
-    background-color: var(--color-bg-hover-table);
-}
+/* ################################################################################ 
+                            CSS for File Container Block
+   ################################################################################
+*/
 
 .file-container {
     margin-top: var(--gap-blocks-vertical-reduced);
@@ -1262,10 +1230,6 @@ tbody tr:hover {
     transition: all 0.2s ease-in-out;
 }
   
-.file-icon {
-    /* background-color: whitesmoke */
-}
-  
 .file-reference {
     flex: auto;
     padding-left: 10px;
@@ -1281,6 +1245,11 @@ tbody tr:hover {
     display: contents;
 }
 
+/* ################################################################################ 
+                            CSS for Hyperlink Container Block
+   ################################################################################
+*/
+
 .hyperlink-container {
     margin-left: var(--gap-blocks-horizontal);
     margin-right: var(--gap-blocks-horizontal);
@@ -1288,10 +1257,6 @@ tbody tr:hover {
     padding-top: 4px;
     padding-bottom: 4px;
     width: fit-content;
-}
-
-.hyperlink-container:hover {
-    /* border: 2px solid seagreen; */
 }
 
 .hyperlink {
@@ -1338,6 +1303,11 @@ tbody tr:hover {
     transform: scale(1.2);
 }
 
+/* ################################################################################ 
+                                CSS for Tweet Block
+   ################################################################################
+*/
+
 .tweet-container {
     margin-top: var(--gap-blocks-vertical);
     max-height: 450px;
@@ -1345,11 +1315,8 @@ tbody tr:hover {
 }
 
 .tweet-block {
-    /* margin-top: 30px;
-    margin-bottom: 30px; */
     margin-top: 3px;
     margin-bottom: 3px;
-    /* background-color: mediumslateblue; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1360,32 +1327,276 @@ blockquote .twitter-tweet {
 }
 
 
-body.light-mode pre[class*=language-]{
-    background: var(--color-bg-prism);
+.tweet-container::-webkit-scrollbar-track
+{
+	background-color: var(--color-scroll-track-tweet);
 }
 
-body.light-mode .line-numbers.line-numbers .line-numbers-rows{
-    background: var(--color-bg-prism);
+.tweet-container::-webkit-scrollbar
+{
+	width: var(--width-scrollbar);
+	height: var(--height-scrollbar);
 }
 
-body.dark-mode pre[class*=language-]{
-    background: var(--color-bg-prism);
+.tweet-container::-webkit-scrollbar-thumb
+{
+	background-color: var(--color-scroll-thumb-tweet);
 }
 
+
+/* ################################################################################ 
+                            CSS for Scroll To Top Button
+   ################################################################################
+*/
+
+.scroll-top-container {
+    margin-top: 15px;
+}
+
+.scroll-top-button {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: opacity 1s, transform 900ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    cursor: pointer;
+    background-color: var(--color-bg-scroll-top);
+    outline: none;
+    box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+}
+
+.scroll-top-show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-top-button:hover {
+    opacity: 0.8;
+}
+
+.scroll-top-icon {
+    fill: var(--color-fill-scroll-top);
+}
+
+
+/* ################################################################################ 
+                            CSS for Table Of Contents Sidebar
+   ################################################################################
+*/
+
+.table-of-contents-container {
+    display: flex;
+    flex-grow: 2.3;
+    width: 22%;
+}
+
+.table-of-contents {
+    margin-bottom: 20px;
+    position: fixed;
+    width: calc(22% - 4px);
+    height: calc(100% - (var(--fsize-creator) + 5px + 5px + 7px + 15px + 2vh + 25px + 10px + 30px));
+}
+  
+.toc-container {
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.on-this-page {
+    font-family: var(--font-nav);
+    font-weight: 900;
+    font-size: var(--fsize-nav-title);
+    color: var(--color-text-toc-header);
+}
+
+.toc-items-container {
+    height: calc(100vh - (var(--fsize-creator) + 5px + 5px + 7px + 15px + 2vh + 25px + 3*var(--fsize-nav-title) + 6px + 10px + 30px));
+    overflow-y: auto;
+}
+
+.page-nav {
+    font-family: var(--font-nav);
+    font-weight: 600;
+    font-size: var(--fsize-nav-text);
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    border-left: 2px solid var(--color-border-toc);
+}
+  
+.page-nav-active {
+    background-color: var(--color-bg-active-toc);
+    border-left: 2px solid var(--color-border-active-toc);
+}
+  
+.page-nav-text {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color-text-toc);
+}
+  
+.page-nav-text:hover {
+    color: var(--color-text-hover-toc);
+}
+
+.toc-head-1 {
+    padding-left: 0px;
+}
+  
+.toc-head-2 {
+    padding-left: 11px;
+}
+  
+.toc-head-3 {
+    padding-left: 25px;
+}
+
+
+.toc-items-container::-webkit-scrollbar-track
+{
+	background-color: var(--color-scroll-track-toc);
+}
+
+.toc-items-container::-webkit-scrollbar
+{
+	width: var(--width-scrollbar);
+	height: var(--height-scrollbar);
+}
+
+.toc-items-container::-webkit-scrollbar-thumb
+{
+	background-color: var(--color-scroll-thumb-toc);
+}
+
+
+/* ################################################################################ 
+                            CSS for Body Ending Buffer Div
+   ################################################################################
+*/
+  
+.body-ending-buffer {
+    margin-top: var(--gap-blocks-vertical);
+    height: 20px;
+    width: 100%;
+}
+
+
+/* ################################################################################ 
+                            Media Queries for Added Responsiveness
+   ################################################################################
+*/
 
 @media (max-width: 768px){
 
-    /* .page-container {
-        flex-direction: column-reverse;
-    } */
-
-    /* .page-contents-container {
-        width: 100%;
-    }
- */
-
     body {
         font-size: var(--fsize-sm-body);
+    }
+
+    .body-icon {
+        width: var(--width-sm-icon);
+        height: var(--height-sm-icon);
+    }
+
+    .page-loader-message {
+        font-size: var(--fsize-sm-page-loader);
+    }
+    
+    .accordion-toc-container {
+        display: block;
+    }
+
+    .taskbar-icon {
+        width: var(--width-sm-taskbar-icon);
+        height: var(--height-sm-taskbar-icon);
+    }
+
+    .top-taskbar-container-2 {
+        gap: 4px;
+    }
+
+    .dark-mode-switch {
+        width: 40px;
+        height: 22px;
+    }
+      
+    .dark-mode-slider {
+        border-radius: 22px;
+    }
+      
+    .dark-mode-slider:before {
+        height: 18px;
+        width: 18px;
+        left: 2px;
+        bottom: 2px;
+    }
+
+    .dark-mode-input:checked + .dark-mode-slider:before {
+        -webkit-transform: translateX(18px);
+        -ms-transform: translateX(18px);
+        transform: translateX(18px);
+    }
+
+    .dark-mode-toggle-container {
+        width: 42px;
+        height: 22px;
+    }
+
+    .dark-mode-toggle-container span:before,
+    .dark-mode-toggle-container span:after {
+        top: 3px;
+        width: 16px;
+        height: 16px;
+    }
+
+    .dark-mode-toggle-container span:before {
+        transform: translate(-16px, 0px);
+    }
+
+    .dark-mode-toggle-container span:after {
+        transform: translate(3px, 0px);
+    }
+
+    .dark-mode-toggle-container input[type="checkbox"]:checked + span:before {
+        background-color: #000;
+        transform: translate(18px, -7px);
+    }
+
+    .dark-mode-toggle-container input[type="checkbox"]:checked + span:after {
+        background-color: #fff;
+        transform: translate(23px, 0px);
+    }
+
+    .github-container {
+        display: none;
+    }
+
+    .options-dropdown-content {
+        min-width: 130px;
+    }
+
+    .options-dropdown-item {
+        padding-left: 8px;
+    }
+
+    .options-dropdown {
+        display: inline-block;
+    }
+
+    .options-dropdown-icon {
+        margin-left: -5px;
+        width: var(--width-sm-dropdown-icon);
+        height: var(--height-sm-dropdown-icon);
+    }
+
+    .options-icon {
+        width: var(--width-sm-dropdown-item-icon);
+        height: var(--height-sm-dropdown-item-icon);
     }
 
     .page-title {
@@ -1403,6 +1614,15 @@ body.dark-mode pre[class*=language-]{
         height: var(--height-sm-scrollbar);
     }
     
+    .code-block {
+        font-size: var(--fsize-sm-code);
+        max-height: 400px;
+    }
+    
+    .created-by-container {
+        font-size: var(--fsize-creator);
+    }
+
     .code-block-prism::-webkit-scrollbar
     {
         width: var(--width-sm-scrollbar);
@@ -1445,45 +1665,6 @@ body.dark-mode pre[class*=language-]{
         font-size: var(--fsize-file-link);
     }
 
-    .code-block {
-        font-size: var(--fsize-sm-code);
-        max-height: 400px;
-    }
-    
-    .created-by-container {
-        font-size: var(--fsize-creator);
-    }
-
-    /* .github-container {
-        display: none;
-    } */
-
-    .dark-mode-switch {
-        width: 40px;
-        height: 22px;
-    }
-      
-    .dark-mode-slider {
-        border-radius: 22px;
-    }
-      
-    .dark-mode-slider:before {
-        height: 18px;
-        width: 18px;
-        left: 2px;
-        bottom: 2px;
-    }
-
-    .dark-mode-input:checked + .dark-mode-slider:before {
-        -webkit-transform: translateX(18px);
-        -ms-transform: translateX(18px);
-        transform: translateX(18px);
-    }
-
-    .accordion-toc-container {
-        display: block;
-    }
-
     .heading-1 {
         font-size: var(--fsize-sm-h1);
     }
@@ -1495,56 +1676,5 @@ body.dark-mode pre[class*=language-]{
     .heading-3 {
         font-size: var(--fsize-sm-h3);
     }
-
-    .taskbar-icon {
-        width: var(--width-sm-taskbar-icon);
-        height: var(--height-sm-taskbar-icon);
-    }
-
-    .body-icon {
-        width: var(--width-sm-icon);
-        height: var(--height-sm-icon);
-    }
-
-
-
-    .dark-mode-toggle-container {
-        width: 42px;
-        height: 22px;
-    }
-
-    .dark-mode-toggle-container span:before,
-    .dark-mode-toggle-container span:after {
-        top: 3px;
-        width: 16px;
-        height: 16px;
-    }
-
-    .dark-mode-toggle-container span:before {
-        transform: translate(-16px, 0px);
-    }
-
-    .dark-mode-toggle-container span:after {
-        transform: translate(3px, 0px);
-    }
-
-    .dark-mode-toggle-container input[type="checkbox"]:checked + span:before {
-        background-color: #000;
-        transform: translate(18px, -7px);
-    }
-
-    .dark-mode-toggle-container input[type="checkbox"]:checked + span:after {
-        background-color: #fff;
-        transform: translate(23px, 0px);
-    }
-
-    .page-loader-message {
-        font-size: var(--fsize-sm-page-loader);
-    }
     
-    .top-taskbar-container-2 {
-        gap: 2px;
-    }
-    
-
 }
