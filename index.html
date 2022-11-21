@@ -9,15 +9,18 @@
 		<script src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js" integrity="sha384-Qsn9KnoKISj6dI8g7p1HBlNpVx0I8p1SvlwOldgi3IorMle61nQy4zEahWYtljaz" crossorigin="anonymous"></script>
 		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
 	        onload="renderMathInElement(document.body);"></script>
-		<link id="prism-theme-file" href="prism_coldark_cold_theme.css" rel="stylesheet" />
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.2/contrib/copy-tex.min.js" integrity="sha512-cQxSkTM4RvFAjdBeBDkrllhYfERwZWjM/oijKfPsmhR0JI2U3fXSlbUaJp5SlgBh/FzYmMyWudRTXLnNj3MbEA==" crossorigin="anonymous"></script>
+		<!-- <link id="prism-theme-file" href="prism_coldark_cold_theme.css" rel="stylesheet" /> -->
+
+		<link id="prism-theme-file" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-coldark-cold.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/match-braces/prism-match-braces.min.css" integrity="sha512-SwPHdIEEQ3lKazpLV9+r1UH4HnpNVlYVdKYgBwD/8QuougtQj6xm5x2xladh3mC/bz+jVWkvYTpKCI1KWD1MWQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/unescaped-markup/prism-unescaped-markup.min.css" integrity="sha512-g33HCZ23fueSK96JEeoy9DelAlu7Ry5mtxqLk+zlEiPj7NIpFI6T9mybOvQxjBN50FALFDCviMXiLqWJcFwzaA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<link rel="stylesheet" type="text/css" href="styles_responsive.css">
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Barlow+Condensed:ital@0;1&family=Barlow+Semi+Condensed:ital,wght@1,400;1,600&family=IBM+Plex+Sans+Hebrew&family=Istok+Web&family=Prompt&family=Roboto+Condensed:ital,wght@0,400;1,300;1,400&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Barlow+Condensed:ital@0;1&family=Barlow+Semi+Condensed:ital,wght@1,400;1,600&family=IBM+Plex+Sans+Hebrew&family=Istok+Web&family=Prompt&family=Roboto+Condensed:ital,wght@0,400;1,300;1,400&family=Roboto:ital,wght@1,300&family=Ubuntu+Mono&display=swap" rel="stylesheet">
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
@@ -31,11 +34,14 @@
 			<img src="" id="modalImage" class="modal-content" />
 		</div>
 
+
 		<div class="progress-container" id="progressBarContainer">
 			<div class="progress-bar" id="progressBar"></div>
 		</div>
 
-		<div id="snackbar" class="copied-snackbar">Copied to Clipboard!!</div>
+
+		<div id="snackbar">Copied to Clipboard!!</div>
+
 
 		<div id="pageWaitLoader" class="page-loader">
 			<div class="page-loader-wrap">
@@ -49,19 +55,19 @@
 			</div>
 		</div>
 
+
 		<div id="topFixedTaskbar" class="top-fixed-taskbar">
 			<div class="top-taskbar-container-1">
 				<div class="created-by-container">
 					<span>Notion Export</span>
 				</div>
 			</div>
-			<div class="top-taskbar-container-2">
 
+			<div class="top-taskbar-container-2">
 				<div class="dark-mode-toggle-container">
 					<input type="checkbox" id="dark-mode-check" onclick="togglePageTheme(this)">
 					<span></span>
 				</div>
-	  
 
 				<div class="notion-container">
 					<a href="https://www.google.com" target="_blank">
@@ -80,8 +86,6 @@
 						</svg>
 					</a>
 				</div>
-
-				
 
 				<div class="options-dropdown">
 						<svg class="options-dropdown-icon" id="optionsDropdownBtn" onclick="toggleOptionsDropdown()" fill="white" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -110,13 +114,11 @@
 								</svg>
 							</div>
 							<div>
-								<span>Scroll to Top</span>							
+								<span>Scroll to Top</span>
 							</div>
 						</div>
 					</div>
 				</div>
-					
-
 			</div>
 		</div>
 	
@@ -228,12 +230,6 @@
 								</svg>
 							</button>
 						</div>
-					</div>
-
-					<div id="dummyMathBlock" class="block-equation">
-						<span>
-							$$\tilde f(\omega)=\frac{1}{2\pi}\int_{-\infty}^\infty f(x)e^{-i\omega x}\,dx\,,$$
-						</span>
 					</div>
 
 					
@@ -440,9 +436,6 @@ def train_step(x, y):
 				</div>
 
 				
-				<button style="width: 50%; height: 40px; background-color: lightcoral;" onclick="lazyLoadResources()">Load Lazy Resources</button>
-		
-
 				<div class="image-block" id="box">
 					<img class="image-container lazy-load" data-src="scrapper_out/Image_75.png" alt="Text" onclick="openModal(this)" />
 				</div>
@@ -575,21 +568,6 @@ def train_step(x, y):
 					<p>This is some paragraph text in here.To make font size responsive in steps, set the base font size at each breakpoint. To create fluid text that smoothly changes size, use the calc() function to calculate a ratio between pixels and viewport widths, this will make the base font size grow at the correct rate relative to the screen width.</p>
 				</div>
 		
-				<div>
-					<h3 id="605406hkfgkh" class="heading-3">Heading 3 2 jljklajskajskjksjaks</h3>
-				</div>
-			
-				<div>
-					<h3 id="po4peitoiro" class="heading-3">Heading 3 3 jljklajskajskjksjaks    Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks</h3>
-				</div>
-		
-				<div>
-					<h2 id="rwewew23e" class="heading-2">Heading 2 2 Wrinting a loop that does nothing</h2>
-				</div>
-		
-				<div>
-					<h3 id="dsd43sa24" class="heading-3">Heading 3 4 jljklajskajskjksjaks</h3>
-				</div>
 		
 				<div class="video-container">
 					<iframe class="video-player lazy-load" data-src="https://replit.com/@ctjlewis/BurnsidesLemma?embed=true"></iframe>
@@ -655,36 +633,6 @@ def train_step(x, y):
 						<h3 class="heading-3">Quantum GANs</h3>
 					</div>
 		
-					<div>
-						<h3 id="po4peitoiro" class="heading-3">Heading 3 3 jljklajskajskjksjaks    Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks</h3>
-					</div>
-			
-					<div>
-						<h2 id="rwewew23e" class="heading-2">Heading 2 2 Wrinting a loop that does nothing</h2>
-					</div>
-			
-					<div>
-						<h3 id="dsd43sa24" class="heading-3">Heading 3 4 jljklajskajskjksjaks</h3>
-					</div>
-
-
-
-					<div>
-						<h3 id="605406hkfgkh" class="heading-3">Heading 3 2 jljklajskajskjksjaks</h3>
-					</div>
-			
-					<div>
-						<h3 id="po4peitoiro" class="heading-3">Heading 3 3 jljklajskajskjksjaks    Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks   Heading 3 3 jljklajskajskjksjaks</h3>
-					</div>
-			
-					<div>
-						<h2 id="rwewew23e" class="heading-2">Heading 2 2 Wrinting a loop that does nothing</h2>
-					</div>
-			
-					<div>
-						<h3 id="dsd43sa24" class="heading-3">Heading 3 4 jljklajskajskjksjaks</h3>
-					</div>
-
 
 					<div class="table-block">
 						<table>
@@ -814,41 +762,6 @@ def train_step(x, y):
 						<h1 class="heading-1">AI Ethics</h1>
 					</div>
 			
-					<a class="file-link" target="_blank" href="scrapper_out/CauchyIntegralFormula_ManimCE_v0.15.0.gif">
-						<div class="file-container">
-							<div class="file-icon">
-								<img src="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/32/000000/external-file-interface-kiranshastry-lineal-color-kiranshastry.png"/>
-							</div>
-							<div class="file-reference">
-								Assembler Challenge.pdf
-							</div>
-						</div>
-					</a>
-			
-
-					<a class="file-link" target="_blank" href="scrapper_out/carbon.png">
-						<div class="file-container">
-							<div class="file-icon">
-								<img src="https://img.icons8.com/cotton/32/000000/document-1.png"/>
-							</div>
-							<div class="file-reference">
-								Assembler Challenge.pdf
-							</div>
-						</div>
-					</a>
-
-					<a class="file-link" target="_blank" href="scrapper_out/carbon.png">
-						<div class="file-container">
-							<div class="file-icon">
-								<img src="https://img.icons8.com/external-creatype-blue-field-colourcreatype/32/000000/external-paper-user-interface-creatype-blue-field-colourcreatype.png"/>
-							</div>
-							<div class="file-reference">
-								Assembler Challenge.pdf
-							</div>
-						</div>
-					</a>
-
-
 
 					<div class="math-block prevent-select">
 						<div class="block-equation">
@@ -888,9 +801,13 @@ def train_step(x, y):
 					</div>
 			
 					<div>
-						<p class="text-paragraph">The formula $a^2+b^2=c^2$ will be rendered inline, but $$a^2+b^2=c^2$$ will be rendered as a block element.</p>
+						<p class="text-paragraph">The formula <span class="inline-math">$a^2+b^2=c^2$ <span class="inline-math-popup">Copy Equation<svg class="copy-inline-math-clipboard-svg" onclick="copyInlineMathToClipboard(this.parentElement.parentElement.parentElement)" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" /></svg></span></span> will be rendered inline, but <span class="inline-math text-block-math">$$a^2+b^2=c^2$$ <span class="inline-math-popup">Copy Equation<svg class="copy-inline-math-clipboard-svg" onclick="copyInlineMathToClipboard(this.parentElement.parentElement)" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" /></svg></span></span> will be rendered as a block element.</p>
 					</div>
-			
+
+					<div>
+						<p class="text-paragraph">The formula <span class="inline-math"><span class="inline-math-inner">$A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)$ <span class="inline-math-popup"><span class="inline-math-copy-text"></span><svg class="copy-inline-math-clipboard-svg" onclick="copyInlineMathToClipboard(this.parentElement.parentElement.parentElement)" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" /></svg></span></span></span> will be rendered inline, but <span class="inline-math text-block-math"><span class="inline-math-inner">$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$<span class="inline-math-popup"><span class="inline-math-copy-text"></span><svg class="copy-inline-math-clipboard-svg" onclick="copyInlineMathToClipboard(this.parentElement.parentElement.parentElement)" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" /></svg></span></span></span> will be rendered as a block element.</p>
+					</div>
+
 					<div>
 						<hr class="horizontal-divider">
 					</div>
@@ -955,8 +872,8 @@ def train_step(x, y):
 					<a class="file-link" target="_blank" href="scrapper_out/carbon.png">
 						<div class="file-container">
 							<div class="file-icon">
-								<img style="display: none;" width="30" height="30" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEh0lEQVR4nO2bXWgcVRTH/+fO7CZ1TTbZZltXtHWlmkRfLDUtiB8klGhiitWl9CEIFVrxQfriWwWhgoog+qAUoeCTIrpIETS0KrYq2NZYpRUsja2SGtGitMHsYnZ35l4fltnstLvJmendTTKZ39OdmXvux3/uPefe+QBCQlY05NVgaGi0vUSFvSBsB9ADIKapLaXNYtW3L7WmHuJk3lf486tx+7/7ABQBnIWij6wY3jqWzea8VOpJgMHhzBZJdAhAyosdl4hpFsei66KcvMPFi8WSZbnyEjBlE2W+/CT7HbdOwc04uC3TI4mOoEGdN00TmcdHWJ0HgCe2j0RN03SdU8AtQqnPBrdletj1cjNKKQ4AKg4AbW03Ys9TT2LLvRuRSHRyi+Dx6RlWtt27RrF71yguX76CE+OncPCdd5HL5wEgXm4rBjjlsEbA1kd39gKqHwAMw8ArLz6PocEB/Z33QSLRieGHt+Ll/fsghNMd1V9u88Iwp4B8wEn1bdqI7js2eG5oo+ntuRN9m+6ZO0HW/Rw7ngBKrXGS6fW3emxa80jftm7uQNJajg1PADHnK8wI2200nUgkUn1ocGzYUWA5oJSqpIlIzZO1QqAEqEZCrUABWF12EygBVJUCpHhyBEoAPyxdlw4AyU7g2Z2AVMCBD4G/r8ybvdoJYtk7wa4O4IWngd40cPftwP5ngLUJ7dUsPQHWp4BU17UddgS5aXU5Tw1cA4AZBZbeFHh1b9mbGzXuTbITeOO5+rZVfZbEc4JLTwCxwKA0WAs8fnVaS1tkXGFQLncn2CQCJcBVUTAcARyCJYCPKBAoAUIn6AOt6wDblpjOzcKWPvalDAxB6GhrhVFnreBye4vhBAslu2GdBwBbKhSKttYytQrQEjHq3h0dGEKgJVp/Jeh6JMZ8PKJ1ChiGwOr4Kp1FNpxgOUFXGFyBUcDlAyXPGQVKAD9o3w7PFi0wxfeMEITWaP0m+3kkplWA2aKFf/MFnUXWZD4RvBKoKeDnzZDWEeDcGcuWOoutYBqCffclcx5q9wE6h2czWPFTIFAC+CFQAix6GJRSYTo369sJCkGIx1oRMd33xdlmK6Dm9etB6wgoWvZ1RQApFQol65rzzja73nWHRV8KR00DZq03OkyEILTU+ATH2WbXu17Bx2ZI6xQQgpBo178dbuQ2O7BOkBCGQRaBEsAdBcPnASwCJkBVFFiJL0bCvYAPeAJIVJZflqX3xYROSlb1KlHWXzJWwfxYWl1ykpMXf/fWqiYyOTlVSRPhL44NSwBB+MZJnxz/Ab+c/9Vz4xrNj6d/wsT5C85hKapajnPsWF8cXZg4+0+6+64HCUgrpXD85PdIJruwJtl19SfqTWdmJocvjn6N1998G8ViqXxS4b0jYx+8z7Fn/zXW/8iObsNQJwB0VIyJEIvd4LHJesnl8q5jAqZKivqOjWVZU8DTb3MDIzs2C6UOAbjZi13TIJyzLXrs6OHsOa6Jp4/ufpv4+Y9U74aDJowZUtQOQhwA+1e3BjEN0CkAr0Vkfs/nhz++tKBFSEiIw//bwHNNwJUmSQAAAABJRU5ErkJggg==">
-								<img width="30" height="30" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEh0lEQVR4nO2bXWgcVRTH/+fO7CZ1TTbZZltXtHWlmkRfLDUtiB8klGhiitWl9CEIFVrxQfriWwWhgoog+qAUoeCTIrpIETS0KrYq2NZYpRUsja2SGtGitMHsYnZ35l4fltnstLvJmendTTKZ39OdmXvux3/uPefe+QBCQlY05NVgaGi0vUSFvSBsB9ADIKapLaXNYtW3L7WmHuJk3lf486tx+7/7ABQBnIWij6wY3jqWzea8VOpJgMHhzBZJdAhAyosdl4hpFsei66KcvMPFi8WSZbnyEjBlE2W+/CT7HbdOwc04uC3TI4mOoEGdN00TmcdHWJ0HgCe2j0RN03SdU8AtQqnPBrdletj1cjNKKQ4AKg4AbW03Ys9TT2LLvRuRSHRyi+Dx6RlWtt27RrF71yguX76CE+OncPCdd5HL5wEgXm4rBjjlsEbA1kd39gKqHwAMw8ArLz6PocEB/Z33QSLRieGHt+Ll/fsghNMd1V9u88Iwp4B8wEn1bdqI7js2eG5oo+ntuRN9m+6ZO0HW/Rw7ngBKrXGS6fW3emxa80jftm7uQNJajg1PADHnK8wI2200nUgkUn1ocGzYUWA5oJSqpIlIzZO1QqAEqEZCrUABWF12EygBVJUCpHhyBEoAPyxdlw4AyU7g2Z2AVMCBD4G/r8ybvdoJYtk7wa4O4IWngd40cPftwP5ngLUJ7dUsPQHWp4BU17UddgS5aXU5Tw1cA4AZBZbeFHh1b9mbGzXuTbITeOO5+rZVfZbEc4JLTwCxwKA0WAs8fnVaS1tkXGFQLncn2CQCJcBVUTAcARyCJYCPKBAoAUIn6AOt6wDblpjOzcKWPvalDAxB6GhrhVFnreBye4vhBAslu2GdBwBbKhSKttYytQrQEjHq3h0dGEKgJVp/Jeh6JMZ8PKJ1ChiGwOr4Kp1FNpxgOUFXGFyBUcDlAyXPGQVKAD9o3w7PFi0wxfeMEITWaP0m+3kkplWA2aKFf/MFnUXWZD4RvBKoKeDnzZDWEeDcGcuWOoutYBqCffclcx5q9wE6h2czWPFTIFAC+CFQAix6GJRSYTo369sJCkGIx1oRMd33xdlmK6Dm9etB6wgoWvZ1RQApFQol65rzzja73nWHRV8KR00DZq03OkyEILTU+ATH2WbXu17Bx2ZI6xQQgpBo178dbuQ2O7BOkBCGQRaBEsAdBcPnASwCJkBVFFiJL0bCvYAPeAJIVJZflqX3xYROSlb1KlHWXzJWwfxYWl1ykpMXf/fWqiYyOTlVSRPhL44NSwBB+MZJnxz/Ab+c/9Vz4xrNj6d/wsT5C85hKapajnPsWF8cXZg4+0+6+64HCUgrpXD85PdIJruwJtl19SfqTWdmJocvjn6N1998G8ViqXxS4b0jYx+8z7Fn/zXW/8iObsNQJwB0VIyJEIvd4LHJesnl8q5jAqZKivqOjWVZU8DTb3MDIzs2C6UOAbjZi13TIJyzLXrs6OHsOa6Jp4/ufpv4+Y9U74aDJowZUtQOQhwA+1e3BjEN0CkAr0Vkfs/nhz++tKBFSEiIw//bwHNNwJUmSQAAAABJRU5ErkJggg==">
+								<img class="file-container-icon" style="display: none;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEh0lEQVR4nO2bXWgcVRTH/+fO7CZ1TTbZZltXtHWlmkRfLDUtiB8klGhiitWl9CEIFVrxQfriWwWhgoog+qAUoeCTIrpIETS0KrYq2NZYpRUsja2SGtGitMHsYnZ35l4fltnstLvJmendTTKZ39OdmXvux3/uPefe+QBCQlY05NVgaGi0vUSFvSBsB9ADIKapLaXNYtW3L7WmHuJk3lf486tx+7/7ABQBnIWij6wY3jqWzea8VOpJgMHhzBZJdAhAyosdl4hpFsei66KcvMPFi8WSZbnyEjBlE2W+/CT7HbdOwc04uC3TI4mOoEGdN00TmcdHWJ0HgCe2j0RN03SdU8AtQqnPBrdletj1cjNKKQ4AKg4AbW03Ys9TT2LLvRuRSHRyi+Dx6RlWtt27RrF71yguX76CE+OncPCdd5HL5wEgXm4rBjjlsEbA1kd39gKqHwAMw8ArLz6PocEB/Z33QSLRieGHt+Ll/fsghNMd1V9u88Iwp4B8wEn1bdqI7js2eG5oo+ntuRN9m+6ZO0HW/Rw7ngBKrXGS6fW3emxa80jftm7uQNJajg1PADHnK8wI2200nUgkUn1ocGzYUWA5oJSqpIlIzZO1QqAEqEZCrUABWF12EygBVJUCpHhyBEoAPyxdlw4AyU7g2Z2AVMCBD4G/r8ybvdoJYtk7wa4O4IWngd40cPftwP5ngLUJ7dUsPQHWp4BU17UddgS5aXU5Tw1cA4AZBZbeFHh1b9mbGzXuTbITeOO5+rZVfZbEc4JLTwCxwKA0WAs8fnVaS1tkXGFQLncn2CQCJcBVUTAcARyCJYCPKBAoAUIn6AOt6wDblpjOzcKWPvalDAxB6GhrhVFnreBye4vhBAslu2GdBwBbKhSKttYytQrQEjHq3h0dGEKgJVp/Jeh6JMZ8PKJ1ChiGwOr4Kp1FNpxgOUFXGFyBUcDlAyXPGQVKAD9o3w7PFi0wxfeMEITWaP0m+3kkplWA2aKFf/MFnUXWZD4RvBKoKeDnzZDWEeDcGcuWOoutYBqCffclcx5q9wE6h2czWPFTIFAC+CFQAix6GJRSYTo369sJCkGIx1oRMd33xdlmK6Dm9etB6wgoWvZ1RQApFQol65rzzja73nWHRV8KR00DZq03OkyEILTU+ATH2WbXu17Bx2ZI6xQQgpBo178dbuQ2O7BOkBCGQRaBEsAdBcPnASwCJkBVFFiJL0bCvYAPeAJIVJZflqX3xYROSlb1KlHWXzJWwfxYWl1ykpMXf/fWqiYyOTlVSRPhL44NSwBB+MZJnxz/Ab+c/9Vz4xrNj6d/wsT5C85hKapajnPsWF8cXZg4+0+6+64HCUgrpXD85PdIJruwJtl19SfqTWdmJocvjn6N1998G8ViqXxS4b0jYx+8z7Fn/zXW/8iObsNQJwB0VIyJEIvd4LHJesnl8q5jAqZKivqOjWVZU8DTb3MDIzs2C6UOAbjZi13TIJyzLXrs6OHsOa6Jp4/ufpv4+Y9U74aDJowZUtQOQhwA+1e3BjEN0CkAr0Vkfs/nhz++tKBFSEiIw//bwHNNwJUmSQAAAABJRU5ErkJggg==">
+								<img class="file-container-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEh0lEQVR4nO2bXWgcVRTH/+fO7CZ1TTbZZltXtHWlmkRfLDUtiB8klGhiitWl9CEIFVrxQfriWwWhgoog+qAUoeCTIrpIETS0KrYq2NZYpRUsja2SGtGitMHsYnZ35l4fltnstLvJmendTTKZ39OdmXvux3/uPefe+QBCQlY05NVgaGi0vUSFvSBsB9ADIKapLaXNYtW3L7WmHuJk3lf486tx+7/7ABQBnIWij6wY3jqWzea8VOpJgMHhzBZJdAhAyosdl4hpFsei66KcvMPFi8WSZbnyEjBlE2W+/CT7HbdOwc04uC3TI4mOoEGdN00TmcdHWJ0HgCe2j0RN03SdU8AtQqnPBrdletj1cjNKKQ4AKg4AbW03Ys9TT2LLvRuRSHRyi+Dx6RlWtt27RrF71yguX76CE+OncPCdd5HL5wEgXm4rBjjlsEbA1kd39gKqHwAMw8ArLz6PocEB/Z33QSLRieGHt+Ll/fsghNMd1V9u88Iwp4B8wEn1bdqI7js2eG5oo+ntuRN9m+6ZO0HW/Rw7ngBKrXGS6fW3emxa80jftm7uQNJajg1PADHnK8wI2200nUgkUn1ocGzYUWA5oJSqpIlIzZO1QqAEqEZCrUABWF12EygBVJUCpHhyBEoAPyxdlw4AyU7g2Z2AVMCBD4G/r8ybvdoJYtk7wa4O4IWngd40cPftwP5ngLUJ7dUsPQHWp4BU17UddgS5aXU5Tw1cA4AZBZbeFHh1b9mbGzXuTbITeOO5+rZVfZbEc4JLTwCxwKA0WAs8fnVaS1tkXGFQLncn2CQCJcBVUTAcARyCJYCPKBAoAUIn6AOt6wDblpjOzcKWPvalDAxB6GhrhVFnreBye4vhBAslu2GdBwBbKhSKttYytQrQEjHq3h0dGEKgJVp/Jeh6JMZ8PKJ1ChiGwOr4Kp1FNpxgOUFXGFyBUcDlAyXPGQVKAD9o3w7PFi0wxfeMEITWaP0m+3kkplWA2aKFf/MFnUXWZD4RvBKoKeDnzZDWEeDcGcuWOoutYBqCffclcx5q9wE6h2czWPFTIFAC+CFQAix6GJRSYTo369sJCkGIx1oRMd33xdlmK6Dm9etB6wgoWvZ1RQApFQol65rzzja73nWHRV8KR00DZq03OkyEILTU+ATH2WbXu17Bx2ZI6xQQgpBo178dbuQ2O7BOkBCGQRaBEsAdBcPnASwCJkBVFFiJL0bCvYAPeAJIVJZflqX3xYROSlb1KlHWXzJWwfxYWl1ykpMXf/fWqiYyOTlVSRPhL44NSwBB+MZJnxz/Ab+c/9Vz4xrNj6d/wsT5C85hKapajnPsWF8cXZg4+0+6+64HCUgrpXD85PdIJruwJtl19SfqTWdmJocvjn6N1998G8ViqXxS4b0jYx+8z7Fn/zXW/8iObsNQJwB0VIyJEIvd4LHJesnl8q5jAqZKivqOjWVZU8DTb3MDIzs2C6UOAbjZi13TIJyzLXrs6OHsOa6Jp4/ufpv4+Y9U74aDJowZUtQOQhwA+1e3BjEN0CkAr0Vkfs/nhz++tKBFSEiIw//bwHNNwJUmSQAAAABJRU5ErkJggg==">
 							</div>
 							<div class="file-reference">
 								Assembler Challenge.pdf
@@ -968,8 +885,8 @@ def train_step(x, y):
 					<a class="file-link" target="_blank" href="scrapper_out/carbon.png">
 						<div class="file-container">
 							<div class="file-icon">
-								<img style="display: none;" width="30" height="30" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEh0lEQVR4nO2bXWgcVRTH/+fO7CZ1TTbZZltXtHWlmkRfLDUtiB8klGhiitWl9CEIFVrxQfriWwWhgoog+qAUoeCTIrpIETS0KrYq2NZYpRUsja2SGtGitMHsYnZ35l4fltnstLvJmendTTKZ39OdmXvux3/uPefe+QBCQlY05NVgaGi0vUSFvSBsB9ADIKapLaXNYtW3L7WmHuJk3lf486tx+7/7ABQBnIWij6wY3jqWzea8VOpJgMHhzBZJdAhAyosdl4hpFsei66KcvMPFi8WSZbnyEjBlE2W+/CT7HbdOwc04uC3TI4mOoEGdN00TmcdHWJ0HgCe2j0RN03SdU8AtQqnPBrdletj1cjNKKQ4AKg4AbW03Ys9TT2LLvRuRSHRyi+Dx6RlWtt27RrF71yguX76CE+OncPCdd5HL5wEgXm4rBjjlsEbA1kd39gKqHwAMw8ArLz6PocEB/Z33QSLRieGHt+Ll/fsghNMd1V9u88Iwp4B8wEn1bdqI7js2eG5oo+ntuRN9m+6ZO0HW/Rw7ngBKrXGS6fW3emxa80jftm7uQNJajg1PADHnK8wI2200nUgkUn1ocGzYUWA5oJSqpIlIzZO1QqAEqEZCrUABWF12EygBVJUCpHhyBEoAPyxdlw4AyU7g2Z2AVMCBD4G/r8ybvdoJYtk7wa4O4IWngd40cPftwP5ngLUJ7dUsPQHWp4BU17UddgS5aXU5Tw1cA4AZBZbeFHh1b9mbGzXuTbITeOO5+rZVfZbEc4JLTwCxwKA0WAs8fnVaS1tkXGFQLncn2CQCJcBVUTAcARyCJYCPKBAoAUIn6AOt6wDblpjOzcKWPvalDAxB6GhrhVFnreBye4vhBAslu2GdBwBbKhSKttYytQrQEjHq3h0dGEKgJVp/Jeh6JMZ8PKJ1ChiGwOr4Kp1FNpxgOUFXGFyBUcDlAyXPGQVKAD9o3w7PFi0wxfeMEITWaP0m+3kkplWA2aKFf/MFnUXWZD4RvBKoKeDnzZDWEeDcGcuWOoutYBqCffclcx5q9wE6h2czWPFTIFAC+CFQAix6GJRSYTo369sJCkGIx1oRMd33xdlmK6Dm9etB6wgoWvZ1RQApFQol65rzzja73nWHRV8KR00DZq03OkyEILTU+ATH2WbXu17Bx2ZI6xQQgpBo178dbuQ2O7BOkBCGQRaBEsAdBcPnASwCJkBVFFiJL0bCvYAPeAJIVJZflqX3xYROSlb1KlHWXzJWwfxYWl1ykpMXf/fWqiYyOTlVSRPhL44NSwBB+MZJnxz/Ab+c/9Vz4xrNj6d/wsT5C85hKapajnPsWF8cXZg4+0+6+64HCUgrpXD85PdIJruwJtl19SfqTWdmJocvjn6N1998G8ViqXxS4b0jYx+8z7Fn/zXW/8iObsNQJwB0VIyJEIvd4LHJesnl8q5jAqZKivqOjWVZU8DTb3MDIzs2C6UOAbjZi13TIJyzLXrs6OHsOa6Jp4/ufpv4+Y9U74aDJowZUtQOQhwA+1e3BjEN0CkAr0Vkfs/nhz++tKBFSEiIw//bwHNNwJUmSQAAAABJRU5ErkJggg==">
-								<img width="30" height="30" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEh0lEQVR4nO2bXWgcVRTH/+fO7CZ1TTbZZltXtHWlmkRfLDUtiB8klGhiitWl9CEIFVrxQfriWwWhgoog+qAUoeCTIrpIETS0KrYq2NZYpRUsja2SGtGitMHsYnZ35l4fltnstLvJmendTTKZ39OdmXvux3/uPefe+QBCQlY05NVgaGi0vUSFvSBsB9ADIKapLaXNYtW3L7WmHuJk3lf486tx+7/7ABQBnIWij6wY3jqWzea8VOpJgMHhzBZJdAhAyosdl4hpFsei66KcvMPFi8WSZbnyEjBlE2W+/CT7HbdOwc04uC3TI4mOoEGdN00TmcdHWJ0HgCe2j0RN03SdU8AtQqnPBrdletj1cjNKKQ4AKg4AbW03Ys9TT2LLvRuRSHRyi+Dx6RlWtt27RrF71yguX76CE+OncPCdd5HL5wEgXm4rBjjlsEbA1kd39gKqHwAMw8ArLz6PocEB/Z33QSLRieGHt+Ll/fsghNMd1V9u88Iwp4B8wEn1bdqI7js2eG5oo+ntuRN9m+6ZO0HW/Rw7ngBKrXGS6fW3emxa80jftm7uQNJajg1PADHnK8wI2200nUgkUn1ocGzYUWA5oJSqpIlIzZO1QqAEqEZCrUABWF12EygBVJUCpHhyBEoAPyxdlw4AyU7g2Z2AVMCBD4G/r8ybvdoJYtk7wa4O4IWngd40cPftwP5ngLUJ7dUsPQHWp4BU17UddgS5aXU5Tw1cA4AZBZbeFHh1b9mbGzXuTbITeOO5+rZVfZbEc4JLTwCxwKA0WAs8fnVaS1tkXGFQLncn2CQCJcBVUTAcARyCJYCPKBAoAUIn6AOt6wDblpjOzcKWPvalDAxB6GhrhVFnreBye4vhBAslu2GdBwBbKhSKttYytQrQEjHq3h0dGEKgJVp/Jeh6JMZ8PKJ1ChiGwOr4Kp1FNpxgOUFXGFyBUcDlAyXPGQVKAD9o3w7PFi0wxfeMEITWaP0m+3kkplWA2aKFf/MFnUXWZD4RvBKoKeDnzZDWEeDcGcuWOoutYBqCffclcx5q9wE6h2czWPFTIFAC+CFQAix6GJRSYTo369sJCkGIx1oRMd33xdlmK6Dm9etB6wgoWvZ1RQApFQol65rzzja73nWHRV8KR00DZq03OkyEILTU+ATH2WbXu17Bx2ZI6xQQgpBo178dbuQ2O7BOkBCGQRaBEsAdBcPnASwCJkBVFFiJL0bCvYAPeAJIVJZflqX3xYROSlb1KlHWXzJWwfxYWl1ykpMXf/fWqiYyOTlVSRPhL44NSwBB+MZJnxz/Ab+c/9Vz4xrNj6d/wsT5C85hKapajnPsWF8cXZg4+0+6+64HCUgrpXD85PdIJruwJtl19SfqTWdmJocvjn6N1998G8ViqXxS4b0jYx+8z7Fn/zXW/8iObsNQJwB0VIyJEIvd4LHJesnl8q5jAqZKivqOjWVZU8DTb3MDIzs2C6UOAbjZi13TIJyzLXrs6OHsOa6Jp4/ufpv4+Y9U74aDJowZUtQOQhwA+1e3BjEN0CkAr0Vkfs/nhz++tKBFSEiIw//bwHNNwJUmSQAAAABJRU5ErkJggg==">
+								<img class="file-container-icon" style="display: none;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEh0lEQVR4nO2bXWgcVRTH/+fO7CZ1TTbZZltXtHWlmkRfLDUtiB8klGhiitWl9CEIFVrxQfriWwWhgoog+qAUoeCTIrpIETS0KrYq2NZYpRUsja2SGtGitMHsYnZ35l4fltnstLvJmendTTKZ39OdmXvux3/uPefe+QBCQlY05NVgaGi0vUSFvSBsB9ADIKapLaXNYtW3L7WmHuJk3lf486tx+7/7ABQBnIWij6wY3jqWzea8VOpJgMHhzBZJdAhAyosdl4hpFsei66KcvMPFi8WSZbnyEjBlE2W+/CT7HbdOwc04uC3TI4mOoEGdN00TmcdHWJ0HgCe2j0RN03SdU8AtQqnPBrdletj1cjNKKQ4AKg4AbW03Ys9TT2LLvRuRSHRyi+Dx6RlWtt27RrF71yguX76CE+OncPCdd5HL5wEgXm4rBjjlsEbA1kd39gKqHwAMw8ArLz6PocEB/Z33QSLRieGHt+Ll/fsghNMd1V9u88Iwp4B8wEn1bdqI7js2eG5oo+ntuRN9m+6ZO0HW/Rw7ngBKrXGS6fW3emxa80jftm7uQNJajg1PADHnK8wI2200nUgkUn1ocGzYUWA5oJSqpIlIzZO1QqAEqEZCrUABWF12EygBVJUCpHhyBEoAPyxdlw4AyU7g2Z2AVMCBD4G/r8ybvdoJYtk7wa4O4IWngd40cPftwP5ngLUJ7dUsPQHWp4BU17UddgS5aXU5Tw1cA4AZBZbeFHh1b9mbGzXuTbITeOO5+rZVfZbEc4JLTwCxwKA0WAs8fnVaS1tkXGFQLncn2CQCJcBVUTAcARyCJYCPKBAoAUIn6AOt6wDblpjOzcKWPvalDAxB6GhrhVFnreBye4vhBAslu2GdBwBbKhSKttYytQrQEjHq3h0dGEKgJVp/Jeh6JMZ8PKJ1ChiGwOr4Kp1FNpxgOUFXGFyBUcDlAyXPGQVKAD9o3w7PFi0wxfeMEITWaP0m+3kkplWA2aKFf/MFnUXWZD4RvBKoKeDnzZDWEeDcGcuWOoutYBqCffclcx5q9wE6h2czWPFTIFAC+CFQAix6GJRSYTo369sJCkGIx1oRMd33xdlmK6Dm9etB6wgoWvZ1RQApFQol65rzzja73nWHRV8KR00DZq03OkyEILTU+ATH2WbXu17Bx2ZI6xQQgpBo178dbuQ2O7BOkBCGQRaBEsAdBcPnASwCJkBVFFiJL0bCvYAPeAJIVJZflqX3xYROSlb1KlHWXzJWwfxYWl1ykpMXf/fWqiYyOTlVSRPhL44NSwBB+MZJnxz/Ab+c/9Vz4xrNj6d/wsT5C85hKapajnPsWF8cXZg4+0+6+64HCUgrpXD85PdIJruwJtl19SfqTWdmJocvjn6N1998G8ViqXxS4b0jYx+8z7Fn/zXW/8iObsNQJwB0VIyJEIvd4LHJesnl8q5jAqZKivqOjWVZU8DTb3MDIzs2C6UOAbjZi13TIJyzLXrs6OHsOa6Jp4/ufpv4+Y9U74aDJowZUtQOQhwA+1e3BjEN0CkAr0Vkfs/nhz++tKBFSEiIw//bwHNNwJUmSQAAAABJRU5ErkJggg==">
+								<img class="file-container-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEh0lEQVR4nO2bXWgcVRTH/+fO7CZ1TTbZZltXtHWlmkRfLDUtiB8klGhiitWl9CEIFVrxQfriWwWhgoog+qAUoeCTIrpIETS0KrYq2NZYpRUsja2SGtGitMHsYnZ35l4fltnstLvJmendTTKZ39OdmXvux3/uPefe+QBCQlY05NVgaGi0vUSFvSBsB9ADIKapLaXNYtW3L7WmHuJk3lf486tx+7/7ABQBnIWij6wY3jqWzea8VOpJgMHhzBZJdAhAyosdl4hpFsei66KcvMPFi8WSZbnyEjBlE2W+/CT7HbdOwc04uC3TI4mOoEGdN00TmcdHWJ0HgCe2j0RN03SdU8AtQqnPBrdletj1cjNKKQ4AKg4AbW03Ys9TT2LLvRuRSHRyi+Dx6RlWtt27RrF71yguX76CE+OncPCdd5HL5wEgXm4rBjjlsEbA1kd39gKqHwAMw8ArLz6PocEB/Z33QSLRieGHt+Ll/fsghNMd1V9u88Iwp4B8wEn1bdqI7js2eG5oo+ntuRN9m+6ZO0HW/Rw7ngBKrXGS6fW3emxa80jftm7uQNJajg1PADHnK8wI2200nUgkUn1ocGzYUWA5oJSqpIlIzZO1QqAEqEZCrUABWF12EygBVJUCpHhyBEoAPyxdlw4AyU7g2Z2AVMCBD4G/r8ybvdoJYtk7wa4O4IWngd40cPftwP5ngLUJ7dUsPQHWp4BU17UddgS5aXU5Tw1cA4AZBZbeFHh1b9mbGzXuTbITeOO5+rZVfZbEc4JLTwCxwKA0WAs8fnVaS1tkXGFQLncn2CQCJcBVUTAcARyCJYCPKBAoAUIn6AOt6wDblpjOzcKWPvalDAxB6GhrhVFnreBye4vhBAslu2GdBwBbKhSKttYytQrQEjHq3h0dGEKgJVp/Jeh6JMZ8PKJ1ChiGwOr4Kp1FNpxgOUFXGFyBUcDlAyXPGQVKAD9o3w7PFi0wxfeMEITWaP0m+3kkplWA2aKFf/MFnUXWZD4RvBKoKeDnzZDWEeDcGcuWOoutYBqCffclcx5q9wE6h2czWPFTIFAC+CFQAix6GJRSYTo369sJCkGIx1oRMd33xdlmK6Dm9etB6wgoWvZ1RQApFQol65rzzja73nWHRV8KR00DZq03OkyEILTU+ATH2WbXu17Bx2ZI6xQQgpBo178dbuQ2O7BOkBCGQRaBEsAdBcPnASwCJkBVFFiJL0bCvYAPeAJIVJZflqX3xYROSlb1KlHWXzJWwfxYWl1ykpMXf/fWqiYyOTlVSRPhL44NSwBB+MZJnxz/Ab+c/9Vz4xrNj6d/wsT5C85hKapajnPsWF8cXZg4+0+6+64HCUgrpXD85PdIJruwJtl19SfqTWdmJocvjn6N1998G8ViqXxS4b0jYx+8z7Fn/zXW/8iObsNQJwB0VIyJEIvd4LHJesnl8q5jAqZKivqOjWVZU8DTb3MDIzs2C6UOAbjZi13TIJyzLXrs6OHsOa6Jp4/ufpv4+Y9U74aDJowZUtQOQhwA+1e3BjEN0CkAr0Vkfs/nhz++tKBFSEiIw//bwHNNwJUmSQAAAABJRU5ErkJggg==">
 							</div>
 							<div class="file-reference">
 								Assembler Challenge.pdf
@@ -981,25 +898,14 @@ def train_step(x, y):
 					<a class="file-link" target="_blank" href="scrapper_out/carbon.png">
 						<div class="file-container">
 							<div class="file-icon">
-								<img style="display: none;" width="30" height="30" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEh0lEQVR4nO2bXWgcVRTH/+fO7CZ1TTbZZltXtHWlmkRfLDUtiB8klGhiitWl9CEIFVrxQfriWwWhgoog+qAUoeCTIrpIETS0KrYq2NZYpRUsja2SGtGitMHsYnZ35l4fltnstLvJmendTTKZ39OdmXvux3/uPefe+QBCQlY05NVgaGi0vUSFvSBsB9ADIKapLaXNYtW3L7WmHuJk3lf486tx+7/7ABQBnIWij6wY3jqWzea8VOpJgMHhzBZJdAhAyosdl4hpFsei66KcvMPFi8WSZbnyEjBlE2W+/CT7HbdOwc04uC3TI4mOoEGdN00TmcdHWJ0HgCe2j0RN03SdU8AtQqnPBrdletj1cjNKKQ4AKg4AbW03Ys9TT2LLvRuRSHRyi+Dx6RlWtt27RrF71yguX76CE+OncPCdd5HL5wEgXm4rBjjlsEbA1kd39gKqHwAMw8ArLz6PocEB/Z33QSLRieGHt+Ll/fsghNMd1V9u88Iwp4B8wEn1bdqI7js2eG5oo+ntuRN9m+6ZO0HW/Rw7ngBKrXGS6fW3emxa80jftm7uQNJajg1PADHnK8wI2200nUgkUn1ocGzYUWA5oJSqpIlIzZO1QqAEqEZCrUABWF12EygBVJUCpHhyBEoAPyxdlw4AyU7g2Z2AVMCBD4G/r8ybvdoJYtk7wa4O4IWngd40cPftwP5ngLUJ7dUsPQHWp4BU17UddgS5aXU5Tw1cA4AZBZbeFHh1b9mbGzXuTbITeOO5+rZVfZbEc4JLTwCxwKA0WAs8fnVaS1tkXGFQLncn2CQCJcBVUTAcARyCJYCPKBAoAUIn6AOt6wDblpjOzcKWPvalDAxB6GhrhVFnreBye4vhBAslu2GdBwBbKhSKttYytQrQEjHq3h0dGEKgJVp/Jeh6JMZ8PKJ1ChiGwOr4Kp1FNpxgOUFXGFyBUcDlAyXPGQVKAD9o3w7PFi0wxfeMEITWaP0m+3kkplWA2aKFf/MFnUXWZD4RvBKoKeDnzZDWEeDcGcuWOoutYBqCffclcx5q9wE6h2czWPFTIFAC+CFQAix6GJRSYTo369sJCkGIx1oRMd33xdlmK6Dm9etB6wgoWvZ1RQApFQol65rzzja73nWHRV8KR00DZq03OkyEILTU+ATH2WbXu17Bx2ZI6xQQgpBo178dbuQ2O7BOkBCGQRaBEsAdBcPnASwCJkBVFFiJL0bCvYAPeAJIVJZflqX3xYROSlb1KlHWXzJWwfxYWl1ykpMXf/fWqiYyOTlVSRPhL44NSwBB+MZJnxz/Ab+c/9Vz4xrNj6d/wsT5C85hKapajnPsWF8cXZg4+0+6+64HCUgrpXD85PdIJruwJtl19SfqTWdmJocvjn6N1998G8ViqXxS4b0jYx+8z7Fn/zXW/8iObsNQJwB0VIyJEIvd4LHJesnl8q5jAqZKivqOjWVZU8DTb3MDIzs2C6UOAbjZi13TIJyzLXrs6OHsOa6Jp4/ufpv4+Y9U74aDJowZUtQOQhwA+1e3BjEN0CkAr0Vkfs/nhz++tKBFSEiIw//bwHNNwJUmSQAAAABJRU5ErkJggg==">
-								<img width="30" height="30" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEh0lEQVR4nO2bXWgcVRTH/+fO7CZ1TTbZZltXtHWlmkRfLDUtiB8klGhiitWl9CEIFVrxQfriWwWhgoog+qAUoeCTIrpIETS0KrYq2NZYpRUsja2SGtGitMHsYnZ35l4fltnstLvJmendTTKZ39OdmXvux3/uPefe+QBCQlY05NVgaGi0vUSFvSBsB9ADIKapLaXNYtW3L7WmHuJk3lf486tx+7/7ABQBnIWij6wY3jqWzea8VOpJgMHhzBZJdAhAyosdl4hpFsei66KcvMPFi8WSZbnyEjBlE2W+/CT7HbdOwc04uC3TI4mOoEGdN00TmcdHWJ0HgCe2j0RN03SdU8AtQqnPBrdletj1cjNKKQ4AKg4AbW03Ys9TT2LLvRuRSHRyi+Dx6RlWtt27RrF71yguX76CE+OncPCdd5HL5wEgXm4rBjjlsEbA1kd39gKqHwAMw8ArLz6PocEB/Z33QSLRieGHt+Ll/fsghNMd1V9u88Iwp4B8wEn1bdqI7js2eG5oo+ntuRN9m+6ZO0HW/Rw7ngBKrXGS6fW3emxa80jftm7uQNJajg1PADHnK8wI2200nUgkUn1ocGzYUWA5oJSqpIlIzZO1QqAEqEZCrUABWF12EygBVJUCpHhyBEoAPyxdlw4AyU7g2Z2AVMCBD4G/r8ybvdoJYtk7wa4O4IWngd40cPftwP5ngLUJ7dUsPQHWp4BU17UddgS5aXU5Tw1cA4AZBZbeFHh1b9mbGzXuTbITeOO5+rZVfZbEc4JLTwCxwKA0WAs8fnVaS1tkXGFQLncn2CQCJcBVUTAcARyCJYCPKBAoAUIn6AOt6wDblpjOzcKWPvalDAxB6GhrhVFnreBye4vhBAslu2GdBwBbKhSKttYytQrQEjHq3h0dGEKgJVp/Jeh6JMZ8PKJ1ChiGwOr4Kp1FNpxgOUFXGFyBUcDlAyXPGQVKAD9o3w7PFi0wxfeMEITWaP0m+3kkplWA2aKFf/MFnUXWZD4RvBKoKeDnzZDWEeDcGcuWOoutYBqCffclcx5q9wE6h2czWPFTIFAC+CFQAix6GJRSYTo369sJCkGIx1oRMd33xdlmK6Dm9etB6wgoWvZ1RQApFQol65rzzja73nWHRV8KR00DZq03OkyEILTU+ATH2WbXu17Bx2ZI6xQQgpBo178dbuQ2O7BOkBCGQRaBEsAdBcPnASwCJkBVFFiJL0bCvYAPeAJIVJZflqX3xYROSlb1KlHWXzJWwfxYWl1ykpMXf/fWqiYyOTlVSRPhL44NSwBB+MZJnxz/Ab+c/9Vz4xrNj6d/wsT5C85hKapajnPsWF8cXZg4+0+6+64HCUgrpXD85PdIJruwJtl19SfqTWdmJocvjn6N1998G8ViqXxS4b0jYx+8z7Fn/zXW/8iObsNQJwB0VIyJEIvd4LHJesnl8q5jAqZKivqOjWVZU8DTb3MDIzs2C6UOAbjZi13TIJyzLXrs6OHsOa6Jp4/ufpv4+Y9U74aDJowZUtQOQhwA+1e3BjEN0CkAr0Vkfs/nhz++tKBFSEiIw//bwHNNwJUmSQAAAABJRU5ErkJggg==">
+								<img class="file-container-icon" style="display: none;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEh0lEQVR4nO2bXWgcVRTH/+fO7CZ1TTbZZltXtHWlmkRfLDUtiB8klGhiitWl9CEIFVrxQfriWwWhgoog+qAUoeCTIrpIETS0KrYq2NZYpRUsja2SGtGitMHsYnZ35l4fltnstLvJmendTTKZ39OdmXvux3/uPefe+QBCQlY05NVgaGi0vUSFvSBsB9ADIKapLaXNYtW3L7WmHuJk3lf486tx+7/7ABQBnIWij6wY3jqWzea8VOpJgMHhzBZJdAhAyosdl4hpFsei66KcvMPFi8WSZbnyEjBlE2W+/CT7HbdOwc04uC3TI4mOoEGdN00TmcdHWJ0HgCe2j0RN03SdU8AtQqnPBrdletj1cjNKKQ4AKg4AbW03Ys9TT2LLvRuRSHRyi+Dx6RlWtt27RrF71yguX76CE+OncPCdd5HL5wEgXm4rBjjlsEbA1kd39gKqHwAMw8ArLz6PocEB/Z33QSLRieGHt+Ll/fsghNMd1V9u88Iwp4B8wEn1bdqI7js2eG5oo+ntuRN9m+6ZO0HW/Rw7ngBKrXGS6fW3emxa80jftm7uQNJajg1PADHnK8wI2200nUgkUn1ocGzYUWA5oJSqpIlIzZO1QqAEqEZCrUABWF12EygBVJUCpHhyBEoAPyxdlw4AyU7g2Z2AVMCBD4G/r8ybvdoJYtk7wa4O4IWngd40cPftwP5ngLUJ7dUsPQHWp4BU17UddgS5aXU5Tw1cA4AZBZbeFHh1b9mbGzXuTbITeOO5+rZVfZbEc4JLTwCxwKA0WAs8fnVaS1tkXGFQLncn2CQCJcBVUTAcARyCJYCPKBAoAUIn6AOt6wDblpjOzcKWPvalDAxB6GhrhVFnreBye4vhBAslu2GdBwBbKhSKttYytQrQEjHq3h0dGEKgJVp/Jeh6JMZ8PKJ1ChiGwOr4Kp1FNpxgOUFXGFyBUcDlAyXPGQVKAD9o3w7PFi0wxfeMEITWaP0m+3kkplWA2aKFf/MFnUXWZD4RvBKoKeDnzZDWEeDcGcuWOoutYBqCffclcx5q9wE6h2czWPFTIFAC+CFQAix6GJRSYTo369sJCkGIx1oRMd33xdlmK6Dm9etB6wgoWvZ1RQApFQol65rzzja73nWHRV8KR00DZq03OkyEILTU+ATH2WbXu17Bx2ZI6xQQgpBo178dbuQ2O7BOkBCGQRaBEsAdBcPnASwCJkBVFFiJL0bCvYAPeAJIVJZflqX3xYROSlb1KlHWXzJWwfxYWl1ykpMXf/fWqiYyOTlVSRPhL44NSwBB+MZJnxz/Ab+c/9Vz4xrNj6d/wsT5C85hKapajnPsWF8cXZg4+0+6+64HCUgrpXD85PdIJruwJtl19SfqTWdmJocvjn6N1998G8ViqXxS4b0jYx+8z7Fn/zXW/8iObsNQJwB0VIyJEIvd4LHJesnl8q5jAqZKivqOjWVZU8DTb3MDIzs2C6UOAbjZi13TIJyzLXrs6OHsOa6Jp4/ufpv4+Y9U74aDJowZUtQOQhwA+1e3BjEN0CkAr0Vkfs/nhz++tKBFSEiIw//bwHNNwJUmSQAAAABJRU5ErkJggg==">
+								<img class="file-container-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEh0lEQVR4nO2bXWgcVRTH/+fO7CZ1TTbZZltXtHWlmkRfLDUtiB8klGhiitWl9CEIFVrxQfriWwWhgoog+qAUoeCTIrpIETS0KrYq2NZYpRUsja2SGtGitMHsYnZ35l4fltnstLvJmendTTKZ39OdmXvux3/uPefe+QBCQlY05NVgaGi0vUSFvSBsB9ADIKapLaXNYtW3L7WmHuJk3lf486tx+7/7ABQBnIWij6wY3jqWzea8VOpJgMHhzBZJdAhAyosdl4hpFsei66KcvMPFi8WSZbnyEjBlE2W+/CT7HbdOwc04uC3TI4mOoEGdN00TmcdHWJ0HgCe2j0RN03SdU8AtQqnPBrdletj1cjNKKQ4AKg4AbW03Ys9TT2LLvRuRSHRyi+Dx6RlWtt27RrF71yguX76CE+OncPCdd5HL5wEgXm4rBjjlsEbA1kd39gKqHwAMw8ArLz6PocEB/Z33QSLRieGHt+Ll/fsghNMd1V9u88Iwp4B8wEn1bdqI7js2eG5oo+ntuRN9m+6ZO0HW/Rw7ngBKrXGS6fW3emxa80jftm7uQNJajg1PADHnK8wI2200nUgkUn1ocGzYUWA5oJSqpIlIzZO1QqAEqEZCrUABWF12EygBVJUCpHhyBEoAPyxdlw4AyU7g2Z2AVMCBD4G/r8ybvdoJYtk7wa4O4IWngd40cPftwP5ngLUJ7dUsPQHWp4BU17UddgS5aXU5Tw1cA4AZBZbeFHh1b9mbGzXuTbITeOO5+rZVfZbEc4JLTwCxwKA0WAs8fnVaS1tkXGFQLncn2CQCJcBVUTAcARyCJYCPKBAoAUIn6AOt6wDblpjOzcKWPvalDAxB6GhrhVFnreBye4vhBAslu2GdBwBbKhSKttYytQrQEjHq3h0dGEKgJVp/Jeh6JMZ8PKJ1ChiGwOr4Kp1FNpxgOUFXGFyBUcDlAyXPGQVKAD9o3w7PFi0wxfeMEITWaP0m+3kkplWA2aKFf/MFnUXWZD4RvBKoKeDnzZDWEeDcGcuWOoutYBqCffclcx5q9wE6h2czWPFTIFAC+CFQAix6GJRSYTo369sJCkGIx1oRMd33xdlmK6Dm9etB6wgoWvZ1RQApFQol65rzzja73nWHRV8KR00DZq03OkyEILTU+ATH2WbXu17Bx2ZI6xQQgpBo178dbuQ2O7BOkBCGQRaBEsAdBcPnASwCJkBVFFiJL0bCvYAPeAJIVJZflqX3xYROSlb1KlHWXzJWwfxYWl1ykpMXf/fWqiYyOTlVSRPhL44NSwBB+MZJnxz/Ab+c/9Vz4xrNj6d/wsT5C85hKapajnPsWF8cXZg4+0+6+64HCUgrpXD85PdIJruwJtl19SfqTWdmJocvjn6N1998G8ViqXxS4b0jYx+8z7Fn/zXW/8iObsNQJwB0VIyJEIvd4LHJesnl8q5jAqZKivqOjWVZU8DTb3MDIzs2C6UOAbjZi13TIJyzLXrs6OHsOa6Jp4/ufpv4+Y9U74aDJowZUtQOQhwA+1e3BjEN0CkAr0Vkfs/nhz++tKBFSEiIw//bwHNNwJUmSQAAAABJRU5ErkJggg==">
 							</div>
 							<div class="file-reference">
 								Assembler Challenge.pdf
 							</div>
 						</div>
 					</a>
-
-					<a class="file-link" target="_blank" href="scrapper_out/carbon.png">
-						<div class="file-container">
-							<div class="file-icon">
-								<img width="30" height="30" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAACvUlEQVR4nO2bz0uUQRyHn5l3dYkUWyWEgk5dsohyL0UWRacOHaJblw518wcd+gP8G9KCrl4L7NahoEMSREYqSRBJkBCh6e66WWvrvtNhVzOU5l15p+/70jyXfXf4DvOZZ2eWHdgBz/+Naqp62Gi+Fs8BJ1Gq1U0kwGBQ5gkjuTfOxmgQXUB/sRetxsAcdZhnK2sYdYXRjscuB4km4FbhBDX1HGhzGWYHnEuIIMAoBkuTQC9ASwA9B0P2tLgJNPVJU6n+0eRUgl3AUDGPYRIgE8D1vir7211EqXP/WYbC6rZYziRoa0Vojm88Hu4OnU5+BwqN1yzKjDNQuhT3AHYBSm9OuS1r4h7fMra5Csw13mVR5hGDy5fjHMIuQJJ1PU+tdoHfElpBP4xTQrIFANzrcioh+QLAqYR0CABnEtIjAJxISJcAiF1C+gRArBLSKQBik5BeARCLhIybZDGhw2MMFTusdaG5jVJjQDt1CQ8YKEU6OyRbgFLjRPn1rbYdnupnh/6lPHe7Zv/WNXFboDW+jyRLkDlvK0rcCrjYU2PifcDP9d31X6nA97XGijAEtvrECTjUZbh2epezB57OaiY/Wue9SeK2wL/GC5AOII0XIB1AGi9AOoA0XoB0AGm8AOkA0ngB0gGk8QKkA0jjBUgHkMYLkA4gjRcgHUAaL0A6gDRegHQAabwA6QDSeAHSAaTxAqQDSOMFSAeQxi7AhOWNx2+V5i6ZSVD+sWVKKizZ6u0CtJrZePywoFlcSa6EhbJibnFLg2ba1ifqpalXQB7ql6aOHAjp3GuavXXoDgPLq4p3nzXV2mbbS0b3nbJ1jfAnKWWgcAPUBNBWrcHMfOK/Osro8GaUwmgzGclNE5izYF9S4him0GEfdzrfRilv/ursUuEMqDxKdWMSsgkUhtB8ITCvyeVeMKxC6UietPALDcncTIDBFv4AAAAASUVORK5CYII=">							</div>
-							<div class="file-reference">
-								Assembler Challenge.pdf
-							</div>
-						</div>
-					</a>
-
 
 					<div class="code-block">
 						<div class="code-snippet">
@@ -1035,8 +941,6 @@ def train_step(x, y):
 						</div>
 					</div>
 
-					<!-- <img src="scrapper_out/placeholder_image.png"> -->
-						
 
 					<h1> Original embedded tweet from twitter</h1>
 					<div class="tweet-container">
@@ -1050,25 +954,6 @@ def train_step(x, y):
 							<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 						</div>
 					</div>
-
-					<div class="options-dropdown">
-						<button id="optionsDropdownBtn" onclick="toggleOptionsDropdown()">Dropdown</button>
-						<div id="optionsDropdownContent" class="options-dropdown-content">
-							<ul>
-								<li>
-									<a href = "https://www.google.com">Option 1</a>
-								</li>
-								<li>
-									<a href = "https://www.google.com">Option 2</a>
-								</li>
-								<li>
-									<a href = "https://www.google.com">Option 3</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					
-
 
 
 				</section>
@@ -1118,44 +1003,13 @@ def train_step(x, y):
 					document.getElementById("mainPageContainer").style.display = "none";
 					document.getElementById("topFixedTaskbar").style.display = "none";
 					document.getElementById("progressBarContainer").style.display = "none";
-					console.log("\n\n\n\nNot complete");
 				} else {
 					document.getElementById("pageWaitLoader").style.display = "none";
 					document.getElementById("mainPageContainer").style.display = "flex";
 					document.getElementById("topFixedTaskbar").style.display = "flex";
 					document.getElementById("progressBarContainer").style.display = "block";
-					console.log("\n\n\n\Complete");
 				}
 			}
-
-			let currentOpenDialogElement = "*NoDialog";
-			function openAdhocDialog(dialogElement) {
-				dialogElement.style.display = "block";
-				currentOpenDialogElement = dialogElement;
-			}
-
-			function closeAdhocDialog(dialogElement) {
-				dialogElement.style.display = "none";
-				currentOpenDialogElement = "*NoDialog";
-			}
-
-			// Close the dialog when clicked outside dialog
-			window.onclick = function(event) {
-				console.log("\n\n\n\n\nHere clicked : ", currentOpenDialogElement);
-				if (event.target == currentOpenDialogElement) {
-					closeAdhocDialog(currentOpenDialogElement);
-				}
-			}
-
-			// Have to bind key on document. Close any dialog if opened
-			document.onkeydown = function(event) {
-				if (event.key === "Escape") {
-					if(currentOpenDialogElement != "*NoDialog") {
-						closeAdhocDialog(currentOpenDialogElement);
-					}
-				}
-			}
-
 
 			var largeFileIconSize = 32;
 			var smallFileIconSize = 20;
@@ -1172,21 +1026,17 @@ def train_step(x, y):
 
 			document.addEventListener("DOMContentLoaded", function() {
 				renderMathInElement(document.body, {
-				// customised options
-				// • auto-render specific keys, e.g.:
 				delimiters: [
 					{left: '$$', right: '$$', display: true},
 					{left: '$', right: '$', display: false},
 					{left: '\\(', right: '\\)', display: false},
 					{left: '\\[', right: '\\]', display: true}
 				],
-				// • rendering keys, e.g.:
 				throwOnError : false
 				});
 			});
 
 			function togglePageTheme(modeElement) {
-				console.log("is Checked : ", modeElement.checked);
 				if (modeElement.checked) {
 					pageTheme = "dark";
 				} else {
@@ -1198,47 +1048,35 @@ def train_step(x, y):
 
 			function applyPageTheme() {
 				prismThemeElement = document.getElementById("prism-theme-file");
-				dummyMathElement = document.getElementById("dummyMathBlock");
 				if(pageTheme === "dark") {
 					prismThemeElement.href = "https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-night-owl.min.css";
-					dummyMathElement.style.backgroundColor = "black";
-					dummyMathElement.style.color = "white";
 					document.body.classList.remove("light-mode");
 					document.body.classList.add("dark-mode");
-					// taskbarElement.style.backgroundColor = "#00695c";
 				} else {
-					prismThemeElement.href = "prism_coldark_cold_theme.css";
-					dummyMathElement.style.backgroundColor = "white";
-					dummyMathElement.style.color = "black";
+					prismThemeElement.href = "https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-coldark-cold.min.css";
 					document.body.classList.remove("dark-mode");
 					document.body.classList.add("light-mode");
 				}
 			}
 
-			// alert("THeme Mode : " + window.localStorage.getItem("notion_theme_mode"));
-			console.log("THeme Mode : ", window.localStorage.getItem("notion_theme_mode"));
 			window.localStorage.setItem("notion_theme_mode", "light");
 
 			function handleTabletChange(flag) {
 				if(flag.matches) {
-					// alert("On Smaller Screen");
 					sizeBef = largeFileIconSize;
 					sizeAft = smallFileIconSize;
 				} else {
-					// alert("On Larger Screen");
 					sizeBef = smallFileIconSize;
 					sizeAft = largeFileIconSize;
 				}
 				let fileIcons = document.getElementsByClassName("file-icon");
 				for (element of fileIcons) {
-					console.log(element.children[0].src);
 					element.children[0].src = element.children[0].src.replace(sizeBef, sizeAft);
 				}				
 			}
 
 			var isSmallScreen = window.matchMedia("(max-width: 768px)");			
 			isSmallScreen.addListener(handleTabletChange);
-			// Initial Screen size check
 			handleTabletChange(isSmallScreen);
 
 			function generateId() {
@@ -1260,12 +1098,10 @@ def train_step(x, y):
 			}
 
 			function resetProgressBar() {
-				console.log("\n\n\nScrolls reset");
 				document.getElementById("progressBar").style.width = "0%";
 			}
 
 			toggleScrollTopButtonDisplay()
-			// window.onscroll = function() {myFunction()};
 
 			window.onscroll = function() {
 				myFunction();
@@ -1276,11 +1112,8 @@ def train_step(x, y):
 				var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
 				var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 				var scrolled = (winScroll / height) * 100;
-				// console.log("\nprogress : ", scrolled);
 				document.getElementById("progressBar").style.width = scrolled + "%";
 			}
-
-
 
 			let modal = document.getElementById("imageModal");
 			modal.onkeydown = function(event) {
@@ -1292,7 +1125,6 @@ def train_step(x, y):
 			function openModal(imageElement) {
 				var modal = document.getElementById("imageModal");
 				var modalImage = document.getElementById("modalImage");
-				console.log(imageElement.src);
 				modal.style.display = "flex";
 				modalImage.src = imageElement.src;
 				modal.focus();
@@ -1313,14 +1145,12 @@ def train_step(x, y):
 				copiedToClipboard("Equation Copied to Clipboard!!");
 			}
 
-
-
 			function copiedToClipboard(message) {
 				var snackbarElement = document.getElementById("snackbar");
 				snackbarElement.className = "show";
 				snackbarElement.textContent = message;
 				setTimeout(function() { 
-					snackbarElement.className = snackbarElement.className.replace("show", ""); 
+					snackbarElement.className = snackbarElement.className.replace("show", "");
 				}, 2000);
 			}
 
@@ -1332,11 +1162,8 @@ def train_step(x, y):
 			}
 
 
-			// This is the combined version of above 2 mthods as at a time only one window.onload works
 			window.onload = function createTOC() {
-				// console.clear();
 				resetProgressBar();
-				console.log("Populating the TOC");
 				const data = Array.from(document.querySelectorAll(".heading-1, .heading-2, .heading-3")).map((element) => ({
 					id: element.parentElement.parentElement.id,
 					text: element.innerText,
@@ -1379,8 +1206,6 @@ def train_step(x, y):
 			}, false);
 
 			function createObserver() {
-				// console.clear();
-				console.log("Create Observer Invoked!!");
 				let options = {
 					root: null,
 					rootMargin: "-20px 0px -40% 0px",
@@ -1394,8 +1219,6 @@ def train_step(x, y):
 			function handleIntersectCallback(entries, observer) {
 				entries.forEach((entry) => {
 					if(entry.isIntersecting) {
-						// console.log("Target : ", entry.target, " | ", entry.target.id);
-						// console.log("Target : ", entry.target.id);
 						highlightActiveHeading(entry.target.id);
 					}
 				})
@@ -1404,7 +1227,6 @@ def train_step(x, y):
 			function highlightActiveHeading(id) {
 				tocNav = document.getElementsByClassName("toc-container")[0].getElementsByTagName("nav")[0];
 				navHeaders = Array.from(tocNav.getElementsByTagName("div"));
-				// console.log("Id : ", id);
 				navHeaders.forEach((element) => {
 					element.classList.remove("page-nav-active");
 					url = element.children[0].href;
@@ -1420,14 +1242,12 @@ def train_step(x, y):
 			document.onkeydown = function(event) {
 				if (event.key === "Home") {
 					timeoutId = setTimeout(() => {
-						highlightActiveHeading(document.querySelector(".text-container-section:first-child").id);
-						console.log("Home Highlight done");
+						highlightActiveHeading(document.querySelectorAll(".text-container-section")[0].id);
 					}, 500);
 				}
 				if (event.key === "End") {
 					setTimeout(() => {
-						highlightActiveHeading(document.querySelector(".text-container-section:last-child").id);
-						console.log("End Highlight done");
+						highlightActiveHeading(Array.from(document.querySelectorAll(".text-container-section")).at(-1).id);
 					}, 500);
 				}
 			}
@@ -1440,30 +1260,7 @@ def train_step(x, y):
 				}
 			}
 
-			// function lazyLoadResources() {
-			// 	console.clear();
-			// 	console.log("\n\nLoading video");
-			// 	lazyLoadElements = document.getElementsByClassName("lazy-load");
-			// 	for (element of lazyLoadElements) {
-			// 		tag_name = element.nodeName.toLowerCase();
-			// 		if (tag_name === "video" || tag_name === "audio") {
-			// 			for (child of element.children) {
-			// 				if(typeof child.nodeName === "string" && child.nodeName.toLowerCase() === "source") {
-			// 					child.setAttribute("src", child.getAttribute("data-src"));
-			// 				}
-			// 			}
-			// 			element.load();
-			// 		} else {
-			// 			element.setAttribute("src", element.getAttribute("data-src"));
-			// 		}
-			// 	}
-			// 	console.log("\n\nDone Loading Lazy Resources");
-			// }
-
-
 			function createLazyLoadObserver() {
-				// console.clear();
-				console.log("Create Lazy Load Observer Invoked!!");
 				let options = {
 					root: null,
 					rootMargin: "0px 0px 0px 0px",
@@ -1478,7 +1275,6 @@ def train_step(x, y):
 				entries.forEach((entry) => {
 					if(entry.isIntersecting) {
 						tag_name = entry.target.nodeName.toLowerCase();
-						// console.log("\n**********************************Target : ", tag_name);
 						if (tag_name === "video" || tag_name === "audio") {
 							for (child of entry.target.children) {
 								if(typeof child.nodeName === "string" && child.nodeName.toLowerCase() === "source") {
@@ -1537,12 +1333,6 @@ def train_step(x, y):
 			}
 
 
-
-
-
-
-
-
 			let isDropDownExpanded = false;
 
 			function closeOptionsDropdown() {
@@ -1585,11 +1375,57 @@ def train_step(x, y):
 				}
 			}
 
+			// class InlineMathCopy extends HTMLElement {
+			// 	constructor() {
+			// 		super();
+			// 	}
 
+			// 	connectedCallback() {
+			// 		this.innerHTML = `
+			// 			<svg class="copy-inline-math-clipboard-svg" onclick="copyInlineMathToClipboard(this.parentElement.parentElement.parentElement)" viewBox="0 0 24 24">
+			// 				<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+			// 			</svg>
+			// 		`;
+			// 	}
+			// }
+
+			// customElements.define('inline-math-copy-component', InlineMathCopy);
+
+			function copyInlineMathToClipboard(mathElement) {
+				console.log("\nCopied Math Element : ", mathElement);
+				let mathEquation = mathElement.querySelector('[encoding="application/x-tex"]').textContent;
+				let delimiter = mathElement.classList.contains("text-block-math") ? "$$" : "$";
+				let equation = delimiter + mathEquation + delimiter;
+				navigator.clipboard.writeText(equation);
+				mathElement.getElementsByClassName("inline-math-popup")[0].classList.remove("inline-math-popup-show");
+				copiedToClipboard("Equation Copied to Clipboard!!");
+			}
+
+			let inlineMathElements = document.getElementsByClassName("inline-math-inner");
+			for (element of inlineMathElements) {
+				element.addEventListener("mouseover", addHoverbaleCopyOption);
+				element.addEventListener("mouseout",  removeHoverbaleCopyOption);
+			}
+			console.log("\n\nEventListerners created");
+
+			function addHoverbaleCopyOption(event) {
+				let target = event.currentTarget;
+				console.log("\nAdd Hover Before : ", target);
+				target.getElementsByClassName("inline-math-copy-text")[0].textContent = "Copy Equation";
+				target.getElementsByClassName("inline-math-popup")[0].classList.add("inline-math-popup-show");
+				console.log("\nAdd Hover After : ", target);
+			}
+
+
+			function removeHoverbaleCopyOption(event) {
+				console.log("\n\n\n\nOut even fired");
+				let target = event.currentTarget;
+				console.log("\Remove Hover Before : ", target);
+				target.getElementsByClassName("inline-math-copy-text")[0].textContent = "";
+				target.getElementsByClassName("inline-math-popup")[0].classList.remove("inline-math-popup-show");
+				console.log("\Remove Hover After : ", target);
+			}
 		</script>
-
-
-
 	</body>
 </html>
     
