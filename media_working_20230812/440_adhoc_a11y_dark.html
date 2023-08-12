@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css" integrity="sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js" integrity="sha384-Qsn9KnoKISj6dI8g7p1HBlNpVx0I8p1SvlwOldgi3IorMle61nQy4zEahWYtljaz" crossorigin="anonymous"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+	        onload="renderMathInElement(document.body);"></script>
+
+
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-a11y-dark.min.css" integrity="sha512-bd1K4DEquIavX49RSZHIE0Ye6RFOVlGLhtGow9KDbLYqOd/ufhshkP0GoJoVR1jqj7FmOffvVIKuq1tcXlN9ZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />            
+
+
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/match-braces/prism-match-braces.min.css" integrity="sha512-SwPHdIEEQ3lKazpLV9+r1UH4HnpNVlYVdKYgBwD/8QuougtQj6xm5x2xladh3mC/bz+jVWkvYTpKCI1KWD1MWQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/unescaped-markup/prism-unescaped-markup.min.css" integrity="sha512-g33HCZ23fueSK96JEeoy9DelAlu7Ry5mtxqLk+zlEiPj7NIpFI6T9mybOvQxjBN50FALFDCviMXiLqWJcFwzaA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/show-language/prism-show-language.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/match-braces/prism-match-braces.min.js" integrity="sha512-1V2DjbHHHr8KzGoafg/R5GoT/+5A5WJBvno03LEL1unbfCLy4PLTQ2Trcrp+qfvTEtyI9Uj825deuInXoRkOyA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-SkmBfuA2hqjzEVpmnMt/LINrjop3GKWqsuLSSB3e7iBmYK7JuWw4ldmmxwD9mdm2IRTTi0OxSAfEGvgEi0i2Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/unescaped-markup/prism-unescaped-markup.min.js" integrity="sha512-QaQkFkE1LvUW6IaC7zLY4EsrNHuMWwepQv2RWyg4q/3+KI7K2WwtNEe6IPuYE7ZWkNxdKEnLJRuyuSnvbTUB3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <style>
+            :root {
+                --adhoc-dialog-std-height: 500px;
+                --adhoc-dialog-height: 500px;
+                --adhoc-dialog-border-radius: 2px;
+            }
+            .adhoc-dialog-button-container {
+                text-align: center;
+                margin-top: 25px;
+            }
+            .adhoc-dialog-button {
+                height: 40px;
+                width: 90%;
+                background-color: #872bff;
+                font-size: 20px;
+                font-weight: bold;
+                border: none;
+                border-radius: 5px;
+            }
+            .adhoc-dialog-button:hover {
+                cursor: pointer;
+            }
+            .adhoc-dialog-outer {
+                display: none;
+                position: fixed;
+                z-index: 50;
+                left: 0;
+                top: 0;
+                width: 100%;
+                background-color: rgb(0,0,0);
+                background-color: rgba(0,0,0,0.85);
+            }
+            .adhoc-dialog-inner {
+                max-height: var(--adhoc-dialog-height);
+                /* overflow: hidden auto; */
+                background-color: #fefefe;
+                margin: calc((100vh - var(--adhoc-dialog-height)) / 2) auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%;
+                padding: 0px;
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+                border: none;
+                border-radius: var(--adhoc-dialog-border-radius);
+            }
+            .adhoc-dialog-inner-fullscreen {
+                width: 100%;
+            }
+            .adhoc-dialog-inner:focus {
+                outline: none;
+            }
+            .adhoc-dialog-header {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                background-color: #04AA6D;
+                align-items: center;
+                position: sticky;
+                z-index: 10;
+                top: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                border-top-left-radius: var(--adhoc-dialog-border-radius);
+                border-top-right-radius: var(--adhoc-dialog-border-radius);
+            }
+
+            .adhoc-dialog-header-title {
+                margin-left: 12px;
+            }
+
+            .adhoc-dialog-header-action {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                margin-right: 12px;
+                height: 40px;
+            }
+
+            .adhoc-dialog-header-action-button {
+                cursor: pointer;
+                height: 24px;
+                padding: 5px;
+            }
+
+            .adhoc-dialog-header-action-button:hover {
+                border-radius: 50%;
+                background-color: #008483;
+            }
+
+            .dummy-div {
+                display: flex;
+            }
+
+            .adhoc-dialog-body {
+                background-color: #4b9cdb;
+                margin: 12px;
+                width: 100%;
+                overflow-y: scroll;
+                height: calc(var(--adhoc-dialog-height) - 80px);
+            }
+
+            .adhoc-dialog-body:focus {
+                outline: none;
+            }
+
+            .math-block {
+                flex-grow: 1;
+                background-color: blueviolet;
+                padding-top: 3px;
+                padding-bottom: 3px;
+                font-size: var(--fsize-math);
+                margin-top: 10px;
+                display: flex;
+                color: #fff;
+                max-height: 300px;
+                padding-left: 25px;
+            }
+            
+            .block-equation {
+                flex-grow: 1;
+                overflow: auto;
+                white-space: nowrap;
+            }
+            
+            .copy-clipboard {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: blueviolet;
+            }
+            
+            .btn-clipboard {
+                height: 35px;
+                width: 35px;
+                line-height: 35px;
+                color: red;
+                background-color: transparent;
+                background-repeat: no-repeat;
+                border: none;
+                cursor: pointer;
+                overflow: hidden;
+                outline: none;
+            }
+
+            .code-block {
+                font-size: var(--fsize-code);
+                display: flex;
+                margin-top: 20px;
+                /* max-height: 500px; */
+                /* background-color: #551a8b; */
+            }
+            
+            .code-snippet {
+                max-width: calc(100% - 20px);
+                overflow-y: auto;
+                flex-grow: 1;
+            }
+            
+            .copy-code-clipboard {
+                display: flex;
+                justify-content: center;
+                /* align-items: center; */
+                margin-top: 10px;
+                margin-left: 0px;
+                /* background-color: #04AA6D; */
+                /* background-color: #272822; */
+            }
+            
+            .btn-code-clipboard {
+                height: 35px;
+                width: 20px;
+                line-height: 35px;
+                background-color: transparent;
+                background-repeat: no-repeat;
+                border: none;
+                cursor: pointer;
+                overflow: hidden;
+                outline: none;
+            }
+
+            #snackbar {
+                visibility: hidden;
+                min-width: 250px;
+                margin-left: -125px;
+                background-color: #333;
+                color: #fff;
+                text-align: center;
+                border-radius: 2px;
+                padding: 16px;
+                position: fixed;
+                z-index: 1000;
+                left: 50%;
+                bottom: 30px;
+                font-size: var(--fsize-snackbar);
+            }
+            
+            #snackbar.show {
+                visibility: visible;
+                -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+                animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            }
+            
+            @-webkit-keyframes fadein {
+                from {bottom: 0; opacity: 0;} 
+                to {bottom: 30px; opacity: 1;}
+            }
+            
+            @keyframes fadein {
+                from {bottom: 0; opacity: 0;}
+                to {bottom: 30px; opacity: 1;}
+            }
+            
+            @-webkit-keyframes fadeout {
+                from {bottom: 30px; opacity: 1;} 
+                to {bottom: 0; opacity: 0;}
+            }
+            
+            @keyframes fadeout {
+                from {bottom: 30px; opacity: 1;}
+                to {bottom: 0; opacity: 0;}
+            }
+
+        </style>
+
+    </head>
+	
+	<body>
+		<div id="snackbar">Copied to Clipboard!!</div>
+
+        <div class="adhoc-dialog-button-container">
+            <button class="adhoc-dialog-button" onclick="openAdhocDialog(this.parentElement.nextElementSibling)">Show Derivation of Riemann Zeta Function</button>
+        </div>
+
+        <div class="adhoc-dialog-outer">
+            <div class="adhoc-dialog-inner">
+                <div class="adhoc-dialog-header">
+                    <div class="adhoc-dialog-header-title">
+                        <h3>Derivation of Riemann Zeta Funcion</h3>
+                    </div>
+                    <div class="adhoc-dialog-header-action">
+                        <img class="adhoc-dialog-header-action-button" src="https://img.icons8.com/material-rounded/24/000000/full-screen--v1.png" onclick="toggleAdhocDialogFullscreen(this.parentElement.parentElement.parentElement)">
+                        <img class="adhoc-dialog-header-action-button" src="https://img.icons8.com/material-outlined/24/000000/delete-sign.png" onclick="closeAdhocDialog(this.parentElement.parentElement.parentElement.parentElement)">
+                    </div>
+                </div>
+                <div class="dummy-div">
+                    <div class="adhoc-dialog-body" tabindex="0">
+                        <h2>Derivation of Riemann Zeta Funcion</h2>
+                        <h2>Derivation of Riemann Zeta Funcion</h2>
+                        <h2>Derivation of Riemann Zeta Funcion</h2>
+                        <h2>Derivation of Riemann Zeta Funcion</h2>
+                        <h2>Derivation of Riemann Zeta Funcion</h2>
+                        <h2>Derivation of Riemann Zeta Funcion</h2>
+                        <h2>Derivation of Riemann Zeta Funcion</h2>
+                        <h2>Derivation of Riemann Zeta Funcion</h2>
+                        <h2>Derivation of Riemann Zeta Funcion</h2>
+                        <h2>Derivation of Riemann Zeta Funcion</h2>
+                        <h2>Derivation of Riemann Zeta Funcion</h2>
+                        <h2>Derivation of Riemann Zeta Funcion</h2>
+                        <h2>Derivation of Riemann Zeta Funcion</h2>
+                        <div style="height: 300px; background-color: #872bff;"></div>
+                        <h2>Derivation of Riemann Zeta Funcion</h2>
+                        <h2>Derivation of Riemann Zeta Funcion</h2>
+
+                        <div class="math-block">
+                            <div class="block-equation" tabindex="0">
+                                <span>
+                                    $$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$  $$\begin{align*}y = y(x,t) &= A e^{i\theta} \\&= A (\cos \theta + i \sin \theta) \\&= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \\&= A\cos(kx - \omega t) + i A\sin(kx - \omega t)  \\&= A\cos \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) + i A\sin \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big)  \\&= A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)\end{align*}$$ $$\tilde f(\omega)=\frac{1}{2\pi}\int_{-\infty}^\infty f(x)e^{-i\omega x}\,dx\,,$$  
+                                </span>
+                            </div>
+                            <div class="copy-clipboard">
+                                <button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+                                    <svg style="width:16px;height:16px;" viewBox="0 0 24 24">
+                                        <path fill="#fff" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <h2>Derivation of Riemann Zeta Funcion</h2>
+                        <h2>Derivation of Riemann Zeta Funcion</h2>
+                        <h2>Derivation of Riemann Zeta Funcion</h2>
+                        <h2>Derivation of Riemann Zeta Funcion</h2>
+                        <h2>Derivation of Riemann Zeta Funcion</h2>
+                        <h2>Derivation of Riemann Zeta Funcion</h2>
+                        <h2>Derivation of Riemann Zeta Funcion</h2>
+                        <h2>Derivation of Riemann Zeta Funcion</h2>
+                        <h2>Derivation of Riemann Zeta Funcion</h2>
+
+                        <div class="code-block">
+                            <div class="code-snippet">
+                                <pre class="line-numbers"><code class="language-python match-braces"># Instantiate an optimizer.
+def train_step(x, y):
+    with tf.GradientTape() as tape:
+        logits = model(x, training=True)
+        loss_value = loss_fn(y, logits)
+    grads = tape.gradient(loss_value, model.trainable_weights)
+    optimizer.apply_gradients(zip(grads, model.trainable_weights))
+    train_acc_metric.update_state(y, logits)
+    return loss_value</code></pre>
+                            </div>
+                            <div class="copy-code-clipboard">
+                                <button class="btn-code-clipboard" onclick="copyCodeToClipboard(this.parentElement.previousElementSibling)">
+                                    <svg style="width:16px;height:16px;" viewBox="0 0 24 24">
+                                        <path fill="blue" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="code-block">
+                            <div class="code-snippet">
+                                <pre class="line-numbers"><code class="language-python">import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MonacoEditorConstructionOptions, MonacoStandaloneCodeEditor } from "@materia-ui/ngx-monaco-editor";
+import { Observable } from 'rxjs';
+import { filter, map, startWith } from 'rxjs/operators';
+import { CodeBlock, CodeDialogData } from '../separate-entities/separate-entities.component';
+import { ProgLanguagesService } from '../services/prog-languages.service';
+
+export interface ProgLanguage {
+    viewValue: string;
+    monacoValue: string;
+    prismValue: string;
+}
+
+@Component({
+    selector: 'app-code-input',
+    templateUrl: './code-input.component.html',
+    styleUrls: ['./code-input.component.css']
+})
+export class CodeInputComponent implements OnInit {
+
+    // @ViewChild('codeBlock', { static: false }) codeBlock!: ElementRef;
+
+    monacoEditor!: MonacoStandaloneCodeEditor;
+    langFormControl = new FormControl('');
+    filteredLanguages!: Observable<ProgLanguage[]>;
+    languagesRepository: ProgLanguage[] = [];
+    defaultLang: string = "Python"
+    langNotFoundString: string = "No such language"
+    selectedMonacoLang: string = "";
+    selectedPrismLang: string = "";
+    codeSnippet: string = "";
+    // codeBlock: CodeBlock = { language: "", code: "" };
+    isCodeBlockSaved: boolean = true;
+
+    editorOptions: MonacoEditorConstructionOptions = {
+    theme: "vs-dark",
+    roundedSelection: true,
+    automaticLayout: true,
+    autoIndent: "full",
+    language: this.selectedMonacoLang
+    };
+
+    constructor(public dialogRef: MatDialogRef<CodeInputComponent>,
+    @Inject(MAT_DIALOG_DATA) public codeDialogData: CodeDialogData,
+    private progLangService: ProgLanguagesService) { 
+    }
+    
+    editorInit(editor: MonacoStandaloneCodeEditor) {
+    this.monacoEditor = editor;
+    }
+
+
+    ngOnInit(): void {
+    this.progLangService.fetchProgrammingLangData().subscribe({
+        next: (response) => {
+        console.log("Success : ", response);
+        this.languagesRepository = response;
+
+        // Angular Material Autocomplete logic to filter languages
+        this.filteredLanguages = this.langFormControl.valueChanges.pipe(
+            startWith(''),
+            map(value => this._filterLanguages(value || '')),
+        );
+        },
+        error: (error) => console.log("Error: ", error),
+        complete: () => console.log("Complete")
+    });
+    }
+
+    private _filterLanguages(value: string): ProgLanguage[] {
+    console.log("In filter : ", value);
+    let arr = this.languagesRepository.filter(
+        (language) => language.viewValue.toLowerCase().indexOf(value.toLowerCase()) === 0
+    );
+    return arr.length ? arr : [{ viewValue: this.langNotFoundString, monacoValue: this.defaultLang, prismValue: this.defaultLang}];
+    }
+
+    langChange($event: MatAutocompleteSelectedEvent) {
+    let selection = $event.option.value;
+    if (selection === this.langNotFoundString) {
+        [this.selectedMonacoLang, this.selectedPrismLang] = this.mapLangViewToValue(this.defaultLang);
+        console.log("Default Case");
+    }
+    else {
+        [this.selectedMonacoLang, this.selectedPrismLang] = this.mapLangViewToValue(selection);
+    }
+
+    this.editorOptions = { ...this.editorOptions, language: this.selectedMonacoLang };
+    this.codeDialogData.codeBlock.language = this.selectedPrismLang;
+    }
+
+    codeEdit($event: Event) {
+    console.log("\n\nHere : ");
+    this.codeDialogData.codeBlock.code = this.codeSnippet;
+    this.codeDialogData.codeBlock.language = this.selectedPrismLang;
+    console.log($event);
+    }
+
+
+
+    mapLangViewToValue(selectedLang: string): string[] {
+    let langObj = this.languagesRepository.find((language) => language.viewValue === selectedLang);
+    return [langObj!.monacoValue, langObj!.prismValue];
+    }
+
+    onClose(): void {
+    this.dialogRef.close(!this.isCodeBlockSaved);
+    }
+
+    // langChange function triggered on Mat Select Change (earlier logic)
+    // langChange($event: MatSelectChange) {
+    //   this.editorOptions.language = this.selectedLang;
+    // }
+
+}</code></pre>
+                            </div>
+                            <div class="copy-code-clipboard">
+                                <button class="btn-code-clipboard" onclick="copyCodeToClipboard(this.parentElement.previousElementSibling)">
+                                    <svg style="width:16px;height:16px;" viewBox="0 0 24 24">
+                                        <path fill="blue" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        
+
+                        <div class="code-block">
+                            <div class="code-snippet">
+                                <pre class="line-numbers"><code class="language-java match-braces">@Configuration
+@EnableWebSecurity
+public class BasicConfiguration {
+
+    @Bean
+    public InMemoryUserDetailsManager userDetailsService(PasswordEncoder passwordEncoder) {
+        UserDetails user = User.withUsername("user")
+            .password(passwordEncoder.encode("password"))
+            .roles("USER")
+            .build();
+
+        UserDetails admin = User.withUsername("admin")
+            .password(passwordEncoder.encode("admin"))
+            .roles("USER", "ADMIN")
+            .build();
+
+        return new InMemoryUserDetailsManager(user, admin);
+    }
+
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http.authorizeRequests()
+            .anyRequest()
+            .authenticated()
+            .and()
+            .httpBasic();
+        return http.build();
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+        return encoder;
+    }
+}</code></pre>
+                            </div>
+                            <div class="copy-code-clipboard">
+                                <button class="btn-code-clipboard" onclick="copyCodeToClipboard(this.parentElement.previousElementSibling)">
+                                    <svg style="width:16px;height:16px;" viewBox="0 0 24 24">
+                                        <path fill="blue" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <div class="code-block">
+                            <div class="code-snippet">
+                                <script type="text/plain" class="language-cpp line-numbers match-braces">#include <iostream>
+#include <climits>
+using namespace std;
+    
+#define MAX(X, Y) (X > Y) ? X : Y
+#define POS(X) (X > 0) ? X : 0
+    
+int maxSum = INT_MIN;
+int N;
+int kadane(int* row, int len)
+{
+    int x, sum, maxSum = INT_MIN;
+    for (sum = POS(row[0]), x = 0; x < N; ++x, sum = POS(sum + row[x]))
+        maxSum = MAX(sum, maxSum);
+    return maxSum;
+}
+    
+int main()
+{
+    cout << "Enter the array length: ";
+    cin >> N;
+    int arr[N];
+    cout << "Enter the array: ";
+    for (int i = 0; i < N; i++)
+    {
+        cin >> arr[i];
+    }
+    cout << "The Max Sum is: "<<kadane(arr, N) << endl;
+    return 0;
+}</script>
+                            </div>
+                            <div class="copy-code-clipboard">
+                                <button class="btn-code-clipboard" onclick="copyCodeToClipboard(this.parentElement.previousElementSibling)">
+                                    <svg style="width:16px;height:16px;" viewBox="0 0 24 24">
+                                        <path fill="blue" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <div class="code-block">
+                            <div class="code-snippet">
+                                <script type="text/plain" class="language-html line-numbers match-braces"><div class="code-block">
+    <div class="code-snippet">
+        <pre class="line-numbers"><code class="language-python match-braces"></code></pre>
+    </div>
+    <div class="copy-code-clipboard">
+        <button class="btn-code-clipboard" onclick="copyCodeToClipboard(this.parentElement.previousElementSibling)">
+            <svg style="width:16px;height:16px;" viewBox="0 0 24 24">
+                <path fill="blue" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+            </svg>
+        </button>
+    </div>
+</div></script>
+                            </div>
+                            <div class="copy-code-clipboard">
+                                <button class="btn-code-clipboard" onclick="copyCodeToClipboard(this.parentElement.previousElementSibling)">
+                                    <svg style="width:16px;height:16px;" viewBox="0 0 24 24">
+                                        <path fill="blue" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <div class="code-block">
+                            <div class="code-snippet">
+                                <script type="text/plain" class="language-css line-numbers match-braces">#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: var(--fsize-snackbar);
+}
+    
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+    
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+    
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+    
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+    
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+.page-loader {
+    position: absolute;
+    margin: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.page-loader-message {
+    font-size: var(--fsize-page-loader);
+}
+
+.page-loader-wrap {
+    margin: 0 10px 10px 0;
+    padding: 20px 20px 20px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #d8d8d8;
+    padding-bottom: 30px;
+}
+@media (max-width: 768px){
+
+    /* .page-container {
+        flex-direction: column-reverse;
+    } */
+
+    /* .page-contents-container {
+        width: 100%;
+    }
+    */
+
+    body {
+        font-size: var(--fsize-sm-body);
+    }
+
+    .page-title {
+        font-size: var(--fsize-sm-title);
+    }
+
+    .math-block {
+        font-size: var(--fsize-sm-math);
+        max-height: 250px;
+    }
+
+    .block-equation::-webkit-scrollbar {
+        width: 3px;
+        height: 3px;
+    }
+
+    .table-of-contents-container {
+        display: none;
+    }</script>
+</div>
+                            <div class="copy-code-clipboard">
+                                <button class="btn-code-clipboard" onclick="copyCodeToClipboard(this.parentElement.previousElementSibling)">
+                                    <svg style="width:16px;height:16px;" viewBox="0 0 24 24">
+                                        <path fill="blue" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+
+
+                        <div class="code-block">
+                            <div class="code-snippet">
+                                <pre class="line-numbers"><code class="language-javascript match-braces">var isSmallScreen = window.matchMedia("(max-width: 768px)");
+isSmallScreen.addListener(handleTabletChange);
+// Initial Screen size check
+handleTabletChange(isSmallScreen);
+
+function generateId() {
+    let x = Math.random().toString(36).substr(2, 9);
+    let y = Date.now();
+    return x + '_' + y;
+}
+
+function toggleAccordionTOC(btnElement) {
+    btnElement.classList.toggle("active");
+    let panel = btnElement.nextElementSibling;
+    if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+        panel.style.borderColor = "transparent";
+    } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+        panel.style.borderColor = "lightgray";
+    }
+}
+
+// Alternate way of doing toggleAccordionTOC() thing without using onlick on button
+// let accordionButton = document.getElementById("accordionButtonTOC");
+// accordionButton.addEventListener("click", function() {
+// 	this.classList.toggle("active");
+// 	let panel = this.nextElementSibling;
+// 	if (panel.style.maxHeight) {
+// 		panel.style.maxHeight = null;
+// 	} else {
+// 		panel.style.maxHeight = panel.scrollHeight + "px";
+// 	} 
+// });
+
+
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("progressBar").style.width = scrolled + "%";
+}</code></pre>
+                            </div>
+                            <div class="copy-code-clipboard">
+                                <button class="btn-code-clipboard" onclick="copyCodeToClipboard(this.parentElement.previousElementSibling)">
+                                    <svg style="width:16px;height:16px;" viewBox="0 0 24 24">
+                                        <path fill="blue" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <div class="code-block">
+                            <div class="code-snippet">
+                                <pre class="line-numbers"><code class="language-python match-braces"></code></pre>
+                            </div>
+                            <div class="copy-code-clipboard">
+                                <button class="btn-code-clipboard" onclick="copyCodeToClipboard(this.parentElement.previousElementSibling)">
+                                    <svg style="width:16px;height:16px;" viewBox="0 0 24 24">
+                                        <path fill="blue" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>    
+                </div>
+			</div>
+        </div>
+        
+
+        <script>
+            let currentOpenDialogElement = "*NoDialog";
+			function openAdhocDialog(dialogElement) {
+				dialogElement.style.display = "flex";
+				currentOpenDialogElement = dialogElement;
+                dialogElement.children[0].children[1].children[0].focus();
+			}
+
+			function closeAdhocDialog(dialogElement) {
+				dialogElement.style.display = "none";
+				currentOpenDialogElement = "*NoDialog";
+                closeFullscreenDialog(dialogElement.children[0]);
+                isDialogInFullscreen = false;
+			}
+			// Close the dialog when clicked outside dialog
+			window.onclick = function(event) {
+				console.log("\n\n\n\n\nHere clicked : ", currentOpenDialogElement);
+				if (event.target == currentOpenDialogElement) {
+					closeAdhocDialog(currentOpenDialogElement);
+				}
+			}
+
+			// Have to bind key on document. Close any dialog if opened
+			document.onkeydown = function(event) {
+				if (event.key === "Escape") {
+					if(currentOpenDialogElement != "*NoDialog") {
+						closeAdhocDialog(currentOpenDialogElement);
+					}
+				}
+			}
+
+            let fullScreenIconUrl = "https://img.icons8.com/material-rounded/24/000000/full-screen--v1.png";
+            let exitFullScreenIconUrl = "https://img.icons8.com/external-those-icons-fill-those-icons/24/000000/external-Exit-Full-Screen-interface-those-icons-fill-those-icons.png";
+            let isDialogInFullscreen = false;
+
+            function toggleAdhocDialogFullscreen(element) {
+                if (!isDialogInFullscreen) {
+                    adhocFullscreenDialog(element);
+                    isDialogInFullscreen = true;
+                } else {
+                    closeFullscreenDialog(element);
+                    isDialogInFullscreen = false;
+                }
+            }
+
+            function adhocFullscreenDialog(element) {
+                let root = document.documentElement;
+                root.style.setProperty("--adhoc-dialog-height", "100vh");
+                element.classList.add("adhoc-dialog-inner-fullscreen");
+                element.children[0].children[1].children[0].src = exitFullScreenIconUrl;
+                element.children[1].children[0].focus();
+            }
+
+            function closeFullscreenDialog(element) {
+                let root = document.documentElement;
+                root.style.setProperty("--adhoc-dialog-height", root.style.getPropertyValue("--adhoc-dialog-std-height"));
+                element.classList.remove("adhoc-dialog-inner-fullscreen");
+                element.children[0].children[1].children[0].src = fullScreenIconUrl;
+            }
+
+            function copyCodeToClipboard(codeBlock) {
+				let codeElement = codeBlock.getElementsByTagName("code")[0];
+				navigator.clipboard.writeText(codeElement.textContent);
+				copiedToClipboard("Code Copied to Clipboard!!");
+			}
+
+            function copiedToClipboard(message) {
+				var snackbarElement = document.getElementById("snackbar");
+				snackbarElement.className = "show";
+				snackbarElement.textContent = message;
+				setTimeout(function() { 
+					snackbarElement.className = snackbarElement.className.replace("show", ""); 
+				}, 2000);
+			}
+
+        </script>
+
+    </body>
+</html>
