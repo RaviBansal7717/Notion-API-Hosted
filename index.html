@@ -109,6 +109,7 @@
                 --width-gist-nav-scrollbar: 7px;
                 --height-gist-nav-scrollbar: 7px;
                 --size-gist-clipboard-icon: 22px;
+                --size-sm-gist-clipboard-icon: 18px;
 
                 --font-title: 'Alegreya SC', serif;
                 --font-body: arial, sans-serif;
@@ -146,6 +147,11 @@
                 --core-color-blue-very-dark: #00060a;
                 --core-color-indigo-light: #6f74dd;
                 --core-color-gold-light: #ffe973;
+
+                --core-shadow-teal-main-1: rgba(0, 105, 92, 0.3);
+                --core-shadow-teal-main-2: rgba(0, 105, 92, 0.28);
+                --core-shadow-white-main-1: rgba(0, 0, 0, 0.2);
+                --core-shadow-white-main-2: rgba(0, 0, 0, 0.19);
             }
 
 
@@ -233,7 +239,7 @@
                 --color-fill-scroll-top: var(--core-color-white-main);
 
                 --color-bg-dropdown: var(--core-color-whitesmoke-main);
-                --color-fill-dropdown-top-icon: var(--core-color-whitesmoke-main);
+                --color-fill-dropdown-top-icon: var(--core-color-black-main);
                 --color-fill-dropdown-github-icon: var(--core-color-teal-main);
                 --color-hover-dropdown-item: var(--core-color-teal-very-light);
 
@@ -252,6 +258,9 @@
 
                 --color-bg-code-block-language: var(--core-color-purple-dark);
                 --color-text-code-block-language: var(--core-color-whitesmoke-main);
+
+                --color-shadow-gist-container-inner: var(--core-shadow-white-main-1);
+                --color-shadow-gist-container-outer: var(--core-shadow-white-main-2);
             }
 
             .dark-mode {
@@ -352,6 +361,9 @@
 
                 --color-bg-code-block-language: var(--core-color-teal-light);
                 --color-text-code-block-language: var(--core-color-whitesmoke-main);
+
+                --color-shadow-gist-container-inner: var(--core-shadow-teal-main-1);
+                --color-shadow-gist-container-outer: var(--core-shadow-teal-main-2);
             }
 
             html {
@@ -365,6 +377,7 @@
                 font-family: var(--font-body);
                 background-color: var(--color-bg-body);
                 color: var(--color-text-body);
+                border: 2px solid red;
             }
 
             .body-icon {
@@ -810,6 +823,7 @@
                 flex-grow: 7.7;
                 width: 77%;
                 transition: width 300ms;
+                border: 2px solid purple;
             }
 
             .page-title-container {
@@ -1730,60 +1744,6 @@
             }
 
 
-            body .gist .gist-file {
-                margin-bottom: 0;
-                border: 1px solid darkslategray;
-                border-radius: 0;
-            }
-            
-            body .gist .gist-data {
-                border-bottom: none;
-                border-radius: 0;
-                background-color: black;
-            }
-            
-            body .gist .blob-wrapper {
-                border-radius: 0;
-            }
-            
-            body .gist .highlight {
-                background-color: transparent;
-                font-family: 'Droid Sans Mono', monospace;
-                font-size: 14px;
-            }
-            
-            body .gist .highlight td {
-                padding: 5px 15px !important;
-                line-height: 1;
-                font-family: inherit;
-                font-size: inherit;
-            }
-            
-            body .gist tr:first-child td {
-                padding-top: 15px !important;
-            }
-            
-            body .gist tr:last-child td {
-                padding-bottom: 15px !important;
-            }
-            
-            body .gist .blob-num {
-                color: whitesmoke;
-                background-color: black;
-                pointer-events: none;
-            }
-            
-            body .pl-s1 {
-                color: whitesmoke;
-            }
-
-            body .gist .pl-smi {
-                color: red;
-            }
-
-            body .pl-kos {
-                color: whitesmoke;
-            }
 
             /* ################################################################################ 
                                         CSS for Body Ending Buffer Div
@@ -1856,13 +1816,15 @@
                 padding: 0 1px;
                 overflow: hidden;
                 margin-bottom: 20px;
+                box-shadow: 0 4px 8px 0 var(--color-shadow-gist-container-inner), 
+                            0 6px 20px 0 var(--color-shadow-gist-container-outer);
             }
 
             .multi-file-gist-file-tab-dev {
                 overflow-x: auto;
                 white-space: nowrap;
-                border: 1px solid var(--color-gist-container-border);
-                border-bottom: none;
+                /* border: 1px solid var(--color-gist-container-border);
+                border-bottom: none; */
             }
 
             .multi-file-gist-file-tab-dev::-webkit-scrollbar-track
@@ -1917,8 +1879,8 @@
             .multi-file-gist-file-content {
                 display: flex;
                 padding: 4px;
-                border: 1px solid var(--color-gist-container-border);
-                border-top: none;
+                /* border: 1px solid var(--color-gist-container-border);
+                border-top: none; */
             }
 
             .multi-file-gist-data-top-nav {
@@ -2096,9 +2058,14 @@
                     min-height: 200px;
                 }
 
+                .video-container {
+                    margin-left: calc(1.3 * var(--gap-blocks-horizontal));
+                    margin-right: calc(1.3 * var(--gap-blocks-horizontal));
+                }
+                
                 .video-player {
                     height: 250px;
-                    width: 99%;
+                    width: 100%;
                 }
 
                 .replit {
@@ -2157,6 +2124,26 @@
                     flex-direction: column;
                     height: max-content;
                 }
+
+                .multi-file-gist-file-link {
+                    font-size: 15px;
+                    width: 49.5%;
+                }
+
+                .copy-clipboard-svg-gist {
+                    width: var(--size-sm-gist-clipboard-icon);
+                    height: var(--size-sm-gist-clipboard-icon);
+                }
+
+                .multi-file-gist-file-content {
+                    padding: 0px;
+                }
+
+                .code-block::before {
+                    padding: 5px 6px;
+                    font-size: 13px;
+                    transform: translateY(-6px);
+                }    
             }
         </style>
 
@@ -5300,7 +5287,7 @@
 							</div>
 			
 							<div class="copy-code-clipboard">
-								<button class="btn-clipboard" onclick="copyGistCodeToClipboard(this.parentElement.parentElement.parentElement)">
+								<button class="btn-code-clipboard" onclick="copyGistCodeToClipboard(this.parentElement.parentElement.parentElement)">
 									<svg class="copy-clipboard-svg-gist" viewBox="0 0 24 24">
 										<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
 									</svg>
@@ -8149,7 +8136,7 @@ With equations like
 							</div>
 			
 							<div class="copy-code-clipboard">
-								<button class="btn-clipboard" onclick="copyGistCodeToClipboard(this.parentElement.parentElement.parentElement)">
+								<button class="btn-code-clipboard" onclick="copyGistCodeToClipboard(this.parentElement.parentElement.parentElement)">
 									<svg class="copy-clipboard-svg-gist" viewBox="0 0 24 24">
 										<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
 									</svg>
@@ -8337,7 +8324,7 @@ Here is some code also in between :
 							</div>
 			
 							<div class="copy-code-clipboard">
-								<button class="btn-clipboard" onclick="copyGistCodeToClipboard(this.parentElement.parentElement.parentElement)">
+								<button class="btn-code-clipboard" onclick="copyGistCodeToClipboard(this.parentElement.parentElement.parentElement)">
 									<svg class="copy-clipboard-svg-gist" viewBox="0 0 24 24">
 										<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
 									</svg>
