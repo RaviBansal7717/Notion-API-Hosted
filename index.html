@@ -148,8 +148,8 @@
                 --core-color-indigo-light: #6f74dd;
                 --core-color-gold-light: #ffe973;
 
-                --core-shadow-teal-main-1: rgba(0, 105, 92, 0.3);
-                --core-shadow-teal-main-2: rgba(0, 105, 92, 0.28);
+                --core-shadow-teal-main-1: rgba(0, 105, 92, 0.4);
+                --core-shadow-teal-main-2: rgba(0, 105, 92, 0.38);
                 --core-shadow-white-main-1: rgba(0, 0, 0, 0.2);
                 --core-shadow-white-main-2: rgba(0, 0, 0, 0.19);
             }
@@ -239,7 +239,8 @@
                 --color-fill-scroll-top: var(--core-color-white-main);
 
                 --color-bg-dropdown: var(--core-color-whitesmoke-main);
-                --color-fill-dropdown-top-icon: var(--core-color-black-main);
+                --color-fill-dropdown-top-icon: var(--core-color-whitesmoke-main);
+                --color-fill-dropdown-bottom-icon: var(--core-color-black-main);
                 --color-fill-dropdown-github-icon: var(--core-color-teal-main);
                 --color-hover-dropdown-item: var(--core-color-teal-very-light);
 
@@ -343,6 +344,7 @@
 
                 --color-bg-dropdown: var(--core-color-gray-blue);
                 --color-fill-dropdown-top-icon: var(--core-color-whitesmoke-main);
+                --color-fill-dropdown-bottom-icon: var(--core-color-whitesmoke-main);
                 --color-fill-dropdown-github-icon: var(--core-color-seagreen-main);
                 --color-hover-dropdown-item: var(--core-color-gray-main);
 
@@ -377,7 +379,6 @@
                 font-family: var(--font-body);
                 background-color: var(--color-bg-body);
                 color: var(--color-text-body);
-                border: 2px solid red;
             }
 
             .body-icon {
@@ -805,6 +806,14 @@
                 fill: var(--color-fill-dropdown-github-icon); 
             }
 
+            .options-icon-bottom-1, .options-icon-bottom-3 {
+                fill: none;
+                stroke: var(--color-fill-dropdown-bottom-icon);
+            }
+
+            .options-icon-bottom-2 {
+                fill: var(--color-fill-dropdown-bottom-icon);
+            }
 
             /* ################################################################################ 
                                             CSS for Page Contents And Title
@@ -823,7 +832,6 @@
                 flex-grow: 7.7;
                 width: 77%;
                 transition: width 300ms;
-                border: 2px solid purple;
             }
 
             .page-title-container {
@@ -2254,9 +2262,9 @@
     					<div class="options-dropdown-item" onclick="scrollToBottom(); closeOptionsDropdown();">
 							<div>
 								<svg class="options-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" transform='rotate(180)'>
-									<polygon class="options-icon-top-1" points="16 4 7.92 13 14 13 14 28 18 28 18 13 24.08 13 16 4"/>
-									<rect class="options-icon-top-2" height="2" width="4" x="14" y="26"/>
-									<line class="options-icon-top-3" x1="14" x2="18" y1="24.5" y2="24.5"/>
+									<polygon class="options-icon-bottom-1" points="16 4 7.92 13 14 13 14 28 18 28 18 13 24.08 13 16 4"/>
+									<rect class="options-icon-bottom-2" height="2" width="4" x="14" y="26"/>
+									<line class="options-icon-bottom-3" x1="14" x2="18" y1="24.5" y2="24.5"/>
 								</svg>
 							</div>
 							<div>
@@ -8339,7 +8347,7 @@ Here is some code also in between :
 
 				</section>
 
-				<div class="body-ending-buffer">
+				<div class="body-ending-buffer" id="pageBottomScrollRef">
 				</div>
 
 			</div>
@@ -8922,9 +8930,9 @@ Here is some code also in between :
                 fileGistUrl = baseGistUrl + "?file=" + fileName;
                 iframebaseString_1 = "<iframe  class='video-player-gist' src=\"data:text/html;charset=utf-8, <head><base target='_blank' /> ";
                 if (pageTheme === "light") {
-                    iframebaseStyleString = "<style>body .gist .gist-file { margin-bottom: 0; border: 1px solid grey; border-radius: 0; } body .gist .gist-data { border-bottom: none; border-radius: 0; background-color: %23f4f6f8; } body .gist .blob-wrapper { border-radius: 0; } body .gist .highlight { background-color: transparent; font-family: 'Droid Sans Mono', monospace; font-size: 14px; } body .gist .highlight td { padding: 5px 15px !important; line-height: 1; font-family: inherit; font-size: inherit; } body .gist tr:first-child td { padding-top: 15px !important; } body .gist tr:last-child td { padding-bottom: 15px !important; } body .gist .blob-num { color: %23ced4da; background-color: %235b6268; pointer-events: none; } body .gist .gist-meta { position: -webkit-sticky; position: sticky; bottom: 0; border-radius: 0; } ::-webkit-scrollbar-track { background-color: %23872bff; } ::-webkit-scrollbar { width: 8px; height: 8px; } ::-webkit-scrollbar-thumb { background-color: %23000000; }</style> ";
+                    iframebaseStyleString = "<style>body .gist .gist-file { margin-bottom: 0; border: 1px solid grey; border-radius: 0; } body .gist .gist-data { border-bottom: none; border-radius: 0; background-color: %23f4f6f8; } body .gist .blob-wrapper { border-radius: 0; } body .gist .highlight { background-color: transparent; font-family: 'Droid Sans Mono', monospace; font-size: 14px; } body .gist .highlight td { padding: 5px 15px !important; line-height: 1; font-family: inherit; font-size: inherit; } body .gist tr:first-child td { padding-top: 15px !important; } body .gist tr:last-child td { padding-bottom: 15px !important; } body .gist .blob-num { color: %23ced4da; background-color: %235b6268; pointer-events: none; } body .gist .gist-meta { position: -webkit-sticky; position: sticky; bottom: 0; border-radius: 0; } ::-webkit-scrollbar-track { background-color: %23872bff; } ::-webkit-scrollbar { width: 8px; height: 8px; } ::-webkit-scrollbar-thumb { background-color: %23000000; } @media (max-width: 768px) { body .gist .highlight { font-size: 12px; } ::-webkit-scrollbar { width: 6px; height: 6px; } }</style> ";
                 } else {
-                    iframebaseStyleString = "<style>@import url('https://cdn.rawgit.com/lonekorean/gist-syntax-themes/d49b91b3/stylesheets/one-dark.css'); body .gist .gist-file { margin-bottom: 0; border: 1px solid %23282828; border-radius: 0; } body .gist .gist-data { border-bottom: none; border-radius: 0; } body .gist .blob-wrapper { border-radius: 0; } body .gist .highlight { font-family: 'Droid Sans Mono', monospace; font-size: 14px; } body .gist .highlight td { padding: 5px 15px !important; line-height: 1; font-family: inherit; font-size: inherit; } body .gist tr:first-child td { padding-top: 15px !important; } body .gist tr:last-child td { padding-bottom: 15px !important; } body .gist .blob-num { pointer-events: none; }  body .gist .gist-meta { position: -webkit-sticky; position: sticky; bottom: 0; background-color: %23080808; color: whitesmoke;} body .gist .gist-meta a { color: whitesmoke; } ::-webkit-scrollbar-track { background-color: whitesmoke; } ::-webkit-scrollbar { width: 8px; height: 8px; } ::-webkit-scrollbar-thumb { background-color: %23439889; }</style> ";
+                    iframebaseStyleString = "<style>@import url('https://cdn.rawgit.com/lonekorean/gist-syntax-themes/d49b91b3/stylesheets/one-dark.css'); body .gist .gist-file { margin-bottom: 0; border: 1px solid %23282828; border-radius: 0; } body .gist .gist-data { border-bottom: none; border-radius: 0; } body .gist .blob-wrapper { border-radius: 0; } body .gist .highlight { font-family: 'Droid Sans Mono', monospace; font-size: 14px; } body .gist .highlight td { padding: 5px 15px !important; line-height: 1; font-family: inherit; font-size: inherit; } body .gist tr:first-child td { padding-top: 15px !important; } body .gist tr:last-child td { padding-bottom: 15px !important; } body .gist .blob-num { pointer-events: none; }  body .gist .gist-meta { position: -webkit-sticky; position: sticky; bottom: 0; background-color: %23080808; color: whitesmoke;} body .gist .gist-meta a { color: whitesmoke; } ::-webkit-scrollbar-track { background-color: whitesmoke; } ::-webkit-scrollbar { width: 8px; height: 8px; } ::-webkit-scrollbar-thumb { background-color: %23439889; } @media (max-width: 768px) { body .gist .highlight { font-size: 12px; } ::-webkit-scrollbar { width: 6px; height: 6px; } }</style> ";
                 }
                 iframebaseString_2 = " </head><body><script src=\'";
                 iframebaseString_3 = "'>";
