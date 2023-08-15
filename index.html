@@ -28,6 +28,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-SkmBfuA2hqjzEVpmnMt/LINrjop3GKWqsuLSSB3e7iBmYK7JuWw4ldmmxwD9mdm2IRTTi0OxSAfEGvgEi0i2Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/unescaped-markup/prism-unescaped-markup.min.js" integrity="sha512-QaQkFkE1LvUW6IaC7zLY4EsrNHuMWwepQv2RWyg4q/3+KI7K2WwtNEe6IPuYE7ZWkNxdKEnLJRuyuSnvbTUB3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.3.1/mermaid.min.js" integrity="sha512-iijJgrEzF9HfJJ8GKxnZdTeXd+UelEAfRfe8eFP6zoF0FmcB0HCJlYYj9DnVxcSfhB77iBVeoHfpfxv+pXO8Ig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <style>
             /* ################################################################################ 
                             CSS Global Variables for Colors, Fonts and Font Sizes
@@ -144,6 +145,7 @@
                 --core-color-gray-main: #121212;
                 --core-color-gray-light: #333333;
                 --core-color-gray-blue: #292c35;
+                --core-color-blue-light: #4c5154;
                 --core-color-blue-very-dark: #00060a;
                 --core-color-indigo-light: #6f74dd;
                 --core-color-gold-light: #ffe973;
@@ -262,6 +264,7 @@
 
                 --color-shadow-gist-container-inner: var(--core-shadow-white-main-1);
                 --color-shadow-gist-container-outer: var(--core-shadow-white-main-2);
+                --color-bg-mermaid: var(--core-color-seagreen-light);
             }
 
             .dark-mode {
@@ -366,6 +369,7 @@
 
                 --color-shadow-gist-container-inner: var(--core-shadow-teal-main-1);
                 --color-shadow-gist-container-outer: var(--core-shadow-teal-main-2);
+                --color-bg-mermaid: var(--core-color-blue-light);
             }
 
             html {
@@ -1895,7 +1899,15 @@
                 width: 100%;
             }
 
-
+            .mermaid-diagram {
+                max-width: calc(100% - 30px);
+                overflow-y: auto;
+                flex-grow: 1;
+                background-color: var(--color-bg-mermaid);
+                text-align: center;
+                align-items: center;
+                padding-top: 15px;
+            }
 
             /* ################################################################################ 
                                         Media Queries for Added Responsiveness
@@ -5295,7 +5307,7 @@
 							</div>
 			
 							<div class="copy-code-clipboard">
-								<button class="btn-code-clipboard" onclick="copyGistCodeToClipboard(this.parentElement.parentElement.parentElement)">
+								<button class="btn-clipboard" onclick="copyGistCodeToClipboard(this.parentElement.parentElement.parentElement)">
 									<svg class="copy-clipboard-svg-gist" viewBox="0 0 24 24">
 										<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
 									</svg>
@@ -5778,6 +5790,46 @@ $$
 
 				<section class="text-container-section" id="132e5e04-9eed-42f2-bd0c-3a76d5727334">
 
+                    <div class="code-block" data-show-lang="mermaid">
+                        <div class="mermaid-diagram">
+                            <div class="mermaid" data-src="---
+            title: Example Git diagram
+            ---
+            gitGraph
+                commit
+                commit
+                branch develop
+                checkout develop
+                commit
+                commit
+                checkout main
+                merge develop
+                commit
+                commit">
+                               ---
+                               title: Example Git diagram
+                               ---
+                               gitGraph
+                                  commit
+                                  commit
+                                  branch develop
+                                  checkout develop
+                                  commit
+                                  commit
+                                  checkout main
+                                  merge develop
+                                  commit
+                                  commit</div>
+                        </div>
+                        <div class="copy-code-clipboard">
+                            <button class="btn-code-clipboard" onclick="copyMermaidCodeToClipboard(this.parentElement.previousElementSibling)">
+                                <svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+                                    <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
                     <div>
                         <h3 class="heading-3">Free fields</h3>
                     </div>
@@ -5984,6 +6036,30 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				<section class="text-container-section" id="5a7118c9-7745-4efe-8804-879cb2ce538a">
 
+                    <div class="code-block" data-show-lang="mermaid">
+                        <div class="mermaid-diagram">
+                            <div class="mermaid" data-src="sankey-beta
+            
+                            %% source,target,value
+                            Electricity grid,Over generation / exports,104.453
+                            Electricity grid,Heating and cooling - homes,113.726
+                            Electricity grid,H2 conversion,27.14">sankey-beta
+            
+                            %% source,target,value
+                            Electricity grid,Over generation / exports,104.453
+                            Electricity grid,Heating and cooling - homes,113.726
+                            Electricity grid,H2 conversion,27.14</div>
+                        </div>
+                        <div class="copy-code-clipboard">
+                            <button class="btn-code-clipboard" onclick="copyMermaidCodeToClipboard(this.parentElement.previousElementSibling)">
+                                <svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+                                    <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+            
+
                     <div>
                         <h1 class="heading-1">A bunch of repls and tweets</h1>
                     </div>
@@ -6019,7 +6095,52 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 						</div>
 					</div>
 
-					<div class="tweet-container">
+                    <div class="code-block" data-show-lang="mermaid">
+                        <div class="mermaid-diagram">
+                            <div class="mermaid" data-src="mindmap
+                            root((mindmap))
+                              Origins
+                                Long history
+                                ::icon(fa fa-book)
+                                Popularisation
+                                  British popular psychology author Tony Buzan
+                              Research
+                                On effectiveness<br/>and features
+                                On Automatic creation
+                                  Uses
+                                      Creative techniques
+                                      Strategic planning
+                                      Argument mapping
+                              Tools
+                                Pen and paper
+                                Mermaid">mindmap
+                                root((mindmap))
+                                  Origins
+                                    Long history
+                                    ::icon(fa fa-book)
+                                    Popularisation
+                                      British popular psychology author Tony Buzan
+                                  Research
+                                    On effectiveness<br/>and features
+                                    On Automatic creation
+                                      Uses
+                                          Creative techniques
+                                          Strategic planning
+                                          Argument mapping
+                                  Tools
+                                    Pen and paper
+                                    Mermaid</div>
+                        </div>
+                        <div class="copy-code-clipboard">
+                            <button class="btn-code-clipboard" onclick="copyMermaidCodeToClipboard(this.parentElement.previousElementSibling)">
+                                <svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+                                    <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="tweet-container">
 						<div class="tweet-block lazy-load" data-src="https://twitter.com/bgreene/status/1528044518406295553?s=20&t=Rivrq_Jz8sdCliZgSFLMOA">
 						</div>
 					</div>
@@ -6238,6 +6359,36 @@ for epoch in range(epochs):
 
 				<section class="text-container-section" id="b0f2ffd4-cae2-42b8-abd4-5329a8491292">
 
+                    <div class="code-block" data-show-lang="mermaid">
+                        <div class="mermaid-diagram">
+                            <div class="mermaid" data-src="gantt
+                            title A Gantt Diagram
+                            dateFormat YYYY-MM-DD
+                            section Section
+                                A task          :a1, 2014-01-01, 30d
+                                Another task    :after a1, 20d
+                            section Another
+                                Task in Another :2014-01-12, 12d
+                                another task    :24d">gantt
+                            title A Gantt Diagram
+                            dateFormat YYYY-MM-DD
+                            section Section
+                                A task          :a1, 2014-01-01, 30d
+                                Another task    :after a1, 20d
+                            section Another
+                                Task in Another :2014-01-12, 12d
+                                another task    :24d</div>
+                        </div>
+                        <div class="copy-code-clipboard">
+                            <button class="btn-code-clipboard" onclick="copyMermaidCodeToClipboard(this.parentElement.previousElementSibling)">
+                                <svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+                                    <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+
                     <div>
                         <h2 class="heading-2">C++ Snippets</h2>
                     </div>
@@ -6338,6 +6489,93 @@ int main(int argc, char **argv) {
 				</section>
 
 				<section class="text-container-section" id="b556f5b0-5e72-456f-b13a-1ad4e35b886b">
+
+
+                    <div class="code-block" data-show-lang="mermaid">
+                        <div class="mermaid-diagram">
+                            <div class="mermaid" data-src="journey
+                            title My working day
+                            section Go to work
+                              Make tea: 5: Me
+                              Go upstairs: 3: Me
+                              Do work: 1: Me, Cat
+                            section Go home
+                              Go downstairs: 5: Me
+                              Sit down: 5: Me">journey
+                              title My working day
+                              section Go to work
+                                Make tea: 5: Me
+                                Go upstairs: 3: Me
+                                Do work: 1: Me, Cat
+                              section Go home
+                                Go downstairs: 5: Me
+                                Sit down: 5: Me</div>
+                        </div>
+                        <div class="copy-code-clipboard">
+                            <button class="btn-code-clipboard" onclick="copyMermaidCodeToClipboard(this.parentElement.previousElementSibling)">
+                                <svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+                                    <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+            
+            
+                    <div class="code-block" data-show-lang="mermaid">
+                        <div class="mermaid-diagram">
+                            <div class="mermaid" data-src="timeline
+                            title History of Social Media Platform
+                            2002 : LinkedIn
+                            2004 : Facebook
+                                 : Google
+                            2005 : Youtube
+                            2006 : Twitter">timeline
+                            title History of Social Media Platform
+                            2002 : LinkedIn
+                            2004 : Facebook
+                                 : Google
+                            2005 : Youtube
+                            2006 : Twitter</div>
+                        </div>
+                        <div class="copy-code-clipboard">
+                            <button class="btn-code-clipboard" onclick="copyMermaidCodeToClipboard(this.parentElement.previousElementSibling)">
+                                <svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+                                    <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+            
+            
+                    <div class="code-block" data-show-lang="mermaid">
+                        <div class="mermaid-diagram">
+                            <div class="mermaid" data-src="%%{init: {&quot;quadrantChart&quot;: {&quot;chartWidth&quot;: 400, &quot;chartHeight&quot;: 400}, &quot;themeVariables&quot;: {&quot;quadrant1TextFill&quot;: &quot;#ff0000&quot;} }}%%
+                            quadrantChart
+                              x-axis Urgent --> Not Urgent
+                              y-axis Not Important --> &quot;Important ❤&quot;
+                              quadrant-1 Plan
+                              quadrant-2 Do
+                              quadrant-3 Delegate
+                              quadrant-4 Delete">%%{init: {"quadrantChart": {"chartWidth": 400, "chartHeight": 400}, "themeVariables": {"quadrant1TextFill": "#ff0000"} }}%%
+                            quadrantChart
+                              x-axis Urgent --> Not Urgent
+                              y-axis Not Important --> "Important ❤"
+                              quadrant-1 Plan
+                              quadrant-2 Do
+                              quadrant-3 Delegate
+                              quadrant-4 Delete</div>
+                        </div>
+                        <div class="copy-code-clipboard">
+                            <button class="btn-code-clipboard" onclick="copyMermaidCodeToClipboard(this.parentElement.previousElementSibling)">
+                                <svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+                                    <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+            
+            
+                        
 
                     <div>
                         <h2 class="heading-2">Javascript Snippets</h2>
@@ -8144,7 +8382,7 @@ With equations like
 							</div>
 			
 							<div class="copy-code-clipboard">
-								<button class="btn-code-clipboard" onclick="copyGistCodeToClipboard(this.parentElement.parentElement.parentElement)">
+								<button class="btn-clipboard" onclick="copyGistCodeToClipboard(this.parentElement.parentElement.parentElement)">
 									<svg class="copy-clipboard-svg-gist" viewBox="0 0 24 24">
 										<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
 									</svg>
@@ -8332,7 +8570,7 @@ Here is some code also in between :
 							</div>
 			
 							<div class="copy-code-clipboard">
-								<button class="btn-code-clipboard" onclick="copyGistCodeToClipboard(this.parentElement.parentElement.parentElement)">
+								<button class="btn-clipboard" onclick="copyGistCodeToClipboard(this.parentElement.parentElement.parentElement)">
 									<svg class="copy-clipboard-svg-gist" viewBox="0 0 24 24">
 										<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
 									</svg>
@@ -8403,6 +8641,9 @@ Here is some code also in between :
                     document.getElementById("mainPageContainer").style.display = "flex";
                     document.getElementById("topFixedTaskbar").style.display = "flex";
                     document.getElementById("progressBarContainer").style.display = "block";
+
+					let mermaidTheme = pageTheme === "dark" ? "dark" : "default";
+					toggleMermaidTheme(pageTheme);
                 }
             }
 
@@ -8448,10 +8689,12 @@ Here is some code also in between :
                     prismThemeElement.href = "https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-night-owl.min.css";
                     document.body.classList.remove("light-mode");
                     document.body.classList.add("dark-mode");
+                    toggleMermaidTheme("dark");
                 } else {
                     prismThemeElement.href = "https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-coldark-cold.min.css";
                     document.body.classList.remove("dark-mode");
                     document.body.classList.add("light-mode");
+                    toggleMermaidTheme("default");
                 }
             }
 
@@ -8945,6 +9188,22 @@ Here is some code also in between :
                 }
                 gistFileDataElement.insertAdjacentHTML("beforeend", iframeElementString);
                 gistContainerElement.setAttribute("data-active-index", gistActiveFileIndex.toString());
+            }
+
+            function toggleMermaidTheme(theme) {
+                let mermaidElements = document.getElementsByClassName("mermaid");
+                for(element of mermaidElements) {
+                    element.removeAttribute("data-processed");
+                    content = element.getAttribute("data-src");
+                    element.innerHTML = content;
+                    mermaid.init({theme: theme}, element);                    
+                }
+            }
+
+            function copyMermaidCodeToClipboard(mermaidBlock) {
+                let content = mermaidBlock.getElementsByClassName("mermaid")[0].getAttribute("data-src");
+                navigator.clipboard.writeText(content);
+                copiedToClipboard("Mermaid Code Copied to Clipboard!!");
             }
 		</script>
 
