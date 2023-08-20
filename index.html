@@ -27,8 +27,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/match-braces/prism-match-braces.min.js" integrity="sha512-1V2DjbHHHr8KzGoafg/R5GoT/+5A5WJBvno03LEL1unbfCLy4PLTQ2Trcrp+qfvTEtyI9Uj825deuInXoRkOyA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-SkmBfuA2hqjzEVpmnMt/LINrjop3GKWqsuLSSB3e7iBmYK7JuWw4ldmmxwD9mdm2IRTTi0OxSAfEGvgEi0i2Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/unescaped-markup/prism-unescaped-markup.min.js" integrity="sha512-QaQkFkE1LvUW6IaC7zLY4EsrNHuMWwepQv2RWyg4q/3+KI7K2WwtNEe6IPuYE7ZWkNxdKEnLJRuyuSnvbTUB3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.3.1/mermaid.min.js" integrity="sha512-iijJgrEzF9HfJJ8GKxnZdTeXd+UelEAfRfe8eFP6zoF0FmcB0HCJlYYj9DnVxcSfhB77iBVeoHfpfxv+pXO8Ig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.3.1/mermaid.min.js" integrity="sha512-iijJgrEzF9HfJJ8GKxnZdTeXd+UelEAfRfe8eFP6zoF0FmcB0HCJlYYj9DnVxcSfhB77iBVeoHfpfxv+pXO8Ig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <style>
             /* ################################################################################ 
                             CSS Global Variables for Colors, Fonts and Font Sizes
@@ -265,6 +266,9 @@
                 --color-shadow-gist-container-inner: var(--core-shadow-white-main-1);
                 --color-shadow-gist-container-outer: var(--core-shadow-white-main-2);
                 --color-bg-mermaid: var(--core-color-seagreen-light);
+
+                --color-bg-caraousel: var(--core-color-whitesmoke-main);
+                --color-border-caraousel: var(--core-color-black-main);
             }
 
             .dark-mode {
@@ -370,6 +374,9 @@
                 --color-shadow-gist-container-inner: var(--core-shadow-teal-main-1);
                 --color-shadow-gist-container-outer: var(--core-shadow-teal-main-2);
                 --color-bg-mermaid: var(--core-color-blue-light);
+
+                --color-bg-caraousel: var(--core-color-black-main);
+                --color-border-caraousel: var(--core-color-blue-very-dark);
             }
 
             html {
@@ -1162,6 +1169,13 @@
                 border: 1px solid var(--color-border-table);
             }
 
+            .table-data-cell {
+                max-height: 125px;
+                overflow: auto;
+                border: 2px solid seagreen;
+                padding: 10px;
+            }
+
             tr {
                 border-bottom: 1px solid var(--color-border-table);
             }
@@ -1756,7 +1770,6 @@
             }
 
 
-
             /* ################################################################################ 
                                         CSS for Body Ending Buffer Div
             ################################################################################
@@ -1908,6 +1921,144 @@
                 align-items: center;
                 padding-top: 15px;
             }
+
+            /* ################################################################################ 
+                                        CSS for column caraousel
+            ################################################################################
+            */
+
+			.multi-column-slideshow-container {
+                /* display: none; */
+				height: 600px;
+				width: 98%;
+				background-color: var(--color-bg-caraousel);
+				border: 2px solid var(--color-border-caraousel);
+				position: relative;
+				margin: auto;
+				padding: 3px;
+				margin-top: 25px;
+				box-shadow: 0 4px 8px 0 var(--color-shadow-gist-container-inner), 
+			                0 6px 20px 0 var(--color-shadow-gist-container-outer);
+			}
+
+			.slideshow-slide {
+				display: none;
+				height: 100%;
+				width: 100%;
+				overflow-y: auto;
+			}
+
+			.slideshow-fade {
+				animation-name: slideshow-fade;
+				animation-duration: 0.8s;
+			}
+
+			@keyframes slideshow-fade {
+				from { opacity: .4 } 
+				to { opacity: 1 }
+			}
+
+			.multi-column-slideshow-container::before,
+			.multi-column-slideshow-container::after,
+			.slideshow-nav-prev,
+			.slideshow-nav-next {
+				position: absolute;
+				top: 0;
+				width: 3rem;
+				height: 3rem;
+				transform: translateY(460%);
+				border-radius: 50%;
+				font-size: 0;
+				outline: 0;
+				cursor: pointer;
+			}
+
+			.multi-column-slideshow-container::before,
+			.slideshow-nav-prev {
+				left: -1rem;
+			}
+
+			.multi-column-slideshow-container::after,
+			.slideshow-nav-next {
+				right: -1rem;
+			}
+
+			.multi-column-slideshow-container::before,
+			.multi-column-slideshow-container::after {
+				content: '';
+				z-index: 1;
+				background-color: #333;
+				background-size: 1.5rem 1.5rem;
+				background-repeat: no-repeat;
+				background-position: center center;
+				color: #fff;
+				font-size: 2.5rem;
+				line-height: 4rem;
+				text-align: center;
+				pointer-events: none;
+			}
+
+			.multi-column-slideshow-container::before {
+				background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
+			}
+			
+			.multi-column-slideshow-container::after {
+				background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
+			}
+
+            /* ################################################################################ 
+                                        CSS for collapsible 
+            ################################################################################
+            */
+
+            .collapsible-visible-container {
+                height: 55px;
+                width: 98%;
+                border: 1px solid #ddd;
+                margin: auto;
+                margin-top: 30px;
+                box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+                -webkit-box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+                font-family: var(--font-title);
+                font-size: 20px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                padding: 10px;
+                cursor: pointer;
+                outline: none;
+           }
+
+           .collapsible-visible-container:hover {
+                background-color: #777;
+           }
+
+           .collapsible-visible-container.collapsible-hidden-open {
+               box-shadow: none;
+               background-color: #BBB;
+           }
+
+           .collapsible-hidden-container {
+                height: 450px;
+                overflow-y: auto;
+                width: 98%;
+                border: 1px solid #ddd;
+                border-top: none;
+                margin: auto;
+                padding: 10px;
+                box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+                -webkit-box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+                display: none;
+
+                visibility: hidden;
+                opacity: 0;
+                transition: visibility 2s, opacity 2s ease-out;
+           }
+
+           .collapsible-hidden-container.collapsible-hidden-visible {
+                visibility: visible;
+                opacity: 1;
+           }
 
             /* ################################################################################ 
                                         Media Queries for Added Responsiveness
@@ -2163,7 +2314,20 @@
                     padding: 5px 6px;
                     font-size: 13px;
                     transform: translateY(-6px);
-                }    
+                }
+
+                .multi-column-slideshow-container {
+                    display: block;
+                }
+
+                .multi-column-slideshow-container::before,
+                .multi-column-slideshow-container::after,
+                .slideshow-nav-prev,
+                .slideshow-nav-next {
+                    transform: translateY(480%);
+					width: 3.5rem;
+					height: 3.5rem;
+                }
             }
         </style>
 
@@ -2359,7 +2523,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="a1c5e894-07ae-497e-8d17-35c1940b6839">
+				<section class="text-container-section" id="4930a7c0-cdca-4bf8-90d2-7859721e5008">
 
                     <div>
                         <h1 class="heading-1">Geometry of Newtonian gravity</h1>
@@ -2436,7 +2600,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="43d42a83-9fc9-481b-817b-bfe39d2fdd55">
+				<section class="text-container-section" id="536c5f92-5123-4dc6-9626-9d3e240a7dea">
 
                     <div>
                         <h2 class="heading-2">Einstein’s equations</h2>
@@ -2558,7 +2722,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="07474798-39f9-4c64-be19-b7e0f5d610ab">
+				<section class="text-container-section" id="d20b145b-1ffe-4031-9ca0-8bcd7b8db252">
 
                     <div>
                         <h3 class="heading-3">Einstein Field Equations</h3>
@@ -2580,7 +2744,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="91507424-b136-4786-882a-b5bfcbf412ea">
+				<section class="text-container-section" id="caa717bf-d549-47ef-9ba5-9affd91360c5">
 
                     <div>
                         <h3 class="heading-3">Mathematical Form</h3>
@@ -2708,7 +2872,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="7990116d-cd8f-40cc-8b7f-4ac4b8e757f9">
+				<section class="text-container-section" id="5079a0c0-f383-42b9-ba22-5b8dc58c6fe7">
 
                     <div>
                         <h3 class="heading-3">Sign convention</h3>
@@ -2781,7 +2945,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="fabb8ff2-ebc6-42cd-841d-1aa518aab6d4">
+				<section class="text-container-section" id="24680c7d-b296-44bb-8c12-7fabf2ad7758">
 
                     <div>
                         <h1 class="heading-1">The Cosmological Constant</h1>
@@ -2817,7 +2981,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="a21bb7ba-db34-4b28-86dd-2c605386baef">
+				<section class="text-container-section" id="475a5818-9901-44ce-bf16-d35530b28bbf">
 
                     <div>
                         <h2 class="heading-2">History</h2>
@@ -2841,7 +3005,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="c31fae8c-58f6-439a-8d87-bbdd1160b879">
+				<section class="text-container-section" id="a310ecd8-6d4c-41c8-b92c-26c073e70438">
 
                     <div>
                         <h3 class="heading-3">Sequence of events 1915–1998</h3>
@@ -2853,7 +3017,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="4821a0ce-9a4d-4e4c-ae66-449f47f1c050">
+				<section class="text-container-section" id="d9fc92d4-7e1c-4c30-b927-850b16de058f">
 
                     <div>
                         <h2 class="heading-2">Equation</h2>
@@ -2926,7 +3090,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="ddcdb7bf-c8e5-4a4e-86d7-a2a07608cdd9">
+				<section class="text-container-section" id="4d695fe7-bc5a-4020-a198-23cda2c58fcd">
 
                     <div>
                         <h3 class="heading-3">ΩΛ (Omega sub Lambda)</h3>
@@ -2942,7 +3106,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="49db5321-9fdb-478e-bd57-d3842be2820b">
+				<section class="text-container-section" id="0ad9c7f2-2aaa-4bd4-99ca-4b11daa3953b">
 
                     <div>
                         <h3 class="heading-3">Equation of state</h3>
@@ -2960,7 +3124,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="8d2943b3-fe47-40ea-8d36-e5262c9ac0c5">
+				<section class="text-container-section" id="ef39ce4a-9a04-4508-8b85-4e220b912bcf">
 
                     <div>
                         <h3 class="heading-3">Positive value</h3>
@@ -2987,7 +3151,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="28d45fbf-bf5c-43a7-945f-957d47b73fdf">
+				<section class="text-container-section" id="d8803b11-b19f-4b37-82f9-53e3d43e6d7b">
 
                     <div>
                         <h2 class="heading-2">Predictions</h2>
@@ -2995,7 +3159,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="d122606a-8110-4596-9b67-83ac659d0647">
+				<section class="text-container-section" id="229d5ee2-7ead-4762-b2ff-eaed1cbf6f6c">
 
                     <div>
                         <h3 class="heading-3">Quantum field theory</h3>
@@ -3052,7 +3216,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="4ca889f9-4e87-45a5-adcb-1a0b0f099fdd">
+				<section class="text-container-section" id="67fa41ca-e4ae-4d9a-8ef6-6c2e77cfbb59">
 
                     <div>
                         <h3 class="heading-3">Anthropic principle</h3>
@@ -3072,7 +3236,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="16303c87-d3f6-4c73-ae19-f33d298c1b9b">
+				<section class="text-container-section" id="dee47af5-b65f-4047-8153-e188f033d548">
 
                     <div>
                         <h3 class="heading-3">Failure to detect dark energy</h3>
@@ -3085,7 +3249,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="9e626609-e46a-4ac4-b8dd-efaf3038c5b4">
+				<section class="text-container-section" id="362b5521-6f46-44e2-8d91-1d6196ab558d">
 
                     <div>
                         <h2 class="heading-2">Einstein–Maxwell equations</h2>
@@ -3189,7 +3353,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="9f0d6efa-752a-4536-9a2c-cfecc724778a">
+				<section class="text-container-section" id="f19939f1-0f94-4bdc-bb21-1632f59b257d">
 
                     <div>
                         <h2 class="heading-2">The linearized EFE</h2>
@@ -3201,7 +3365,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="4addc1a8-eb5d-4aa5-8b17-8e9bee8a8e78">
+				<section class="text-container-section" id="bb7c9c12-88a3-4f00-8cb6-613bca9b5353">
 
                     <div>
                         <h2 class="heading-2">Polynomial form</h2>
@@ -3267,7 +3431,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="4b470c8e-ac68-43db-85e8-44e2abad6f45">
+				<section class="text-container-section" id="82928f04-02d0-4bf4-a36f-6ee79fe406dc">
 
                     <div>
                         <h1 class="heading-1">Higgs Mechanism</h1>
@@ -3317,6 +3481,32 @@
 
 					</div>
 
+					<div class="multi-column-slideshow-container" data-slide-index="1">
+
+						<div class="slideshow-slide slideshow-fade">
+
+                    <div class="image-block">
+                        <img class="image-container lazy-load" data-src="media/149_1_1_Image.png" onclick="openModal(this)" />
+                    </div>
+
+					<div class="block-caption">Standard Model of Elementary Particles </div>
+
+						</div>
+
+						<div class="slideshow-slide slideshow-fade">
+
+                    <div class="image-block">
+                        <img class="image-container lazy-load" data-src="media/149_2_1_Image.png" onclick="openModal(this)" />
+                    </div>
+
+					<div class="block-caption">Higgs potential  V  . For a fixed value of  λ , the potential is presented upwards against the real and imaginary parts of Φ. The  Mexican-hat  or   champagne-bottle profile  at the ground should be noted. </div>
+
+						</div>
+
+						<a class="slideshow-nav-prev" onclick="slideshowChangeSlide(this.parentElement, -1)"></a>
+						<a class="slideshow-nav-next" onclick="slideshowChangeSlide(this.parentElement, 1)"></a>
+					</div>
+
                     <div class="video-container">
                         <iframe class="video-player lazy-load" data-src="https://www.youtube.com/embed/kixAljyfdqU" allow="fullscreen;"></iframe>
                     </div>
@@ -3325,7 +3515,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="3ab2a1d8-3736-4311-a9c2-1839a61cfec9">
+				<section class="text-container-section" id="5c208818-e665-4f8b-936c-031c89165e5e">
 
                     <div>
                         <h2 class="heading-2">Standard Model</h2>
@@ -3356,7 +3546,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="1e5a86a2-ea81-4919-8e38-15352779c197">
+				<section class="text-container-section" id="6fb12651-13fc-4603-93a9-a8b642407f46">
 
                     <div>
                         <h3 class="heading-3">Structure of the Higgs field</h3>
@@ -3376,7 +3566,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="1e1eb181-ffa4-405c-aa03-c9b9a3d03617">
+				<section class="text-container-section" id="7cd63c64-1e9a-4611-a8c5-490e99727cde">
 
                     <div>
                         <h3 class="heading-3">The photon as the part that remains massless</h3>
@@ -3445,7 +3635,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="a57ae6ed-a45e-455c-b2af-fe23cbaedb02">
+				<section class="text-container-section" id="315da443-6975-4818-9f93-95283e8bb7bd">
 
                     <div>
                         <h3 class="heading-3">Consequences for fermions</h3>
@@ -3524,7 +3714,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="b84317ff-39bd-43ff-846e-60ebf69ac2a1">
+				<section class="text-container-section" id="66116c56-0503-4910-a3eb-3412f756b80a">
 
                     <div>
                         <h2 class="heading-2">Examples</h2>
@@ -3536,7 +3726,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="1093776c-275c-4274-9ce8-cbde2dceef2e">
+				<section class="text-container-section" id="7aedc7ea-991c-4494-9088-3b66ca8bed0e">
 
                     <div>
                         <h3 class="heading-3">Landau model</h3>
@@ -3743,7 +3933,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="fc86445f-3bf9-4f1c-a93c-3672c517c338">
+				<section class="text-container-section" id="eee16e36-c7a7-46b0-888b-1ca5d4246454">
 
                     <div>
                         <h3 class="heading-3">Abelian Higgs mechanism</h3>
@@ -3855,7 +4045,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="d97557ac-fe91-49a8-ae24-fbfe01355248">
+				<section class="text-container-section" id="1bb288eb-ded1-4424-8e8a-e5f279199731">
 
                     <div>
                         <h3 class="heading-3">Alternate form of the Abelian Higgs model action</h3>
@@ -3994,7 +4184,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="25e676ac-b17f-41cf-8a4a-1f5cd96e1d77">
+				<section class="text-container-section" id="2b7b9dad-f111-41a9-a90d-c060e904062a">
 
                     <div>
                         <h3 class="heading-3">Lagrangian in explicit symmetry broken form</h3>
@@ -4374,7 +4564,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="e41f4cc9-34fe-4892-b0b3-215484ef7ce5">
+				<section class="text-container-section" id="a84787c7-b146-4dfc-b31c-b0aac837f096">
 
                     <div>
                         <h3 class="heading-3">Spontaneous symmetry breaking and trivializations</h3>
@@ -4472,7 +4662,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="e94642c9-9da1-4002-9b44-1503ed72d78e">
+				<section class="text-container-section" id="cafc3b7e-1be3-4537-931d-a17da27a31a2">
 
                     <div>
                         <h3 class="heading-3">Non-Abelian Higgs mechanism</h3>
@@ -4832,7 +5022,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="44c3e178-854c-4bef-a4e9-ea73497ccfb4">
+				<section class="text-container-section" id="4c9147e7-b2ae-4e5b-b991-1c874c304576">
 
                     <div>
                         <h3 class="heading-3">Affine Higgs mechanism</h3>
@@ -5137,7 +5327,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="017187fe-2877-4faf-bbf2-09619140777b">
+				<section class="text-container-section" id="cae41b6d-1d3c-42df-97ba-80c1a6520575">
 
                     <div>
                         <h1 class="heading-1">Higgs Boson</h1>
@@ -5165,7 +5355,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="9e239e77-14e4-4b45-a67c-fa8463ab4864">
+				<section class="text-container-section" id="5a068a7c-fcb5-482a-baae-2da001033b9c">
 
                     <div>
                         <h2 class="heading-2">Technical aspects and mathematical formulation</h2>
@@ -5742,7 +5932,7 @@ $$
 
 				</section>
 
-				<section class="text-container-section" id="95f0fddd-1c24-4822-984f-fbfe9dbc610a">
+				<section class="text-container-section" id="1f8633ea-63d4-4b7c-8522-6d4e945d0365">
 
                     <div>
                         <h1 class="heading-1">The Mathematical Foundations of Standard Model</h1>
@@ -5780,6 +5970,30 @@ $$
 
 					</div>
 
+					<div class="multi-column-slideshow-container" data-slide-index="1">
+
+						<div class="slideshow-slide slideshow-fade">
+
+                    <div class="image-block">
+                        <img class="image-container lazy-load" data-src="media/357_1_1_Untitled.png" onclick="openModal(this)" />
+                    </div>
+
+						</div>
+
+						<div class="slideshow-slide slideshow-fade">
+
+                    <div class="image-block">
+                        <img class="image-container lazy-load" data-src="media/357_2_1_Untitled.png" onclick="openModal(this)" />
+                    </div>
+
+					<div class="block-caption">The pattern of  <a href="https://en.wikipedia.org/wiki/Weak_isospin" class="inline-link" target="_blank">weak isospin</a>   T 3 ,  <a href="https://en.wikipedia.org/wiki/Weak_hypercharge" class="inline-link" target="_blank">weak hypercharge</a>  YW  , and  <a href="https://en.wikipedia.org/wiki/Color_charge" class="inline-link" target="_blank">color charge</a>  of all known elementary particles, rotated by the  <a href="https://en.wikipedia.org/wiki/Weak_mixing_angle" class="inline-link" target="_blank">weak mixing angle</a>  to show electric charge  Q  , roughly along the vertical. The neutral  <a href="https://en.wikipedia.org/wiki/Higgs_field" class="inline-link" target="_blank">Higgs field</a>  (gray square) breaks the   <a href="https://en.wikipedia.org/wiki/Electroweak_symmetry" class="inline-link" target="_blank">electroweak symmetry</a>  and interacts with other particles to give them mass. </div>
+
+						</div>
+
+						<a class="slideshow-nav-prev" onclick="slideshowChangeSlide(this.parentElement, -1)"></a>
+						<a class="slideshow-nav-next" onclick="slideshowChangeSlide(this.parentElement, 1)"></a>
+					</div>
+
                     <div class="image-block">
                         <img class="image-container lazy-load" data-src="media/359_Standard_Model__All_Feynman_diagram_vertices.svg-removebg-preview.jpg" onclick="openModal(this)" />
                     </div>
@@ -5788,47 +6002,7 @@ $$
 
 				</section>
 
-				<section class="text-container-section" id="132e5e04-9eed-42f2-bd0c-3a76d5727334">
-
-                    <div class="code-block" data-show-lang="mermaid">
-                        <div class="mermaid-diagram">
-                            <div class="mermaid" data-src="---
-            title: Example Git diagram
-            ---
-            gitGraph
-                commit
-                commit
-                branch develop
-                checkout develop
-                commit
-                commit
-                checkout main
-                merge develop
-                commit
-                commit">
-                               ---
-                               title: Example Git diagram
-                               ---
-                               gitGraph
-                                  commit
-                                  commit
-                                  branch develop
-                                  checkout develop
-                                  commit
-                                  commit
-                                  checkout main
-                                  merge develop
-                                  commit
-                                  commit</div>
-                        </div>
-                        <div class="copy-code-clipboard">
-                            <button class="btn-code-clipboard" onclick="copyMermaidCodeToClipboard(this.parentElement.previousElementSibling)">
-                                <svg class="copy-clipboard-svg" viewBox="0 0 24 24">
-                                    <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
+				<section class="text-container-section" id="1d14b562-0b01-47d0-9a13-13284df66716">
 
                     <div>
                         <h3 class="heading-3">Free fields</h3>
@@ -5907,7 +6081,7 @@ $$
 
 				</section>
 
-				<section class="text-container-section" id="a4941425-e1b8-4f16-9890-0b6dfba6fb95">
+				<section class="text-container-section" id="8a7c6420-743b-4563-b586-52de43421d79">
 
                     <div>
                         <h1 class="heading-1">A bunch of equations</h1>
@@ -6034,31 +6208,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="5a7118c9-7745-4efe-8804-879cb2ce538a">
-
-                    <div class="code-block" data-show-lang="mermaid">
-                        <div class="mermaid-diagram">
-                            <div class="mermaid" data-src="sankey-beta
-            
-                            %% source,target,value
-                            Electricity grid,Over generation / exports,104.453
-                            Electricity grid,Heating and cooling - homes,113.726
-                            Electricity grid,H2 conversion,27.14">sankey-beta
-            
-                            %% source,target,value
-                            Electricity grid,Over generation / exports,104.453
-                            Electricity grid,Heating and cooling - homes,113.726
-                            Electricity grid,H2 conversion,27.14</div>
-                        </div>
-                        <div class="copy-code-clipboard">
-                            <button class="btn-code-clipboard" onclick="copyMermaidCodeToClipboard(this.parentElement.previousElementSibling)">
-                                <svg class="copy-clipboard-svg" viewBox="0 0 24 24">
-                                    <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-            
+				<section class="text-container-section" id="d4cea9a1-e6f6-465a-a400-0e4a1fb2777d">
 
                     <div>
                         <h1 class="heading-1">A bunch of repls and tweets</h1>
@@ -6095,52 +6245,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 						</div>
 					</div>
 
-                    <div class="code-block" data-show-lang="mermaid">
-                        <div class="mermaid-diagram">
-                            <div class="mermaid" data-src="mindmap
-                            root((mindmap))
-                              Origins
-                                Long history
-                                ::icon(fa fa-book)
-                                Popularisation
-                                  British popular psychology author Tony Buzan
-                              Research
-                                On effectiveness<br/>and features
-                                On Automatic creation
-                                  Uses
-                                      Creative techniques
-                                      Strategic planning
-                                      Argument mapping
-                              Tools
-                                Pen and paper
-                                Mermaid">mindmap
-                                root((mindmap))
-                                  Origins
-                                    Long history
-                                    ::icon(fa fa-book)
-                                    Popularisation
-                                      British popular psychology author Tony Buzan
-                                  Research
-                                    On effectiveness<br/>and features
-                                    On Automatic creation
-                                      Uses
-                                          Creative techniques
-                                          Strategic planning
-                                          Argument mapping
-                                  Tools
-                                    Pen and paper
-                                    Mermaid</div>
-                        </div>
-                        <div class="copy-code-clipboard">
-                            <button class="btn-code-clipboard" onclick="copyMermaidCodeToClipboard(this.parentElement.previousElementSibling)">
-                                <svg class="copy-clipboard-svg" viewBox="0 0 24 24">
-                                    <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="tweet-container">
+					<div class="tweet-container">
 						<div class="tweet-block lazy-load" data-src="https://twitter.com/bgreene/status/1528044518406295553?s=20&t=Rivrq_Jz8sdCliZgSFLMOA">
 						</div>
 					</div>
@@ -6156,7 +6261,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="0385ef74-2b03-4df1-8397-2bbe90fe8e04">
+				<section class="text-container-section" id="d31b3bce-412e-4166-adc6-a38ae1f66d73">
 
                     <div>
                         <h1 class="heading-1">A bunch of other widgets</h1>
@@ -6185,7 +6290,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="2a5bb3fb-a2f4-4e32-be8e-d10c629dd2ce">
+				<section class="text-container-section" id="a07f0078-f6bf-428b-9c55-d3989428f133">
 
                     <div>
                         <h1 class="heading-1">Code Snippets</h1>
@@ -6193,7 +6298,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="13e37fd2-392f-4021-b353-fa15178ff604">
+				<section class="text-container-section" id="a1d13144-5758-4dba-9aa1-6f6da44ddcf2">
 
                     <div>
                         <h2 class="heading-2">Python Snippets</h2>
@@ -6357,37 +6462,7 @@ for epoch in range(epochs):
 
 				</section>
 
-				<section class="text-container-section" id="b0f2ffd4-cae2-42b8-abd4-5329a8491292">
-
-                    <div class="code-block" data-show-lang="mermaid">
-                        <div class="mermaid-diagram">
-                            <div class="mermaid" data-src="gantt
-                            title A Gantt Diagram
-                            dateFormat YYYY-MM-DD
-                            section Section
-                                A task          :a1, 2014-01-01, 30d
-                                Another task    :after a1, 20d
-                            section Another
-                                Task in Another :2014-01-12, 12d
-                                another task    :24d">gantt
-                            title A Gantt Diagram
-                            dateFormat YYYY-MM-DD
-                            section Section
-                                A task          :a1, 2014-01-01, 30d
-                                Another task    :after a1, 20d
-                            section Another
-                                Task in Another :2014-01-12, 12d
-                                another task    :24d</div>
-                        </div>
-                        <div class="copy-code-clipboard">
-                            <button class="btn-code-clipboard" onclick="copyMermaidCodeToClipboard(this.parentElement.previousElementSibling)">
-                                <svg class="copy-clipboard-svg" viewBox="0 0 24 24">
-                                    <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-
+				<section class="text-container-section" id="24e9babf-9f13-4f24-9635-86e11feb2caa">
 
                     <div>
                         <h2 class="heading-2">C++ Snippets</h2>
@@ -6488,94 +6563,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="b556f5b0-5e72-456f-b13a-1ad4e35b886b">
-
-
-                    <div class="code-block" data-show-lang="mermaid">
-                        <div class="mermaid-diagram">
-                            <div class="mermaid" data-src="journey
-                            title My working day
-                            section Go to work
-                              Make tea: 5: Me
-                              Go upstairs: 3: Me
-                              Do work: 1: Me, Cat
-                            section Go home
-                              Go downstairs: 5: Me
-                              Sit down: 5: Me">journey
-                              title My working day
-                              section Go to work
-                                Make tea: 5: Me
-                                Go upstairs: 3: Me
-                                Do work: 1: Me, Cat
-                              section Go home
-                                Go downstairs: 5: Me
-                                Sit down: 5: Me</div>
-                        </div>
-                        <div class="copy-code-clipboard">
-                            <button class="btn-code-clipboard" onclick="copyMermaidCodeToClipboard(this.parentElement.previousElementSibling)">
-                                <svg class="copy-clipboard-svg" viewBox="0 0 24 24">
-                                    <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-            
-            
-                    <div class="code-block" data-show-lang="mermaid">
-                        <div class="mermaid-diagram">
-                            <div class="mermaid" data-src="timeline
-                            title History of Social Media Platform
-                            2002 : LinkedIn
-                            2004 : Facebook
-                                 : Google
-                            2005 : Youtube
-                            2006 : Twitter">timeline
-                            title History of Social Media Platform
-                            2002 : LinkedIn
-                            2004 : Facebook
-                                 : Google
-                            2005 : Youtube
-                            2006 : Twitter</div>
-                        </div>
-                        <div class="copy-code-clipboard">
-                            <button class="btn-code-clipboard" onclick="copyMermaidCodeToClipboard(this.parentElement.previousElementSibling)">
-                                <svg class="copy-clipboard-svg" viewBox="0 0 24 24">
-                                    <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-            
-            
-                    <div class="code-block" data-show-lang="mermaid">
-                        <div class="mermaid-diagram">
-                            <div class="mermaid" data-src="%%{init: {&quot;quadrantChart&quot;: {&quot;chartWidth&quot;: 400, &quot;chartHeight&quot;: 400}, &quot;themeVariables&quot;: {&quot;quadrant1TextFill&quot;: &quot;#ff0000&quot;} }}%%
-                            quadrantChart
-                              x-axis Urgent --> Not Urgent
-                              y-axis Not Important --> &quot;Important ❤&quot;
-                              quadrant-1 Plan
-                              quadrant-2 Do
-                              quadrant-3 Delegate
-                              quadrant-4 Delete">%%{init: {"quadrantChart": {"chartWidth": 400, "chartHeight": 400}, "themeVariables": {"quadrant1TextFill": "#ff0000"} }}%%
-                            quadrantChart
-                              x-axis Urgent --> Not Urgent
-                              y-axis Not Important --> "Important ❤"
-                              quadrant-1 Plan
-                              quadrant-2 Do
-                              quadrant-3 Delegate
-                              quadrant-4 Delete</div>
-                        </div>
-                        <div class="copy-code-clipboard">
-                            <button class="btn-code-clipboard" onclick="copyMermaidCodeToClipboard(this.parentElement.previousElementSibling)">
-                                <svg class="copy-clipboard-svg" viewBox="0 0 24 24">
-                                    <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-            
-            
-                        
+				<section class="text-container-section" id="4c9090c2-b02f-41b1-922b-aaf58695d9dd">
 
                     <div>
                         <h2 class="heading-2">Javascript Snippets</h2>
@@ -6658,7 +6646,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="b42215fa-5ea0-43ca-8585-c89eaebde605">
+				<section class="text-container-section" id="d0a71229-08e2-455c-8bfe-bb9c2409de43">
 
                     <div>
                         <h2 class="heading-2">HTML Snippets</h2>
@@ -6714,7 +6702,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="b996aa45-6807-407e-91b3-c0ddb408b74f">
+				<section class="text-container-section" id="b16efb7d-62a7-460a-942b-a041d8db65b2">
 
                     <div>
                         <h2 class="heading-2">CSS Snippets</h2>
@@ -6862,7 +6850,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="0ae3545e-1bc4-4bb5-a331-37356f1f12bb">
+				<section class="text-container-section" id="4c7c30d5-2312-4549-8966-04a3c1e8bd45">
 
                     <div>
                         <h1 class="heading-1">Table, File and Audio Widgets</h1>
@@ -7211,24 +7199,26 @@ With equations like
                         </div>
                     </div>
 
-					<div class="code-block" data-show-lang="mermaid">
-						<div class="code-snippet">
-							<script type="text/plain" class="language-mermaid line-numbers match-braces code-block-prism">pie title NETFLIX
+        <div class="code-block" data-show-lang="mermaid">
+            <div class="mermaid-diagram">
+                <div class="mermaid" data-src="pie title NETFLIX
+         &quot;Time spent looking for movie&quot; : 90
+         &quot;Time spent watching it&quot; : 10">pie title NETFLIX
          "Time spent looking for movie" : 90
-         "Time spent watching it" : 10</script>
-						</div>
-						<div class="copy-code-clipboard">
-							<button class="btn-code-clipboard" onclick="copyCodeToClipboard(this.parentElement.previousElementSibling)">
-								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
-									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
-								</svg>
-							</button>
-						</div>
-					</div>
+         "Time spent watching it" : 10</div>
+            </div>
+            <div class="copy-code-clipboard">
+                <button class="btn-code-clipboard" onclick="copyMermaidCodeToClipboard(this.parentElement.previousElementSibling)">
+                    <svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
 
 				</section>
 
-				<section class="text-container-section" id="689ece1d-c38f-439d-a744-7e0abcce3a04">
+				<section class="text-container-section" id="697503ed-855d-4a49-83d2-936e9e7290dc">
 
                     <div>
                         <h3 class="heading-3">Here is a block mention from another page</h3>
@@ -7240,7 +7230,7 @@ With equations like
 
 				</section>
 
-				<section class="text-container-section" id="9c6b0bb9-6c70-4920-b6f9-dd182aadde2d">
+				<section class="text-container-section" id="2a637783-9b0d-40af-9605-666eedad3f5e">
 
                     <div>
                         <h3 class="heading-3">Free fields</h3>
@@ -7912,20 +7902,22 @@ With equations like
 						</div>
 					</div>
 
-					<div class="code-block" data-show-lang="mermaid">
-						<div class="code-snippet">
-							<script type="text/plain" class="language-mermaid line-numbers match-braces code-block-prism">pie title NETFLIX
+        <div class="code-block" data-show-lang="mermaid">
+            <div class="mermaid-diagram">
+                <div class="mermaid" data-src="pie title NETFLIX
+         &quot;Time spent looking for movie&quot; : 90
+         &quot;Time spent watching it&quot; : 10">pie title NETFLIX
          "Time spent looking for movie" : 90
-         "Time spent watching it" : 10</script>
-						</div>
-						<div class="copy-code-clipboard">
-							<button class="btn-code-clipboard" onclick="copyCodeToClipboard(this.parentElement.previousElementSibling)">
-								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
-									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
-								</svg>
-							</button>
-						</div>
-					</div>
+         "Time spent watching it" : 10</div>
+            </div>
+            <div class="copy-code-clipboard">
+                <button class="btn-code-clipboard" onclick="copyMermaidCodeToClipboard(this.parentElement.previousElementSibling)">
+                    <svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
 
 					<div class="code-block" data-show-lang="nix">
 						<div class="code-snippet">
@@ -8369,6 +8361,111 @@ With equations like
 						</div>
 					</div>
 
+        <div class="collapsible-visible-container" onclick="toggleCollapsibleContent(this)">Toggle 1 </div>
+        <div class="collapsible-hidden-container">
+
+                    <div>
+                        <h3 class="heading-3">Toggle Body</h3>
+                    </div>
+
+                    <div class="image-block">
+                        <img class="image-container lazy-load" data-src="media/575_2_Image.png" onclick="openModal(this)" />
+                    </div>
+
+                    <div class="image-block">
+                        <img class="image-container lazy-load" data-src="media/575_3_Image.png" onclick="openModal(this)" />
+                    </div>
+
+                    <div class="image-block">
+                        <img class="image-container lazy-load" data-src="media/575_4_Image.png" onclick="openModal(this)" />
+                    </div>
+
+					<div class="math-block prevent-select">
+						<div class="block-equation" data-katex="$${\displaystyle {\mathcal {L}}=\left[-{\frac {1}{4}}F_{\mu \nu }F^{\mu \nu }+{\frac {1}{2}}e^{2}v^{2}A_{\mu }A^{\mu }+{\frac {1}{2}}\partial _{\mu }\eta \partial ^{\mu }\eta -\lambda v^{2}\eta ^{2}\right]+\left[-\lambda v\eta ^{3}-{\frac {\lambda }{4}}\eta ^{4}+{\frac {1}{2}}(\eta ^{2}+2v\eta )A^{\mu }A_{\mu }\right].}$$">
+							<span>
+								$${\displaystyle {\mathcal {L}}=\left[-{\frac {1}{4}}F_{\mu \nu }F^{\mu \nu }+{\frac {1}{2}}e^{2}v^{2}A_{\mu }A^{\mu }+{\frac {1}{2}}\partial _{\mu }\eta \partial ^{\mu }\eta -\lambda v^{2}\eta ^{2}\right]+\left[-\lambda v\eta ^{3}-{\frac {\lambda }{4}}\eta ^{4}+{\frac {1}{2}}(\eta ^{2}+2v\eta )A^{\mu }A_{\mu }\right].}$$
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+					<div class="code-block" data-show-lang="python">
+						<div class="code-snippet">
+							<script type="text/plain" class="language-python line-numbers match-braces code-block-prism">from scipy.stats import expon
+import numpy as np
+
+def Inverse_transform_sampling_Exponential(M,lambda_):
+    expon_x = []
+
+    for i in range(M):
+        u = np.random.uniform(0, 1)
+        x = expon.ppf(u, lambda_) - 1
+        expon_x.append(x)
+
+    return(np.array(expon_x))
+
+exponential_random_samples = Inverse_transform_sampling_Exponential(M = 10000,lambda_ = 1)</script>
+						</div>
+						<div class="copy-code-clipboard">
+							<button class="btn-code-clipboard" onclick="copyCodeToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+        <div class="code-block" data-show-lang="mermaid">
+            <div class="mermaid-diagram">
+                <div class="mermaid" data-src="---
+title: Example Git diagram
+---
+gitGraph
+    commit
+    commit
+    branch develop
+    checkout develop
+    commit
+    commit
+    checkout main
+    merge develop
+    commit
+    commit">---
+title: Example Git diagram
+---
+gitGraph
+    commit
+    commit
+    branch develop
+    checkout develop
+    commit
+    commit
+    checkout main
+    merge develop
+    commit
+    commit</div>
+            </div>
+            <div class="copy-code-clipboard">
+                <button class="btn-code-clipboard" onclick="copyMermaidCodeToClipboard(this.parentElement.previousElementSibling)">
+                    <svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+                    <div class="image-block">
+                        <img class="image-container lazy-load" data-src="media/575_12_Image.png" onclick="openModal(this)" />
+                    </div>
+
+        </div>
+
                     <div>
                         <p class="text-paragraph">😁 </p>
                     </div>
@@ -8416,6 +8513,26 @@ With equations like
                         <img class="image-container lazy-load" data-src="media/590_1_5_Image.png" onclick="openModal(this)" />
                     </div>
 
+                    <div>
+                        <hr class="horizontal-divider">
+                    </div>
+
+                    <div>
+                        <h3 class="heading-3">Heading within a column</h3>
+                    </div>
+
+                    <div>
+                        <p class="text-paragraph">Science and Artificial Intelligence Laboratory, and the Columbia University Department of Industrial Engineering and Operations Research. We thank our respective universities and colleagues for providing such supportive and stimulating
+environments.
+Julie Sussman, P.P.A., once again bailed us out as the technical copyeditor. Time
+and again, we were amazed at the errors that eluded us, but that Julie caught. She
+also helped us improve our presentation in several places. If there is a Hall of Fame
+for technical copyeditors, Julie is a sure-fire, first-ballot inductee. She is nothing
+short of phenomenal. Thank you, thank you, thank you, Julie! Priya Natarajan also
+found some errors that we were able to correct before this book went to press. Any
+errors that remain (and undoubtedly, some do) are the respons </p>
+                    </div>
+
 							</div>
 						</div>
 
@@ -8426,9 +8543,129 @@ With equations like
                         <img class="image-container lazy-load" data-src="media/590_2_1_Image.png" onclick="openModal(this)" />
                     </div>
 
+					<div class="math-block prevent-select">
+						<div class="block-equation" data-katex="$$|x| = \begin{cases}
+   x,  &\quad x \geq 0 \\
+   -x, &\quad x < 0
+\end{cases}$$">
+							<span>
+								$$|x| = \begin{cases}
+   x,  &\quad x \geq 0 \\
+   -x, &\quad x < 0
+\end{cases}$$
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+					<a class="file-link" target="_blank" href="media/590_MachineLearningDevOpsEngineerNanodegreeProgramSyllabus.pdf">
+						<div class="file-container">
+							<div class="file-icon">
+								<img class="file-container-icon" style="display: none;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEh0lEQVR4nO2bXWgcVRTH/+fO7CZ1TTbZZltXtHWlmkRfLDUtiB8klGhiitWl9CEIFVrxQfriWwWhgoog+qAUoeCTIrpIETS0KrYq2NZYpRUsja2SGtGitMHsYnZ35l4fltnstLvJmendTTKZ39OdmXvux3/uPefe+QBCQlY05NVgaGi0vUSFvSBsB9ADIKapLaXNYtW3L7WmHuJk3lf486tx+7/7ABQBnIWij6wY3jqWzea8VOpJgMHhzBZJdAhAyosdl4hpFsei66KcvMPFi8WSZbnyEjBlE2W+/CT7HbdOwc04uC3TI4mOoEGdN00TmcdHWJ0HgCe2j0RN03SdU8AtQqnPBrdletj1cjNKKQ4AKg4AbW03Ys9TT2LLvRuRSHRyi+Dx6RlWtt27RrF71yguX76CE+OncPCdd5HL5wEgXm4rBjjlsEbA1kd39gKqHwAMw8ArLz6PocEB/Z33QSLRieGHt+Ll/fsghNMd1V9u88Iwp4B8wEn1bdqI7js2eG5oo+ntuRN9m+6ZO0HW/Rw7ngBKrXGS6fW3emxa80jftm7uQNJajg1PADHnK8wI2200nUgkUn1ocGzYUWA5oJSqpIlIzZO1QqAEqEZCrUABWF12EygBVJUCpHhyBEoAPyxdlw4AyU7g2Z2AVMCBD4G/r8ybvdoJYtk7wa4O4IWngd40cPftwP5ngLUJ7dUsPQHWp4BU17UddgS5aXU5Tw1cA4AZBZbeFHh1b9mbGzXuTbITeOO5+rZVfZbEc4JLTwCxwKA0WAs8fnVaS1tkXGFQLncn2CQCJcBVUTAcARyCJYCPKBAoAUIn6AOt6wDblpjOzcKWPvalDAxB6GhrhVFnreBye4vhBAslu2GdBwBbKhSKttYytQrQEjHq3h0dGEKgJVp/Jeh6JMZ8PKJ1ChiGwOr4Kp1FNpxgOUFXGFyBUcDlAyXPGQVKAD9o3w7PFi0wxfeMEITWaP0m+3kkplWA2aKFf/MFnUXWZD4RvBKoKeDnzZDWEeDcGcuWOoutYBqCffclcx5q9wE6h2czWPFTIFAC+CFQAix6GJRSYTo369sJCkGIx1oRMd33xdlmK6Dm9etB6wgoWvZ1RQApFQol65rzzja73nWHRV8KR00DZq03OkyEILTU+ATH2WbXu17Bx2ZI6xQQgpBo178dbuQ2O7BOkBCGQRaBEsAdBcPnASwCJkBVFFiJL0bCvYAPeAJIVJZflqX3xYROSlb1KlHWXzJWwfxYWl1ykpMXf/fWqiYyOTlVSRPhL44NSwBB+MZJnxz/Ab+c/9Vz4xrNj6d/wsT5C85hKapajnPsWF8cXZg4+0+6+64HCUgrpXD85PdIJruwJtl19SfqTWdmJocvjn6N1998G8ViqXxS4b0jYx+8z7Fn/zXW/8iObsNQJwB0VIyJEIvd4LHJesnl8q5jAqZKivqOjWVZU8DTb3MDIzs2C6UOAbjZi13TIJyzLXrs6OHsOa6Jp4/ufpv4+Y9U74aDJowZUtQOQhwA+1e3BjEN0CkAr0Vkfs/nhz++tKBFSEiIw//bwHNNwJUmSQAAAABJRU5ErkJggg==">
+								<img class="file-container-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEh0lEQVR4nO2bXWgcVRTH/+fO7CZ1TTbZZltXtHWlmkRfLDUtiB8klGhiitWl9CEIFVrxQfriWwWhgoog+qAUoeCTIrpIETS0KrYq2NZYpRUsja2SGtGitMHsYnZ35l4fltnstLvJmendTTKZ39OdmXvux3/uPefe+QBCQlY05NVgaGi0vUSFvSBsB9ADIKapLaXNYtW3L7WmHuJk3lf486tx+7/7ABQBnIWij6wY3jqWzea8VOpJgMHhzBZJdAhAyosdl4hpFsei66KcvMPFi8WSZbnyEjBlE2W+/CT7HbdOwc04uC3TI4mOoEGdN00TmcdHWJ0HgCe2j0RN03SdU8AtQqnPBrdletj1cjNKKQ4AKg4AbW03Ys9TT2LLvRuRSHRyi+Dx6RlWtt27RrF71yguX76CE+OncPCdd5HL5wEgXm4rBjjlsEbA1kd39gKqHwAMw8ArLz6PocEB/Z33QSLRieGHt+Ll/fsghNMd1V9u88Iwp4B8wEn1bdqI7js2eG5oo+ntuRN9m+6ZO0HW/Rw7ngBKrXGS6fW3emxa80jftm7uQNJajg1PADHnK8wI2200nUgkUn1ocGzYUWA5oJSqpIlIzZO1QqAEqEZCrUABWF12EygBVJUCpHhyBEoAPyxdlw4AyU7g2Z2AVMCBD4G/r8ybvdoJYtk7wa4O4IWngd40cPftwP5ngLUJ7dUsPQHWp4BU17UddgS5aXU5Tw1cA4AZBZbeFHh1b9mbGzXuTbITeOO5+rZVfZbEc4JLTwCxwKA0WAs8fnVaS1tkXGFQLncn2CQCJcBVUTAcARyCJYCPKBAoAUIn6AOt6wDblpjOzcKWPvalDAxB6GhrhVFnreBye4vhBAslu2GdBwBbKhSKttYytQrQEjHq3h0dGEKgJVp/Jeh6JMZ8PKJ1ChiGwOr4Kp1FNpxgOUFXGFyBUcDlAyXPGQVKAD9o3w7PFi0wxfeMEITWaP0m+3kkplWA2aKFf/MFnUXWZD4RvBKoKeDnzZDWEeDcGcuWOoutYBqCffclcx5q9wE6h2czWPFTIFAC+CFQAix6GJRSYTo369sJCkGIx1oRMd33xdlmK6Dm9etB6wgoWvZ1RQApFQol65rzzja73nWHRV8KR00DZq03OkyEILTU+ATH2WbXu17Bx2ZI6xQQgpBo178dbuQ2O7BOkBCGQRaBEsAdBcPnASwCJkBVFFiJL0bCvYAPeAJIVJZflqX3xYROSlb1KlHWXzJWwfxYWl1ykpMXf/fWqiYyOTlVSRPhL44NSwBB+MZJnxz/Ab+c/9Vz4xrNj6d/wsT5C85hKapajnPsWF8cXZg4+0+6+64HCUgrpXD85PdIJruwJtl19SfqTWdmJocvjn6N1998G8ViqXxS4b0jYx+8z7Fn/zXW/8iObsNQJwB0VIyJEIvd4LHJesnl8q5jAqZKivqOjWVZU8DTb3MDIzs2C6UOAbjZi13TIJyzLXrs6OHsOa6Jp4/ufpv4+Y9U74aDJowZUtQOQhwA+1e3BjEN0CkAr0Vkfs/nhz++tKBFSEiIw//bwHNNwJUmSQAAAABJRU5ErkJggg==">
+							</div>
+							<div class="file-reference">
+								590_MachineLearningDevOpsEngineerNanodegreeProgramSyllabus.pdf
+							</div>
+						</div>
+					</a>
+
 							</div>
 						</div>
 
+					</div>
+
+					<div class="multi-column-slideshow-container" data-slide-index="1">
+
+						<div class="slideshow-slide slideshow-fade">
+
+				<div class="audio-container">
+					<audio class="audio-player lazy-load" controls>
+						<source data-src="media/590_1_1_ButtaBomma_Mp3_Song_Download_Armaan_Malik_2019_wellmp3songs.com.mp3" type="audio/ogg">
+						<source data-src="media/590_1_1_ButtaBomma_Mp3_Song_Download_Armaan_Malik_2019_wellmp3songs.com.mp3" type="audio/mpeg">
+						Your browser does not support the audio element.
+					</audio>			  
+				</div>
+
+                    <div class="image-block">
+                        <img class="image-container lazy-load" data-src="media/590_1_3_Image.png" onclick="openModal(this)" />
+                    </div>
+
+                    <div class="image-block">
+                        <img class="image-container lazy-load" data-src="media/590_1_5_Image.png" onclick="openModal(this)" />
+                    </div>
+
+                    <div>
+                        <hr class="horizontal-divider">
+                    </div>
+
+                    <div>
+                        <h3 class="heading-3">Heading within a column</h3>
+                    </div>
+
+                    <div>
+                        <p class="text-paragraph">Science and Artificial Intelligence Laboratory, and the Columbia University Department of Industrial Engineering and Operations Research. We thank our respective universities and colleagues for providing such supportive and stimulating
+environments.
+Julie Sussman, P.P.A., once again bailed us out as the technical copyeditor. Time
+and again, we were amazed at the errors that eluded us, but that Julie caught. She
+also helped us improve our presentation in several places. If there is a Hall of Fame
+for technical copyeditors, Julie is a sure-fire, first-ballot inductee. She is nothing
+short of phenomenal. Thank you, thank you, thank you, Julie! Priya Natarajan also
+found some errors that we were able to correct before this book went to press. Any
+errors that remain (and undoubtedly, some do) are the respons </p>
+                    </div>
+
+						</div>
+
+						<div class="slideshow-slide slideshow-fade">
+
+                    <div class="image-block">
+                        <img class="image-container lazy-load" data-src="media/590_2_1_Image.png" onclick="openModal(this)" />
+                    </div>
+
+					<div class="math-block prevent-select">
+						<div class="block-equation" data-katex="$$|x| = \begin{cases}
+   x,  &\quad x \geq 0 \\
+   -x, &\quad x < 0
+\end{cases}$$">
+							<span>
+								$$|x| = \begin{cases}
+   x,  &\quad x \geq 0 \\
+   -x, &\quad x < 0
+\end{cases}$$
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+					<a class="file-link" target="_blank" href="media/590_MachineLearningDevOpsEngineerNanodegreeProgramSyllabus.pdf">
+						<div class="file-container">
+							<div class="file-icon">
+								<img class="file-container-icon" style="display: none;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEh0lEQVR4nO2bXWgcVRTH/+fO7CZ1TTbZZltXtHWlmkRfLDUtiB8klGhiitWl9CEIFVrxQfriWwWhgoog+qAUoeCTIrpIETS0KrYq2NZYpRUsja2SGtGitMHsYnZ35l4fltnstLvJmendTTKZ39OdmXvux3/uPefe+QBCQlY05NVgaGi0vUSFvSBsB9ADIKapLaXNYtW3L7WmHuJk3lf486tx+7/7ABQBnIWij6wY3jqWzea8VOpJgMHhzBZJdAhAyosdl4hpFsei66KcvMPFi8WSZbnyEjBlE2W+/CT7HbdOwc04uC3TI4mOoEGdN00TmcdHWJ0HgCe2j0RN03SdU8AtQqnPBrdletj1cjNKKQ4AKg4AbW03Ys9TT2LLvRuRSHRyi+Dx6RlWtt27RrF71yguX76CE+OncPCdd5HL5wEgXm4rBjjlsEbA1kd39gKqHwAMw8ArLz6PocEB/Z33QSLRieGHt+Ll/fsghNMd1V9u88Iwp4B8wEn1bdqI7js2eG5oo+ntuRN9m+6ZO0HW/Rw7ngBKrXGS6fW3emxa80jftm7uQNJajg1PADHnK8wI2200nUgkUn1ocGzYUWA5oJSqpIlIzZO1QqAEqEZCrUABWF12EygBVJUCpHhyBEoAPyxdlw4AyU7g2Z2AVMCBD4G/r8ybvdoJYtk7wa4O4IWngd40cPftwP5ngLUJ7dUsPQHWp4BU17UddgS5aXU5Tw1cA4AZBZbeFHh1b9mbGzXuTbITeOO5+rZVfZbEc4JLTwCxwKA0WAs8fnVaS1tkXGFQLncn2CQCJcBVUTAcARyCJYCPKBAoAUIn6AOt6wDblpjOzcKWPvalDAxB6GhrhVFnreBye4vhBAslu2GdBwBbKhSKttYytQrQEjHq3h0dGEKgJVp/Jeh6JMZ8PKJ1ChiGwOr4Kp1FNpxgOUFXGFyBUcDlAyXPGQVKAD9o3w7PFi0wxfeMEITWaP0m+3kkplWA2aKFf/MFnUXWZD4RvBKoKeDnzZDWEeDcGcuWOoutYBqCffclcx5q9wE6h2czWPFTIFAC+CFQAix6GJRSYTo369sJCkGIx1oRMd33xdlmK6Dm9etB6wgoWvZ1RQApFQol65rzzja73nWHRV8KR00DZq03OkyEILTU+ATH2WbXu17Bx2ZI6xQQgpBo178dbuQ2O7BOkBCGQRaBEsAdBcPnASwCJkBVFFiJL0bCvYAPeAJIVJZflqX3xYROSlb1KlHWXzJWwfxYWl1ykpMXf/fWqiYyOTlVSRPhL44NSwBB+MZJnxz/Ab+c/9Vz4xrNj6d/wsT5C85hKapajnPsWF8cXZg4+0+6+64HCUgrpXD85PdIJruwJtl19SfqTWdmJocvjn6N1998G8ViqXxS4b0jYx+8z7Fn/zXW/8iObsNQJwB0VIyJEIvd4LHJesnl8q5jAqZKivqOjWVZU8DTb3MDIzs2C6UOAbjZi13TIJyzLXrs6OHsOa6Jp4/ufpv4+Y9U74aDJowZUtQOQhwA+1e3BjEN0CkAr0Vkfs/nhz++tKBFSEiIw//bwHNNwJUmSQAAAABJRU5ErkJggg==">
+								<img class="file-container-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEh0lEQVR4nO2bXWgcVRTH/+fO7CZ1TTbZZltXtHWlmkRfLDUtiB8klGhiitWl9CEIFVrxQfriWwWhgoog+qAUoeCTIrpIETS0KrYq2NZYpRUsja2SGtGitMHsYnZ35l4fltnstLvJmendTTKZ39OdmXvux3/uPefe+QBCQlY05NVgaGi0vUSFvSBsB9ADIKapLaXNYtW3L7WmHuJk3lf486tx+7/7ABQBnIWij6wY3jqWzea8VOpJgMHhzBZJdAhAyosdl4hpFsei66KcvMPFi8WSZbnyEjBlE2W+/CT7HbdOwc04uC3TI4mOoEGdN00TmcdHWJ0HgCe2j0RN03SdU8AtQqnPBrdletj1cjNKKQ4AKg4AbW03Ys9TT2LLvRuRSHRyi+Dx6RlWtt27RrF71yguX76CE+OncPCdd5HL5wEgXm4rBjjlsEbA1kd39gKqHwAMw8ArLz6PocEB/Z33QSLRieGHt+Ll/fsghNMd1V9u88Iwp4B8wEn1bdqI7js2eG5oo+ntuRN9m+6ZO0HW/Rw7ngBKrXGS6fW3emxa80jftm7uQNJajg1PADHnK8wI2200nUgkUn1ocGzYUWA5oJSqpIlIzZO1QqAEqEZCrUABWF12EygBVJUCpHhyBEoAPyxdlw4AyU7g2Z2AVMCBD4G/r8ybvdoJYtk7wa4O4IWngd40cPftwP5ngLUJ7dUsPQHWp4BU17UddgS5aXU5Tw1cA4AZBZbeFHh1b9mbGzXuTbITeOO5+rZVfZbEc4JLTwCxwKA0WAs8fnVaS1tkXGFQLncn2CQCJcBVUTAcARyCJYCPKBAoAUIn6AOt6wDblpjOzcKWPvalDAxB6GhrhVFnreBye4vhBAslu2GdBwBbKhSKttYytQrQEjHq3h0dGEKgJVp/Jeh6JMZ8PKJ1ChiGwOr4Kp1FNpxgOUFXGFyBUcDlAyXPGQVKAD9o3w7PFi0wxfeMEITWaP0m+3kkplWA2aKFf/MFnUXWZD4RvBKoKeDnzZDWEeDcGcuWOoutYBqCffclcx5q9wE6h2czWPFTIFAC+CFQAix6GJRSYTo369sJCkGIx1oRMd33xdlmK6Dm9etB6wgoWvZ1RQApFQol65rzzja73nWHRV8KR00DZq03OkyEILTU+ATH2WbXu17Bx2ZI6xQQgpBo178dbuQ2O7BOkBCGQRaBEsAdBcPnASwCJkBVFFiJL0bCvYAPeAJIVJZflqX3xYROSlb1KlHWXzJWwfxYWl1ykpMXf/fWqiYyOTlVSRPhL44NSwBB+MZJnxz/Ab+c/9Vz4xrNj6d/wsT5C85hKapajnPsWF8cXZg4+0+6+64HCUgrpXD85PdIJruwJtl19SfqTWdmJocvjn6N1998G8ViqXxS4b0jYx+8z7Fn/zXW/8iObsNQJwB0VIyJEIvd4LHJesnl8q5jAqZKivqOjWVZU8DTb3MDIzs2C6UOAbjZi13TIJyzLXrs6OHsOa6Jp4/ufpv4+Y9U74aDJowZUtQOQhwA+1e3BjEN0CkAr0Vkfs/nhz++tKBFSEiIw//bwHNNwJUmSQAAAABJRU5ErkJggg==">
+							</div>
+							<div class="file-reference">
+								590_MachineLearningDevOpsEngineerNanodegreeProgramSyllabus.pdf
+							</div>
+						</div>
+					</a>
+
+						</div>
+
+						<a class="slideshow-nav-prev" onclick="slideshowChangeSlide(this.parentElement, -1)"></a>
+						<a class="slideshow-nav-next" onclick="slideshowChangeSlide(this.parentElement, 1)"></a>
 					</div>
 
 					<a class="file-link" target="_blank" href="media/591_pdf_content">
@@ -8464,25 +8701,25 @@ With equations like
 
 								<tr>
 
-									<td>Company </td>
+									<td><div class="table-data-cell">Company </div></td>
 
-									<td>Contact </td>
+									<td><div class="table-data-cell">Contact </div></td>
 
-									<td>Country </td>
+									<td><div class="table-data-cell">Country </div></td>
 
-									<td>Continent </td>
+									<td><div class="table-data-cell">Continent </div></td>
 
-									<td>Symbol </td>
+									<td><div class="table-data-cell">Symbol </div></td>
 
 								</tr>
 
 								<tr>
 
-									<td>sfsdfsdfdsfsdfdsfsdfdsfdsfsdfsdfefewfwefwefwefwefwefwefwefwefwefwe </td>
+									<td><div class="table-data-cell">sfsdfsdfdsfsdfdsfsdfdsfdsfsdfsdfefewfwefwefwefwefwefwefwefwefwefwe </div></td>
 
-									<td>Maria came back to home.  </td>
+									<td><div class="table-data-cell">Maria came back to home.  </div></td>
 
-									<td>
+									<td><div class="table-data-cell">
                         <span class="inline-math" data-katex=" ${\displaystyle {\mathcal {L}}_{\text{m}}=-m_{\text{u}}^{i}{\overline {u}}_{\text{L}}^{i}u_{\text{R}}^{i}-m_{\text{d}}^{i}{\overline {d}}_{\text{L}}^{i}d_{\text{R}}^{i}-m_{\text{e}}^{i}{\overline {e}}_{\text{L}}^{i}e_{\text{R}}^{i}+{\textrm {h.c.}},}$ ">
                             <span class="inline-math-inner"> ${\displaystyle {\mathcal {L}}_{\text{m}}=-m_{\text{u}}^{i}{\overline {u}}_{\text{L}}^{i}u_{\text{R}}^{i}-m_{\text{d}}^{i}{\overline {d}}_{\text{L}}^{i}d_{\text{R}}^{i}-m_{\text{e}}^{i}{\overline {e}}_{\text{L}}^{i}e_{\text{R}}^{i}+{\textrm {h.c.}},}$  
                                 <span class="inline-math-popup">
@@ -8493,11 +8730,11 @@ With equations like
                                 </span>
                             </span>
                         </span>
-</td>
+</div></td>
 
-									<td><a href="https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation" class="inline-link" target="_blank">Newton's law of universal gravitation</a>, which describes classical gravity, can be seen as a prediction of general relativity for the almost flat spacetime geometry around stationary mass distributions. Some predictions of general relativity, however, are beyond   <a href="https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation" class="inline-link" target="_blank">Newton's law of universal gravitation</a> in   <a href="https://en.wikipedia.org/wiki/Classical_physics" class="inline-link" target="_blank">classical physics</a>. These predictions concern the passage of time, the   <a href="https://en.wikipedia.org/wiki/Geometry" class="inline-link" target="_blank">geometry</a> of space, the motion of bodies in   <a href="https://en.wikipedia.org/wiki/Free_fall" class="inline-link" target="_blank">free fall</a>, and the propagation of light, and include   <a href="https://en.wikipedia.org/wiki/Gravitational_time_dilation" class="inline-link" target="_blank">gravitational time dilation</a>,   <a href="https://en.wikipedia.org/wiki/Gravitational_lens" class="inline-link" target="_blank">gravitational lensing</a>, the   <a href="https://en.wikipedia.org/wiki/Gravitational_redshift" class="inline-link" target="_blank">gravitational redshift</a> of light, the   <a href="https://en.wikipedia.org/wiki/Shapiro_time_delay" class="inline-link" target="_blank">Shapiro time delay</a> and   <a href="https://en.wikipedia.org/wiki/Gravitational_singularity" class="inline-link" target="_blank">singularities</a>/  <a href="https://en.wikipedia.org/wiki/Black_holes" class="inline-link" target="_blank">black holes</a>. So far, all   <a href="https://en.wikipedia.org/wiki/Tests_of_general_relativity" class="inline-link" target="_blank">tests of general relativity</a> have been shown to be in agreement with the theory. The time dependent solutions of general relativity enable us to talk about the history of the universe and have provided the modern framework for   <a href="https://en.wikipedia.org/wiki/Cosmology" class="inline-link" target="_blank">cosmology</a>, thus leading to the discovery of the   <a href="https://en.wikipedia.org/wiki/Big_Bang" class="inline-link" target="_blank">Big Bang</a> and   <a href="https://en.wikipedia.org/wiki/Cosmic_microwave_background" class="inline-link" target="_blank">cosmic microwave background</a> radiation. Despite the introduction of a number of   <a href="https://en.wikipedia.org/wiki/Alternatives_to_general_relativity" class="inline-link" target="_blank">alternative theories</a>, general relativity continues to be the simplest theory consistent with   <a href="https://en.wikipedia.org/wiki/Experimental_data" class="inline-link" target="_blank">experimental data</a>. </td>
+									<td><div class="table-data-cell"><a href="https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation" class="inline-link" target="_blank">Newton's law of universal gravitation</a>, which describes classical gravity, can be seen as a prediction of general relativity for the almost flat spacetime geometry around stationary mass distributions. Some predictions of general relativity, however, are beyond   <a href="https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation" class="inline-link" target="_blank">Newton's law of universal gravitation</a> in   <a href="https://en.wikipedia.org/wiki/Classical_physics" class="inline-link" target="_blank">classical physics</a>. These predictions concern the passage of time, the   <a href="https://en.wikipedia.org/wiki/Geometry" class="inline-link" target="_blank">geometry</a> of space, the motion of bodies in   <a href="https://en.wikipedia.org/wiki/Free_fall" class="inline-link" target="_blank">free fall</a>, and the propagation of light, and include   <a href="https://en.wikipedia.org/wiki/Gravitational_time_dilation" class="inline-link" target="_blank">gravitational time dilation</a>,   <a href="https://en.wikipedia.org/wiki/Gravitational_lens" class="inline-link" target="_blank">gravitational lensing</a>, the   <a href="https://en.wikipedia.org/wiki/Gravitational_redshift" class="inline-link" target="_blank">gravitational redshift</a> of light, the   <a href="https://en.wikipedia.org/wiki/Shapiro_time_delay" class="inline-link" target="_blank">Shapiro time delay</a> and   <a href="https://en.wikipedia.org/wiki/Gravitational_singularity" class="inline-link" target="_blank">singularities</a>/  <a href="https://en.wikipedia.org/wiki/Black_holes" class="inline-link" target="_blank">black holes</a>. So far, all   <a href="https://en.wikipedia.org/wiki/Tests_of_general_relativity" class="inline-link" target="_blank">tests of general relativity</a> have been shown to be in agreement with the theory. The time dependent solutions of general relativity enable us to talk about the history of the universe and have provided the modern framework for   <a href="https://en.wikipedia.org/wiki/Cosmology" class="inline-link" target="_blank">cosmology</a>, thus leading to the discovery of the   <a href="https://en.wikipedia.org/wiki/Big_Bang" class="inline-link" target="_blank">Big Bang</a> and   <a href="https://en.wikipedia.org/wiki/Cosmic_microwave_background" class="inline-link" target="_blank">cosmic microwave background</a> radiation. Despite the introduction of a number of   <a href="https://en.wikipedia.org/wiki/Alternatives_to_general_relativity" class="inline-link" target="_blank">alternative theories</a>, general relativity continues to be the simplest theory consistent with   <a href="https://en.wikipedia.org/wiki/Experimental_data" class="inline-link" target="_blank">experimental data</a>. </div></td>
 
-									<td>This mixes both kinds of stuff.
+									<td><div class="table-data-cell">This mixes both kinds of stuff.
 Like text and math 
  
                         <span class="inline-math" data-katex=" $\sin x = \sum\limits_{n = 1}^\infty {\frac{{\left( { - 1} \right)^{n - 1} x^{2n - 1} }}{{\left( {2n - 1} \right)!}}}$ ">
@@ -8516,15 +8753,15 @@ Here is some code also in between :
  <span class="inline-code">import numpy as np</span>
 
  <a href="https://en.wikipedia.org/wiki/Calabi%E2%80%93Yau_manifold" class="inline-link" target="_blank">Wikipedia Columbia Manifold
-</a></td>
+</a></div></td>
 
 								</tr>
 
 								<tr>
 
-									<td>The simplest description of the mechanism adds a   <a href="https://en.wikipedia.org/wiki/Quantum_field" class="inline-link" target="_blank">quantum field</a> ( the   <a href="https://en.wikipedia.org/wiki/Higgs_boson" class="inline-link" target="_blank">Higgs field</a> ) that permeates all space to the Standard Model. Below some extremely high temperature, the field causes   <a href="https://en.wikipedia.org/wiki/Spontaneous_symmetry_breaking" class="inline-link" target="_blank">spontaneous symmetry breaking</a>  during interactions. The breaking of symmetry triggers the Higgs mechanism, causing the bosons it interacts with to have mass. </td>
+									<td><div class="table-data-cell">The simplest description of the mechanism adds a   <a href="https://en.wikipedia.org/wiki/Quantum_field" class="inline-link" target="_blank">quantum field</a> ( the   <a href="https://en.wikipedia.org/wiki/Higgs_boson" class="inline-link" target="_blank">Higgs field</a> ) that permeates all space to the Standard Model. Below some extremely high temperature, the field causes   <a href="https://en.wikipedia.org/wiki/Spontaneous_symmetry_breaking" class="inline-link" target="_blank">spontaneous symmetry breaking</a>  during interactions. The breaking of symmetry triggers the Higgs mechanism, causing the bosons it interacts with to have mass. </div></td>
 
-									<td>, 
+									<td><div class="table-data-cell">, 
                         <span class="inline-math" data-katex=" $\begin{bmatrix} 1 & 2 & 3 & 4 \\ a & b & c & d \\ x & y & z & w \end{bmatrix}$ ">
                             <span class="inline-math-inner"> $\begin{bmatrix} 1 & 2 & 3 & 4 \\ a & b & c & d \\ x & y & z & w \end{bmatrix}$  
                                 <span class="inline-math-popup">
@@ -8548,13 +8785,13 @@ Here is some code also in between :
                                 </span>
                             </span>
                         </span>
-</td>
+</div></td>
 
-									<td>Interactions in the Standard Model. All Feynman diagrams in the model are built from combinations of these vertices.  q  is any quark,  g  is a gluon,   X  is any charged particle, γ is a photon,  f is any fermion,  m  is any particle with mass (with the possible exception of the neutrinos),  m B is any boson with mass. In diagrams with multiple particle labels separated by / one particle label is chosen. In diagrams with particle labels separated by | the labels must be chosen in the same order. For example, in the four boson electroweak case the valid diagrams are WWWW, WWZZ, WWγγ, WWZγ. The conjugate of each listed vertex (reversing the direction of arrows) is also allowed. </td>
+									<td><div class="table-data-cell">Interactions in the Standard Model. All Feynman diagrams in the model are built from combinations of these vertices.  q  is any quark,  g  is a gluon,   X  is any charged particle, γ is a photon,  f is any fermion,  m  is any particle with mass (with the possible exception of the neutrinos),  m B is any boson with mass. In diagrams with multiple particle labels separated by / one particle label is chosen. In diagrams with particle labels separated by | the labels must be chosen in the same order. For example, in the four boson electroweak case the valid diagrams are WWWW, WWZZ, WWγγ, WWZγ. The conjugate of each listed vertex (reversing the direction of arrows) is also allowed. </div></td>
 
-									<td>N.A. </td>
+									<td><div class="table-data-cell">N.A. </div></td>
 
-									<td>N.A. </td>
+									<td><div class="table-data-cell">N.A. </div></td>
 
 								</tr>
 
@@ -8582,6 +8819,365 @@ Here is some code also in between :
 							<script src="https://gist.github.com/RaviBansal7717/25c464d710971c5656cc7145df86d33f.js"></script>
 						</div>    
 					</div>
+
+        <div class="code-block" data-show-lang="mermaid">
+            <div class="mermaid-diagram">
+                <div class="mermaid" data-src="---
+title: Example Git diagram
+---
+gitGraph
+    commit
+    commit
+    branch develop
+    checkout develop
+    commit
+    commit
+    checkout main
+    merge develop
+    commit
+    commit">---
+title: Example Git diagram
+---
+gitGraph
+    commit
+    commit
+    branch develop
+    checkout develop
+    commit
+    commit
+    checkout main
+    merge develop
+    commit
+    commit</div>
+            </div>
+            <div class="copy-code-clipboard">
+                <button class="btn-code-clipboard" onclick="copyMermaidCodeToClipboard(this.parentElement.previousElementSibling)">
+                    <svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="code-block" data-show-lang="mermaid">
+            <div class="mermaid-diagram">
+                <div class="mermaid" data-src="timeline
+                title History of Social Media Platform
+                2002 : LinkedIn
+                2004 : Facebook
+                     : Google
+                2005 : Youtube
+                2006 : Twitter">timeline
+                title History of Social Media Platform
+                2002 : LinkedIn
+                2004 : Facebook
+                     : Google
+                2005 : Youtube
+                2006 : Twitter</div>
+            </div>
+            <div class="copy-code-clipboard">
+                <button class="btn-code-clipboard" onclick="copyMermaidCodeToClipboard(this.parentElement.previousElementSibling)">
+                    <svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="code-block" data-show-lang="mermaid">
+            <div class="mermaid-diagram">
+                <div class="mermaid" data-src="mindmap
+                root((mindmap))
+                  Origins
+                    Long history
+                    ::icon(fa fa-book)
+                    Popularisation
+                      British popular psychology author Tony Buzan
+                  Research
+                    On effectiveness<br/>and features
+                    On Automatic creation
+                      Uses
+                          Creative techniques
+                          Strategic planning
+                          Argument mapping
+                  Tools
+                    Pen and paper
+                    Mermaid">mindmap
+                root((mindmap))
+                  Origins
+                    Long history
+                    ::icon(fa fa-book)
+                    Popularisation
+                      British popular psychology author Tony Buzan
+                  Research
+                    On effectiveness<br/>and features
+                    On Automatic creation
+                      Uses
+                          Creative techniques
+                          Strategic planning
+                          Argument mapping
+                  Tools
+                    Pen and paper
+                    Mermaid</div>
+            </div>
+            <div class="copy-code-clipboard">
+                <button class="btn-code-clipboard" onclick="copyMermaidCodeToClipboard(this.parentElement.previousElementSibling)">
+                    <svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="code-block" data-show-lang="mermaid">
+            <div class="mermaid-diagram">
+                <div class="mermaid" data-src="%%{init: {&quot;quadrantChart&quot;: {&quot;chartWidth&quot;: 400, &quot;chartHeight&quot;: 400}, &quot;themeVariables&quot;: {&quot;quadrant1TextFill&quot;: &quot;#ff0000&quot;} }}%%
+                quadrantChart
+                  x-axis Urgent --> Not Urgent
+                  y-axis Not Important --> &quot;Important ❤&quot;
+                  quadrant-1 Plan
+                  quadrant-2 Do
+                  quadrant-3 Delegate
+                  quadrant-4 Delete">%%{init: {"quadrantChart": {"chartWidth": 400, "chartHeight": 400}, "themeVariables": {"quadrant1TextFill": "#ff0000"} }}%%
+                quadrantChart
+                  x-axis Urgent --> Not Urgent
+                  y-axis Not Important --> "Important ❤"
+                  quadrant-1 Plan
+                  quadrant-2 Do
+                  quadrant-3 Delegate
+                  quadrant-4 Delete</div>
+            </div>
+            <div class="copy-code-clipboard">
+                <button class="btn-code-clipboard" onclick="copyMermaidCodeToClipboard(this.parentElement.previousElementSibling)">
+                    <svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="code-block" data-show-lang="mermaid">
+            <div class="mermaid-diagram">
+                <div class="mermaid" data-src="gantt
+                title A Gantt Diagram
+                dateFormat YYYY-MM-DD
+                section Section
+                    A task          :a1, 2014-01-01, 30d
+                    Another task    :after a1, 20d
+                section Another
+                    Task in Another :2014-01-12, 12d
+                    another task    :24d">gantt
+                title A Gantt Diagram
+                dateFormat YYYY-MM-DD
+                section Section
+                    A task          :a1, 2014-01-01, 30d
+                    Another task    :after a1, 20d
+                section Another
+                    Task in Another :2014-01-12, 12d
+                    another task    :24d</div>
+            </div>
+            <div class="copy-code-clipboard">
+                <button class="btn-code-clipboard" onclick="copyMermaidCodeToClipboard(this.parentElement.previousElementSibling)">
+                    <svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="code-block" data-show-lang="mermaid">
+            <div class="mermaid-diagram">
+                <div class="mermaid" data-src="journey
+                title My working day
+                section Go to work
+                  Make tea: 5: Me
+                  Go upstairs: 3: Me
+                  Do work: 1: Me, Cat
+                section Go home
+                  Go downstairs: 5: Me
+                  Sit down: 5: Me">journey
+                title My working day
+                section Go to work
+                  Make tea: 5: Me
+                  Go upstairs: 3: Me
+                  Do work: 1: Me, Cat
+                section Go home
+                  Go downstairs: 5: Me
+                  Sit down: 5: Me</div>
+            </div>
+            <div class="copy-code-clipboard">
+                <button class="btn-code-clipboard" onclick="copyMermaidCodeToClipboard(this.parentElement.previousElementSibling)">
+                    <svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="code-block" data-show-lang="mermaid">
+            <div class="mermaid-diagram">
+                <div class="mermaid" data-src="---
+title: Animal example
+---
+classDiagram
+    note &quot;From Duck till Zebra&quot;
+    Animal <|-- Duck
+    note for Duck &quot;can fly\ncan swim\ncan dive\ncan help in debugging&quot;
+    Animal <|-- Fish
+    Animal <|-- Zebra
+    Animal : +int age
+    Animal : +String gender
+    Animal: +isMammal()
+    Animal: +mate()
+    class Duck{
+        +String beakColor
+        +swim()
+        +quack()
+    }
+    class Fish{
+        -int sizeInFeet
+        -canEat()
+    }
+    class Zebra{
+        +bool is_wild
+        +run()
+    }">---
+title: Animal example
+---
+classDiagram
+    note "From Duck till Zebra"
+    Animal <|-- Duck
+    note for Duck "can fly\ncan swim\ncan dive\ncan help in debugging"
+    Animal <|-- Fish
+    Animal <|-- Zebra
+    Animal : +int age
+    Animal : +String gender
+    Animal: +isMammal()
+    Animal: +mate()
+    class Duck{
+        +String beakColor
+        +swim()
+        +quack()
+    }
+    class Fish{
+        -int sizeInFeet
+        -canEat()
+    }
+    class Zebra{
+        +bool is_wild
+        +run()
+    }</div>
+            </div>
+            <div class="copy-code-clipboard">
+                <button class="btn-code-clipboard" onclick="copyMermaidCodeToClipboard(this.parentElement.previousElementSibling)">
+                    <svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="code-block" data-show-lang="mermaid">
+            <div class="mermaid-diagram">
+                <div class="mermaid" data-src="---
+title: Animal example
+---
+classDiagram
+    note &quot;From Duck till Zebra&quot;
+    Animal <|-- Duck
+    note for Duck &quot;can fly\ncan swim\ncan dive\ncan help in debugging&quot;
+    Animal <|-- Fish
+    Animal <|-- Zebra
+    Animal : +int age
+    Animal : +String gender
+    Animal: +isMammal()
+    Animal: +mate()
+    class Duck{
+        +String beakColor
+        +swim()
+        +quack()
+    }
+    class Fish{
+        -int sizeInFeet
+        -canEat()
+    }
+    class Zebra{
+        +bool is_wild
+        +run()
+    }">---
+title: Animal example
+---
+classDiagram
+    note "From Duck till Zebra"
+    Animal <|-- Duck
+    note for Duck "can fly\ncan swim\ncan dive\ncan help in debugging"
+    Animal <|-- Fish
+    Animal <|-- Zebra
+    Animal : +int age
+    Animal : +String gender
+    Animal: +isMammal()
+    Animal: +mate()
+    class Duck{
+        +String beakColor
+        +swim()
+        +quack()
+    }
+    class Fish{
+        -int sizeInFeet
+        -canEat()
+    }
+    class Zebra{
+        +bool is_wild
+        +run()
+    }</div>
+            </div>
+            <div class="copy-code-clipboard">
+                <button class="btn-code-clipboard" onclick="copyMermaidCodeToClipboard(this.parentElement.previousElementSibling)">
+                    <svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="code-block" data-show-lang="mermaid">
+            <div class="mermaid-diagram">
+                <div class="mermaid" data-src="flowchart LR
+                subgraph TOP
+                  direction TB
+                  subgraph B1
+                      direction RL
+                      i1 -->f1
+                  end
+                  subgraph B2
+                      direction BT
+                      i2 -->f2
+                  end
+                end
+                A --> TOP --> B
+                B1 --> B2">flowchart LR
+                subgraph TOP
+                  direction TB
+                  subgraph B1
+                      direction RL
+                      i1 -->f1
+                  end
+                  subgraph B2
+                      direction BT
+                      i2 -->f2
+                  end
+                end
+                A --> TOP --> B
+                B1 --> B2</div>
+            </div>
+            <div class="copy-code-clipboard">
+                <button class="btn-code-clipboard" onclick="copyMermaidCodeToClipboard(this.parentElement.previousElementSibling)">
+                    <svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
 
 				</section>
 
@@ -8644,6 +9240,7 @@ Here is some code also in between :
 
 					let mermaidTheme = pageTheme === "dark" ? "dark" : "default";
 					toggleMermaidTheme(pageTheme);
+                    loadFirstSlidesForSlideshows();
                 }
             }
 
@@ -9173,9 +9770,9 @@ Here is some code also in between :
                 fileGistUrl = baseGistUrl + "?file=" + fileName;
                 iframebaseString_1 = "<iframe  class='video-player-gist' src=\"data:text/html;charset=utf-8, <head><base target='_blank' /> ";
                 if (pageTheme === "light") {
-                    iframebaseStyleString = "<style>body .gist .gist-file { margin-bottom: 0; border: 1px solid grey; border-radius: 0; } body .gist .gist-data { border-bottom: none; border-radius: 0; background-color: %23f4f6f8; } body .gist .blob-wrapper { border-radius: 0; } body .gist .highlight { background-color: transparent; font-family: 'Droid Sans Mono', monospace; font-size: 14px; } body .gist .highlight td { padding: 5px 15px !important; line-height: 1; font-family: inherit; font-size: inherit; } body .gist tr:first-child td { padding-top: 15px !important; } body .gist tr:last-child td { padding-bottom: 15px !important; } body .gist .blob-num { color: %23ced4da; background-color: %235b6268; pointer-events: none; } body .gist .gist-meta { position: -webkit-sticky; position: sticky; bottom: 0; border-radius: 0; } ::-webkit-scrollbar-track { background-color: %23872bff; } ::-webkit-scrollbar { width: 8px; height: 8px; } ::-webkit-scrollbar-thumb { background-color: %23000000; } @media (max-width: 768px) { body .gist .highlight { font-size: 12px; } ::-webkit-scrollbar { width: 6px; height: 6px; } }</style> ";
+                    iframebaseStyleString = "<style>body .gist .gist-file { margin-bottom: 0; border: 1px solid grey; border-radius: 0; } body .gist .gist-data { border-bottom: none; border-radius: 0; background-color: %23f4f6f8; } body .gist .blob-wrapper { border-radius: 0; } body .gist .highlight { background-color: transparent; font-family: 'Droid Sans Mono', monospace; font-size: 14px; } body .gist .highlight td { padding: 5px 15px !important; line-height: 1; font-family: inherit; font-size: inherit; } body .gist tr:first-child td { padding-top: 15px !important; } body .gist tr:last-child td { padding-bottom: 15px !important; } body .gist .blob-num { color: %23ced4da; background-color: %235b6268; pointer-events: none; } body .gist .gist-meta { position: -webkit-sticky; position: sticky; bottom: 0; border-radius: 0; } ::-webkit-scrollbar-track { background-color: %23872bff; } ::-webkit-scrollbar { width: 8px; height: 8px; } ::-webkit-scrollbar-thumb { background-color: %23000000; }  @media (max-width: 768px) { body .gist .highlight { font-size: 12px; } ::-webkit-scrollbar { width: 6px; height: 6px; } }</style> ";
                 } else {
-                    iframebaseStyleString = "<style>@import url('https://cdn.rawgit.com/lonekorean/gist-syntax-themes/d49b91b3/stylesheets/one-dark.css'); body .gist .gist-file { margin-bottom: 0; border: 1px solid %23282828; border-radius: 0; } body .gist .gist-data { border-bottom: none; border-radius: 0; } body .gist .blob-wrapper { border-radius: 0; } body .gist .highlight { font-family: 'Droid Sans Mono', monospace; font-size: 14px; } body .gist .highlight td { padding: 5px 15px !important; line-height: 1; font-family: inherit; font-size: inherit; } body .gist tr:first-child td { padding-top: 15px !important; } body .gist tr:last-child td { padding-bottom: 15px !important; } body .gist .blob-num { pointer-events: none; }  body .gist .gist-meta { position: -webkit-sticky; position: sticky; bottom: 0; background-color: %23080808; color: whitesmoke;} body .gist .gist-meta a { color: whitesmoke; } ::-webkit-scrollbar-track { background-color: whitesmoke; } ::-webkit-scrollbar { width: 8px; height: 8px; } ::-webkit-scrollbar-thumb { background-color: %23439889; } @media (max-width: 768px) { body .gist .highlight { font-size: 12px; } ::-webkit-scrollbar { width: 6px; height: 6px; } }</style> ";
+                    iframebaseStyleString = "<style>@import url('https://cdn.rawgit.com/lonekorean/gist-syntax-themes/d49b91b3/stylesheets/one-dark.css'); body .gist .gist-file { margin-bottom: 0; border: 1px solid %23282828; border-radius: 0; } body .gist .gist-data { border-bottom: none; border-radius: 0; } body .gist .blob-wrapper { border-radius: 0; } body .gist .highlight { font-family: 'Droid Sans Mono', monospace; font-size: 14px; } body .gist .highlight td { padding: 5px 15px !important; line-height: 1; font-family: inherit; font-size: inherit; } body .gist tr:first-child td { padding-top: 15px !important; } body .gist tr:last-child td { padding-bottom: 15px !important; } body .gist .blob-num { pointer-events: none; }  body .gist .gist-meta { position: -webkit-sticky; position: sticky; bottom: 0; background-color: %23080808; color: whitesmoke;} body .gist .gist-meta a { color: whitesmoke; } ::-webkit-scrollbar-track { background-color: whitesmoke; } ::-webkit-scrollbar { width: 8px; height: 8px; } ::-webkit-scrollbar-thumb { background-color: %23439889; }  @media (max-width: 768px) { body .gist .highlight { font-size: 12px; } ::-webkit-scrollbar { width: 6px; height: 6px; } }</style> ";
                 }
                 iframebaseString_2 = " </head><body><script src=\'";
                 iframebaseString_3 = "'>";
@@ -9204,6 +9801,36 @@ Here is some code also in between :
                 let content = mermaidBlock.getElementsByClassName("mermaid")[0].getAttribute("data-src");
                 navigator.clipboard.writeText(content);
                 copiedToClipboard("Mermaid Code Copied to Clipboard!!");
+            }
+            
+            function loadFirstSlidesForSlideshows() {
+                for(element of document.getElementsByClassName("multi-column-slideshow-container")) {
+                    slideshowChangeSlide(element, 0);
+                }
+            }
+
+			function slideshowChangeSlide(slideshowElement, n) {
+                let currentSlide = parseInt(slideshowElement.getAttribute("data-slide-index"));
+				let slides = slideshowElement.getElementsByClassName("slideshow-slide");
+                let slideIndex = currentSlide + n;
+				if ( slideIndex > slides.length ) { slideIndex = 1 };
+				if ( slideIndex < 1 ) { slideIndex = slides.length };
+				for ( i = 0; i < slides.length; i++ ) {
+					slides[i].style.display = "none";  
+				}
+				slides[slideIndex-1].style.display = "block";  
+                slideshowElement.setAttribute("data-slide-index", slideIndex);
+			}
+
+            function toggleCollapsibleContent(toggleElement) {
+                let contentElement = toggleElement.nextElementSibling;
+                contentElement.classList.toggle("collapsible-hidden-visible");
+                toggleElement.classList.toggle("collapsible-hidden-open");
+                if (contentElement.style.display === "block") {
+                    contentElement.style.display = "none";
+                } else {
+                    contentElement.style.display = "block";
+                }
             }
 		</script>
 
