@@ -2023,60 +2023,68 @@
 
             .collapsible-content-container {
                 width: 96%;
-                max-height: calc(55px + 550px);
                 margin: auto;
                 margin-top: 30px;
                 outline: none;
                 box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
                 -webkit-box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
                 border: 2px solid var(--color-border-toggle-container);
+                display: flex;
+                flex-direction: column;
             }
 
             .collapsible-visible-container {
-                height: 55px;
+                height: fit-content;
+                max-height: 160px;
                 font-family: var(--font-title);
-                font-size: 22px;
+                font-size: 20px;
                 display: flex;
-                justify-content: flex-start;
-                align-items: center;
-                padding: 10px;
                 cursor: pointer;
-           }
+            }
 
-           .collapsible-visible-container:hover {
-                background-color: var(--color-hover-toggle-hidden);
-           }
-
-           .collapsible-visible-container.collapsible-hidden-open {
-               background-color: var(--color-bg-toggle-hidden);
-           }
-
-           .collapsible-hidden-container {
-                overflow-y: auto;
-                border-top: none;
-                padding: 0px;
+            .collapsible-hidden-container {
                 max-height: 0px;
-                transition: max-height 0.75s ease;
-           }
+                overflow-y: auto;
+                transition: max-height 0.5s ease-out;
+            }
 
-           .collapsible-hidden-container.collapsible-hidden-visible {
-                max-height: calc(550px - 55px);
+            .toggle-indicator-icon-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 50px;
+            }
+
+            .collapsible-visible-data {
+            overflow-y: auto;
+            width: calc(100% - 50px);
+            }
+
+            .collapsible-visible-container:hover {
+                background-color: var(--color-hover-toggle-hidden);
+            }
+
+            .collapsible-visible-container.collapsible-hidden-open {
+            background-color: var(--color-bg-toggle-hidden);
+            }
+
+            .collapsible-hidden-container.collapsible-hidden-visible {
+                max-height: 450px;
                 padding: 10px;
-           }
+            }
 
-           .toggle-indicator-icon {
-                height: 26px;
-                width: 26px;
-                margin-right: 10px;
-                margin-top: 0px;
+            .toggle-indicator-icon {
+                height: 30px;
+                width: 30px;
+                margin-left: 10px;
                 transition: rotate 0.4s;
                 fill: var(--color-fill-toggle-icon);
-           }
+            }
 
-           .toggle-indicator-icon.toggle-icon-rotate {
+            .toggle-indicator-icon.toggle-icon-rotate {
                 rotate: 90deg;
                 transition: rotate 0.4s;
-           }
+            }
 
             /* ################################################################################ 
                                         Media Queries for Added Responsiveness
@@ -2338,6 +2346,29 @@
                     display: block;
 					height: 470px;
                 }
+
+                .collapsible-visible-container {
+                    font-size: 16px;
+                }
+
+                .toggle-indicator-icon {
+                    height: 22px;
+                    width: 22px;
+                    margin-left: 5px;
+                }
+
+                .toggle-indicator-icon-container {
+                    width: 36px;
+                }
+
+                .collapsible-visible-data {
+                    width: calc(100% - 36px);
+                }
+
+                .collapsible-hidden-container.collapsible-hidden-visible {
+                    max-height: 400px;
+                }
+
             }
         </style>
 
@@ -2533,7 +2564,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="2c2863af-9d31-4c65-891c-fe68f03ccd54">
+				<section class="text-container-section" id="5dff188a-c21b-4d7d-bbb0-7fbd27a2e839">
 
                     <div>
                         <h1 class="heading-1">Geometry of Newtonian gravity</h1>
@@ -2610,7 +2641,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="736eb6ef-025e-4424-8c49-947198bc20db">
+				<section class="text-container-section" id="649b8b46-ec29-40b3-a215-9d88f99a9e3b">
 
                     <div>
                         <h2 class="heading-2">Einstein’s equations</h2>
@@ -2732,7 +2763,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="5f046e2e-8ed1-4e34-84b0-8637c396a48b">
+				<section class="text-container-section" id="e8e92dcb-2ce5-4e73-b8e6-291656f91c02">
 
                     <div>
                         <h3 class="heading-3">Einstein Field Equations</h3>
@@ -2754,7 +2785,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="52f7f2f1-72bc-4aed-89db-9fb37933a330">
+				<section class="text-container-section" id="70e17909-cdda-443e-bd1b-2076a2d62501">
 
                     <div>
                         <h3 class="heading-3">Mathematical Form</h3>
@@ -2882,7 +2913,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="88fa6ef1-ba73-469d-950d-40e6593223cd">
+				<section class="text-container-section" id="e7af6c4c-219b-42ec-a58f-6213d4ffe04c">
 
                     <div>
                         <h3 class="heading-3">Sign convention</h3>
@@ -2955,7 +2986,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="ea76e371-cb0b-40ad-b5d6-708e38dfc07b">
+				<section class="text-container-section" id="94dc99e5-ceeb-4201-a2d2-3ecdb927067f">
 
                     <div>
                         <h1 class="heading-1">The Cosmological Constant</h1>
@@ -2991,7 +3022,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="97a926b1-6526-4067-83be-e464ae274623">
+				<section class="text-container-section" id="50450e84-201c-4353-b163-9860a3759f7d">
 
                     <div>
                         <h2 class="heading-2">History</h2>
@@ -3015,7 +3046,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="c5689225-c006-4ae7-a16d-8c96fc83ed94">
+				<section class="text-container-section" id="e8eabd83-41f0-4c68-b9e2-da57f9484f4e">
 
                     <div>
                         <h3 class="heading-3">Sequence of events 1915–1998</h3>
@@ -3027,7 +3058,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="63fcd680-8c9d-4dfe-b643-52a87781b99e">
+				<section class="text-container-section" id="c90cc317-202d-44d3-a3af-66664c2e52ac">
 
                     <div>
                         <h2 class="heading-2">Equation</h2>
@@ -3100,7 +3131,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="d31f07e5-c7bc-4129-a710-e851a8bda7d3">
+				<section class="text-container-section" id="d6819472-8d61-446e-8db1-c3917c261ab9">
 
                     <div>
                         <h3 class="heading-3">ΩΛ (Omega sub Lambda)</h3>
@@ -3116,7 +3147,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="29154473-6070-4150-b964-a63a61e1685c">
+				<section class="text-container-section" id="38064dbc-8708-4923-b2c9-9f22c5b1cc0e">
 
                     <div>
                         <h3 class="heading-3">Equation of state</h3>
@@ -3134,7 +3165,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="8adc9f52-32c7-4aa2-b5ed-cd1f152becca">
+				<section class="text-container-section" id="70c0ab7d-dcb2-45dd-a5aa-476bd7cefe3e">
 
                     <div>
                         <h3 class="heading-3">Positive value</h3>
@@ -3161,7 +3192,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="9fd736a1-ecdb-4bd5-a34f-9d4fa3535de3">
+				<section class="text-container-section" id="a6933e80-c9eb-4a6a-8164-5e99f7d779a7">
 
                     <div>
                         <h2 class="heading-2">Predictions</h2>
@@ -3169,7 +3200,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="70b8aca4-b9d4-4ca9-bfcc-d8f545b46d54">
+				<section class="text-container-section" id="f76774cf-2d64-4792-b704-3c350c04cd53">
 
                     <div>
                         <h3 class="heading-3">Quantum field theory</h3>
@@ -3226,7 +3257,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="b30fdc09-350b-4066-9b4e-04f8ebf5ff71">
+				<section class="text-container-section" id="341db357-41b8-4532-af3b-12020a2112b3">
 
                     <div>
                         <h3 class="heading-3">Anthropic principle</h3>
@@ -3246,7 +3277,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="4ccd465a-fc84-4e32-9146-77609dcd9893">
+				<section class="text-container-section" id="674b23f3-e604-48b6-bd69-fc7cb5c4d383">
 
                     <div>
                         <h3 class="heading-3">Failure to detect dark energy</h3>
@@ -3259,7 +3290,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="9dd31aaa-1d48-485d-b85b-0c2313f0547d">
+				<section class="text-container-section" id="50d89f7e-44ac-46aa-b601-cec53f3289b5">
 
                     <div>
                         <h2 class="heading-2">Einstein–Maxwell equations</h2>
@@ -3363,7 +3394,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="11453216-cdd8-466b-8770-bbd26e4efcd1">
+				<section class="text-container-section" id="18a6959e-7331-49fd-b887-2283831c2ae3">
 
                     <div>
                         <h2 class="heading-2">The linearized EFE</h2>
@@ -3375,7 +3406,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="4b8b69a7-29f6-40ea-92f6-40efa302583a">
+				<section class="text-container-section" id="ed4fb902-f83b-452f-bf18-a9c7c9b047d6">
 
                     <div>
                         <h2 class="heading-2">Polynomial form</h2>
@@ -3441,7 +3472,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="bdced242-f6e4-4d9f-9b42-58504b99df54">
+				<section class="text-container-section" id="58a421d8-f43f-40f6-ad2e-a886f43a6d97">
 
                     <div>
                         <h1 class="heading-1">Higgs Mechanism</h1>
@@ -3525,7 +3556,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="25d71bee-158b-47df-9044-eb69a66d11d5">
+				<section class="text-container-section" id="401907ea-f220-47c2-a6dd-da9a8b780753">
 
                     <div>
                         <h2 class="heading-2">Standard Model</h2>
@@ -3556,7 +3587,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="6bb2de55-090e-4e9c-adaa-ebb9c2e2fc06">
+				<section class="text-container-section" id="940e210d-a69d-449b-a137-1840ba15f42f">
 
                     <div>
                         <h3 class="heading-3">Structure of the Higgs field</h3>
@@ -3576,7 +3607,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="300fcae4-52ac-44c2-9eb3-6f299211314c">
+				<section class="text-container-section" id="4f0f4b1b-54a0-4fde-832a-762d5f8acea1">
 
                     <div>
                         <h3 class="heading-3">The photon as the part that remains massless</h3>
@@ -3645,7 +3676,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="6fe3e0a2-8fa1-4a70-8fb5-3b9669feb291">
+				<section class="text-container-section" id="e9a2ecdc-c205-4fa2-a75a-b24166948af6">
 
                     <div>
                         <h3 class="heading-3">Consequences for fermions</h3>
@@ -3724,7 +3755,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="87d90054-42c5-4699-ba94-6d1de636a150">
+				<section class="text-container-section" id="d221194c-90b1-4af6-8908-da0fbfaf952b">
 
                     <div>
                         <h2 class="heading-2">Examples</h2>
@@ -3736,7 +3767,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="b8a7bb61-f7c8-4b2d-aec3-5c1332a81099">
+				<section class="text-container-section" id="d36cfbe9-31db-4ed3-ada5-cc2fc47f326d">
 
                     <div>
                         <h3 class="heading-3">Landau model</h3>
@@ -3943,7 +3974,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="fa983850-8f07-462c-845d-1306c25c1731">
+				<section class="text-container-section" id="70aa223a-1ef3-473d-b3af-a250954940ee">
 
                     <div>
                         <h3 class="heading-3">Abelian Higgs mechanism</h3>
@@ -4055,7 +4086,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="be145a8f-04f0-4034-a632-8134c923e382">
+				<section class="text-container-section" id="f651bf0a-87e2-47ee-a486-bb02ecd92217">
 
                     <div>
                         <h3 class="heading-3">Alternate form of the Abelian Higgs model action</h3>
@@ -4194,7 +4225,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="129861a8-b542-48a2-ae7c-5c8f37f389bd">
+				<section class="text-container-section" id="27088bdc-b092-4ea5-93dc-11d096b7682c">
 
                     <div>
                         <h3 class="heading-3">Lagrangian in explicit symmetry broken form</h3>
@@ -4574,7 +4605,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="f5c3b95d-5638-4841-a49c-c58f6a095987">
+				<section class="text-container-section" id="caef3c26-88f9-46ea-9003-5a181b6f461f">
 
                     <div>
                         <h3 class="heading-3">Spontaneous symmetry breaking and trivializations</h3>
@@ -4672,7 +4703,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="652855e8-7645-4ea2-81ff-58e8935d2fc3">
+				<section class="text-container-section" id="e9671ef3-5b4c-473c-b6c2-0440101dbf34">
 
                     <div>
                         <h3 class="heading-3">Non-Abelian Higgs mechanism</h3>
@@ -5032,7 +5063,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="799db7c0-c936-4ee9-8503-f6875b9b0f58">
+				<section class="text-container-section" id="e31a4422-383e-4eb5-b193-2b9c163682b8">
 
                     <div>
                         <h3 class="heading-3">Affine Higgs mechanism</h3>
@@ -5337,7 +5368,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="56277775-861a-4f66-a018-98db1e209f1b">
+				<section class="text-container-section" id="4bbd445c-3e5b-43a3-9f5a-0a2d10ad4ea4">
 
                     <div>
                         <h1 class="heading-1">Higgs Boson</h1>
@@ -5365,7 +5396,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="ec170104-448d-4829-9cb5-a73995df3aa4">
+				<section class="text-container-section" id="85e9c560-da8b-4f99-8409-0f34618772e7">
 
                     <div>
                         <h2 class="heading-2">Technical aspects and mathematical formulation</h2>
@@ -5942,7 +5973,7 @@ $$
 
 				</section>
 
-				<section class="text-container-section" id="014b804a-c698-4527-bf39-2955c0af3e47">
+				<section class="text-container-section" id="0001131c-ca41-400c-b4a5-e2849d03857f">
 
                     <div>
                         <h1 class="heading-1">The Mathematical Foundations of Standard Model</h1>
@@ -6012,7 +6043,7 @@ $$
 
 				</section>
 
-				<section class="text-container-section" id="b0a45782-c680-49c0-a3bc-9e7cb16290e9">
+				<section class="text-container-section" id="8918f286-ffad-4831-80e4-bacf9c5ef85c">
 
                     <div>
                         <h3 class="heading-3">Free fields</h3>
@@ -6091,7 +6122,7 @@ $$
 
 				</section>
 
-				<section class="text-container-section" id="931aa8c1-45bc-4101-aaa7-dbffe343d820">
+				<section class="text-container-section" id="45b87cb8-a78f-4cb5-9a8c-f7ea2690b85e">
 
                     <div>
                         <h1 class="heading-1">A bunch of equations</h1>
@@ -6218,7 +6249,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="d610c417-2b8d-4f67-b8e9-4817c8cd39e6">
+				<section class="text-container-section" id="47a259d8-175f-4384-93b7-efde0fd0b45c">
 
                     <div>
                         <h1 class="heading-1">A bunch of repls and tweets</h1>
@@ -6271,7 +6302,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="4de4d575-6f51-4cff-b87d-f21c7004c27d">
+				<section class="text-container-section" id="21f7cc46-bdbb-48de-96bc-fe35c8efded3">
 
                     <div>
                         <h1 class="heading-1">A bunch of other widgets</h1>
@@ -6300,7 +6331,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="0b94c009-14bc-4702-b988-cfc88e7e44cb">
+				<section class="text-container-section" id="d2966a47-e564-4332-a694-5a0b043e9664">
 
                     <div>
                         <h1 class="heading-1">Code Snippets</h1>
@@ -6308,7 +6339,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="87bc621d-9f83-4ae2-8948-85d7bfdcabe5">
+				<section class="text-container-section" id="29631f2f-380c-4c9d-859c-ad729c2b171a">
 
                     <div>
                         <h2 class="heading-2">Python Snippets</h2>
@@ -6472,7 +6503,7 @@ for epoch in range(epochs):
 
 				</section>
 
-				<section class="text-container-section" id="2d3fded1-373a-43e2-9ed5-f71cf52a58ad">
+				<section class="text-container-section" id="409b85f2-a284-4999-b79c-75f2edd7a180">
 
                     <div>
                         <h2 class="heading-2">C++ Snippets</h2>
@@ -6573,7 +6604,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="954b84b4-e4f5-4413-9d2e-c7b9db1b9951">
+				<section class="text-container-section" id="b0ece6d8-e061-4372-a531-12b92bd4696f">
 
                     <div>
                         <h2 class="heading-2">Javascript Snippets</h2>
@@ -6656,7 +6687,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="9b0461e1-c573-4f54-850a-caf8a3356d23">
+				<section class="text-container-section" id="fb62ea99-b52e-4e01-a3f2-0644e28393e9">
 
                     <div>
                         <h2 class="heading-2">HTML Snippets</h2>
@@ -6712,7 +6743,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="f15bea90-747a-4701-848e-82a953f9fa5b">
+				<section class="text-container-section" id="2ae198cc-7bf4-417c-b38f-332f91115786">
 
                     <div>
                         <h2 class="heading-2">CSS Snippets</h2>
@@ -6860,7 +6891,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="bd62c715-7046-4834-9c76-8c5187b11303">
+				<section class="text-container-section" id="89431bb5-d5a3-44e1-9cbf-148d9193bfe6">
 
                     <div>
                         <h1 class="heading-1">Table, File and Audio Widgets</h1>
@@ -7228,7 +7259,7 @@ With equations like
 
 				</section>
 
-				<section class="text-container-section" id="a4a6a18f-bad1-4781-921d-9aaa819cb140">
+				<section class="text-container-section" id="bb5a9731-7810-4ae9-8594-e25859daeb8d">
 
                     <div>
                         <h3 class="heading-3">Here is a block mention from another page</h3>
@@ -7240,7 +7271,7 @@ With equations like
 
 				</section>
 
-				<section class="text-container-section" id="334f4ed4-6b9e-4869-bdd4-86c6af9ec129">
+				<section class="text-container-section" id="376e5f8f-63b6-4ef9-9620-4ce702ab40be">
 
                     <div>
                         <h3 class="heading-3">Free fields</h3>
@@ -8373,13 +8404,22 @@ With equations like
 
         <div class="collapsible-content-container">
             <div class="collapsible-visible-container" onclick="toggleCollapsibleContent(this)">
-                <svg class="toggle-indicator-icon" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.000000 48.000000" preserveAspectRatio="xMidYMid meet"> 
-                    <g transform="translate(0.000000,48.000000) scale(0.100000,-0.100000)" stroke="none">
-                        <path d="M130 240 c0 -108 4 -160 11 -160 13 0 209 150 209 160 0 10 -196 160 -209 160 -7 0 -11 -52 -11 -160z"/>
-                    </g>
-               </svg>
-               Toggle 1 
+                <div class="toggle-indicator-icon-container">
+                    <svg class="toggle-indicator-icon" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.000000 48.000000" preserveAspectRatio="xMidYMid meet"> 
+                        <g transform="translate(0.000000,48.000000) scale(0.100000,-0.100000)" stroke="none">
+                            <path d="M130 240 c0 -108 4 -160 11 -160 13 0 209 150 209 160 0 10 -196 160 -209 160 -7 0 -11 -52 -11 -160z"/>
+                        </g>
+                   </svg>    
+                </div>
+                <div class="collapsible-visible-data">
+                
+                    <div>
+                        <p class="text-paragraph">Toggle 1 </p>
+                    </div>
+
+                </div>
             </div>
+
             <div class="collapsible-hidden-container">
 
                     <div>
@@ -9200,12 +9240,17 @@ classDiagram
 
         <div class="collapsible-content-container">
             <div class="collapsible-visible-container" onclick="toggleCollapsibleContent(this)">
-                <svg class="toggle-indicator-icon" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.000000 48.000000" preserveAspectRatio="xMidYMid meet"> 
-                    <g transform="translate(0.000000,48.000000) scale(0.100000,-0.100000)" stroke="none">
-                        <path d="M130 240 c0 -108 4 -160 11 -160 13 0 209 150 209 160 0 10 -196 160 -209 160 -7 0 -11 -52 -11 -160z"/>
-                    </g>
-               </svg>
-               Ravi Bansal New Toggle  
+                <div class="toggle-indicator-icon-container">
+                    <svg class="toggle-indicator-icon" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.000000 48.000000" preserveAspectRatio="xMidYMid meet"> 
+                        <g transform="translate(0.000000,48.000000) scale(0.100000,-0.100000)" stroke="none">
+                            <path d="M130 240 c0 -108 4 -160 11 -160 13 0 209 150 209 160 0 10 -196 160 -209 160 -7 0 -11 -52 -11 -160z"/>
+                        </g>
+                   </svg>    
+                </div>
+                <div class="collapsible-visible-data">
+                
+                    <div>
+                        <p class="text-paragraph">Ravi Bansal New Toggle  
                         <span class="inline-math" data-katex=" $A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)$ ">
                             <span class="inline-math-inner"> $A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)$  
                                 <span class="inline-math-popup">
@@ -9216,8 +9261,12 @@ classDiagram
                                 </span>
                             </span>
                         </span>
- 🙃 This is a toggle heading and we are trying to put more and more content here.  
+ 🙃 This is a toggle heading and we are trying to put more and more content here.  </p>
+                    </div>
+
+                </div>
             </div>
+
             <div class="collapsible-hidden-container">
 
 					<div class="math-block prevent-select">
@@ -9461,13 +9510,36 @@ $$
 						</div>
 					</div>
 
-				</section>
-
-				<section class="text-container-section" id="7549ac60-6ac9-4c17-a02d-5079240cf301">
-
+        <div class="collapsible-content-container">
+            <div class="collapsible-visible-container" onclick="toggleCollapsibleContent(this)">
+                <div class="toggle-indicator-icon-container">
+                    <svg class="toggle-indicator-icon" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.000000 48.000000" preserveAspectRatio="xMidYMid meet"> 
+                        <g transform="translate(0.000000,48.000000) scale(0.100000,-0.100000)" stroke="none">
+                            <path d="M130 240 c0 -108 4 -160 11 -160 13 0 209 150 209 160 0 10 -196 160 -209 160 -7 0 -11 -52 -11 -160z"/>
+                        </g>
+                   </svg>    
+                </div>
+                <div class="collapsible-visible-data">
+                
                     <div>
-                        <h1 class="heading-1">This is now toggle heading</h1>
+                        <h1 class="heading-1">This is now toggle heading </h1>
                     </div>
+
+                </div>
+            </div>
+
+            <div class="collapsible-hidden-container">
+
+                    <div class="image-block">
+                        <img class="image-container lazy-load" data-src="media/626_1_Image.png" onclick="openModal(this)" />
+                    </div>
+
+                    <div class="quote">
+                        <p>Here is a nice looking quote that says nothing. </p>
+                    </div>
+
+            </div>
+        </div>
 
 				</section>
 
