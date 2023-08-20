@@ -269,6 +269,11 @@
 
                 --color-bg-caraousel: var(--core-color-whitesmoke-main);
                 --color-border-caraousel: var(--core-color-black-main);
+
+                --color-fill-toggle-icon: var(--core-color-blue-very-dark);
+                --color-hover-toggle-hidden: var(--core-color-purple-very-light);
+                --color-bg-toggle-hidden: var(--core-color-purple-light);
+                --color-border-toggle-container: var(--core-color-purple-very-dark);
             }
 
             .dark-mode {
@@ -377,6 +382,11 @@
 
                 --color-bg-caraousel: var(--core-color-black-main);
                 --color-border-caraousel: var(--core-color-blue-very-dark);
+
+                --color-fill-toggle-icon: var(--core-color-white-main);
+                --color-hover-toggle-hidden: var(--core-color-gray-blue);
+                --color-bg-toggle-hidden: var(--core-color-gray-light);
+                --color-border-toggle-container: var(--core-color-blue-light);
             }
 
             html {
@@ -2011,53 +2021,61 @@
             ################################################################################
             */
 
-            .collapsible-visible-container {
-                height: 55px;
-                width: 98%;
-                border: 1px solid #ddd;
+            .collapsible-content-container {
+                width: 96%;
+                max-height: calc(55px + 550px);
                 margin: auto;
                 margin-top: 30px;
+                outline: none;
                 box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
                 -webkit-box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+                border: 2px solid var(--color-border-toggle-container);
+            }
+
+            .collapsible-visible-container {
+                height: 55px;
                 font-family: var(--font-title);
-                font-size: 20px;
+                font-size: 22px;
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
                 padding: 10px;
                 cursor: pointer;
-                outline: none;
            }
 
            .collapsible-visible-container:hover {
-                background-color: #777;
+                background-color: var(--color-hover-toggle-hidden);
            }
 
            .collapsible-visible-container.collapsible-hidden-open {
-               box-shadow: none;
-               background-color: #BBB;
+               background-color: var(--color-bg-toggle-hidden);
            }
 
            .collapsible-hidden-container {
-                height: 450px;
                 overflow-y: auto;
-                width: 98%;
-                border: 1px solid #ddd;
                 border-top: none;
-                margin: auto;
-                padding: 10px;
-                box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
-                -webkit-box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
-                display: none;
-
-                visibility: hidden;
-                opacity: 0;
-                transition: visibility 2s, opacity 2s ease-out;
+                padding: 0px;
+                max-height: 0px;
+                transition: max-height 0.75s ease;
            }
 
            .collapsible-hidden-container.collapsible-hidden-visible {
-                visibility: visible;
-                opacity: 1;
+                max-height: calc(550px - 55px);
+                padding: 10px;
+           }
+
+           .toggle-indicator-icon {
+                height: 26px;
+                width: 26px;
+                margin-right: 10px;
+                margin-top: 0px;
+                transition: rotate 0.4s;
+                fill: var(--color-fill-toggle-icon);
+           }
+
+           .toggle-indicator-icon.toggle-icon-rotate {
+                rotate: 90deg;
+                transition: rotate 0.4s;
            }
 
             /* ################################################################################ 
@@ -2318,15 +2336,7 @@
 
                 .multi-column-slideshow-container {
                     display: block;
-                }
-
-                .multi-column-slideshow-container::before,
-                .multi-column-slideshow-container::after,
-                .slideshow-nav-prev,
-                .slideshow-nav-next {
-                    transform: translateY(480%);
-					width: 3.5rem;
-					height: 3.5rem;
+					height: 470px;
                 }
             }
         </style>
@@ -2523,7 +2533,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="4930a7c0-cdca-4bf8-90d2-7859721e5008">
+				<section class="text-container-section" id="2c2863af-9d31-4c65-891c-fe68f03ccd54">
 
                     <div>
                         <h1 class="heading-1">Geometry of Newtonian gravity</h1>
@@ -2600,7 +2610,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="536c5f92-5123-4dc6-9626-9d3e240a7dea">
+				<section class="text-container-section" id="736eb6ef-025e-4424-8c49-947198bc20db">
 
                     <div>
                         <h2 class="heading-2">Einstein’s equations</h2>
@@ -2722,7 +2732,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="d20b145b-1ffe-4031-9ca0-8bcd7b8db252">
+				<section class="text-container-section" id="5f046e2e-8ed1-4e34-84b0-8637c396a48b">
 
                     <div>
                         <h3 class="heading-3">Einstein Field Equations</h3>
@@ -2744,7 +2754,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="caa717bf-d549-47ef-9ba5-9affd91360c5">
+				<section class="text-container-section" id="52f7f2f1-72bc-4aed-89db-9fb37933a330">
 
                     <div>
                         <h3 class="heading-3">Mathematical Form</h3>
@@ -2872,7 +2882,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="5079a0c0-f383-42b9-ba22-5b8dc58c6fe7">
+				<section class="text-container-section" id="88fa6ef1-ba73-469d-950d-40e6593223cd">
 
                     <div>
                         <h3 class="heading-3">Sign convention</h3>
@@ -2945,7 +2955,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="24680c7d-b296-44bb-8c12-7fabf2ad7758">
+				<section class="text-container-section" id="ea76e371-cb0b-40ad-b5d6-708e38dfc07b">
 
                     <div>
                         <h1 class="heading-1">The Cosmological Constant</h1>
@@ -2981,7 +2991,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="475a5818-9901-44ce-bf16-d35530b28bbf">
+				<section class="text-container-section" id="97a926b1-6526-4067-83be-e464ae274623">
 
                     <div>
                         <h2 class="heading-2">History</h2>
@@ -3005,7 +3015,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="a310ecd8-6d4c-41c8-b92c-26c073e70438">
+				<section class="text-container-section" id="c5689225-c006-4ae7-a16d-8c96fc83ed94">
 
                     <div>
                         <h3 class="heading-3">Sequence of events 1915–1998</h3>
@@ -3017,7 +3027,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="d9fc92d4-7e1c-4c30-b927-850b16de058f">
+				<section class="text-container-section" id="63fcd680-8c9d-4dfe-b643-52a87781b99e">
 
                     <div>
                         <h2 class="heading-2">Equation</h2>
@@ -3090,7 +3100,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="4d695fe7-bc5a-4020-a198-23cda2c58fcd">
+				<section class="text-container-section" id="d31f07e5-c7bc-4129-a710-e851a8bda7d3">
 
                     <div>
                         <h3 class="heading-3">ΩΛ (Omega sub Lambda)</h3>
@@ -3106,7 +3116,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="0ad9c7f2-2aaa-4bd4-99ca-4b11daa3953b">
+				<section class="text-container-section" id="29154473-6070-4150-b964-a63a61e1685c">
 
                     <div>
                         <h3 class="heading-3">Equation of state</h3>
@@ -3124,7 +3134,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="ef39ce4a-9a04-4508-8b85-4e220b912bcf">
+				<section class="text-container-section" id="8adc9f52-32c7-4aa2-b5ed-cd1f152becca">
 
                     <div>
                         <h3 class="heading-3">Positive value</h3>
@@ -3151,7 +3161,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="d8803b11-b19f-4b37-82f9-53e3d43e6d7b">
+				<section class="text-container-section" id="9fd736a1-ecdb-4bd5-a34f-9d4fa3535de3">
 
                     <div>
                         <h2 class="heading-2">Predictions</h2>
@@ -3159,7 +3169,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="229d5ee2-7ead-4762-b2ff-eaed1cbf6f6c">
+				<section class="text-container-section" id="70b8aca4-b9d4-4ca9-bfcc-d8f545b46d54">
 
                     <div>
                         <h3 class="heading-3">Quantum field theory</h3>
@@ -3216,7 +3226,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="67fa41ca-e4ae-4d9a-8ef6-6c2e77cfbb59">
+				<section class="text-container-section" id="b30fdc09-350b-4066-9b4e-04f8ebf5ff71">
 
                     <div>
                         <h3 class="heading-3">Anthropic principle</h3>
@@ -3236,7 +3246,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="dee47af5-b65f-4047-8153-e188f033d548">
+				<section class="text-container-section" id="4ccd465a-fc84-4e32-9146-77609dcd9893">
 
                     <div>
                         <h3 class="heading-3">Failure to detect dark energy</h3>
@@ -3249,7 +3259,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="362b5521-6f46-44e2-8d91-1d6196ab558d">
+				<section class="text-container-section" id="9dd31aaa-1d48-485d-b85b-0c2313f0547d">
 
                     <div>
                         <h2 class="heading-2">Einstein–Maxwell equations</h2>
@@ -3353,7 +3363,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="f19939f1-0f94-4bdc-bb21-1632f59b257d">
+				<section class="text-container-section" id="11453216-cdd8-466b-8770-bbd26e4efcd1">
 
                     <div>
                         <h2 class="heading-2">The linearized EFE</h2>
@@ -3365,7 +3375,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="bb7c9c12-88a3-4f00-8cb6-613bca9b5353">
+				<section class="text-container-section" id="4b8b69a7-29f6-40ea-92f6-40efa302583a">
 
                     <div>
                         <h2 class="heading-2">Polynomial form</h2>
@@ -3431,7 +3441,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="82928f04-02d0-4bf4-a36f-6ee79fe406dc">
+				<section class="text-container-section" id="bdced242-f6e4-4d9f-9b42-58504b99df54">
 
                     <div>
                         <h1 class="heading-1">Higgs Mechanism</h1>
@@ -3515,7 +3525,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="5c208818-e665-4f8b-936c-031c89165e5e">
+				<section class="text-container-section" id="25d71bee-158b-47df-9044-eb69a66d11d5">
 
                     <div>
                         <h2 class="heading-2">Standard Model</h2>
@@ -3546,7 +3556,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="6fb12651-13fc-4603-93a9-a8b642407f46">
+				<section class="text-container-section" id="6bb2de55-090e-4e9c-adaa-ebb9c2e2fc06">
 
                     <div>
                         <h3 class="heading-3">Structure of the Higgs field</h3>
@@ -3566,7 +3576,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="7cd63c64-1e9a-4611-a8c5-490e99727cde">
+				<section class="text-container-section" id="300fcae4-52ac-44c2-9eb3-6f299211314c">
 
                     <div>
                         <h3 class="heading-3">The photon as the part that remains massless</h3>
@@ -3635,7 +3645,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="315da443-6975-4818-9f93-95283e8bb7bd">
+				<section class="text-container-section" id="6fe3e0a2-8fa1-4a70-8fb5-3b9669feb291">
 
                     <div>
                         <h3 class="heading-3">Consequences for fermions</h3>
@@ -3714,7 +3724,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="66116c56-0503-4910-a3eb-3412f756b80a">
+				<section class="text-container-section" id="87d90054-42c5-4699-ba94-6d1de636a150">
 
                     <div>
                         <h2 class="heading-2">Examples</h2>
@@ -3726,7 +3736,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="7aedc7ea-991c-4494-9088-3b66ca8bed0e">
+				<section class="text-container-section" id="b8a7bb61-f7c8-4b2d-aec3-5c1332a81099">
 
                     <div>
                         <h3 class="heading-3">Landau model</h3>
@@ -3933,7 +3943,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="eee16e36-c7a7-46b0-888b-1ca5d4246454">
+				<section class="text-container-section" id="fa983850-8f07-462c-845d-1306c25c1731">
 
                     <div>
                         <h3 class="heading-3">Abelian Higgs mechanism</h3>
@@ -4045,7 +4055,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="1bb288eb-ded1-4424-8e8a-e5f279199731">
+				<section class="text-container-section" id="be145a8f-04f0-4034-a632-8134c923e382">
 
                     <div>
                         <h3 class="heading-3">Alternate form of the Abelian Higgs model action</h3>
@@ -4184,7 +4194,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="2b7b9dad-f111-41a9-a90d-c060e904062a">
+				<section class="text-container-section" id="129861a8-b542-48a2-ae7c-5c8f37f389bd">
 
                     <div>
                         <h3 class="heading-3">Lagrangian in explicit symmetry broken form</h3>
@@ -4564,7 +4574,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="a84787c7-b146-4dfc-b31c-b0aac837f096">
+				<section class="text-container-section" id="f5c3b95d-5638-4841-a49c-c58f6a095987">
 
                     <div>
                         <h3 class="heading-3">Spontaneous symmetry breaking and trivializations</h3>
@@ -4662,7 +4672,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="cafc3b7e-1be3-4537-931d-a17da27a31a2">
+				<section class="text-container-section" id="652855e8-7645-4ea2-81ff-58e8935d2fc3">
 
                     <div>
                         <h3 class="heading-3">Non-Abelian Higgs mechanism</h3>
@@ -5022,7 +5032,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="4c9147e7-b2ae-4e5b-b991-1c874c304576">
+				<section class="text-container-section" id="799db7c0-c936-4ee9-8503-f6875b9b0f58">
 
                     <div>
                         <h3 class="heading-3">Affine Higgs mechanism</h3>
@@ -5327,7 +5337,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="cae41b6d-1d3c-42df-97ba-80c1a6520575">
+				<section class="text-container-section" id="56277775-861a-4f66-a018-98db1e209f1b">
 
                     <div>
                         <h1 class="heading-1">Higgs Boson</h1>
@@ -5355,7 +5365,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="5a068a7c-fcb5-482a-baae-2da001033b9c">
+				<section class="text-container-section" id="ec170104-448d-4829-9cb5-a73995df3aa4">
 
                     <div>
                         <h2 class="heading-2">Technical aspects and mathematical formulation</h2>
@@ -5932,7 +5942,7 @@ $$
 
 				</section>
 
-				<section class="text-container-section" id="1f8633ea-63d4-4b7c-8522-6d4e945d0365">
+				<section class="text-container-section" id="014b804a-c698-4527-bf39-2955c0af3e47">
 
                     <div>
                         <h1 class="heading-1">The Mathematical Foundations of Standard Model</h1>
@@ -6002,7 +6012,7 @@ $$
 
 				</section>
 
-				<section class="text-container-section" id="1d14b562-0b01-47d0-9a13-13284df66716">
+				<section class="text-container-section" id="b0a45782-c680-49c0-a3bc-9e7cb16290e9">
 
                     <div>
                         <h3 class="heading-3">Free fields</h3>
@@ -6081,7 +6091,7 @@ $$
 
 				</section>
 
-				<section class="text-container-section" id="8a7c6420-743b-4563-b586-52de43421d79">
+				<section class="text-container-section" id="931aa8c1-45bc-4101-aaa7-dbffe343d820">
 
                     <div>
                         <h1 class="heading-1">A bunch of equations</h1>
@@ -6208,7 +6218,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="d4cea9a1-e6f6-465a-a400-0e4a1fb2777d">
+				<section class="text-container-section" id="d610c417-2b8d-4f67-b8e9-4817c8cd39e6">
 
                     <div>
                         <h1 class="heading-1">A bunch of repls and tweets</h1>
@@ -6261,7 +6271,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="d31b3bce-412e-4166-adc6-a38ae1f66d73">
+				<section class="text-container-section" id="4de4d575-6f51-4cff-b87d-f21c7004c27d">
 
                     <div>
                         <h1 class="heading-1">A bunch of other widgets</h1>
@@ -6290,7 +6300,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="a07f0078-f6bf-428b-9c55-d3989428f133">
+				<section class="text-container-section" id="0b94c009-14bc-4702-b988-cfc88e7e44cb">
 
                     <div>
                         <h1 class="heading-1">Code Snippets</h1>
@@ -6298,7 +6308,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="a1d13144-5758-4dba-9aa1-6f6da44ddcf2">
+				<section class="text-container-section" id="87bc621d-9f83-4ae2-8948-85d7bfdcabe5">
 
                     <div>
                         <h2 class="heading-2">Python Snippets</h2>
@@ -6462,7 +6472,7 @@ for epoch in range(epochs):
 
 				</section>
 
-				<section class="text-container-section" id="24e9babf-9f13-4f24-9635-86e11feb2caa">
+				<section class="text-container-section" id="2d3fded1-373a-43e2-9ed5-f71cf52a58ad">
 
                     <div>
                         <h2 class="heading-2">C++ Snippets</h2>
@@ -6563,7 +6573,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="4c9090c2-b02f-41b1-922b-aaf58695d9dd">
+				<section class="text-container-section" id="954b84b4-e4f5-4413-9d2e-c7b9db1b9951">
 
                     <div>
                         <h2 class="heading-2">Javascript Snippets</h2>
@@ -6646,7 +6656,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="d0a71229-08e2-455c-8bfe-bb9c2409de43">
+				<section class="text-container-section" id="9b0461e1-c573-4f54-850a-caf8a3356d23">
 
                     <div>
                         <h2 class="heading-2">HTML Snippets</h2>
@@ -6702,7 +6712,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="b16efb7d-62a7-460a-942b-a041d8db65b2">
+				<section class="text-container-section" id="f15bea90-747a-4701-848e-82a953f9fa5b">
 
                     <div>
                         <h2 class="heading-2">CSS Snippets</h2>
@@ -6850,7 +6860,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="4c7c30d5-2312-4549-8966-04a3c1e8bd45">
+				<section class="text-container-section" id="bd62c715-7046-4834-9c76-8c5187b11303">
 
                     <div>
                         <h1 class="heading-1">Table, File and Audio Widgets</h1>
@@ -7218,7 +7228,7 @@ With equations like
 
 				</section>
 
-				<section class="text-container-section" id="697503ed-855d-4a49-83d2-936e9e7290dc">
+				<section class="text-container-section" id="a4a6a18f-bad1-4781-921d-9aaa819cb140">
 
                     <div>
                         <h3 class="heading-3">Here is a block mention from another page</h3>
@@ -7230,7 +7240,7 @@ With equations like
 
 				</section>
 
-				<section class="text-container-section" id="2a637783-9b0d-40af-9605-666eedad3f5e">
+				<section class="text-container-section" id="334f4ed4-6b9e-4869-bdd4-86c6af9ec129">
 
                     <div>
                         <h3 class="heading-3">Free fields</h3>
@@ -8361,8 +8371,16 @@ With equations like
 						</div>
 					</div>
 
-        <div class="collapsible-visible-container" onclick="toggleCollapsibleContent(this)">Toggle 1 </div>
-        <div class="collapsible-hidden-container">
+        <div class="collapsible-content-container">
+            <div class="collapsible-visible-container" onclick="toggleCollapsibleContent(this)">
+                <svg class="toggle-indicator-icon" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.000000 48.000000" preserveAspectRatio="xMidYMid meet"> 
+                    <g transform="translate(0.000000,48.000000) scale(0.100000,-0.100000)" stroke="none">
+                        <path d="M130 240 c0 -108 4 -160 11 -160 13 0 209 150 209 160 0 10 -196 160 -209 160 -7 0 -11 -52 -11 -160z"/>
+                    </g>
+               </svg>
+               Toggle 1 
+            </div>
+            <div class="collapsible-hidden-container">
 
                     <div>
                         <h3 class="heading-3">Toggle Body</h3>
@@ -8464,6 +8482,7 @@ gitGraph
                         <img class="image-container lazy-load" data-src="media/575_12_Image.png" onclick="openModal(this)" />
                     </div>
 
+            </div>
         </div>
 
                     <div>
@@ -9179,6 +9198,277 @@ classDiagram
             </div>
         </div>
 
+        <div class="collapsible-content-container">
+            <div class="collapsible-visible-container" onclick="toggleCollapsibleContent(this)">
+                <svg class="toggle-indicator-icon" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.000000 48.000000" preserveAspectRatio="xMidYMid meet"> 
+                    <g transform="translate(0.000000,48.000000) scale(0.100000,-0.100000)" stroke="none">
+                        <path d="M130 240 c0 -108 4 -160 11 -160 13 0 209 150 209 160 0 10 -196 160 -209 160 -7 0 -11 -52 -11 -160z"/>
+                    </g>
+               </svg>
+               Ravi Bansal New Toggle  
+                        <span class="inline-math" data-katex=" $A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)$ ">
+                            <span class="inline-math-inner"> $A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)$  
+                                <span class="inline-math-popup">
+                                    <span class="inline-math-copy-text"></span>
+                                    <svg class="copy-inline-math-clipboard-svg" onclick="copyInlineMathToClipboard(this.parentElement.parentElement.parentElement)" viewBox="0 0 24 24">
+                                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                    </svg>
+                                </span>
+                            </span>
+                        </span>
+ 🙃 This is a toggle heading and we are trying to put more and more content here.  
+            </div>
+            <div class="collapsible-hidden-container">
+
+					<div class="math-block prevent-select">
+						<div class="block-equation" data-katex="$$\mathcal{L} = -\frac{1}{2}\partial_{\nu}g^{a}_{\mu}\partial_{\nu}g^{a}_{\mu}
+-g_{s}f^{abc}\partial_{\mu}g^{a}_{\nu}g^{b}_{\mu}g^{c}_{\nu}
+
+-\frac{1}{4}g^{2}_{s}f^{abc}f^{ade}g^{b}_{\mu}g^{c}_{\nu}g^{d}_{\mu}g^{e}_{\nu}
+
++\frac{1}{2}ig^{2}_{s}(\bar{q}^{\sigma}_{i}\gamma^{\mu}q^{\sigma}_{j})g^{a}_{\mu} \\
+
++\bar{G}^{a}\partial^{2}G^{a}+g_{s}f^{abc}\partial_{\mu}\bar{G}^{a}G^{b}g^{c}_{\mu}
+
+-\partial_{\nu}W^{+}_{\mu}\partial_{\nu}W^{-}_{\mu}-M^{2}W^{+}_{\mu}W^{-}_{\mu}
+-\frac{1}{2}\partial_{\nu}Z^{0}_{\mu}\partial_{\nu}Z^{0}_{\mu}-\frac{1}{2c^{2}_{w}}
+M^{2}Z^{0}_{\mu}Z^{0}_{\mu} \\
+
+-\frac{1}{2}\partial_{\mu}A_{\nu}\partial_{\mu}A_{\nu}
+-\frac{1}{2}\partial_{\mu}H\partial_{\mu}H-\frac{1}{2}m^{2}_{h}H^{2}
+-\partial_{\mu}\phi^{+}\partial_{\mu}\phi^{-}-M^{2}\phi^{+}\phi^{-}
+-\frac{1}{2}\partial_{\mu}\phi^{0}\partial_{\mu}\phi^{0}-\frac{1}{2c^{2}_{w}}M\phi^{0}\phi^{0}
+-\beta_{h}[\frac{2M^{2}}{g^{2}}+\frac{2M}{g}H+\frac{1}{2}(H^{2}+\phi^{0}\phi^{0}+2\phi^{+}\phi^{-%%@
+})]+\frac{2M^{4}}{g^{2}}\alpha_{h}
+-igc_{w}[\partial_{\nu}Z^{0}_{\mu}(W^{+}_{\mu}W^{-}_{\nu}-W^{+}_{\nu}W^{-}_{\mu})
+-Z^{0}_{\nu}(W^{+}_{\mu}\partial_{\nu}W^{-}_{\mu}-W^{-}_{\mu}\partial_{\nu}W^{+}_{\mu})
++Z^{0}_{\mu}(W^{+}_{\nu}\partial_{\nu}W^{-}_{\mu} \\ -W^{-}_{\nu}\partial_{\nu}W^{+}_{\mu})]
+-igs_{w}[\partial_{\nu}A_{\mu}(W^{+}_{\mu}W^{-}_{\nu}-W^{+}_{\nu}W^{-}_{\mu})
+-A_{\nu}(W^{+}_{\mu}\partial_{\nu}W^{-}_{\mu} \\ -W^{-}_{\mu}\partial_{\nu}W^{+}_{\mu})
++A_{\mu}(W^{+}_{\nu}\partial_{\nu}W^{-}_{\mu}-W^{-}_{\nu}\partial_{\nu}W^{+}_{\mu})]
+-\frac{1}{2}g^{2}W^{+}_{\mu}W^{-}_{\mu}W^{+}_{\nu}W^{-}_{\nu}+\frac{1}{2}g^{2}
+W^{+}_{\mu}W^{-}_{\nu}W^{+}_{\mu}W^{-}_{\nu}
+ \\ +g^2c^{2}_{w}(Z^{0}_{\mu}W^{+}_{\mu}Z^{0}_{\nu}W^{-}_{\nu}-Z^{0}_{\mu}Z^{0}_{\mu}W^{+}_{\nu}
+W^{-}_{\nu})
++g^2s^{2}_{w}(A_{\mu}W^{+}_{\mu}A_{\nu}W^{-}_{\nu}-A_{\mu}A_{\mu}W^{+}_{\nu}
+W^{-}_{\nu})
++g^{2}s_{w}c_{w}[A_{\mu}Z^{0}_{\nu}(W^{+}_{\mu}W^{-}_{\nu}-W^{+}_{\nu}W^{-}_{\mu})-%%@
+2A_{\mu}Z^{0}_{\mu}W^{+}_{\nu}W^{-}_{\nu}]
+\\ -g\alpha[H^3+H\phi^{0}\phi^{0}+2H\phi^{+}\phi^{-}]
+-\frac{1}{8}g^{2}\alpha_{h}[H^4+(\phi^{0})^{4}+4(\phi^{+}\phi^{-})^{2}+4(\phi^{0})^{2}
+\phi^{+}\phi^{-}+4H^{2}\phi^{+}\phi^{-}+2(\phi^{0})^{2}H^{2}]
+-gMW^{+}_{\mu}W^{-}_{\mu}H-\frac{1}{2}g\frac{M}{c^{2}_{w}}Z^{0}_{\mu}Z^{0}_{\mu}H
+-\frac{1}{2}ig[W^{+}_{\mu}(\phi^{0}\partial_{\mu}\phi^{-}-\phi^{-}\partial_{\mu}\phi^{0})
+-W^{-}_{\mu}(\phi^{0}\partial_{\mu}\phi^{+}-\phi^{+}\partial_{\mu}\phi^{0})]
++\frac{1}{2}g[W^{+}_{\mu}(H\partial_{\mu}\phi^{-}-\phi^{-}\partial_{\mu}H)
+-W^{-}_{\mu}(H\partial_{\mu}\phi^{+}-\phi^{+}\partial_{\mu}H)]
++\frac{1}{2}g\frac{1}{c_{w}}(Z^{0}_{\mu}(H\partial_{\mu}\phi^{0}-\phi^{0}\partial_{\mu}H)
+-ig\frac{s^{2}_{w}}{c_{w}}MZ^{0}_{\mu}(W^{+}_{\mu}\phi^{-}-W^{-}_{\mu}\phi^{+})
++igs_{w}MA_{\mu}(W^{+}_{\mu}\phi^{-}-W^{-}_{\mu}\phi^{+})
+-ig\frac{1-2c^{2}_{w}}{2c_{w}}Z^{0}_{\mu}(\phi^{+}\partial_{\mu}\phi^{-}-\phi^{-%%@
+}\partial_{\mu}\phi^{+})
++igs_{w}A_{\mu}(\phi^{+}\partial_{\mu}\phi^{-}-\phi^{-}\partial_{\mu}\phi^{+})
+-\frac{1}{4}g^{2}W^{+}_{\mu}W^{-}_{\mu}[H^{2}+(\phi^{0})^{2}+2\phi^{+}\phi^{-}]
+-\frac{1}{4}g^{2}\frac{1}{c^{2}_{w}}Z^{0}_{\mu}Z^{0}_{\mu}[H^{2}+(\phi^{0})^{2}+2(2s^{2}_{w}-%%@
+1)^{2}\phi^{+}\phi^{-}]
+-\frac{1}{2}g^{2}\frac{s^{2}_{w}}{c_{w}}Z^{0}_{\mu}\phi^{0}(W^{+}_{\mu}\phi^{-}+W^{-%%@
+}_{\mu}\phi^{+}) \\
+-\frac{1}{2}ig^{2}\frac{s^{2}_{w}}{c_{w}}Z^{0}_{\mu}H(W^{+}_{\mu}\phi^{-}-W^{-}_{\mu}\phi^{+})
++\frac{1}{2}g^{2}s_{w}A_{\mu}\phi^{0}(W^{+}_{\mu}\phi^{-}+W^{-}_{\mu}\phi^{+})
++\frac{1}{2}ig^{2}s_{w}A_{\mu}H(W^{+}_{\mu}\phi^{-}-W^{-}_{\mu}\phi^{+})
+-g^{2}\frac{s_{w}}{c_{w}}(2c^{2}_{w}-1)Z^{0}_{\mu}A_{\mu}\phi^{+}\phi^{-}-%%@
+g^{1}s^{2}_{w}A_{\mu}A_{\mu}\phi^{+}\phi^{-}
+-\bar{e}^{\lambda}(\gamma\partial+m^{\lambda}_{e})e^{\lambda}
+-\bar{\nu}^{\lambda}\gamma\partial\nu^{\lambda}
+-\bar{u}^{\lambda}_{j}(\gamma\partial+m^{\lambda}_{u})u^{\lambda}_{j}
+\\ -\bar{d}^{\lambda}_{j}(\gamma\partial+m^{\lambda}_{d})d^{\lambda}_{j}
++igs_{w}A_{\mu}[-(\bar{e}^{\lambda}\gamma^{\mu}
+e^{\lambda})+\frac{2}{3}(\bar{u}^{\lambda}_{j}\gamma^{\mu} %%@
+u^{\lambda}_{j})-\frac{1}{3}(\bar{d}^{\lambda}_{j}\gamma^{\mu} 
+d^{\lambda}_{j})]
++\frac{ig}{4c_{w}}Z^{0}_{\mu}
+[(\bar{\nu}^{\lambda}\gamma^{\mu}(1+\gamma^{5})\nu^{\lambda})+
+(\bar{e}^{\lambda}\gamma^{\mu}(4s^{2}_{w}-1-\gamma^{5})e^{\lambda})+
+(\bar{u}^{\lambda}_{j}\gamma^{\mu}(\frac{4}{3}s^{2}_{w}-1-\gamma^{5})u^{\lambda}_{j})+
+(\bar{d}^{\lambda}_{j}\gamma^{\mu}(1-\frac{8}{3}s^{2}_{w}-\gamma^{5})d^{\lambda}_{j})]
+\\ +\frac{ig}{2\sqrt{2}}W^{+}_{\mu}[(\bar{\nu}^{\lambda}\gamma^{\mu}(1+\gamma^{5})e^{\lambda})
++(\bar{u}^{\lambda}_{j}\gamma^{\mu}(1+\gamma^{5})C_{\lambda\kappa}d^{\kappa}_{j})]
++\frac{ig}{2\sqrt{2}}W^{-}_{\mu}[(\bar{e}^{\lambda}\gamma^{\mu}(1+\gamma^{5})\nu^{\lambda})
+\\ +(\bar{d}^{\kappa}_{j}C^{\dagger}_{\lambda\kappa}\gamma^{\mu}(1+\gamma^{5})u^{\lambda}_{j})]
++\frac{ig}{2\sqrt{2}}\frac{m^{\lambda}_{e}}{M}
+[-\phi^{+}(\bar{\nu}^{\lambda}(1-\gamma^{5})e^{\lambda})
++\phi^{-}(\bar{e}^{\lambda}(1+\gamma^{5})\nu^{\lambda})]
+-\frac{g}{2}\frac{m^{\lambda}_{e}}{M}[H(\bar{e}^{\lambda}e^{\lambda})
++i\phi^{0}(\bar{e}^{\lambda}\gamma^{5}e^{\lambda})]
++\frac{ig}{2M\sqrt{2}}\phi^{+}
+[-m^{\kappa}_{d}(\bar{u}^{\lambda}_{j}C_{\lambda\kappa}(1-\gamma^{5})d^{\kappa}_{j})
++m^{\lambda}_{u}(\bar{u}^{\lambda}_{j}C_{\lambda\kappa}(1+\gamma^{5})d^{\kappa}_{j}]
+\\ +\frac{ig}{2M\sqrt{2}}\phi^{-}
+[m^{\lambda}_{d}(\bar{d}^{\lambda}_{j}C^{\dagger}_{\lambda\kappa}(1+\gamma^{5})u^{\kappa}_{j})
+-m^{\kappa}_{u}(\bar{d}^{\lambda}_{j}C^{\dagger}_{\lambda\kappa}(1-\gamma^{5})u^{\kappa}_{j}]
+-\frac{g}{2}\frac{m^{\lambda}_{u}}{M}H(\bar{u}^{\lambda}_{j}u^{\lambda}_{j})
+\\ -\frac{g}{2}\frac{m^{\lambda}_{d}}{M}H(\bar{d}^{\lambda}_{j}d^{\lambda}_{j})
++\frac{ig}{2}\frac{m^{\lambda}_{u}}{M}\phi^{0}(\bar{u}^{\lambda}_{j}\gamma^{5}u^{\lambda}_{j})
+-\frac{ig}{2}\frac{m^{\lambda}_{d}}{M}\phi^{0}(\bar{d}^{\lambda}_{j}\gamma^{5}d^{\lambda}_{j})
+\\ +\bar{X}^{+}(\partial^{2}-M^{2})X^{+}+\bar{X}^{-}(\partial^{2}-M^{2})X^{-}
++\bar{X}^{0}(\partial^{2}-\frac{M^{2}}{c^{2}_{w}})X^{0}+\bar{Y}\partial^{2}Y
++igc_{w}W^{+}_{\mu}(\partial_{\mu}\bar{X}^{0}X^{-}-\partial_{\mu}\bar{X}^{+}X^{0})
+\\ +igs_{w}W^{+}_{\mu}(\partial_{\mu}\bar{Y}X^{-}-\partial_{\mu}\bar{X}^{+}Y)
++igc_{w}W^{-}_{\mu}(\partial_{\mu}\bar{X}^{-}X^{0}-\partial_{\mu}\bar{X}^{0}X^{+})
++igs_{w}W^{-}_{\mu}(\partial_{\mu}\bar{X}^{-}Y-\partial_{\mu}\bar{Y}X^{+})
++igc_{w}Z^{0}_{\mu}(\partial_{\mu}\bar{X}^{+}X^{+}-\partial_{\mu}\bar{X}^{-}X^{-})
++igs_{w}A_{\mu}(\partial_{\mu}\bar{X}^{+}X^{+}-\partial_{\mu}\bar{X}^{-}X^{-})
+\\ -\frac{1}{2}gM[\bar{X}^{+}X^{+}H+\bar{X}^{-}X^{-}H+\frac{1}{c^{2}_{w}}\bar{X}^{0}X^{0}H]
++\frac{1-2c^{2}_{w}}{2c_{w}}igM[\bar{X}^{+}X^{0}\phi^{+}-\bar{X}^{-}X^{0}\phi^{-}]
++\frac{1}{2c_{w}}igM[\bar{X}^{0}X^{-}\phi^{+}-\bar{X}^{0}X^{+}\phi^{-}]
++igMs_{w}[\bar{X}^{0}X^{-}\phi^{+}-\bar{X}^{0}X^{+}\phi^{-}]
++\frac{1}{2}igM[\bar{X}^{+}X^{+}\phi^{0}-\bar{X}^{-}X^{-}\phi^{0}]
+$$">
+							<span>
+								$$\mathcal{L} = -\frac{1}{2}\partial_{\nu}g^{a}_{\mu}\partial_{\nu}g^{a}_{\mu}
+-g_{s}f^{abc}\partial_{\mu}g^{a}_{\nu}g^{b}_{\mu}g^{c}_{\nu}
+
+-\frac{1}{4}g^{2}_{s}f^{abc}f^{ade}g^{b}_{\mu}g^{c}_{\nu}g^{d}_{\mu}g^{e}_{\nu}
+
++\frac{1}{2}ig^{2}_{s}(\bar{q}^{\sigma}_{i}\gamma^{\mu}q^{\sigma}_{j})g^{a}_{\mu} \\
+
++\bar{G}^{a}\partial^{2}G^{a}+g_{s}f^{abc}\partial_{\mu}\bar{G}^{a}G^{b}g^{c}_{\mu}
+
+-\partial_{\nu}W^{+}_{\mu}\partial_{\nu}W^{-}_{\mu}-M^{2}W^{+}_{\mu}W^{-}_{\mu}
+-\frac{1}{2}\partial_{\nu}Z^{0}_{\mu}\partial_{\nu}Z^{0}_{\mu}-\frac{1}{2c^{2}_{w}}
+M^{2}Z^{0}_{\mu}Z^{0}_{\mu} \\
+
+-\frac{1}{2}\partial_{\mu}A_{\nu}\partial_{\mu}A_{\nu}
+-\frac{1}{2}\partial_{\mu}H\partial_{\mu}H-\frac{1}{2}m^{2}_{h}H^{2}
+-\partial_{\mu}\phi^{+}\partial_{\mu}\phi^{-}-M^{2}\phi^{+}\phi^{-}
+-\frac{1}{2}\partial_{\mu}\phi^{0}\partial_{\mu}\phi^{0}-\frac{1}{2c^{2}_{w}}M\phi^{0}\phi^{0}
+-\beta_{h}[\frac{2M^{2}}{g^{2}}+\frac{2M}{g}H+\frac{1}{2}(H^{2}+\phi^{0}\phi^{0}+2\phi^{+}\phi^{-%%@
+})]+\frac{2M^{4}}{g^{2}}\alpha_{h}
+-igc_{w}[\partial_{\nu}Z^{0}_{\mu}(W^{+}_{\mu}W^{-}_{\nu}-W^{+}_{\nu}W^{-}_{\mu})
+-Z^{0}_{\nu}(W^{+}_{\mu}\partial_{\nu}W^{-}_{\mu}-W^{-}_{\mu}\partial_{\nu}W^{+}_{\mu})
++Z^{0}_{\mu}(W^{+}_{\nu}\partial_{\nu}W^{-}_{\mu} \\ -W^{-}_{\nu}\partial_{\nu}W^{+}_{\mu})]
+-igs_{w}[\partial_{\nu}A_{\mu}(W^{+}_{\mu}W^{-}_{\nu}-W^{+}_{\nu}W^{-}_{\mu})
+-A_{\nu}(W^{+}_{\mu}\partial_{\nu}W^{-}_{\mu} \\ -W^{-}_{\mu}\partial_{\nu}W^{+}_{\mu})
++A_{\mu}(W^{+}_{\nu}\partial_{\nu}W^{-}_{\mu}-W^{-}_{\nu}\partial_{\nu}W^{+}_{\mu})]
+-\frac{1}{2}g^{2}W^{+}_{\mu}W^{-}_{\mu}W^{+}_{\nu}W^{-}_{\nu}+\frac{1}{2}g^{2}
+W^{+}_{\mu}W^{-}_{\nu}W^{+}_{\mu}W^{-}_{\nu}
+ \\ +g^2c^{2}_{w}(Z^{0}_{\mu}W^{+}_{\mu}Z^{0}_{\nu}W^{-}_{\nu}-Z^{0}_{\mu}Z^{0}_{\mu}W^{+}_{\nu}
+W^{-}_{\nu})
++g^2s^{2}_{w}(A_{\mu}W^{+}_{\mu}A_{\nu}W^{-}_{\nu}-A_{\mu}A_{\mu}W^{+}_{\nu}
+W^{-}_{\nu})
++g^{2}s_{w}c_{w}[A_{\mu}Z^{0}_{\nu}(W^{+}_{\mu}W^{-}_{\nu}-W^{+}_{\nu}W^{-}_{\mu})-%%@
+2A_{\mu}Z^{0}_{\mu}W^{+}_{\nu}W^{-}_{\nu}]
+\\ -g\alpha[H^3+H\phi^{0}\phi^{0}+2H\phi^{+}\phi^{-}]
+-\frac{1}{8}g^{2}\alpha_{h}[H^4+(\phi^{0})^{4}+4(\phi^{+}\phi^{-})^{2}+4(\phi^{0})^{2}
+\phi^{+}\phi^{-}+4H^{2}\phi^{+}\phi^{-}+2(\phi^{0})^{2}H^{2}]
+-gMW^{+}_{\mu}W^{-}_{\mu}H-\frac{1}{2}g\frac{M}{c^{2}_{w}}Z^{0}_{\mu}Z^{0}_{\mu}H
+-\frac{1}{2}ig[W^{+}_{\mu}(\phi^{0}\partial_{\mu}\phi^{-}-\phi^{-}\partial_{\mu}\phi^{0})
+-W^{-}_{\mu}(\phi^{0}\partial_{\mu}\phi^{+}-\phi^{+}\partial_{\mu}\phi^{0})]
++\frac{1}{2}g[W^{+}_{\mu}(H\partial_{\mu}\phi^{-}-\phi^{-}\partial_{\mu}H)
+-W^{-}_{\mu}(H\partial_{\mu}\phi^{+}-\phi^{+}\partial_{\mu}H)]
++\frac{1}{2}g\frac{1}{c_{w}}(Z^{0}_{\mu}(H\partial_{\mu}\phi^{0}-\phi^{0}\partial_{\mu}H)
+-ig\frac{s^{2}_{w}}{c_{w}}MZ^{0}_{\mu}(W^{+}_{\mu}\phi^{-}-W^{-}_{\mu}\phi^{+})
++igs_{w}MA_{\mu}(W^{+}_{\mu}\phi^{-}-W^{-}_{\mu}\phi^{+})
+-ig\frac{1-2c^{2}_{w}}{2c_{w}}Z^{0}_{\mu}(\phi^{+}\partial_{\mu}\phi^{-}-\phi^{-%%@
+}\partial_{\mu}\phi^{+})
++igs_{w}A_{\mu}(\phi^{+}\partial_{\mu}\phi^{-}-\phi^{-}\partial_{\mu}\phi^{+})
+-\frac{1}{4}g^{2}W^{+}_{\mu}W^{-}_{\mu}[H^{2}+(\phi^{0})^{2}+2\phi^{+}\phi^{-}]
+-\frac{1}{4}g^{2}\frac{1}{c^{2}_{w}}Z^{0}_{\mu}Z^{0}_{\mu}[H^{2}+(\phi^{0})^{2}+2(2s^{2}_{w}-%%@
+1)^{2}\phi^{+}\phi^{-}]
+-\frac{1}{2}g^{2}\frac{s^{2}_{w}}{c_{w}}Z^{0}_{\mu}\phi^{0}(W^{+}_{\mu}\phi^{-}+W^{-%%@
+}_{\mu}\phi^{+}) \\
+-\frac{1}{2}ig^{2}\frac{s^{2}_{w}}{c_{w}}Z^{0}_{\mu}H(W^{+}_{\mu}\phi^{-}-W^{-}_{\mu}\phi^{+})
++\frac{1}{2}g^{2}s_{w}A_{\mu}\phi^{0}(W^{+}_{\mu}\phi^{-}+W^{-}_{\mu}\phi^{+})
++\frac{1}{2}ig^{2}s_{w}A_{\mu}H(W^{+}_{\mu}\phi^{-}-W^{-}_{\mu}\phi^{+})
+-g^{2}\frac{s_{w}}{c_{w}}(2c^{2}_{w}-1)Z^{0}_{\mu}A_{\mu}\phi^{+}\phi^{-}-%%@
+g^{1}s^{2}_{w}A_{\mu}A_{\mu}\phi^{+}\phi^{-}
+-\bar{e}^{\lambda}(\gamma\partial+m^{\lambda}_{e})e^{\lambda}
+-\bar{\nu}^{\lambda}\gamma\partial\nu^{\lambda}
+-\bar{u}^{\lambda}_{j}(\gamma\partial+m^{\lambda}_{u})u^{\lambda}_{j}
+\\ -\bar{d}^{\lambda}_{j}(\gamma\partial+m^{\lambda}_{d})d^{\lambda}_{j}
++igs_{w}A_{\mu}[-(\bar{e}^{\lambda}\gamma^{\mu}
+e^{\lambda})+\frac{2}{3}(\bar{u}^{\lambda}_{j}\gamma^{\mu} %%@
+u^{\lambda}_{j})-\frac{1}{3}(\bar{d}^{\lambda}_{j}\gamma^{\mu} 
+d^{\lambda}_{j})]
++\frac{ig}{4c_{w}}Z^{0}_{\mu}
+[(\bar{\nu}^{\lambda}\gamma^{\mu}(1+\gamma^{5})\nu^{\lambda})+
+(\bar{e}^{\lambda}\gamma^{\mu}(4s^{2}_{w}-1-\gamma^{5})e^{\lambda})+
+(\bar{u}^{\lambda}_{j}\gamma^{\mu}(\frac{4}{3}s^{2}_{w}-1-\gamma^{5})u^{\lambda}_{j})+
+(\bar{d}^{\lambda}_{j}\gamma^{\mu}(1-\frac{8}{3}s^{2}_{w}-\gamma^{5})d^{\lambda}_{j})]
+\\ +\frac{ig}{2\sqrt{2}}W^{+}_{\mu}[(\bar{\nu}^{\lambda}\gamma^{\mu}(1+\gamma^{5})e^{\lambda})
++(\bar{u}^{\lambda}_{j}\gamma^{\mu}(1+\gamma^{5})C_{\lambda\kappa}d^{\kappa}_{j})]
++\frac{ig}{2\sqrt{2}}W^{-}_{\mu}[(\bar{e}^{\lambda}\gamma^{\mu}(1+\gamma^{5})\nu^{\lambda})
+\\ +(\bar{d}^{\kappa}_{j}C^{\dagger}_{\lambda\kappa}\gamma^{\mu}(1+\gamma^{5})u^{\lambda}_{j})]
++\frac{ig}{2\sqrt{2}}\frac{m^{\lambda}_{e}}{M}
+[-\phi^{+}(\bar{\nu}^{\lambda}(1-\gamma^{5})e^{\lambda})
++\phi^{-}(\bar{e}^{\lambda}(1+\gamma^{5})\nu^{\lambda})]
+-\frac{g}{2}\frac{m^{\lambda}_{e}}{M}[H(\bar{e}^{\lambda}e^{\lambda})
++i\phi^{0}(\bar{e}^{\lambda}\gamma^{5}e^{\lambda})]
++\frac{ig}{2M\sqrt{2}}\phi^{+}
+[-m^{\kappa}_{d}(\bar{u}^{\lambda}_{j}C_{\lambda\kappa}(1-\gamma^{5})d^{\kappa}_{j})
++m^{\lambda}_{u}(\bar{u}^{\lambda}_{j}C_{\lambda\kappa}(1+\gamma^{5})d^{\kappa}_{j}]
+\\ +\frac{ig}{2M\sqrt{2}}\phi^{-}
+[m^{\lambda}_{d}(\bar{d}^{\lambda}_{j}C^{\dagger}_{\lambda\kappa}(1+\gamma^{5})u^{\kappa}_{j})
+-m^{\kappa}_{u}(\bar{d}^{\lambda}_{j}C^{\dagger}_{\lambda\kappa}(1-\gamma^{5})u^{\kappa}_{j}]
+-\frac{g}{2}\frac{m^{\lambda}_{u}}{M}H(\bar{u}^{\lambda}_{j}u^{\lambda}_{j})
+\\ -\frac{g}{2}\frac{m^{\lambda}_{d}}{M}H(\bar{d}^{\lambda}_{j}d^{\lambda}_{j})
++\frac{ig}{2}\frac{m^{\lambda}_{u}}{M}\phi^{0}(\bar{u}^{\lambda}_{j}\gamma^{5}u^{\lambda}_{j})
+-\frac{ig}{2}\frac{m^{\lambda}_{d}}{M}\phi^{0}(\bar{d}^{\lambda}_{j}\gamma^{5}d^{\lambda}_{j})
+\\ +\bar{X}^{+}(\partial^{2}-M^{2})X^{+}+\bar{X}^{-}(\partial^{2}-M^{2})X^{-}
++\bar{X}^{0}(\partial^{2}-\frac{M^{2}}{c^{2}_{w}})X^{0}+\bar{Y}\partial^{2}Y
++igc_{w}W^{+}_{\mu}(\partial_{\mu}\bar{X}^{0}X^{-}-\partial_{\mu}\bar{X}^{+}X^{0})
+\\ +igs_{w}W^{+}_{\mu}(\partial_{\mu}\bar{Y}X^{-}-\partial_{\mu}\bar{X}^{+}Y)
++igc_{w}W^{-}_{\mu}(\partial_{\mu}\bar{X}^{-}X^{0}-\partial_{\mu}\bar{X}^{0}X^{+})
++igs_{w}W^{-}_{\mu}(\partial_{\mu}\bar{X}^{-}Y-\partial_{\mu}\bar{Y}X^{+})
++igc_{w}Z^{0}_{\mu}(\partial_{\mu}\bar{X}^{+}X^{+}-\partial_{\mu}\bar{X}^{-}X^{-})
++igs_{w}A_{\mu}(\partial_{\mu}\bar{X}^{+}X^{+}-\partial_{\mu}\bar{X}^{-}X^{-})
+\\ -\frac{1}{2}gM[\bar{X}^{+}X^{+}H+\bar{X}^{-}X^{-}H+\frac{1}{c^{2}_{w}}\bar{X}^{0}X^{0}H]
++\frac{1-2c^{2}_{w}}{2c_{w}}igM[\bar{X}^{+}X^{0}\phi^{+}-\bar{X}^{-}X^{0}\phi^{-}]
++\frac{1}{2c_{w}}igM[\bar{X}^{0}X^{-}\phi^{+}-\bar{X}^{0}X^{+}\phi^{-}]
++igMs_{w}[\bar{X}^{0}X^{-}\phi^{+}-\bar{X}^{0}X^{+}\phi^{-}]
++\frac{1}{2}igM[\bar{X}^{+}X^{+}\phi^{0}-\bar{X}^{-}X^{-}\phi^{0}]
+$$
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+                    <div class="image-block">
+                        <img class="image-container lazy-load" data-src="media/622_2_Image.png" onclick="openModal(this)" />
+                    </div>
+
+            </div>
+        </div>
+
+					<div class="math-block prevent-select">
+						<div class="block-equation" data-katex="$$|x| = x$$">
+							<span>
+								$$|x| = x$$
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+				</section>
+
+				<section class="text-container-section" id="7549ac60-6ac9-4c17-a02d-5079240cf301">
+
+                    <div>
+                        <h1 class="heading-1">This is now toggle heading</h1>
+                    </div>
+
 				</section>
 
 				<div class="body-ending-buffer" id="pageBottomScrollRef">
@@ -9826,11 +10116,7 @@ classDiagram
                 let contentElement = toggleElement.nextElementSibling;
                 contentElement.classList.toggle("collapsible-hidden-visible");
                 toggleElement.classList.toggle("collapsible-hidden-open");
-                if (contentElement.style.display === "block") {
-                    contentElement.style.display = "none";
-                } else {
-                    contentElement.style.display = "block";
-                }
+                toggleElement.getElementsByTagName("svg")[0].classList.toggle("toggle-icon-rotate");
             }
 		</script>
 
