@@ -2087,6 +2087,51 @@
             }
 
             /* ################################################################################ 
+                                        CSS for Misc Elements
+            ################################################################################
+            */
+
+            .unordered-list-container {
+                background-color: coral;
+                width: 99%;
+                margin: auto;
+            }
+
+            li {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+
+            .ordered-list-container {
+                background-color: cornflowerblue;
+                width: 99%;
+                margin: auto;
+            }
+
+            .todo-list-container {
+                background-color: bisque;
+                width: 99%;
+                margin: auto;
+                margin-top: 40px;
+                display: flex;
+                flex-direction: column;
+                gap: 3px;
+            }
+
+            .todo-list-item {
+                height: 45px;
+                width: 100%;
+                background-color: #551a8b;
+                color: whitesmoke;
+                display: flex;
+                gap: 17px;
+                align-items: center;
+                padding-left: 15px;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 18px;
+            }
+
+            /* ################################################################################ 
                                         Media Queries for Added Responsiveness
             ################################################################################
             */
@@ -2564,7 +2609,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="5dff188a-c21b-4d7d-bbb0-7fbd27a2e839">
+				<section class="text-container-section" id="fa2f06d7-5f73-4cc5-bdbe-c224f9ee9c0e">
 
                     <div>
                         <h1 class="heading-1">Geometry of Newtonian gravity</h1>
@@ -2641,7 +2686,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="649b8b46-ec29-40b3-a215-9d88f99a9e3b">
+				<section class="text-container-section" id="0f155bb4-470c-4514-9ec8-75a832a775e2">
 
                     <div>
                         <h2 class="heading-2">Einstein’s equations</h2>
@@ -2763,7 +2808,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="e8e92dcb-2ce5-4e73-b8e6-291656f91c02">
+				<section class="text-container-section" id="e01e67bf-9ff0-4e94-932f-39ec6da13bd3">
 
                     <div>
                         <h3 class="heading-3">Einstein Field Equations</h3>
@@ -2785,7 +2830,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="70e17909-cdda-443e-bd1b-2076a2d62501">
+				<section class="text-container-section" id="f023b8e2-9c89-4719-b77f-2085380207de">
 
                     <div>
                         <h3 class="heading-3">Mathematical Form</h3>
@@ -2913,7 +2958,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="e7af6c4c-219b-42ec-a58f-6213d4ffe04c">
+				<section class="text-container-section" id="b2e33820-a13d-4efb-b487-3798ddbc0ab0">
 
                     <div>
                         <h3 class="heading-3">Sign convention</h3>
@@ -2986,11 +3031,17 @@
 
 				</section>
 
-				<section class="text-container-section" id="94dc99e5-ceeb-4201-a2d2-3ecdb927067f">
+				<section class="text-container-section" id="6c070a93-abea-49b4-bcc0-c0fb5070c1b1">
 
                     <div>
                         <h1 class="heading-1">The Cosmological Constant</h1>
                     </div>
+
+					<div class="hyperlink-container">
+						<a class="hyperlink" target="_blank" href="https://en.wikipedia.org/wiki/Cosmological_constant">
+							<img width="24px" height="24px" src="data:image/png;base64,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"> A simple web link 
+						</a>
+					</div>
 
                     <div>
                         <p class="text-paragraph">In  <a href="https://en.wikipedia.org/wiki/Physical_cosmology" class="inline-link" target="_blank">cosmology</a>, the  cosmological constant  (usually denoted by the Greek capital letter  <a href="https://en.wikipedia.org/wiki/Lambda" class="inline-link" target="_blank">lambda</a>: Λ), alternatively called  Einstein's cosmological constant , is the constant coefficient of a term that  <a href="https://en.wikipedia.org/wiki/Albert_Einstein" class="inline-link" target="_blank">Albert Einstein</a> temporarily added to his  <a href="https://en.wikipedia.org/wiki/Field_equations" class="inline-link" target="_blank">field equations</a> of  <a href="https://en.wikipedia.org/wiki/General_relativity" class="inline-link" target="_blank">general relativity</a>. He later removed it. Much later it was revived and reinterpreted as the energy density of space, or  <a href="https://en.wikipedia.org/wiki/Vacuum_energy" class="inline-link" target="_blank">vacuum energy</a>, that arises in  <a href="https://en.wikipedia.org/wiki/Quantum_mechanics" class="inline-link" target="_blank">quantum mechanics</a>. It is closely associated with the concept of  <a href="https://en.wikipedia.org/wiki/Dark_energy" class="inline-link" target="_blank">dark energy</a>. <a href="https://en.wikipedia.org/wiki/Cosmological_constant#cite_note-CC_Definition-1" class="inline-link" target="_blank">[1]</a></p>
@@ -3022,7 +3073,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="50450e84-201c-4353-b163-9860a3759f7d">
+				<section class="text-container-section" id="ee59b5f5-5d64-47df-83d8-f03d2d85d2b4">
 
                     <div>
                         <h2 class="heading-2">History</h2>
@@ -3046,11 +3097,67 @@
 
 				</section>
 
-				<section class="text-container-section" id="e8eabd83-41f0-4c68-b9e2-da57f9484f4e">
+				<section class="text-container-section" id="8933c258-c244-4a1d-a52e-7bb4ea434918">
 
                     <div>
                         <h3 class="heading-3">Sequence of events 1915–1998</h3>
                     </div>
+
+        <div class="unordered-list-container">
+
+            <ul>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">In 1915, Einstein publishes his equations of  <a href="https://en.wikipedia.org/wiki/General_relativity" class="inline-link" target="_blank">general relativity</a>, without a cosmological constant Λ. </p>
+                    </div>
+
+                        </li>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">In 1917, Einstein adds the parameter Λ to his equations when he realizes that his theory implies a dynamic universe for which space is function of time. He then gives this constant a value that makes his Universe model remain static and eternal (Einstein static universe). </p>
+                    </div>
+
+                        </li>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">In 1922, the Russian physicist  <a href="https://en.wikipedia.org/wiki/Alexander_Friedmann" class="inline-link" target="_blank">Alexander Friedmann</a> mathematically shows that Einstein's equations (whatever Λ) remain valid in a dynamic universe. </p>
+                    </div>
+
+                        </li>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">In 1927, the Belgian astrophysicist  <a href="https://en.wikipedia.org/wiki/Georges_Lema%C3%AEtre" class="inline-link" target="_blank">Georges Lemaître</a> shows that the Universe is expanding by combining general relativity with astronomical observations, those of Hubble in particular. </p>
+                    </div>
+
+                        </li>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">In 1931, Einstein accepts the theory of an expanding universe and proposes, in 1932 with the Dutch physicist and astronomer  <a href="https://en.wikipedia.org/wiki/Willem_de_Sitter" class="inline-link" target="_blank">Willem de Sitter</a>, a model of a continuously expanding Universe with zero cosmological constant (Einstein–de Sitter spacetime). </p>
+                    </div>
+
+                        </li>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">In 1998, two teams of astrophysicists, one led by  <a href="https://en.wikipedia.org/wiki/Saul_Perlmutter" class="inline-link" target="_blank">Saul Perlmutter</a>, the other led by  <a href="https://en.wikipedia.org/wiki/Brian_Schmidt" class="inline-link" target="_blank">Brian Schmidt</a> and  <a href="https://en.wikipedia.org/wiki/Adam_Riess" class="inline-link" target="_blank">Adam Riess</a>, carried out measurements on distant supernovae which showed that the speed of galaxies' recession in relation to the  <a href="https://en.wikipedia.org/wiki/Milky_Way" class="inline-link" target="_blank">Milky Way</a> increases over time. The universe is in accelerated expansion, which requires having a strictly positive Λ. The universe would contain a mysterious  <a href="https://en.wikipedia.org/wiki/Dark_energy" class="inline-link" target="_blank">dark energy</a> producing a repulsive force that counterbalances the gravitational braking produced by the matter contained in the universe (see  <a href="https://en.wikipedia.org/wiki/Standard_cosmological_model" class="inline-link" target="_blank">Standard cosmological model</a>). </p>
+                    </div>
+
+                        </li>
+
+            </ul>
+
+        </div>
 
                     <div>
                         <p class="text-paragraph">For this work,  <a href="https://en.wikipedia.org/wiki/Saul_Perlmutter" class="inline-link" target="_blank">Perlmutter</a>,  <a href="https://en.wikipedia.org/wiki/Brian_Schmidt" class="inline-link" target="_blank">Schmidt</a>, and  <a href="https://en.wikipedia.org/wiki/Adam_Riess" class="inline-link" target="_blank">Riess</a> jointly received the Nobel Prize in physics in 2011. </p>
@@ -3058,7 +3165,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="c90cc317-202d-44d3-a3af-66664c2e52ac">
+				<section class="text-container-section" id="441f88c3-6533-4ee1-a7b0-2386158e17fd">
 
                     <div>
                         <h2 class="heading-2">Equation</h2>
@@ -3131,7 +3238,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="d6819472-8d61-446e-8db1-c3917c261ab9">
+				<section class="text-container-section" id="73e2616c-04b8-4794-aecd-d948bef47158">
 
                     <div>
                         <h3 class="heading-3">ΩΛ (Omega sub Lambda)</h3>
@@ -3147,7 +3254,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="38064dbc-8708-4923-b2c9-9f22c5b1cc0e">
+				<section class="text-container-section" id="327e19ab-271c-43e0-81bd-91d551a428b8">
 
                     <div>
                         <h3 class="heading-3">Equation of state</h3>
@@ -3165,7 +3272,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="70c0ab7d-dcb2-45dd-a5aa-476bd7cefe3e">
+				<section class="text-container-section" id="7f24c6a1-1477-49d1-aff2-8bf10e31a7c2">
 
                     <div>
                         <h3 class="heading-3">Positive value</h3>
@@ -3192,7 +3299,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="a6933e80-c9eb-4a6a-8164-5e99f7d779a7">
+				<section class="text-container-section" id="44060cba-6512-427d-a623-73c033d38260">
 
                     <div>
                         <h2 class="heading-2">Predictions</h2>
@@ -3200,7 +3307,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="f76774cf-2d64-4792-b704-3c350c04cd53">
+				<section class="text-container-section" id="753b86bb-3a7b-47a0-b70e-539b196f5f43">
 
                     <div>
                         <h3 class="heading-3">Quantum field theory</h3>
@@ -3257,7 +3364,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="341db357-41b8-4532-af3b-12020a2112b3">
+				<section class="text-container-section" id="ec368930-983d-408f-9d73-898dd057c150">
 
                     <div>
                         <h3 class="heading-3">Anthropic principle</h3>
@@ -3277,7 +3384,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="674b23f3-e604-48b6-bd69-fc7cb5c4d383">
+				<section class="text-container-section" id="fefd6ff3-0d66-4e1e-bef8-3a56641e7e74">
 
                     <div>
                         <h3 class="heading-3">Failure to detect dark energy</h3>
@@ -3290,7 +3397,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="50d89f7e-44ac-46aa-b601-cec53f3289b5">
+				<section class="text-container-section" id="0030f512-0e2a-4856-8764-7536c0907eb7">
 
                     <div>
                         <h2 class="heading-2">Einstein–Maxwell equations</h2>
@@ -3394,7 +3501,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="18a6959e-7331-49fd-b887-2283831c2ae3">
+				<section class="text-container-section" id="258cf9dc-933c-4aed-a23b-afccdf7dde07">
 
                     <div>
                         <h2 class="heading-2">The linearized EFE</h2>
@@ -3406,7 +3513,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="ed4fb902-f83b-452f-bf18-a9c7c9b047d6">
+				<section class="text-container-section" id="bcfed23d-5ded-4e11-b6da-e77d49cbe55d">
 
                     <div>
                         <h2 class="heading-2">Polynomial form</h2>
@@ -3472,11 +3579,17 @@
 
 				</section>
 
-				<section class="text-container-section" id="58a421d8-f43f-40f6-ad2e-a886f43a6d97">
+				<section class="text-container-section" id="536f79d7-ae93-44f5-8024-4a8c44723f6c">
 
                     <div>
                         <h1 class="heading-1">Higgs Mechanism</h1>
                     </div>
+
+					<div class="hyperlink-container">
+						<a class="hyperlink" target="_blank" href="https://en.wikipedia.org/wiki/Higgs_mechanism">
+							<img width="24px" height="24px" src="data:image/png;base64,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"> 
+						</a>
+					</div>
 
                     <div>
                         <p class="text-paragraph">In the  <a href="https://en.wikipedia.org/wiki/Standard_Model" class="inline-link" target="_blank">Standard Model</a> of  <a href="https://en.wikipedia.org/wiki/Particle_physics" class="inline-link" target="_blank">particle physics</a>, the  Higgs mechanism  is essential to explain the  <a href="https://en.wikipedia.org/wiki/Mass_generation" class="inline-link" target="_blank">generation mechanism</a> of the property " <a href="https://en.wikipedia.org/wiki/Mass" class="inline-link" target="_blank">mass</a>" for  <a href="https://en.wikipedia.org/wiki/Gauge_boson" class="inline-link" target="_blank">gauge bosons</a>. Without the Higgs mechanism, all  <a href="https://en.wikipedia.org/wiki/Boson" class="inline-link" target="_blank">bosons</a> (one of the two classes of particles, the other being  <a href="https://en.wikipedia.org/wiki/Fermion" class="inline-link" target="_blank">fermions</a>) would be considered  <a href="https://en.wikipedia.org/wiki/Massless_particle" class="inline-link" target="_blank">massless</a>, but measurements show that the  <a href="https://en.wikipedia.org/wiki/W_boson" class="inline-link" target="_blank">W+, W−</a>, and  <a href="https://en.wikipedia.org/wiki/Z_boson" class="inline-link" target="_blank">Z0 bosons</a> actually have relatively large masses of around 80 GeV/ c 2. The Higgs field resolves this conundrum. The simplest description of the mechanism adds a  <a href="https://en.wikipedia.org/wiki/Quantum_field" class="inline-link" target="_blank">quantum field</a> (the  <a href="https://en.wikipedia.org/wiki/Higgs_boson" class="inline-link" target="_blank">Higgs field</a>) that permeates all space to the Standard Model. Below some extremely high temperature, the field causes  <a href="https://en.wikipedia.org/wiki/Spontaneous_symmetry_breaking" class="inline-link" target="_blank">spontaneous symmetry breaking</a> during interactions. The breaking of symmetry triggers the Higgs mechanism, causing the bosons it interacts with to have mass. In the Standard Model, the phrase "Higgs mechanism" refers specifically to the generation of masses for the  <a href="https://en.wikipedia.org/wiki/W_and_Z_bosons" class="inline-link" target="_blank">W±, and Z</a>  <a href="https://en.wikipedia.org/wiki/Weak_force" class="inline-link" target="_blank">weak</a> gauge bosons through  <a href="https://en.wikipedia.org/wiki/Electroweak_interaction" class="inline-link" target="_blank">electroweak</a> symmetry breaking. <a href="https://en.wikipedia.org/wiki/Higgs_mechanism#cite_note-PDG-1" class="inline-link" target="_blank">[1]</a> The  <a href="https://en.wikipedia.org/wiki/Large_Hadron_Collider" class="inline-link" target="_blank">Large Hadron Collider</a> at  <a href="https://en.wikipedia.org/wiki/CERN" class="inline-link" target="_blank">CERN</a> announced results consistent with the Higgs particle on 14 March 2013, making it extremely likely that the field, or one like it, exists, and explaining how the Higgs mechanism takes place in nature. The view of the Higgs mechanism as involving spontaneous symmetry breaking of a gauge symmetry is technically incorrect since by  <a href="https://en.wikipedia.org/wiki/Elitzur%27s_theorem" class="inline-link" target="_blank">Elitzur's theorem</a> gauge symmetries can never be spontaneously broken. Rather, the  <a href="https://en.wikipedia.org/wiki/J%C3%BCrg_Fr%C3%B6hlich" class="inline-link" target="_blank">Fröhlich</a>–Morchio–Strocchi mechanism reformulates the Higgs mechanism in an entirely gauge invariant way, generally leading to the same results. <a href="https://en.wikipedia.org/wiki/Higgs_mechanism#cite_note-2" class="inline-link" target="_blank">[2]</a></p>
@@ -3556,7 +3669,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="401907ea-f220-47c2-a6dd-da9a8b780753">
+				<section class="text-container-section" id="fd80190a-3300-4a51-a855-148df3b69c16">
 
                     <div>
                         <h2 class="heading-2">Standard Model</h2>
@@ -3587,7 +3700,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="940e210d-a69d-449b-a137-1840ba15f42f">
+				<section class="text-container-section" id="b831558c-5aa8-4715-afdb-598765667b7e">
 
                     <div>
                         <h3 class="heading-3">Structure of the Higgs field</h3>
@@ -3607,7 +3720,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="4f0f4b1b-54a0-4fde-832a-762d5f8acea1">
+				<section class="text-container-section" id="42ba5d96-10ee-43d5-8786-0771387314cf">
 
                     <div>
                         <h3 class="heading-3">The photon as the part that remains massless</h3>
@@ -3676,7 +3789,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="e9a2ecdc-c205-4fa2-a75a-b24166948af6">
+				<section class="text-container-section" id="3ab295da-df30-43a3-806f-40bfc84c8972">
 
                     <div>
                         <h3 class="heading-3">Consequences for fermions</h3>
@@ -3755,7 +3868,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="d221194c-90b1-4af6-8908-da0fbfaf952b">
+				<section class="text-container-section" id="91c6875c-7f59-46ab-99e0-a0b3b0482efb">
 
                     <div>
                         <h2 class="heading-2">Examples</h2>
@@ -3767,7 +3880,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="d36cfbe9-31db-4ed3-ada5-cc2fc47f326d">
+				<section class="text-container-section" id="0a5084c9-f365-4eb7-b363-7a3a90138281">
 
                     <div>
                         <h3 class="heading-3">Landau model</h3>
@@ -3974,7 +4087,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="70aa223a-1ef3-473d-b3af-a250954940ee">
+				<section class="text-container-section" id="ca5c4d9f-6957-4af1-a4b1-2dcff3c776f1">
 
                     <div>
                         <h3 class="heading-3">Abelian Higgs mechanism</h3>
@@ -4086,7 +4199,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="f651bf0a-87e2-47ee-a486-bb02ecd92217">
+				<section class="text-container-section" id="da00f6dc-9553-4b58-838d-b5ffbc4c81da">
 
                     <div>
                         <h3 class="heading-3">Alternate form of the Abelian Higgs model action</h3>
@@ -4225,7 +4338,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="27088bdc-b092-4ea5-93dc-11d096b7682c">
+				<section class="text-container-section" id="b1b01992-5bb8-410a-9c4b-584260df9187">
 
                     <div>
                         <h3 class="heading-3">Lagrangian in explicit symmetry broken form</h3>
@@ -4605,7 +4718,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="caef3c26-88f9-46ea-9003-5a181b6f461f">
+				<section class="text-container-section" id="95861bd4-c7d5-41a1-9231-dd56abea3af2">
 
                     <div>
                         <h3 class="heading-3">Spontaneous symmetry breaking and trivializations</h3>
@@ -4703,7 +4816,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="e9671ef3-5b4c-473c-b6c2-0440101dbf34">
+				<section class="text-container-section" id="ebe6cfca-d960-44d1-9ac3-96f60135ef4c">
 
                     <div>
                         <h3 class="heading-3">Non-Abelian Higgs mechanism</h3>
@@ -5063,7 +5176,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="e31a4422-383e-4eb5-b193-2b9c163682b8">
+				<section class="text-container-section" id="d4088314-857f-4c7e-8743-844bfc5d9941">
 
                     <div>
                         <h3 class="heading-3">Affine Higgs mechanism</h3>
@@ -5368,7 +5481,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="4bbd445c-3e5b-43a3-9f5a-0a2d10ad4ea4">
+				<section class="text-container-section" id="93d34cbf-72c2-4e25-ba89-4f597226aa03">
 
                     <div>
                         <h1 class="heading-1">Higgs Boson</h1>
@@ -5396,7 +5509,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="85e9c560-da8b-4f99-8409-0f34618772e7">
+				<section class="text-container-section" id="615a819d-8d6d-4c72-99f9-b0f3ab5c3c09">
 
                     <div>
                         <h2 class="heading-2">Technical aspects and mathematical formulation</h2>
@@ -5973,7 +6086,7 @@ $$
 
 				</section>
 
-				<section class="text-container-section" id="0001131c-ca41-400c-b4a5-e2849d03857f">
+				<section class="text-container-section" id="b77a2751-525e-42a2-a449-7b5089e75039">
 
                     <div>
                         <h1 class="heading-1">The Mathematical Foundations of Standard Model</h1>
@@ -6043,7 +6156,7 @@ $$
 
 				</section>
 
-				<section class="text-container-section" id="8918f286-ffad-4831-80e4-bacf9c5ef85c">
+				<section class="text-container-section" id="7c1a15a5-0bdd-4100-a67c-3d36cb80ded5">
 
                     <div>
                         <h3 class="heading-3">Free fields</h3>
@@ -6052,6 +6165,90 @@ $$
                     <div>
                         <p class="text-paragraph">Under the usual free/interaction decomposition, which is suitable for low energies, the free fields obey the following equations: </p>
                     </div>
+
+        <div class="unordered-list-container">
+
+            <ul>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">The fermion field  ψ  satisfies the  <a href="https://en.wikipedia.org/wiki/Dirac_equation" class="inline-link" target="_blank">Dirac equation</a>;   
+                        <span class="inline-math" data-katex=" ${\displaystyle (i\hbar \gamma ^{\mu }\partial _{\mu }-m_{\rm {f}}c)\psi _{\rm {f}}=0}$ ">
+                            <span class="inline-math-inner"> ${\displaystyle (i\hbar \gamma ^{\mu }\partial _{\mu }-m_{\rm {f}}c)\psi _{\rm {f}}=0}$  
+                                <span class="inline-math-popup">
+                                    <span class="inline-math-copy-text"></span>
+                                    <svg class="copy-inline-math-clipboard-svg" onclick="copyInlineMathToClipboard(this.parentElement.parentElement.parentElement)" viewBox="0 0 24 24">
+                                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                    </svg>
+                                </span>
+                            </span>
+                        </span>
+ for each type  
+                        <span class="inline-math" data-katex=" ${\displaystyle f}$ ">
+                            <span class="inline-math-inner"> ${\displaystyle f}$  
+                                <span class="inline-math-popup">
+                                    <span class="inline-math-copy-text"></span>
+                                    <svg class="copy-inline-math-clipboard-svg" onclick="copyInlineMathToClipboard(this.parentElement.parentElement.parentElement)" viewBox="0 0 24 24">
+                                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                    </svg>
+                                </span>
+                            </span>
+                        </span>
+ of fermion. </p>
+                    </div>
+
+                        </li>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">The photon field  A  satisfies the  <a href="https://en.wikipedia.org/wiki/Wave_equation" class="inline-link" target="_blank">wave equation</a>  
+                        <span class="inline-math" data-katex=" ${\displaystyle \partial _{\mu }\partial ^{\mu }A^{\nu }=0}$ ">
+                            <span class="inline-math-inner"> ${\displaystyle \partial _{\mu }\partial ^{\mu }A^{\nu }=0}$  
+                                <span class="inline-math-popup">
+                                    <span class="inline-math-copy-text"></span>
+                                    <svg class="copy-inline-math-clipboard-svg" onclick="copyInlineMathToClipboard(this.parentElement.parentElement.parentElement)" viewBox="0 0 24 24">
+                                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                    </svg>
+                                </span>
+                            </span>
+                        </span>
+. </p>
+                    </div>
+
+                        </li>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">The Higgs field  φ  satisfies the  <a href="https://en.wikipedia.org/wiki/Klein%E2%80%93Gordon_equation" class="inline-link" target="_blank">Klein–Gordon equation</a>. </p>
+                    </div>
+
+                        </li>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">The weak interaction fields  
+                        <span class="inline-math" data-katex=" $Z, W^{\pm}$ ">
+                            <span class="inline-math-inner"> $Z, W^{\pm}$  
+                                <span class="inline-math-popup">
+                                    <span class="inline-math-copy-text"></span>
+                                    <svg class="copy-inline-math-clipboard-svg" onclick="copyInlineMathToClipboard(this.parentElement.parentElement.parentElement)" viewBox="0 0 24 24">
+                                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                    </svg>
+                                </span>
+                            </span>
+                        </span>
+ satisfy the  <a href="https://en.wikipedia.org/wiki/Proca_equation" class="inline-link" target="_blank">Proca equation</a>. </p>
+                    </div>
+
+                        </li>
+
+            </ul>
+
+        </div>
 
                     <div>
                         <p class="text-paragraph">These equations can be solved exactly. One usually does so by considering first solutions that are periodic with some period  L  along each spatial axis; later taking the limit:  L  → ∞ will lift this periodicity restriction. </p>
@@ -6122,7 +6319,7 @@ $$
 
 				</section>
 
-				<section class="text-container-section" id="45b87cb8-a78f-4cb5-9a8c-f7ea2690b85e">
+				<section class="text-container-section" id="84ed9f18-ffbe-4c65-b9fe-295af1bd84c4">
 
                     <div>
                         <h1 class="heading-1">A bunch of equations</h1>
@@ -6249,7 +6446,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="47a259d8-175f-4384-93b7-efde0fd0b45c">
+				<section class="text-container-section" id="50fb2f19-00fe-49c7-9344-28cb2e0232e8">
 
                     <div>
                         <h1 class="heading-1">A bunch of repls and tweets</h1>
@@ -6302,7 +6499,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="21f7cc46-bdbb-48de-96bc-fe35c8efded3">
+				<section class="text-container-section" id="57f2c611-8303-4cc7-b849-edfd6e423c9a">
 
                     <div>
                         <h1 class="heading-1">A bunch of other widgets</h1>
@@ -6331,7 +6528,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="d2966a47-e564-4332-a694-5a0b043e9664">
+				<section class="text-container-section" id="1768f31f-2562-4816-9c9e-1f5921d0089e">
 
                     <div>
                         <h1 class="heading-1">Code Snippets</h1>
@@ -6339,7 +6536,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="29631f2f-380c-4c9d-859c-ad729c2b171a">
+				<section class="text-container-section" id="5b476a38-93d9-4c8d-a537-e14434184efe">
 
                     <div>
                         <h2 class="heading-2">Python Snippets</h2>
@@ -6503,7 +6700,7 @@ for epoch in range(epochs):
 
 				</section>
 
-				<section class="text-container-section" id="409b85f2-a284-4999-b79c-75f2edd7a180">
+				<section class="text-container-section" id="bb28ac08-2bbd-442a-b070-b16c0091d74b">
 
                     <div>
                         <h2 class="heading-2">C++ Snippets</h2>
@@ -6604,7 +6801,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="b0ece6d8-e061-4372-a531-12b92bd4696f">
+				<section class="text-container-section" id="995cf260-f40e-4f39-a182-234fe4e2b365">
 
                     <div>
                         <h2 class="heading-2">Javascript Snippets</h2>
@@ -6687,7 +6884,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="fb62ea99-b52e-4e01-a3f2-0644e28393e9">
+				<section class="text-container-section" id="b1f4ecbc-9151-4325-a7da-d51e5b3799f8">
 
                     <div>
                         <h2 class="heading-2">HTML Snippets</h2>
@@ -6743,7 +6940,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="2ae198cc-7bf4-417c-b38f-332f91115786">
+				<section class="text-container-section" id="23be9144-7004-465d-97e8-add27b298489">
 
                     <div>
                         <h2 class="heading-2">CSS Snippets</h2>
@@ -6891,7 +7088,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="89431bb5-d5a3-44e1-9cbf-148d9193bfe6">
+				<section class="text-container-section" id="83d9477a-e3f6-4678-8ca1-3dc9b2ad9799">
 
                     <div>
                         <h1 class="heading-1">Table, File and Audio Widgets</h1>
@@ -7259,7 +7456,7 @@ With equations like
 
 				</section>
 
-				<section class="text-container-section" id="bb5a9731-7810-4ae9-8594-e25859daeb8d">
+				<section class="text-container-section" id="7936e83b-5f3a-41dc-85b5-8ddac4a40964">
 
                     <div>
                         <h3 class="heading-3">Here is a block mention from another page</h3>
@@ -7269,9 +7466,268 @@ With equations like
                         <p class="text-paragraph">  </p>
                     </div>
 
+        <div class="todo-list-container">
+
+            <div class="todo-list-item">
+                <input type="checkbox"  onclick="return false;" checked />
+                <span class="todo-list-item-text">
+                    
+                    <div>
+                        <p class="text-paragraph">Task 1 of ToDoList </p>
+                    </div>
+
+                </span>
+            </div>
+
+            <div class="todo-list-item">
+                <input type="checkbox"  onclick="return false;" />
+                <span class="todo-list-item-text">
+                    
+                    <div>
+                        <p class="text-paragraph">Task 2 of ToDo List </p>
+                    </div>
+
+                </span>
+            </div>
+
+            <div class="todo-list-item">
+                <input type="checkbox"  onclick="return false;" checked />
+                <span class="todo-list-item-text">
+                    
+                    <div>
+                        <p class="text-paragraph">Task 3 </p>
+                    </div>
+
+                </span>
+            </div>
+
+            <div class="todo-list-item">
+                <input type="checkbox"  onclick="return false;" />
+                <span class="todo-list-item-text">
+                    
+                    <div>
+                        <p class="text-paragraph">Task 4 </p>
+                    </div>
+
+                </span>
+            </div>
+
+            <div class="todo-list-item">
+                <input type="checkbox"  onclick="return false;" />
+                <span class="todo-list-item-text">
+                    
+                    <div>
+                        <p class="text-paragraph">Task 5 </p>
+                    </div>
+
+                </span>
+            </div>
+
+        </div>
+
+        <div class="unordered-list-container">
+
+            <ul>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">List Item 1 and is imp  </p>
+                    </div>
+
+                        </li>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">List Item 2 </p>
+                    </div>
+
+                        </li>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">sdf;sdfksldjfklwjekfjklewjkru483r783rehfrjewhfjwehfjkewhjkfhwjkehfjkwhejkfhjefhjkewjhfklwejflwjkelfkj;wlefkowe8f9wew0efjwekjfklwefjwklejfklwejfklwejfkl </p>
+                    </div>
+
+                        </li>
+
+            <ul>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">Sub List Item 1 </p>
+                    </div>
+
+                        </li>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">Sub List Item 2 </p>
+                    </div>
+
+                        </li>
+
+            <ul>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">Sub Sub List Item 1 </p>
+                    </div>
+
+                        </li>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">Sub Sub List Item 2 </p>
+                    </div>
+
+                        </li>
+
+            <ul>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">Sub Sub Sub List Item 1 </p>
+                    </div>
+
+                        </li>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">Sub Sub Sub List Item 2 </p>
+                    </div>
+
+                        </li>
+
+            </ul>
+
+            </ul>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">Sub List Item 3 </p>
+                    </div>
+
+                        </li>
+
+            </ul>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">List Item 4 </p>
+                    </div>
+
+                        </li>
+
+            </ul>
+
+        </div>
+
+        <div class="ordered-list-container">
+
+            <ol>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">Num List Item 1 </p>
+                    </div>
+
+                        </li>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">Num List Item 2 </p>
+                    </div>
+
+                        </li>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">sdsadskajdksajdlksajlkdjlkjkl3jkl3j24l 3kl4jkl3j4lk32j43 4  34 3 4jl3jlkjfjsdklfjskdlf sdjfksldjfklsdjfsjdfkl sdjfklsdjfksdjfklsdjfsdjkfjsdkl        kjhreutroeutr7t8r7   fdklgjfkldjgklfdjgkjfdklgjfkgjkfdj     fjdgkfdjglfdkjgklfdjgklfdjgkljfdklgjkfldjgkjajlewaurieuioweuriweurioweur    fjgkfldjgklfdjlgkjfdklgjfdkljgklfdjgklfdjglkfjglkfjdlgkjfdlkgjfkldjgfkld     fjgkfldjgklfdjgkj4iturieouriejgrkegjrekgureot748uigjklfjg    jfdkjfkdlgjkfdjgkfdjgklfdjgirlejgklregjrklegjreguirejgrkejgrkegjiregj </p>
+                    </div>
+
+                        </li>
+
+            <ol>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">Sub Num List Item 1 </p>
+                    </div>
+
+                        </li>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">Sub Num List Item 2 </p>
+                    </div>
+
+                        </li>
+
+            <ol>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">Sub Sub Num List Item 1 </p>
+                    </div>
+
+                        </li>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">Sub Sub Num List Item 2 </p>
+                    </div>
+
+                        </li>
+
+            <ol>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">Sub Sub Sub Num List Item 1 </p>
+                    </div>
+
+                        </li>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">dsadsadsadsadjhjhjkhjkhjhjkhjkhjyuiyuiyuiyuyuyuiuiy </p>
+                    </div>
+
+                        </li>
+
+            </ol>
+
+            </ol>
+
+            </ol>
+
+            </ol>
+
+        </div>
+
 				</section>
 
-				<section class="text-container-section" id="376e5f8f-63b6-4ef9-9620-4ce702ab40be">
+				<section class="text-container-section" id="3c80a83f-8e80-485a-be03-61ac27483cd7">
 
                     <div>
                         <h3 class="heading-3">Free fields</h3>
@@ -7280,6 +7736,44 @@ With equations like
                     <div>
                         <p class="text-paragraph">Under the usual free/interaction decomposition, which is suitable for low energies, the free fields obey the following equations: </p>
                     </div>
+
+        <div class="unordered-list-container">
+
+            <ul>
+
+                        <li>
+                            
+                    <div>
+                        <p class="text-paragraph">The fermion field  ψ  satisfies the  <a href="https://en.wikipedia.org/wiki/Dirac_equation" class="inline-link" target="_blank">Dirac equation</a>;   
+                        <span class="inline-math" data-katex=" ${\displaystyle (i\hbar \gamma ^{\mu }\partial _{\mu }-m_{\rm {f}}c)\psi _{\rm {f}}=0}$ ">
+                            <span class="inline-math-inner"> ${\displaystyle (i\hbar \gamma ^{\mu }\partial _{\mu }-m_{\rm {f}}c)\psi _{\rm {f}}=0}$  
+                                <span class="inline-math-popup">
+                                    <span class="inline-math-copy-text"></span>
+                                    <svg class="copy-inline-math-clipboard-svg" onclick="copyInlineMathToClipboard(this.parentElement.parentElement.parentElement)" viewBox="0 0 24 24">
+                                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                    </svg>
+                                </span>
+                            </span>
+                        </span>
+ for each type  
+                        <span class="inline-math" data-katex=" ${\displaystyle f}$ ">
+                            <span class="inline-math-inner"> ${\displaystyle f}$  
+                                <span class="inline-math-popup">
+                                    <span class="inline-math-copy-text"></span>
+                                    <svg class="copy-inline-math-clipboard-svg" onclick="copyInlineMathToClipboard(this.parentElement.parentElement.parentElement)" viewBox="0 0 24 24">
+                                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                    </svg>
+                                </span>
+                            </span>
+                        </span>
+ of fermion. </p>
+                    </div>
+
+                        </li>
+
+            </ul>
+
+        </div>
 
 					<div class="math-block prevent-select">
 						<div class="block-equation" data-katex="$$\begin{align*}
@@ -8525,6 +9019,12 @@ gitGraph
             </div>
         </div>
 
+					<div class="hyperlink-container">
+						<a class="hyperlink" target="_blank" href="https://en.wikipedia.org/wiki/Theory_of_relativity">
+							<img width="24px" height="24px" src="data:image/png;base64,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"> 
+						</a>
+					</div>
+
                     <div>
                         <p class="text-paragraph">😁 </p>
                     </div>
@@ -9494,6 +9994,12 @@ $$
 
             </div>
         </div>
+
+					<div class="hyperlink-container">
+						<a class="hyperlink" target="_blank" href="">
+							<img width="24px" height="24px" src="data:image/png;base64,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"> 
+						</a>
+					</div>
 
 					<div class="math-block prevent-select">
 						<div class="block-equation" data-katex="$$|x| = x$$">
