@@ -52,7 +52,7 @@
                 --fsize-math: 0.92rem;
                 --fsize-sm-math: 0.82rem;
                 --fsize-code: 0.85rem;
-                --fsize-sm-code: 0.8rem;
+                --fsize-sm-code: 0.815rem;
                 --fsize-table: 0.86rem;
                 --fsize-sm-table: 0.82rem;
                 --fsize-page-loader: 1.1rem;
@@ -1139,7 +1139,6 @@
                 margin-top: var(--gap-blocks-vertical);
                 margin-left: calc(2 * var(--gap-blocks-horizontal));
                 margin-right: calc(2 * var(--gap-blocks-horizontal));
-                background-color: teal;
                 display: flex;
                 justify-content: center;
             }
@@ -1938,7 +1937,7 @@
             */
 
 			.multi-column-slideshow-container {
-                /* display: none; */
+                display: none;
 				height: 600px;
 				width: 98%;
 				background-color: var(--color-bg-caraousel);
@@ -2107,7 +2106,6 @@
             }
 
             .todo-list-container {
-                background-color: bisque;
                 width: 99%;
                 margin: auto;
                 margin-top: 40px;
@@ -2119,14 +2117,12 @@
             .todo-list-item {
                 height: 40px;
                 width: 100%;
-                background-color: #551a8b;
-                color: whitesmoke;
                 display: flex;
-                gap: 12px;
+                gap: 10px;
                 align-items: center;
                 padding-left: 15px;
                 font-family: 'Courier New', Courier, monospace;
-                font-size: 18px;
+                font-size: 17px;
             }
 
 			.child-page-reference {
@@ -2139,16 +2135,17 @@
 				font-size: 20px;
 			}
 
+            .relative-position {
+                position: relative;
+                overflow-y: hidden;
+            }
+
             /* ################################################################################ 
                                         Media Queries for Added Responsiveness
             ################################################################################
             */
 
             @media (max-width: 768px){
-
-                .column-layout-container {
-                    flex-direction: column;
-                }
 
                 body {
                     font-size: var(--fsize-sm-body);
@@ -2309,8 +2306,8 @@
                 }
 
                 .video-container {
-                    margin-left: calc(1.3 * var(--gap-blocks-horizontal));
-                    margin-right: calc(1.3 * var(--gap-blocks-horizontal));
+                    margin-left: calc(0.4 * var(--gap-blocks-horizontal));
+                    margin-right: calc(0.4 * var(--gap-blocks-horizontal));
                 }
                 
                 .video-player {
@@ -2371,8 +2368,7 @@
                 }
                 
                 .column-layout-container {
-                    flex-direction: column;
-                    height: max-content;
+                    display: none;
                 }
 
                 .multi-file-gist-file-link {
@@ -2617,7 +2613,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="70dcc65d-7a8c-47a8-b48e-efa6714933c9">
+				<section class="text-container-section" id="780ccaaf-976f-4f82-8953-074c810df9e5">
 
                     <div>
                         <h1 class="heading-1">Geometry of Newtonian gravity</h1>
@@ -2694,7 +2690,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="84438ef4-c6d8-4489-a9ad-52200162c003">
+				<section class="text-container-section" id="a375962d-345b-40f3-b68b-64b8ab5c2512">
 
                     <div>
                         <h2 class="heading-2">Einstein’s equations</h2>
@@ -2816,7 +2812,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="6b2bbb2d-d169-40d3-8cb6-f9aa89171183">
+				<section class="text-container-section" id="58728598-4cd8-4842-96f4-c5042fa65a68">
 
                     <div>
                         <h3 class="heading-3">Einstein Field Equations</h3>
@@ -2838,7 +2834,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="b88aec7e-fbf2-4b3c-9a7d-c5a79b7f6062">
+				<section class="text-container-section" id="27857ba5-eca4-49bb-812c-7d1c6f38feff">
 
                     <div>
                         <h3 class="heading-3">Mathematical Form</h3>
@@ -2966,7 +2962,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="7c64c824-dea7-4500-9dfa-b90cfcbc17b0">
+				<section class="text-container-section" id="429150bc-9afc-4dd6-91f6-3792bf42c282">
 
                     <div>
                         <h3 class="heading-3">Sign convention</h3>
@@ -3039,7 +3035,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="f4cdf6fb-9acb-4f61-bea7-5ce63843db77">
+				<section class="text-container-section" id="21399e20-c709-44b8-ba35-b7c1974a24ee">
 
                     <div>
                         <h1 class="heading-1">The Cosmological Constant</h1>
@@ -3081,7 +3077,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="f56eb1ab-d59a-426d-9514-38b2973d3d58">
+				<section class="text-container-section" id="9939c1fd-2711-4da4-aa7b-1c2bff0ad8e2">
 
                     <div>
                         <h2 class="heading-2">History</h2>
@@ -3105,7 +3101,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="f6b7dc17-99f4-457c-a5e2-eeb2f9cf355e">
+				<section class="text-container-section" id="a8d12097-20ba-445b-bb77-736b00c8eb2a">
 
                     <div>
                         <h3 class="heading-3">Sequence of events 1915–1998</h3>
@@ -3173,7 +3169,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="391910a9-ef9f-42d5-9fe5-8aa60bad5dc8">
+				<section class="text-container-section" id="5e5b9fb0-4e65-422d-bac1-c82e2f74c765">
 
                     <div>
                         <h2 class="heading-2">Equation</h2>
@@ -3246,7 +3242,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="c751c00d-c443-474f-9640-59044f04d58a">
+				<section class="text-container-section" id="c63ba8ec-7e15-4317-95c2-1be8921d29b6">
 
                     <div>
                         <h3 class="heading-3">ΩΛ (Omega sub Lambda)</h3>
@@ -3262,7 +3258,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="8669ce8c-08fc-41c6-a485-63783d7e35b0">
+				<section class="text-container-section" id="c3dbe153-e05f-4b43-bdea-6b33fb458624">
 
                     <div>
                         <h3 class="heading-3">Equation of state</h3>
@@ -3280,7 +3276,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="0dec7d00-a187-4eeb-b385-5c042ef7315a">
+				<section class="text-container-section" id="bf3ec0f8-6088-45ab-8d76-9d50c32807ef">
 
                     <div>
                         <h3 class="heading-3">Positive value</h3>
@@ -3307,7 +3303,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="7553fe7c-8370-4ae5-b375-7f45bf981237">
+				<section class="text-container-section" id="69fb3a2c-3cd2-4a04-999c-22546f56e198">
 
                     <div>
                         <h2 class="heading-2">Predictions</h2>
@@ -3315,7 +3311,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="08c3989c-5aa2-40b4-be45-4d4010803e74">
+				<section class="text-container-section" id="171a6d38-022d-4396-a321-8081d19f4d49">
 
                     <div>
                         <h3 class="heading-3">Quantum field theory</h3>
@@ -3372,7 +3368,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="f979b1d7-ad04-4ee0-9393-58a846d7e5cb">
+				<section class="text-container-section" id="748e136b-51ff-47ba-8d0f-1fd6c235ca30">
 
                     <div>
                         <h3 class="heading-3">Anthropic principle</h3>
@@ -3392,7 +3388,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="fcd7b82c-3b13-44d4-9bd5-3b0a204bf558">
+				<section class="text-container-section" id="feb5716c-1043-4d6e-9a21-ad28c1e7a9e2">
 
                     <div>
                         <h3 class="heading-3">Failure to detect dark energy</h3>
@@ -3405,7 +3401,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="5df8a5ac-46d4-4e15-8ee5-173f7983f885">
+				<section class="text-container-section" id="92c94d5a-346b-4116-81d8-71392c674b18">
 
                     <div>
                         <h2 class="heading-2">Einstein–Maxwell equations</h2>
@@ -3509,7 +3505,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="b1bc6852-3bd7-4fa6-b335-2432c0226c4c">
+				<section class="text-container-section" id="4b21ab94-0628-4d37-b8bb-9672f9bdf787">
 
                     <div>
                         <h2 class="heading-2">The linearized EFE</h2>
@@ -3521,7 +3517,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="cd313f1e-03de-4b68-b32e-51d4477f719c">
+				<section class="text-container-section" id="a4783d57-67bd-4ee9-8f6a-ee08ffa01bf5">
 
                     <div>
                         <h2 class="heading-2">Polynomial form</h2>
@@ -3587,7 +3583,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="eafb6029-1d20-4a5b-83f0-e1d414582921">
+				<section class="text-container-section" id="9273705c-3f55-4596-a1df-6893cbcb8639">
 
                     <div>
                         <h1 class="heading-1">Higgs Mechanism</h1>
@@ -3677,7 +3673,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="1138e0f5-72fb-4743-a8a8-9920c0c648e6">
+				<section class="text-container-section" id="117af884-ed9a-4025-92e6-afb66da395f3">
 
                     <div>
                         <h2 class="heading-2">Standard Model</h2>
@@ -3708,7 +3704,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="697cfe36-c597-4067-84c6-90b33220bc2c">
+				<section class="text-container-section" id="d155265d-35bc-49bf-a3dd-f5c576ecabec">
 
                     <div>
                         <h3 class="heading-3">Structure of the Higgs field</h3>
@@ -3728,7 +3724,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="081403cf-900e-4775-bdf8-50adc95389a9">
+				<section class="text-container-section" id="8fdfe0c2-7635-4464-b2f5-8724a073e1e0">
 
                     <div>
                         <h3 class="heading-3">The photon as the part that remains massless</h3>
@@ -3797,7 +3793,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="c6718e9d-59d2-4d14-b745-226ac422ec72">
+				<section class="text-container-section" id="67cc8d33-f6a1-4d20-bfe5-7ec34692ece0">
 
                     <div>
                         <h3 class="heading-3">Consequences for fermions</h3>
@@ -3876,7 +3872,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="52451d1f-5767-4b7c-af06-1a45118ccda7">
+				<section class="text-container-section" id="79432911-f68f-4b9d-ac23-26d7551ba125">
 
                     <div>
                         <h2 class="heading-2">Examples</h2>
@@ -3888,7 +3884,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="522bfafa-93e0-4460-9220-76a6f3621954">
+				<section class="text-container-section" id="ee866668-8a96-4196-b25c-08ac44bda1ad">
 
                     <div>
                         <h3 class="heading-3">Landau model</h3>
@@ -4095,7 +4091,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="39066d6c-74ce-4849-89b9-7657c5f88f68">
+				<section class="text-container-section" id="d0a76182-274e-4768-8d86-443165607c58">
 
                     <div>
                         <h3 class="heading-3">Abelian Higgs mechanism</h3>
@@ -4207,7 +4203,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="c9eb79a1-c345-49f4-8a9b-1c3ec2c1f845">
+				<section class="text-container-section" id="8d2c6e05-5235-46eb-898f-09ac11db4417">
 
                     <div>
                         <h3 class="heading-3">Alternate form of the Abelian Higgs model action</h3>
@@ -4346,7 +4342,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="9669a577-3e74-4805-92ef-c1a09bc9da92">
+				<section class="text-container-section" id="8efc027e-36ed-46ed-aa6d-cee73e2cd224">
 
                     <div>
                         <h3 class="heading-3">Lagrangian in explicit symmetry broken form</h3>
@@ -4726,7 +4722,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="4ee7e52e-f5f0-456d-858b-fa8bb4e0fcf3">
+				<section class="text-container-section" id="551e83a7-4ec3-42bc-b138-e6dc11beca5a">
 
                     <div>
                         <h3 class="heading-3">Spontaneous symmetry breaking and trivializations</h3>
@@ -4824,7 +4820,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="42c81c44-f144-4a65-8394-e3b5572e2990">
+				<section class="text-container-section" id="861ffe83-dba6-4ee5-b10b-4c9de0bec946">
 
                     <div>
                         <h3 class="heading-3">Non-Abelian Higgs mechanism</h3>
@@ -5184,7 +5180,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="a48f80ec-9353-4c87-9f81-c68a0588124f">
+				<section class="text-container-section" id="39b9b8f7-78c3-4e48-94ec-c1508746ebbe">
 
                     <div>
                         <h3 class="heading-3">Affine Higgs mechanism</h3>
@@ -5489,7 +5485,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="2ff15e72-fce8-4f98-9497-79306c8fcc4c">
+				<section class="text-container-section" id="66bdd40b-9a20-428d-8ac2-fb413d557e24">
 
                     <div>
                         <h1 class="heading-1">Higgs Boson</h1>
@@ -5517,7 +5513,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="9b4ad9c8-2aef-4f71-8c4e-8bf9617d55a5">
+				<section class="text-container-section" id="73e220ef-1d31-4e3a-aca3-fc68657794b5">
 
                     <div>
                         <h2 class="heading-2">Technical aspects and mathematical formulation</h2>
@@ -6094,7 +6090,7 @@ $$
 
 				</section>
 
-				<section class="text-container-section" id="65ba8aaf-f605-4064-a513-d96fdd43de00">
+				<section class="text-container-section" id="d4bc2b9b-12de-475d-8283-ffb1b10e085d">
 
                     <div>
                         <h1 class="heading-1">The Mathematical Foundations of Standard Model</h1>
@@ -6164,7 +6160,7 @@ $$
 
 				</section>
 
-				<section class="text-container-section" id="a379ce37-6d17-4a3f-8af6-d0bb08476e36">
+				<section class="text-container-section" id="d8fb9cad-41b0-4f06-a237-9040dc4ee8e5">
 
                     <div>
                         <h3 class="heading-3">Free fields</h3>
@@ -6327,7 +6323,7 @@ $$
 
 				</section>
 
-				<section class="text-container-section" id="1c61cd46-b231-4fb4-b1ff-1d718a40f4f6">
+				<section class="text-container-section" id="eb005cbc-2278-4079-95fe-80cba970a609">
 
                     <div>
                         <h1 class="heading-1">A bunch of equations</h1>
@@ -6454,7 +6450,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="d53d558f-29db-4ee5-929c-ad1000fa83a5">
+				<section class="text-container-section" id="fbf80206-d3ce-4ecb-ad8b-bae8524d4908">
 
                     <div>
                         <h1 class="heading-1">A bunch of repls and tweets</h1>
@@ -6507,7 +6503,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="f0afed49-46a5-4c31-a4d9-faa3dad955c7">
+				<section class="text-container-section" id="7d949740-5ae9-40e2-b6c7-5f865dd44fdd">
 
                     <div>
                         <h1 class="heading-1">A bunch of other widgets</h1>
@@ -6536,7 +6532,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="3d31156b-5333-434b-9204-4f7724e5dd07">
+				<section class="text-container-section" id="6d0207be-72eb-4ad4-a966-dabcccbdab64">
 
                     <div>
                         <h1 class="heading-1">Code Snippets</h1>
@@ -6544,7 +6540,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="07be8601-009b-422f-a1c3-d0fcefc38097">
+				<section class="text-container-section" id="5f63b563-3229-49dc-bb37-4befc66a23da">
 
                     <div>
                         <h2 class="heading-2">Python Snippets</h2>
@@ -6708,7 +6704,7 @@ for epoch in range(epochs):
 
 				</section>
 
-				<section class="text-container-section" id="bac0acd1-21f2-448d-aee5-fa647089c32b">
+				<section class="text-container-section" id="1131bebe-47e3-4ed9-aff1-108e86465a0c">
 
                     <div>
                         <h2 class="heading-2">C++ Snippets</h2>
@@ -6809,7 +6805,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="d4d3cfe6-20f4-4e7c-a5d5-f10215639629">
+				<section class="text-container-section" id="56c7daaf-f314-4a24-8668-b2619dab07b1">
 
                     <div>
                         <h2 class="heading-2">Javascript Snippets</h2>
@@ -6892,7 +6888,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="97623781-39b8-4ef6-98d7-b58c87ac21f7">
+				<section class="text-container-section" id="2a8df0fe-bece-49f6-9a7a-107a40af7b77">
 
                     <div>
                         <h2 class="heading-2">HTML Snippets</h2>
@@ -6948,7 +6944,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="d45042ae-99fe-4e32-a0f9-3b6e45b3aa77">
+				<section class="text-container-section" id="1e0c0296-02a4-48d3-8c04-3d7b9815a702">
 
                     <div>
                         <h2 class="heading-2">CSS Snippets</h2>
@@ -7096,7 +7092,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="729a4b3d-dc12-49f8-8bfa-27fd8b5dec09">
+				<section class="text-container-section" id="f3d4c729-05a3-4776-983f-81cfd95a0beb">
 
                     <div>
                         <h1 class="heading-1">Table, File and Audio Widgets</h1>
@@ -7464,7 +7460,7 @@ With equations like
 
 				</section>
 
-				<section class="text-container-section" id="1124a3a2-6052-4e5b-8134-912f4ddc8e8c">
+				<section class="text-container-section" id="6cdaac59-5b9d-444a-8549-34f2ce10d391">
 
                     <div>
                         <h3 class="heading-3">Here is a block mention from another page</h3>
@@ -7741,7 +7737,7 @@ With equations like
 
 				</section>
 
-				<section class="text-container-section" id="50b996c7-615a-487f-b57f-ac86dbb875e2">
+				<section class="text-container-section" id="f0a2d0bb-a318-4ce8-912d-4fccfc85f61e">
 
                     <div>
                         <h3 class="heading-3">Free fields</h3>
@@ -8946,6 +8942,8 @@ With equations like
                         <img class="image-container lazy-load" data-src="media/575_4_Image.png" onclick="openModal(this)" />
                     </div>
 
+				<div class="relative-position">
+                    
 					<div class="math-block prevent-select">
 						<div class="block-equation" data-katex="$${\displaystyle {\mathcal {L}}=\left[-{\frac {1}{4}}F_{\mu \nu }F^{\mu \nu }+{\frac {1}{2}}e^{2}v^{2}A_{\mu }A^{\mu }+{\frac {1}{2}}\partial _{\mu }\eta \partial ^{\mu }\eta -\lambda v^{2}\eta ^{2}\right]+\left[-\lambda v\eta ^{3}-{\frac {\lambda }{4}}\eta ^{4}+{\frac {1}{2}}(\eta ^{2}+2v\eta )A^{\mu }A_{\mu }\right].}$$">
 							<span>
@@ -8961,6 +8959,10 @@ With equations like
 						</div>
 					</div>
 
+                </div>
+
+				<div class="relative-position">
+                    
 					<div class="code-block" data-show-lang="python">
 						<div class="code-snippet">
 							<script type="text/plain" class="language-python line-numbers match-braces code-block-prism">from scipy.stats import expon
@@ -8987,6 +8989,10 @@ exponential_random_samples = Inverse_transform_sampling_Exponential(M = 10000,la
 						</div>
 					</div>
 
+                </div>
+
+				<div class="relative-position">
+                    
         <div class="code-block" data-show-lang="mermaid">
             <div class="mermaid-diagram">
                 <div class="mermaid" data-src="---
@@ -9025,6 +9031,8 @@ gitGraph
                 </button>
             </div>
         </div>
+
+                </div>
 
                     <div class="image-block">
                         <img class="image-container lazy-load" data-src="media/575_12_Image.png" onclick="openModal(this)" />
@@ -9106,6 +9114,25 @@ found some errors that we were able to correct before this book went to press. A
 errors that remain (and undoubtedly, some do) are the respons </p>
                     </div>
 
+				<div class="relative-position">
+                    
+					<div class="math-block prevent-select">
+						<div class="block-equation" data-katex="$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right. p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$">
+							<span>
+								$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right. p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+                </div>
+
 							</div>
 						</div>
 
@@ -9116,6 +9143,8 @@ errors that remain (and undoubtedly, some do) are the respons </p>
                         <img class="image-container lazy-load" data-src="media/590_2_1_Image.png" onclick="openModal(this)" />
                     </div>
 
+				<div class="relative-position">
+                    
 					<div class="math-block prevent-select">
 						<div class="block-equation" data-katex="$$|x| = \begin{cases}
    x,  &\quad x \geq 0 \\
@@ -9137,6 +9166,8 @@ errors that remain (and undoubtedly, some do) are the respons </p>
 						</div>
 					</div>
 
+                </div>
+
 					<a class="file-link" target="_blank" href="media/590_MachineLearningDevOpsEngineerNanodegreeProgramSyllabus.pdf">
 						<div class="file-container">
 							<div class="file-icon">
@@ -9148,6 +9179,165 @@ errors that remain (and undoubtedly, some do) are the respons </p>
 							</div>
 						</div>
 					</a>
+
+				<div class="relative-position">
+                    
+					<div class="code-block" data-show-lang="python">
+						<div class="code-snippet">
+							<script type="text/plain" class="language-python line-numbers match-braces code-block-prism">import os
+
+# Prepare the dataset. We use both the training & test MNIST digits.
+batch_size = 64
+(x_train, _), (x_test, _) = keras.datasets.mnist.load_data()
+all_digits = np.concatenate([x_train, x_test])
+all_digits = all_digits.astype("float32") / 255.0
+all_digits = np.reshape(all_digits, (-1, 28, 28, 1))
+dataset = tf.data.Dataset.from_tensor_slices(all_digits)
+dataset = dataset.shuffle(buffer_size=1024).batch(batch_size)
+
+epochs = 1  # In practice you need at least 20 epochs to generate nice digits. # In practice you need at least 20 epochs to generate nice digits. # In practice you need at least 20 epochs to generate nice digits.
+save_dir = "./"
+
+for epoch in range(epochs):
+	print("\nStart epoch", epoch)
+
+	for step, real_images in enumerate(dataset):
+		# Train the discriminator & generator on one batch of real images.
+		d_loss, g_loss, generated_images = train_step(real_images)
+
+		# Logging.
+		if step % 200 == 0:
+			# Print metrics
+			print("discriminator loss at step %d: %.2f" % (step, d_loss))
+			print("adversarial loss at step %d: %.2f" % (step, g_loss))
+
+			# Save one generated image
+			img = keras.utils.array_to_img(generated_images[0] * 255.0, scale=False)
+			img.save(os.path.join(save_dir, "generated_img" + str(step) + ".png"))
+
+		# To limit execution time we stop after 10 steps.
+		# Remove the lines below to actually train the model!
+		if step > 10:
+			break
+		
+# Instantiate one optimizer for the discriminator and another for the generator.
+d_optimizer = keras.optimizers.Adam(learning_rate=0.0003)
+g_optimizer = keras.optimizers.Adam(learning_rate=0.0004)
+
+# Instantiate a loss function.
+loss_fn = keras.losses.BinaryCrossentropy(from_logits=True)
+
+
+@tf.function
+def train_step(real_images):
+	# Sample random points in the latent space
+	random_latent_vectors = tf.random.normal(shape=(batch_size, latent_dim))
+	# Decode them to fake images
+	generated_images = generator(random_latent_vectors)
+	# Combine them with real images
+	combined_images = tf.concat([generated_images, real_images], axis=0)
+
+	# Assemble labels discriminating real from fake images
+	labels = tf.concat(
+		[tf.ones((batch_size, 1)), tf.zeros((real_images.shape[0], 1))], axis=0
+	)
+	# Add random noise to the labels - important trick!
+	labels += 0.05 * tf.random.uniform(labels.shape)
+
+	# Train the discriminator
+	with tf.GradientTape() as tape:
+		predictions = discriminator(combined_images)
+		d_loss = loss_fn(labels, predictions)
+	grads = tape.gradient(d_loss, discriminator.trainable_weights)
+	d_optimizer.apply_gradients(zip(grads, discriminator.trainable_weights))
+			
+# Sample random points in the latent space
+random_latent_vectors = tf.random.normal(shape=(batch_size, latent_dim))
+# Assemble labels that say "all real images"
+misleading_labels = tf.zeros((batch_size, 1))
+
+# Train the generator (note that we should *not* update the weights
+# of the discriminator)!
+with tf.GradientTape() as tape:
+	predictions = discriminator(generator(random_latent_vectors))
+	g_loss = loss_fn(misleading_labels, predictions)
+grads = tape.gradient(g_loss, generator.trainable_weights)
+g_optimizer.apply_gradients(zip(grads, generator.trainable_weights))
+return d_loss, g_loss, generated_images		
+
+latent_dim = 128
+
+generator = keras.Sequential(
+	[
+		keras.Input(shape=(latent_dim,)),
+		# We want to generate 128 coefficients to reshape into a 7x7x128 map
+		layers.Dense(7 * 7 * 128),
+		layers.LeakyReLU(alpha=0.2),
+		layers.Reshape((7, 7, 128)),
+		layers.Conv2DTranspose(128, (4, 4), strides=(2, 2), padding="same"),
+		layers.LeakyReLU(alpha=0.2),
+		layers.Conv2DTranspose(128, (4, 4), strides=(2, 2), padding="same"),
+		layers.LeakyReLU(alpha=0.2),
+		layers.Conv2D(1, (7, 7), padding="same", activation="sigmoid"),
+	],
+	name="generator",
+)
+			
+import time
+
+epochs = 2
+for epoch in range(epochs):
+	print("\nStart of epoch %d" % (epoch,))
+	start_time = time.time()
+
+	# Iterate over the batches of the dataset.
+	for step, (x_batch_train, y_batch_train) in enumerate(train_dataset):
+		loss_value = train_step(x_batch_train, y_batch_train)
+
+		# Log every 200 batches.
+		if step % 200 == 0:
+			print(
+				"Training loss (for one batch) at step %d: %.4f"
+				% (step, float(loss_value))
+			)
+			print("Seen so far: %d samples" % ((step + 1) * batch_size))
+				
+# Display metrics at the end of each epoch.
+train_acc = train_acc_metric.result()
+print("Training acc over epoch: %.4f" % (float(train_acc),))
+
+# Reset training metrics at the end of each epoch
+train_acc_metric.reset_states()
+
+# Run a validation loop at the end of each epoch.
+for x_batch_val, y_batch_val in val_dataset:
+	test_step(x_batch_val, y_batch_val)
+
+val_acc = val_acc_metric.result()
+val_acc_metric.reset_states()
+print("Validation acc: %.4f" % (float(val_acc),))
+print("Time taken: %.2fs" % (time.time() - start_time))
+				
+@tf.function
+def train_step(x, y):
+	with tf.GradientTape() as tape:
+		logits = model(x, training=True)
+		loss_value = loss_fn(y, logits)
+	grads = tape.gradient(loss_value, model.trainable_weights)
+	optimizer.apply_gradients(zip(grads, model.trainable_weights))
+	train_acc_metric.update_state(y, logits)
+	return loss_value</script>
+						</div>
+						<div class="copy-code-clipboard">
+							<button class="btn-code-clipboard" onclick="copyCodeToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+                </div>
 
 							</div>
 						</div>
@@ -9194,6 +9384,25 @@ found some errors that we were able to correct before this book went to press. A
 errors that remain (and undoubtedly, some do) are the respons </p>
                     </div>
 
+				<div class="relative-position">
+                    
+					<div class="math-block prevent-select">
+						<div class="block-equation" data-katex="$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right. p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$">
+							<span>
+								$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right. p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.  p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+                </div>
+
 						</div>
 
 						<div class="slideshow-slide slideshow-fade">
@@ -9202,6 +9411,8 @@ errors that remain (and undoubtedly, some do) are the respons </p>
                         <img class="image-container lazy-load" data-src="media/590_2_1_Image.png" onclick="openModal(this)" />
                     </div>
 
+				<div class="relative-position">
+                    
 					<div class="math-block prevent-select">
 						<div class="block-equation" data-katex="$$|x| = \begin{cases}
    x,  &\quad x \geq 0 \\
@@ -9223,6 +9434,8 @@ errors that remain (and undoubtedly, some do) are the respons </p>
 						</div>
 					</div>
 
+                </div>
+
 					<a class="file-link" target="_blank" href="media/590_MachineLearningDevOpsEngineerNanodegreeProgramSyllabus.pdf">
 						<div class="file-container">
 							<div class="file-icon">
@@ -9234,6 +9447,165 @@ errors that remain (and undoubtedly, some do) are the respons </p>
 							</div>
 						</div>
 					</a>
+
+				<div class="relative-position">
+                    
+					<div class="code-block" data-show-lang="python">
+						<div class="code-snippet">
+							<script type="text/plain" class="language-python line-numbers match-braces code-block-prism">import os
+
+# Prepare the dataset. We use both the training & test MNIST digits.
+batch_size = 64
+(x_train, _), (x_test, _) = keras.datasets.mnist.load_data()
+all_digits = np.concatenate([x_train, x_test])
+all_digits = all_digits.astype("float32") / 255.0
+all_digits = np.reshape(all_digits, (-1, 28, 28, 1))
+dataset = tf.data.Dataset.from_tensor_slices(all_digits)
+dataset = dataset.shuffle(buffer_size=1024).batch(batch_size)
+
+epochs = 1  # In practice you need at least 20 epochs to generate nice digits. # In practice you need at least 20 epochs to generate nice digits. # In practice you need at least 20 epochs to generate nice digits.
+save_dir = "./"
+
+for epoch in range(epochs):
+	print("\nStart epoch", epoch)
+
+	for step, real_images in enumerate(dataset):
+		# Train the discriminator & generator on one batch of real images.
+		d_loss, g_loss, generated_images = train_step(real_images)
+
+		# Logging.
+		if step % 200 == 0:
+			# Print metrics
+			print("discriminator loss at step %d: %.2f" % (step, d_loss))
+			print("adversarial loss at step %d: %.2f" % (step, g_loss))
+
+			# Save one generated image
+			img = keras.utils.array_to_img(generated_images[0] * 255.0, scale=False)
+			img.save(os.path.join(save_dir, "generated_img" + str(step) + ".png"))
+
+		# To limit execution time we stop after 10 steps.
+		# Remove the lines below to actually train the model!
+		if step > 10:
+			break
+		
+# Instantiate one optimizer for the discriminator and another for the generator.
+d_optimizer = keras.optimizers.Adam(learning_rate=0.0003)
+g_optimizer = keras.optimizers.Adam(learning_rate=0.0004)
+
+# Instantiate a loss function.
+loss_fn = keras.losses.BinaryCrossentropy(from_logits=True)
+
+
+@tf.function
+def train_step(real_images):
+	# Sample random points in the latent space
+	random_latent_vectors = tf.random.normal(shape=(batch_size, latent_dim))
+	# Decode them to fake images
+	generated_images = generator(random_latent_vectors)
+	# Combine them with real images
+	combined_images = tf.concat([generated_images, real_images], axis=0)
+
+	# Assemble labels discriminating real from fake images
+	labels = tf.concat(
+		[tf.ones((batch_size, 1)), tf.zeros((real_images.shape[0], 1))], axis=0
+	)
+	# Add random noise to the labels - important trick!
+	labels += 0.05 * tf.random.uniform(labels.shape)
+
+	# Train the discriminator
+	with tf.GradientTape() as tape:
+		predictions = discriminator(combined_images)
+		d_loss = loss_fn(labels, predictions)
+	grads = tape.gradient(d_loss, discriminator.trainable_weights)
+	d_optimizer.apply_gradients(zip(grads, discriminator.trainable_weights))
+			
+# Sample random points in the latent space
+random_latent_vectors = tf.random.normal(shape=(batch_size, latent_dim))
+# Assemble labels that say "all real images"
+misleading_labels = tf.zeros((batch_size, 1))
+
+# Train the generator (note that we should *not* update the weights
+# of the discriminator)!
+with tf.GradientTape() as tape:
+	predictions = discriminator(generator(random_latent_vectors))
+	g_loss = loss_fn(misleading_labels, predictions)
+grads = tape.gradient(g_loss, generator.trainable_weights)
+g_optimizer.apply_gradients(zip(grads, generator.trainable_weights))
+return d_loss, g_loss, generated_images		
+
+latent_dim = 128
+
+generator = keras.Sequential(
+	[
+		keras.Input(shape=(latent_dim,)),
+		# We want to generate 128 coefficients to reshape into a 7x7x128 map
+		layers.Dense(7 * 7 * 128),
+		layers.LeakyReLU(alpha=0.2),
+		layers.Reshape((7, 7, 128)),
+		layers.Conv2DTranspose(128, (4, 4), strides=(2, 2), padding="same"),
+		layers.LeakyReLU(alpha=0.2),
+		layers.Conv2DTranspose(128, (4, 4), strides=(2, 2), padding="same"),
+		layers.LeakyReLU(alpha=0.2),
+		layers.Conv2D(1, (7, 7), padding="same", activation="sigmoid"),
+	],
+	name="generator",
+)
+			
+import time
+
+epochs = 2
+for epoch in range(epochs):
+	print("\nStart of epoch %d" % (epoch,))
+	start_time = time.time()
+
+	# Iterate over the batches of the dataset.
+	for step, (x_batch_train, y_batch_train) in enumerate(train_dataset):
+		loss_value = train_step(x_batch_train, y_batch_train)
+
+		# Log every 200 batches.
+		if step % 200 == 0:
+			print(
+				"Training loss (for one batch) at step %d: %.4f"
+				% (step, float(loss_value))
+			)
+			print("Seen so far: %d samples" % ((step + 1) * batch_size))
+				
+# Display metrics at the end of each epoch.
+train_acc = train_acc_metric.result()
+print("Training acc over epoch: %.4f" % (float(train_acc),))
+
+# Reset training metrics at the end of each epoch
+train_acc_metric.reset_states()
+
+# Run a validation loop at the end of each epoch.
+for x_batch_val, y_batch_val in val_dataset:
+	test_step(x_batch_val, y_batch_val)
+
+val_acc = val_acc_metric.result()
+val_acc_metric.reset_states()
+print("Validation acc: %.4f" % (float(val_acc),))
+print("Time taken: %.2fs" % (time.time() - start_time))
+				
+@tf.function
+def train_step(x, y):
+	with tf.GradientTape() as tape:
+		logits = model(x, training=True)
+		loss_value = loss_fn(y, logits)
+	grads = tape.gradient(loss_value, model.trainable_weights)
+	optimizer.apply_gradients(zip(grads, model.trainable_weights))
+	train_acc_metric.update_state(y, logits)
+	return loss_value</script>
+						</div>
+						<div class="copy-code-clipboard">
+							<button class="btn-code-clipboard" onclick="copyCodeToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+                </div>
 
 						</div>
 
@@ -9798,6 +10170,8 @@ classDiagram
 
             <div class="collapsible-hidden-container">
 
+				<div class="relative-position">
+                    
 					<div class="math-block prevent-select">
 						<div class="block-equation" data-katex="$$\mathcal{L} = -\frac{1}{2}\partial_{\nu}g^{a}_{\mu}\partial_{\nu}g^{a}_{\mu}
 -g_{s}f^{abc}\partial_{\mu}g^{a}_{\nu}g^{b}_{\mu}g^{c}_{\nu}
@@ -10017,9 +10391,170 @@ $$
 						</div>
 					</div>
 
+                </div>
+
                     <div class="image-block">
                         <img class="image-container lazy-load" data-src="media/622_2_Image.png" onclick="openModal(this)" />
                     </div>
+
+				<div class="relative-position">
+                    
+					<div class="code-block" data-show-lang="python">
+						<div class="code-snippet">
+							<script type="text/plain" class="language-python line-numbers match-braces code-block-prism">import os
+
+# Prepare the dataset. We use both the training & test MNIST digits.
+batch_size = 64
+(x_train, _), (x_test, _) = keras.datasets.mnist.load_data()
+all_digits = np.concatenate([x_train, x_test])
+all_digits = all_digits.astype("float32") / 255.0
+all_digits = np.reshape(all_digits, (-1, 28, 28, 1))
+dataset = tf.data.Dataset.from_tensor_slices(all_digits)
+dataset = dataset.shuffle(buffer_size=1024).batch(batch_size)
+
+epochs = 1  # In practice you need at least 20 epochs to generate nice digits. # In practice you need at least 20 epochs to generate nice digits. # In practice you need at least 20 epochs to generate nice digits.
+save_dir = "./"
+
+for epoch in range(epochs):
+	print("\nStart epoch", epoch)
+
+	for step, real_images in enumerate(dataset):
+		# Train the discriminator & generator on one batch of real images.
+		d_loss, g_loss, generated_images = train_step(real_images)
+
+		# Logging.
+		if step % 200 == 0:
+			# Print metrics
+			print("discriminator loss at step %d: %.2f" % (step, d_loss))
+			print("adversarial loss at step %d: %.2f" % (step, g_loss))
+
+			# Save one generated image
+			img = keras.utils.array_to_img(generated_images[0] * 255.0, scale=False)
+			img.save(os.path.join(save_dir, "generated_img" + str(step) + ".png"))
+
+		# To limit execution time we stop after 10 steps.
+		# Remove the lines below to actually train the model!
+		if step > 10:
+			break
+		
+# Instantiate one optimizer for the discriminator and another for the generator.
+d_optimizer = keras.optimizers.Adam(learning_rate=0.0003)
+g_optimizer = keras.optimizers.Adam(learning_rate=0.0004)
+
+# Instantiate a loss function.
+loss_fn = keras.losses.BinaryCrossentropy(from_logits=True)
+
+
+@tf.function
+def train_step(real_images):
+	# Sample random points in the latent space
+	random_latent_vectors = tf.random.normal(shape=(batch_size, latent_dim))
+	# Decode them to fake images
+	generated_images = generator(random_latent_vectors)
+	# Combine them with real images
+	combined_images = tf.concat([generated_images, real_images], axis=0)
+
+	# Assemble labels discriminating real from fake images
+	labels = tf.concat(
+		[tf.ones((batch_size, 1)), tf.zeros((real_images.shape[0], 1))], axis=0
+	)
+	# Add random noise to the labels - important trick!
+	labels += 0.05 * tf.random.uniform(labels.shape)
+
+	# Train the discriminator
+	with tf.GradientTape() as tape:
+		predictions = discriminator(combined_images)
+		d_loss = loss_fn(labels, predictions)
+	grads = tape.gradient(d_loss, discriminator.trainable_weights)
+	d_optimizer.apply_gradients(zip(grads, discriminator.trainable_weights))
+			
+# Sample random points in the latent space
+random_latent_vectors = tf.random.normal(shape=(batch_size, latent_dim))
+# Assemble labels that say "all real images"
+misleading_labels = tf.zeros((batch_size, 1))
+
+# Train the generator (note that we should *not* update the weights
+# of the discriminator)!
+with tf.GradientTape() as tape:
+	predictions = discriminator(generator(random_latent_vectors))
+	g_loss = loss_fn(misleading_labels, predictions)
+grads = tape.gradient(g_loss, generator.trainable_weights)
+g_optimizer.apply_gradients(zip(grads, generator.trainable_weights))
+return d_loss, g_loss, generated_images		
+
+latent_dim = 128
+
+generator = keras.Sequential(
+	[
+		keras.Input(shape=(latent_dim,)),
+		# We want to generate 128 coefficients to reshape into a 7x7x128 map
+		layers.Dense(7 * 7 * 128),
+		layers.LeakyReLU(alpha=0.2),
+		layers.Reshape((7, 7, 128)),
+		layers.Conv2DTranspose(128, (4, 4), strides=(2, 2), padding="same"),
+		layers.LeakyReLU(alpha=0.2),
+		layers.Conv2DTranspose(128, (4, 4), strides=(2, 2), padding="same"),
+		layers.LeakyReLU(alpha=0.2),
+		layers.Conv2D(1, (7, 7), padding="same", activation="sigmoid"),
+	],
+	name="generator",
+)
+			
+import time
+
+epochs = 2
+for epoch in range(epochs):
+	print("\nStart of epoch %d" % (epoch,))
+	start_time = time.time()
+
+	# Iterate over the batches of the dataset.
+	for step, (x_batch_train, y_batch_train) in enumerate(train_dataset):
+		loss_value = train_step(x_batch_train, y_batch_train)
+
+		# Log every 200 batches.
+		if step % 200 == 0:
+			print(
+				"Training loss (for one batch) at step %d: %.4f"
+				% (step, float(loss_value))
+			)
+			print("Seen so far: %d samples" % ((step + 1) * batch_size))
+				
+# Display metrics at the end of each epoch.
+train_acc = train_acc_metric.result()
+print("Training acc over epoch: %.4f" % (float(train_acc),))
+
+# Reset training metrics at the end of each epoch
+train_acc_metric.reset_states()
+
+# Run a validation loop at the end of each epoch.
+for x_batch_val, y_batch_val in val_dataset:
+	test_step(x_batch_val, y_batch_val)
+
+val_acc = val_acc_metric.result()
+val_acc_metric.reset_states()
+print("Validation acc: %.4f" % (float(val_acc),))
+print("Time taken: %.2fs" % (time.time() - start_time))
+				
+@tf.function
+def train_step(x, y):
+	with tf.GradientTape() as tape:
+		logits = model(x, training=True)
+		loss_value = loss_fn(y, logits)
+	grads = tape.gradient(loss_value, model.trainable_weights)
+	optimizer.apply_gradients(zip(grads, model.trainable_weights))
+	train_acc_metric.update_state(y, logits)
+	return loss_value</script>
+						</div>
+						<div class="copy-code-clipboard">
+							<button class="btn-code-clipboard" onclick="copyCodeToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+                </div>
 
             </div>
         </div>
@@ -10075,6 +10610,277 @@ $$
 
             </div>
         </div>
+
+					<div class="math-block prevent-select">
+						<div class="block-equation" data-katex="$$\begin{aligned}\hat{H} =\sum_{r s} h_{r s} \hat{a}_{r}^{\dagger} \hat{a}_{s} \\& +\frac{1}{2} \sum_{p q r s} g_{p q r s} \hat{a}_{p}^{\dagger} \hat{a}_{q}^{\dagger} \hat{a}_{r} \hat{a}_{s}+E_{N N}\end{aligned}$$">
+							<span>
+								$$\begin{aligned}\hat{H} =\sum_{r s} h_{r s} \hat{a}_{r}^{\dagger} \hat{a}_{s} \\& +\frac{1}{2} \sum_{p q r s} g_{p q r s} \hat{a}_{p}^{\dagger} \hat{a}_{q}^{\dagger} \hat{a}_{r} \hat{a}_{s}+E_{N N}\end{aligned}$$
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+					<div class="math-block prevent-select">
+						<div class="block-equation" data-katex="$$\begin{aligned}\hat{H} =\sum_{r s} h_{r s} \hat{a}_{r}^{\dagger} \hat{a}_{s} \\& +\frac{1}{2} \sum_{p q r s} g_{p q r s} \hat{a}_{p}^{\dagger} \hat{a}_{q}^{\dagger} \hat{a}_{r} \hat{a}_{s}+E_{N N}\end{aligned}$$">
+							<span>
+								$$\begin{aligned}\hat{H} =\sum_{r s} h_{r s} \hat{a}_{r}^{\dagger} \hat{a}_{s} \\& +\frac{1}{2} \sum_{p q r s} g_{p q r s} \hat{a}_{p}^{\dagger} \hat{a}_{q}^{\dagger} \hat{a}_{r} \hat{a}_{s}+E_{N N}\end{aligned}$$
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+					<div class="math-block prevent-select">
+						<div class="block-equation" data-katex="$$\mathbf{V}_1 \times \mathbf{V}_2 = \begin{vmatrix}\mathbf{i} & \mathbf{j} & \mathbf{k} \\\frac{\partial X}{\partial u} & \frac{\partial Y}{\partial u} & 0 \\\frac{\partial X}{\partial v} & \frac{\partial Y}{\partial v} & 0 \\\end{vmatrix}$$">
+							<span>
+								$$\mathbf{V}_1 \times \mathbf{V}_2 = \begin{vmatrix}\mathbf{i} & \mathbf{j} & \mathbf{k} \\\frac{\partial X}{\partial u} & \frac{\partial Y}{\partial u} & 0 \\\frac{\partial X}{\partial v} & \frac{\partial Y}{\partial v} & 0 \\\end{vmatrix}$$
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+					<div class="math-block prevent-select">
+						<div class="block-equation" data-katex="$$\begin{align*}y = y(x,t) &= A e^{i\theta} \\&= A (\cos \theta + i \sin \theta) \\&= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \\&= A\cos(kx - \omega t) + i A\sin(kx - \omega t) \\&= A\cos \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) + i A\sin \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) \\&= A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)\end{align*}$$">
+							<span>
+								$$\begin{align*}y = y(x,t) &= A e^{i\theta} \\&= A (\cos \theta + i \sin \theta) \\&= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \\&= A\cos(kx - \omega t) + i A\sin(kx - \omega t) \\&= A\cos \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) + i A\sin \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) \\&= A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)\end{align*}$$
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+					<div class="math-block prevent-select">
+						<div class="block-equation" data-katex="$$h_{p q}=\int \phi_{p}^{*}(r)\left(-\frac{1}{2} \nabla^{2}-\sum_{I} \frac{Z_{I}}{R_{I}-r}\right) \phi_{q}(r)$$">
+							<span>
+								$$h_{p q}=\int \phi_{p}^{*}(r)\left(-\frac{1}{2} \nabla^{2}-\sum_{I} \frac{Z_{I}}{R_{I}-r}\right) \phi_{q}(r)$$
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+					<div class="math-block prevent-select">
+						<div class="block-equation" data-katex="$$g_{p q r s}=\int \frac{\phi_{p}^{*}\left(r_{1}\right) \phi_{q}^{*}\left(r_{2}\right) \phi_{r}\left(r_{2}\right) \phi_{s}\left(r_{1}\right)}{\left|r_{1}-r_{2}\right|}$$">
+							<span>
+								$$g_{p q r s}=\int \frac{\phi_{p}^{*}\left(r_{1}\right) \phi_{q}^{*}\left(r_{2}\right) \phi_{r}\left(r_{2}\right) \phi_{s}\left(r_{1}\right)}{\left|r_{1}-r_{2}\right|}$$
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+					<div class="math-block prevent-select">
+						<div class="block-equation" data-katex="$$\hat a_{3}^{\dagger}= \hat \sigma_z \otimes \hat \sigma_z \otimes\left(\frac{ \hat \sigma_x-i \hat \sigma_y}{2}\right) \otimes 1 \otimes \cdots \otimes 1$$">
+							<span>
+								$$\hat a_{3}^{\dagger}= \hat \sigma_z \otimes \hat \sigma_z \otimes\left(\frac{ \hat \sigma_x-i \hat \sigma_y}{2}\right) \otimes 1 \otimes \cdots \otimes 1$$
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+					<div class="math-block prevent-select">
+						<div class="block-equation" data-katex="$$P(X=x)=p(x)=\left\{\begin{array}{l}\left(\begin{array}{l}n \\x\end{array}\right) p^{x} q^{n-x} ; x=0,1,2, \ldots, n ; \quad q=1-p \\0, \text { otherwise }\end{array}\right.$$">
+							<span>
+								$$P(X=x)=p(x)=\left\{\begin{array}{l}\left(\begin{array}{l}n \\x\end{array}\right) p^{x} q^{n-x} ; x=0,1,2, \ldots, n ; \quad q=1-p \\0, \text { otherwise }\end{array}\right.$$
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+					<div class="math-block prevent-select">
+						<div class="block-equation" data-katex="$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$">
+							<span>
+								$$p(x,\lambda)=P(X=x)=\left\{\begin{array}{l}\frac{e^{-\lambda}{\lambda^x}}{x!}; \quad x = 0,1,2,\ldots; \quad \lambda>0 \\0, \text { otherwise }\end{array}\right.$$
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+					<div class="math-block prevent-select">
+						<div class="block-equation" data-katex="$$f(x ; \mu, \sigma)=\frac{1}{\sigma \sqrt{2 \pi}} e^{-(x-\mu)^{2} / 2 \sigma^{2}} ; \quad -\infty<x<\infty,\; -\infty<\mu<\infty,\; \sigma>0$$">
+							<span>
+								$$f(x ; \mu, \sigma)=\frac{1}{\sigma \sqrt{2 \pi}} e^{-(x-\mu)^{2} / 2 \sigma^{2}} ; \quad -\infty<x<\infty,\; -\infty<\mu<\infty,\; \sigma>0$$
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+					<div class="math-block prevent-select">
+						<div class="block-equation" data-katex="$$P(X = x) = 0 \quad for\;all\;values\;of\;x$$">
+							<span>
+								$$P(X = x) = 0 \quad for\;all\;values\;of\;x$$
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+					<div class="math-block prevent-select">
+						<div class="block-equation" data-katex="$$P(a \leq X \leq b) = \int_a^b \frac{1}{\sigma \sqrt{2 \pi}}\;e^{-\frac{(t-\mu)^2}{2 \sigma^2}} dt$$">
+							<span>
+								$$P(a \leq X \leq b) = \int_a^b \frac{1}{\sigma \sqrt{2 \pi}}\;e^{-\frac{(t-\mu)^2}{2 \sigma^2}} dt$$
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+					<div class="math-block prevent-select">
+						<div class="block-equation" data-katex="$$C.I.(\mu) = \bar{x} \pm z\frac{\sigma}{\sqrt{n}}$$">
+							<span>
+								$$C.I.(\mu) = \bar{x} \pm z\frac{\sigma}{\sqrt{n}}$$
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+					<div class="table-block">
+						<table>
+
+								<tr>
+
+									<td><div class="table-data-cell">Confidence Interval </div></td>
+
+									<td><div class="table-data-cell">z </div></td>
+
+								</tr>
+
+								<tr>
+
+									<td><div class="table-data-cell">90% </div></td>
+
+									<td><div class="table-data-cell">1.645 </div></td>
+
+								</tr>
+
+								<tr>
+
+									<td><div class="table-data-cell">95% </div></td>
+
+									<td><div class="table-data-cell">1.96 </div></td>
+
+								</tr>
+
+								<tr>
+
+									<td><div class="table-data-cell">98% </div></td>
+
+									<td><div class="table-data-cell">2.326 </div></td>
+
+								</tr>
+
+								<tr>
+
+									<td><div class="table-data-cell">99% </div></td>
+
+									<td><div class="table-data-cell">2.576 </div></td>
+
+								</tr>
+
+						</table>
+					</div>
+
+					<div class="math-block prevent-select">
+						<div class="block-equation" data-katex="$$P(\bar{x} - 1.96 \frac{\sigma}{\sqrt{n}} < \mu < \bar{x} + 1.96 \frac{\sigma}{\sqrt{n}}) = 0.95$$">
+							<span>
+								$$P(\bar{x} - 1.96 \frac{\sigma}{\sqrt{n}} < \mu < \bar{x} + 1.96 \frac{\sigma}{\sqrt{n}}) = 0.95$$
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
+
+					<div class="math-block prevent-select">
+						<div class="block-equation" data-katex="$$S.E.(\bar{x}) = \frac{\sigma}{\sqrt{n}}$$">
+							<span>
+								$$S.E.(\bar{x}) = \frac{\sigma}{\sqrt{n}}$$
+							</span>
+						</div>
+						<div class="copy-clipboard">
+							<button class="btn-clipboard" onclick="copyMathToClipboard(this.parentElement.previousElementSibling)">
+								<svg class="copy-clipboard-svg" viewBox="0 0 24 24">
+									<path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+								</svg>
+							</button>
+						</div>
+					</div>
 
 				</section>
 
