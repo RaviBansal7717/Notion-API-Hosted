@@ -137,6 +137,7 @@
                 --core-color-bisque-main: bisque;
                 --core-color-slateblue-main: slateblue;
                 --core-color-coral-main: coral;
+                --core-color-coral-light: #f4a0a0;
                 --core-color-orangered-main: orangered;
                 --core-color-whitesmoke-main: whitesmoke;
                 --core-color-gray-lighter: #cccccc;
@@ -279,6 +280,8 @@
                 --color-border-child-page: var(--core-color-purple-dark);
 
                 --color-column-divider: var(--core-color-teal-dark);
+
+                --color-bg-audio: var(--core-color-indigo-light);
             }
 
             .dark-mode {
@@ -397,6 +400,8 @@
                 --color-border-child-page: var(--core-color-purple-light);
 
                 --color-column-divider: var(--core-color-coral-main);
+            
+                --color-bg-audio: var(--core-color-teal-main);
             }
 
             html {
@@ -439,6 +444,7 @@
 
             .image-modal {
                 display: none;
+                flex-direction: column;
                 position: fixed;
                 top: 0;
                 left: 0;
@@ -451,14 +457,29 @@
                 align-items: center;
                 justify-content: center;
                 margin-top: -1px;
-            
             } 
             
+            .modal-inner-container {
+                width: 100%;
+                height: 100%;
+                text-align: center;
+            }
+
             .modal-content {
                 width: 90%;
                 max-width: 90%;
                 object-fit: cover;
                 margin: auto 0;
+            }
+
+            .modal-image-caption {
+                width: calc(90% - 2 * 10px);
+                color: whitesmoke;
+                font-size: 20px;
+                margin-top: 10px;
+                padding: 10px;
+                text-align: center;
+                margin: auto;
             }
 
             /* ################################################################################ 
@@ -867,6 +888,7 @@
 
             .page-title-container {
                 display: flex;
+                justify-content: space-between;
             }
 
             .page-title {
@@ -1191,7 +1213,7 @@
             .table-data-cell {
                 max-height: 125px;
                 overflow: auto;
-                border: 2px solid seagreen;
+                /* border: 2px solid seagreen; */
                 padding: 10px;
             }
 
@@ -1202,6 +1224,7 @@
             thead tr {
                 background-color: var(--color-bg-table-header);
                 color: var(--color-text-table-header);
+                font-weight: bold;
             }
 
             td, th {
@@ -1465,6 +1488,7 @@
             */
 
             .audio-container {
+                background-color: var(--color-bg-audio);
                 margin-left: var(--gap-blocks-horizontal);
                 margin-right: var(--gap-blocks-horizontal);
                 text-align: center;
@@ -1556,6 +1580,7 @@
                 font-family: var(--font-nav);
                 font-weight: 400;
                 font-style: italic;
+				border: 2px solid transparent;
             }
 
             .hyperlink:hover {
@@ -2460,6 +2485,10 @@
                     max-height: 400px;
                 }
 
+                .child-page-reference {
+                    font-size: 17px;
+                }
+
             }
         </style>
 
@@ -2468,7 +2497,10 @@
 	<body class="light-mode">
 
 		<div id="imageModal" class="image-modal" onclick="closeModal(this)" tabindex="-1">
-			<img src="" id="modalImage" class="modal-content" />
+            <div class="modal-inner-container">
+                <img src="" id="modalImage" class="modal-content" />
+                <div class="modal-image-caption"></div>    
+            </div>
 		</div>
 
 
@@ -2655,7 +2687,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="2568d1a4-1319-4278-8bcb-99809221e802">
+				<section class="text-container-section" id="0489d834-de3a-4a4e-8ef3-a76445575e7d">
 
                     <div>
                         <h1 class="heading-1">Geometry of Newtonian gravity</h1>
@@ -2732,7 +2764,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="c7d09e42-319c-4710-b5a5-7b8782ccd367">
+				<section class="text-container-section" id="c75d8316-c254-40e0-94e2-cea3ab1516f3">
 
                     <div>
                         <h2 class="heading-2">Einstein’s equations</h2>
@@ -2854,7 +2886,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="d796cd9e-cdb9-446b-b59f-33b198990d8c">
+				<section class="text-container-section" id="8d6c36a7-6d37-4519-a0e1-187ce6bba633">
 
                     <div>
                         <h3 class="heading-3">Einstein Field Equations</h3>
@@ -2876,7 +2908,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="1a9d11ad-e5d6-4af5-9bd3-66a56f001d78">
+				<section class="text-container-section" id="7f667faa-6906-4f3b-95c7-9d5e7db3ac01">
 
                     <div>
                         <h3 class="heading-3">Mathematical Form</h3>
@@ -3004,7 +3036,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="d2c496cf-e2ee-46cf-a42f-56d3fd020451">
+				<section class="text-container-section" id="b9563417-929c-4428-810c-45611f33f99e">
 
                     <div>
                         <h3 class="heading-3">Sign convention</h3>
@@ -3077,7 +3109,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="1cca23da-5f9e-4032-a584-559e86897d47">
+				<section class="text-container-section" id="c7d15289-6a8a-4d79-af07-dc50eb506ab0">
 
                     <div>
                         <h1 class="heading-1">The Cosmological Constant</h1>
@@ -3119,7 +3151,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="25095c9f-1042-4bbe-9dfc-1c4465ecb857">
+				<section class="text-container-section" id="3655d9c2-a119-43b5-9974-302fd329bc26">
 
                     <div>
                         <h2 class="heading-2">History</h2>
@@ -3143,7 +3175,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="4de3d28b-b241-4141-b44e-730d850be5f9">
+				<section class="text-container-section" id="a8ca1e1e-0816-4a18-84ea-226a619f462f">
 
                     <div>
                         <h3 class="heading-3">Sequence of events 1915–1998</h3>
@@ -3211,7 +3243,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="d60c7afa-f634-49ed-b274-f48e43fc84a9">
+				<section class="text-container-section" id="8922550a-d73a-4e0d-98fe-374b6df287c0">
 
                     <div>
                         <h2 class="heading-2">Equation</h2>
@@ -3284,7 +3316,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="18bb7863-ecb8-4876-8ecf-c0088aa3ea9e">
+				<section class="text-container-section" id="2705ed5a-a45a-4243-ba79-5e227533d3f4">
 
                     <div>
                         <h3 class="heading-3">ΩΛ (Omega sub Lambda)</h3>
@@ -3300,7 +3332,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="c101e58b-20f1-46e1-a7bf-a8d716470ccd">
+				<section class="text-container-section" id="641dc202-c1f5-43ec-9cfd-6a3af7333694">
 
                     <div>
                         <h3 class="heading-3">Equation of state</h3>
@@ -3318,7 +3350,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="84a03731-b921-4300-849d-d4616b9b6429">
+				<section class="text-container-section" id="13bb3e3e-f200-4fb6-96d7-cc41d111627a">
 
                     <div>
                         <h3 class="heading-3">Positive value</h3>
@@ -3345,7 +3377,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="31063235-2b5c-4c55-a9cd-680fc1f990ea">
+				<section class="text-container-section" id="5fea1525-d5ab-43d7-bc8b-5a553deedd9d">
 
                     <div>
                         <h2 class="heading-2">Predictions</h2>
@@ -3353,7 +3385,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="bb5167ec-b617-4405-989a-c5344c0b0266">
+				<section class="text-container-section" id="2a16444b-1ac4-4346-bc44-0a5be5224611">
 
                     <div>
                         <h3 class="heading-3">Quantum field theory</h3>
@@ -3410,7 +3442,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="bf10954d-5a5a-404e-98de-6a6056a536bd">
+				<section class="text-container-section" id="cece130d-7a36-43be-97b6-7ff17a872704">
 
                     <div>
                         <h3 class="heading-3">Anthropic principle</h3>
@@ -3430,7 +3462,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="201ebafb-623a-43bc-b68d-a4315e02940f">
+				<section class="text-container-section" id="c35557dc-cffd-4b78-92dc-9b7f70527cc8">
 
                     <div>
                         <h3 class="heading-3">Failure to detect dark energy</h3>
@@ -3443,7 +3475,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="9e53930f-ef92-432c-a634-914c3c29259f">
+				<section class="text-container-section" id="3cf538c9-2997-46bb-b299-62c534ce94eb">
 
                     <div>
                         <h2 class="heading-2">Einstein–Maxwell equations</h2>
@@ -3547,7 +3579,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="7b11e69b-48c0-461d-b927-c14e5f2c64fc">
+				<section class="text-container-section" id="cba46713-54c9-456f-a61b-9618b3caf9a2">
 
                     <div>
                         <h2 class="heading-2">The linearized EFE</h2>
@@ -3559,7 +3591,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="614abca4-f942-4983-9646-ed0d86da1861">
+				<section class="text-container-section" id="444999ae-b50c-489c-8fd1-2dce50aa55e8">
 
                     <div>
                         <h2 class="heading-2">Polynomial form</h2>
@@ -3625,7 +3657,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="e7f6d457-4fb4-4cc3-9bdc-4093b653feb4">
+				<section class="text-container-section" id="05e3a3ba-e239-431a-9904-6a57329109f1">
 
                     <div>
                         <h1 class="heading-1">Higgs Mechanism</h1>
@@ -3718,7 +3750,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="c4e901f5-df1c-4e6b-8f8e-2dc15ef67e2d">
+				<section class="text-container-section" id="fc64a5ef-61de-45f6-8b55-2dcc6ee54a34">
 
                     <div>
                         <h2 class="heading-2">Standard Model</h2>
@@ -3749,7 +3781,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="e2219a1e-38be-455d-b3c5-5bb1cdf5571f">
+				<section class="text-container-section" id="a1bd09dd-c2ae-4b14-8ea0-7b0530ab308e">
 
                     <div>
                         <h3 class="heading-3">Structure of the Higgs field</h3>
@@ -3769,7 +3801,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="4ef9bd34-600c-4ba1-8b07-a2915ba6310f">
+				<section class="text-container-section" id="e1a0f425-22fa-43f9-8ced-66a0d99dabdc">
 
                     <div>
                         <h3 class="heading-3">The photon as the part that remains massless</h3>
@@ -3838,7 +3870,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="cacce2c1-59fd-4964-977c-5c16fcb54a35">
+				<section class="text-container-section" id="763e5697-583a-4a87-a4db-fea1e777eceb">
 
                     <div>
                         <h3 class="heading-3">Consequences for fermions</h3>
@@ -3917,7 +3949,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="c75d5e05-1904-4e22-a035-d0aa14b8f04f">
+				<section class="text-container-section" id="95aae46f-8b93-4cf4-9ad1-1809204f9b7f">
 
                     <div>
                         <h2 class="heading-2">Examples</h2>
@@ -3929,7 +3961,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="3069cfd2-bfe1-435c-907a-09427499c591">
+				<section class="text-container-section" id="93b06211-bbaa-4d68-9da3-a9c6e0911a4e">
 
                     <div>
                         <h3 class="heading-3">Landau model</h3>
@@ -4136,7 +4168,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="6ccdb74a-f811-4888-b4ab-0b58c6dc8f91">
+				<section class="text-container-section" id="a01ab148-bf4a-4866-af5c-bfbb849bc0ea">
 
                     <div>
                         <h3 class="heading-3">Abelian Higgs mechanism</h3>
@@ -4248,7 +4280,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="3d0deabd-6659-48bc-a97b-d8c0863ff060">
+				<section class="text-container-section" id="36d70dbc-16d4-4e82-9d08-d629a211e80f">
 
                     <div>
                         <h3 class="heading-3">Alternate form of the Abelian Higgs model action</h3>
@@ -4387,7 +4419,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="b1552246-2147-4da1-ab8d-96782d9089ba">
+				<section class="text-container-section" id="2f01d43b-7d90-436a-ab89-0350fcc97913">
 
                     <div>
                         <h3 class="heading-3">Lagrangian in explicit symmetry broken form</h3>
@@ -4767,7 +4799,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="bfe289d3-a2e5-443a-bf82-a494b4eaabc3">
+				<section class="text-container-section" id="9661ad6b-6932-4c40-bd09-414616db0e6c">
 
                     <div>
                         <h3 class="heading-3">Spontaneous symmetry breaking and trivializations</h3>
@@ -4865,7 +4897,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="64a69e5d-b804-4b84-888d-35d9f22396d2">
+				<section class="text-container-section" id="78693f56-cf20-4fc5-ac28-7267613487c5">
 
                     <div>
                         <h3 class="heading-3">Non-Abelian Higgs mechanism</h3>
@@ -5225,7 +5257,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="00d58f66-22c9-4586-9e1b-bed1f21bc24c">
+				<section class="text-container-section" id="370ef1dd-5901-4835-a004-eb4c2c1c1e8f">
 
                     <div>
                         <h3 class="heading-3">Affine Higgs mechanism</h3>
@@ -5530,7 +5562,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="c6e49f09-16ac-45c6-baa6-7a7d889d66f9">
+				<section class="text-container-section" id="8919370e-2198-4265-92d6-ad456c363b2d">
 
                     <div>
                         <h1 class="heading-1">Higgs Boson</h1>
@@ -5558,7 +5590,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="32396f5b-5806-4ad9-9cc6-c0d1d58ad487">
+				<section class="text-container-section" id="d1814ec9-7972-40ba-9fb9-3fe506531018">
 
                     <div>
                         <h2 class="heading-2">Technical aspects and mathematical formulation</h2>
@@ -6135,7 +6167,7 @@ $$
 
 				</section>
 
-				<section class="text-container-section" id="772e9908-9b8e-4b2e-8677-bf5b2edabbc2">
+				<section class="text-container-section" id="863dead1-3976-4ac8-a732-c9f9c11f16d7">
 
                     <div>
                         <h1 class="heading-1">The Mathematical Foundations of Standard Model</h1>
@@ -6208,7 +6240,7 @@ $$
 
 				</section>
 
-				<section class="text-container-section" id="bc280c26-341d-490b-b5c1-0fa649994f98">
+				<section class="text-container-section" id="b29a0636-760f-4671-b250-f2288c45b078">
 
                     <div>
                         <h3 class="heading-3">Free fields</h3>
@@ -6365,13 +6397,67 @@ $$
                         </span>
 </div>
 
+                    <div class="image-block">
+                        <img class="image-container lazy-load" data-src="media/377_404.gif" onclick="openModal(this)" />
+                    </div>
+
+					<div class="block-caption">This is a video embedded by me. Here is a caption  
+                        <span class="inline-math" data-katex=" $\frac{1}{2} + \phi e^{\sin(\alpha)}$ ">
+                            <span class="inline-math-inner"> $\frac{1}{2} + \phi e^{\sin(\alpha)}$  
+                                <span class="inline-math-popup">
+                                    <span class="inline-math-copy-text"></span>
+                                    <svg class="copy-inline-math-clipboard-svg" onclick="copyInlineMathToClipboard(this.parentElement.parentElement.parentElement)" viewBox="0 0 24 24">
+                                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                    </svg>
+                                </span>
+                            </span>
+                        </span>
+ with  bit of maths thrown in here.  Let us also throw in  some inline code here      <span class="inline-code"># with open(path, "wb") as f:</span> . We have some more inline mathematics in here as :  
+                        <span class="inline-math" data-katex=" $- \frac{{\hbar ^2 }}{{2m}}\frac{{d^2 \psi (x)}}{{dx^2 }} + U(x)\psi (x) = E\psi (x)$ ">
+                            <span class="inline-math-inner"> $- \frac{{\hbar ^2 }}{{2m}}\frac{{d^2 \psi (x)}}{{dx^2 }} + U(x)\psi (x) = E\psi (x)$  
+                                <span class="inline-math-popup">
+                                    <span class="inline-math-copy-text"></span>
+                                    <svg class="copy-inline-math-clipboard-svg" onclick="copyInlineMathToClipboard(this.parentElement.parentElement.parentElement)" viewBox="0 0 24 24">
+                                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                    </svg>
+                                </span>
+                            </span>
+                        </span>
+</div>
+
+                    <div>
+                        <p class="text-paragraph">This is a video embedded by me. Here is a caption  
+                        <span class="inline-math" data-katex=" $\frac{1}{2} + \phi e^{\sin(\alpha)}$ ">
+                            <span class="inline-math-inner"> $\frac{1}{2} + \phi e^{\sin(\alpha)}$  
+                                <span class="inline-math-popup">
+                                    <span class="inline-math-copy-text"></span>
+                                    <svg class="copy-inline-math-clipboard-svg" onclick="copyInlineMathToClipboard(this.parentElement.parentElement.parentElement)" viewBox="0 0 24 24">
+                                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                    </svg>
+                                </span>
+                            </span>
+                        </span>
+ with  bit of maths thrown in here.  Let us also throw in  some inline code here      <span class="inline-code"># with open(path, "wb") as f:</span> . We have some more inline mathematics in here as :  
+                        <span class="inline-math" data-katex=" $- \frac{{\hbar ^2 }}{{2m}}\frac{{d^2 \psi (x)}}{{dx^2 }} + U(x)\psi (x) = E\psi (x)$ ">
+                            <span class="inline-math-inner"> $- \frac{{\hbar ^2 }}{{2m}}\frac{{d^2 \psi (x)}}{{dx^2 }} + U(x)\psi (x) = E\psi (x)$  
+                                <span class="inline-math-popup">
+                                    <span class="inline-math-copy-text"></span>
+                                    <svg class="copy-inline-math-clipboard-svg" onclick="copyInlineMathToClipboard(this.parentElement.parentElement.parentElement)" viewBox="0 0 24 24">
+                                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                                    </svg>
+                                </span>
+                            </span>
+                        </span>
+</p>
+                    </div>
+
                     <div>
                         <hr class="horizontal-divider">
                     </div>
 
 				</section>
 
-				<section class="text-container-section" id="3c01d084-666b-46a8-8a18-b8c76c493eab">
+				<section class="text-container-section" id="1a371c40-a1dc-486b-bc31-d59f486e4514">
 
                     <div>
                         <h1 class="heading-1">A bunch of equations</h1>
@@ -6498,7 +6584,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="df6dd5e6-28fe-4853-8400-f6526ed31270">
+				<section class="text-container-section" id="3b7294f0-d7ea-42ce-9449-066b4c1a7c08">
 
                     <div>
                         <h1 class="heading-1">A bunch of repls and tweets</h1>
@@ -6551,7 +6637,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="ddc36cfd-c64d-404a-a441-72c1ed934e95">
+				<section class="text-container-section" id="6237f4f4-5c3e-4540-bf13-094a86d60111">
 
                     <div>
                         <h1 class="heading-1">A bunch of other widgets</h1>
@@ -6580,7 +6666,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="dc7c276c-6de8-49e8-a999-b5e2fc32979b">
+				<section class="text-container-section" id="3201bdf1-8795-47ce-a72d-f4feb7406bae">
 
                     <div>
                         <h1 class="heading-1">Code Snippets</h1>
@@ -6588,7 +6674,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="266c3376-9011-4494-94ff-25e6342a8047">
+				<section class="text-container-section" id="2f033d5e-b455-4980-b921-6669f6c1a70f">
 
                     <div>
                         <h2 class="heading-2">Python Snippets</h2>
@@ -6752,7 +6838,7 @@ for epoch in range(epochs):
 
 				</section>
 
-				<section class="text-container-section" id="e06431d0-944b-4bfe-87df-59c8ddf3f257">
+				<section class="text-container-section" id="812cce69-1970-43a5-94f4-8f3261db1c8a">
 
                     <div>
                         <h2 class="heading-2">C++ Snippets</h2>
@@ -6853,7 +6939,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="7ef38aec-57bd-4cef-8629-0ee6d28225a9">
+				<section class="text-container-section" id="186dc573-a75b-459a-b113-d619345e15ef">
 
                     <div>
                         <h2 class="heading-2">Javascript Snippets</h2>
@@ -6936,7 +7022,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="b7c66042-f4ab-459c-9490-c43eddeb51b2">
+				<section class="text-container-section" id="f151cf7b-8ae7-4865-96d6-3a3538989384">
 
                     <div>
                         <h2 class="heading-2">HTML Snippets</h2>
@@ -6992,7 +7078,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="f7a107b9-92ca-4668-bb4a-af18f9d788a1">
+				<section class="text-container-section" id="de942d4c-b4f3-46df-ab80-e538ddcfa216">
 
                     <div>
                         <h2 class="heading-2">CSS Snippets</h2>
@@ -7140,7 +7226,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="97565d8e-3778-462c-9593-4e1fb762b77e">
+				<section class="text-container-section" id="29f22c27-5db3-4193-94f9-6f4f636353c8">
 
                     <div>
                         <h1 class="heading-1">Table, File and Audio Widgets</h1>
@@ -7183,7 +7269,7 @@ int main(int argc, char **argv) {
 					</a>
 
 				<div class="audio-container">
-					<audio class="audio-player lazy-load" controls>
+					<audio class="audio-player prevent-select lazy-load" controls>
 						<source data-src="media/444__Ye_Tune_Kya_Kiya_-_Once_Upon_A_Time_In_Mumbai_Again_-__SongsPk.mp3" type="audio/ogg">
 						<source data-src="media/444__Ye_Tune_Kya_Kiya_-_Once_Upon_A_Time_In_Mumbai_Again_-__SongsPk.mp3" type="audio/mpeg">
 						Your browser does not support the audio element.
@@ -7508,7 +7594,7 @@ With equations like
 
 				</section>
 
-				<section class="text-container-section" id="f46e4594-80ee-40fa-ad6f-061ba1fb69f7">
+				<section class="text-container-section" id="3c264dce-20cd-4fc3-bf3b-86a0fec99998">
 
                     <div>
                         <h3 class="heading-3">Here is a block mention from another page</h3>
@@ -7785,7 +7871,7 @@ With equations like
 
 				</section>
 
-				<section class="text-container-section" id="173934ab-69e8-4598-9d26-72e34a503b2d">
+				<section class="text-container-section" id="7f5d99d2-b87c-450d-9fca-54547a9a3da5">
 
                     <div>
                         <h3 class="heading-3">Free fields</h3>
@@ -9127,7 +9213,7 @@ gitGraph
 							<div class="ltr-direction">
 
 				<div class="audio-container">
-					<audio class="audio-player lazy-load" controls>
+					<audio class="audio-player prevent-select lazy-load" controls>
 						<source data-src="media/590_1_1_ButtaBomma_Mp3_Song_Download_Armaan_Malik_2019_wellmp3songs.com.mp3" type="audio/ogg">
 						<source data-src="media/590_1_1_ButtaBomma_Mp3_Song_Download_Armaan_Malik_2019_wellmp3songs.com.mp3" type="audio/mpeg">
 						Your browser does not support the audio element.
@@ -9400,7 +9486,7 @@ def train_step(x, y):
 						<div class="slideshow-slide slideshow-fade">
 
 				<div class="audio-container">
-					<audio class="audio-player lazy-load" controls>
+					<audio class="audio-player prevent-select lazy-load" controls>
 						<source data-src="media/590_1_1_ButtaBomma_Mp3_Song_Download_Armaan_Malik_2019_wellmp3songs.com.mp3" type="audio/ogg">
 						<source data-src="media/590_1_1_ButtaBomma_Mp3_Song_Download_Armaan_Malik_2019_wellmp3songs.com.mp3" type="audio/mpeg">
 						Your browser does not support the audio element.
@@ -9710,6 +9796,8 @@ def train_step(x, y):
 					<div class="table-block">
 						<table>
 
+								<thead>
+
 								<tr>
 
 									<td><div class="table-data-cell">Company </div></td>
@@ -9723,6 +9811,8 @@ def train_step(x, y):
 									<td><div class="table-data-cell">Symbol </div></td>
 
 								</tr>
+
+								</thead>
 
 								<tr>
 
@@ -10610,12 +10700,6 @@ def train_step(x, y):
             </div>
         </div>
 
-                    <a class="hyperlink" target="_blank" href="">
-                        <div class="hyperlink-container">
-                            <img width="24px" height="24px" src="data:image/png;base64,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"> 
-                        </div>
-                    </a>
-
 					<div class="math-block prevent-select">
 						<div class="block-equation" data-katex="$$|x| = x$$">
 							<span>
@@ -10860,6 +10944,8 @@ def train_step(x, y):
 					<div class="table-block">
 						<table>
 
+								<thead>
+
 								<tr>
 
 									<td><div class="table-data-cell">Confidence Interval </div></td>
@@ -10867,6 +10953,8 @@ def train_step(x, y):
 									<td><div class="table-data-cell">z </div></td>
 
 								</tr>
+
+								</thead>
 
 								<tr>
 
@@ -11118,14 +11206,20 @@ def train_step(x, y):
                 }
             }
 
-            function openModal(imageElement) {
-                var modal = document.getElementById("imageModal");
-                var modalImage = document.getElementById("modalImage");
-                modal.style.display = "flex";
-                modalImage.src = imageElement.src;
-                modal.focus();
-                document.body.style.overflowY = "hidden";
-            }
+			function openModal(imageElement) {
+				var modal = document.getElementById("imageModal");
+				var modalImage = document.getElementById("modalImage");
+                var nextSiblingElement = imageElement.parentElement.nextElementSibling;
+				modal.style.display = "flex";
+				modalImage.src = imageElement.src;
+                if(nextSiblingElement.classList.contains("block-caption")) {
+                    modalImage.nextElementSibling.innerHTML = nextSiblingElement.innerHTML;
+                } else {
+                    modalImage.nextElementSibling.innerHTML = "";
+                }
+				modal.focus();
+				document.body.style.overflowY = "hidden";
+			}
 
             function closeModal(modalElement) {
                 modalElement.style.display = "none";
