@@ -274,6 +274,11 @@
                 --color-hover-toggle-hidden: var(--core-color-purple-very-light);
                 --color-bg-toggle-hidden: var(--core-color-purple-light);
                 --color-border-toggle-container: var(--core-color-purple-very-dark);
+
+                --color-bg-child-page: var(--core-color-coral-light);
+                --color-border-child-page: var(--core-color-purple-dark);
+
+                --color-column-divider: var(--core-color-teal-dark);
             }
 
             .dark-mode {
@@ -310,7 +315,7 @@
 
                 --color-bg-inline-code: var(--core-color-gray-blue);
                 --color-text-inline-code: var(--core-color-gold-light);
-                --color-text-inline-link: var(--core-color-seagreen-main);
+                --color-text-inline-link: var(--core-color-teal-light);
 
                 --color-text-hyperlink: var(--core-color-purple-very-very-light);
                 --color-bg-table-header: var(--core-color-teal-light);
@@ -387,6 +392,11 @@
                 --color-hover-toggle-hidden: var(--core-color-gray-blue);
                 --color-bg-toggle-hidden: var(--core-color-gray-light);
                 --color-border-toggle-container: var(--core-color-blue-light);
+
+				--color-bg-child-page: var(--core-color-gray-blue);
+                --color-border-child-page: var(--core-color-purple-light);
+
+                --color-column-divider: var(--core-color-coral-main);
             }
 
             html {
@@ -1250,21 +1260,21 @@
             ################################################################################
             */
 
-            .heading-1 {
+            .heading-1, .heading-1-recur {
                 margin-left: var(--gap-blocks-horizontal);
                 color: var(--color-text-heading-1);
                 font-family: var(--font-heading);
                 font-size: var(--fsize-h1);
-                
             }
-            .heading-2 {
+
+            .heading-2, .heading-2-recur {
                 margin-left: var(--gap-blocks-horizontal);
                 color: var(--color-text-heading-2);
                 font-family: var(--font-heading);
                 font-size: var(--fsize-h2);
             }
             
-            .heading-3 {
+            .heading-3, .heading-3-recur {
                 margin-left: var(--gap-blocks-horizontal);
                 color: var(--color-text-heading-3);
                 font-family: var(--font-heading);
@@ -1455,7 +1465,6 @@
             */
 
             .audio-container {
-                background-color: cadetblue;
                 margin-left: var(--gap-blocks-horizontal);
                 margin-right: var(--gap-blocks-horizontal);
                 text-align: center;
@@ -1525,13 +1534,16 @@
             .hyperlink-container {
                 margin-left: var(--gap-blocks-horizontal);
                 margin-right: var(--gap-blocks-horizontal);
-                margin-top: var(--gap-blocks-vertical-reduced-more);
                 padding-top: 4px;
                 padding-bottom: 4px;
                 width: fit-content;
+                display: flex;
+                align-items: center;
+                gap: 10px;
             }
 
             .hyperlink {
+                margin-top: var(--gap-blocks-vertical-reduced-more);
                 font-size: var(--fsize-hyperlink);
                 text-decoration: none;
                 color: var(--color-text-hyperlink);
@@ -1545,34 +1557,12 @@
                 font-weight: 400;
                 font-style: italic;
             }
-            
+
             .hyperlink:hover {
+                border: 2px solid seagreen;
                 -webkit-transform: scale(0.9);
                 transform: scale(0.9);
                 font-weight: normal;
-            }
-            
-            .hyperlink::before {
-                position: absolute;
-                top: -2px;
-                left: -7px;
-                box-sizing: content-box;
-                padding: 0 5px;
-                width: 100%;
-                height: 100%;
-                border: 2px solid seagreen;
-                /* content: ''; */
-                opacity: 0;
-                -webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
-                transition: opacity 0.2s, transform 0.2s;
-                -webkit-transform: scale(0.9);
-                transform: scale(0.9);
-            }
-            
-            .hyperlink:hover::before{
-                opacity: 1;
-                -webkit-transform: scale(1.2);
-                transform: scale(1.2);
             }
 
             /* ################################################################################ 
@@ -1803,12 +1793,11 @@
                 flex-direction: row;
                 gap: 1vh;
                 padding: 1vh 0.6vh;
-                background-color: lightcoral;
             }
 
             .column-item-container {
                 flex: 1;
-                border: 3px solid green;
+                /* border: 3px solid green; */
                 /* display: flex;
                 align-items: center; */
                 overflow: auto;
@@ -1821,6 +1810,39 @@
                 max-height: 260px;
             }
 
+            .column-item-container::-webkit-scrollbar-track
+            {
+                background-color: var(--color-scroll-track-gist);
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+
+            .column-item-container::-webkit-scrollbar
+            {
+                width: calc(var(--width-gist-nav-scrollbar) + 0px);
+                height: calc(var(--height-gist-nav-scrollbar) + 0px);
+            }
+
+            .column-item-container::-webkit-scrollbar-thumb
+            {
+                background-color: var(--color-scroll-thumb-gist);
+            }
+
+            .column-item-divider {
+                width: 6px; 
+                background-color: var(--color-column-divider);
+                margin-top: -8px; 
+                margin-bottom: -8px; 
+                border-radius: 1px;
+            }
+
+            .column-item-container .audio-player {
+                width: 80%;
+            }
+
+            .column-item-container .file-container {
+                width: 80%;
+            }
 
             /* ################################################################################ 
                                             CSS for Gist
@@ -2135,9 +2157,29 @@
 				font-size: 20px;
 			}
 
+			.child-page-container {
+				background-color: var(--color-bg-child-page);
+				color: var(--color-text-file);
+				outline: 1px solid var(--color-border-child-page);
+				border: 3px solid transparent;
+			}
+			
+			.child-page-container:hover {
+				border: 3px solid var(--color-border-child-page);
+				outline: 0px solid transparent;
+			}
+
             .relative-position {
                 position: relative;
                 overflow-y: hidden;
+            }
+
+            .rtl-direction {
+                direction: rtl;
+            }
+
+            .ltr-direction {
+                direction: ltr;
             }
 
             /* ################################################################################ 
@@ -2345,15 +2387,15 @@
                     height: var(--height-sm-file-icon);
                 }
                 
-                .heading-1 {
+                .heading-1, .heading-1-recur {
                     font-size: var(--fsize-sm-h1);
                 }
                 
-                .heading-2 {
+                .heading-2, .heading-2-recur {
                     font-size: var(--fsize-sm-h2);
                 }
                 
-                .heading-3 {
+                .heading-3, .heading-3-recur {
                     font-size: var(--fsize-sm-h3);
                 }
 
@@ -2613,7 +2655,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="780ccaaf-976f-4f82-8953-074c810df9e5">
+				<section class="text-container-section" id="2568d1a4-1319-4278-8bcb-99809221e802">
 
                     <div>
                         <h1 class="heading-1">Geometry of Newtonian gravity</h1>
@@ -2690,7 +2732,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="a375962d-345b-40f3-b68b-64b8ab5c2512">
+				<section class="text-container-section" id="c7d09e42-319c-4710-b5a5-7b8782ccd367">
 
                     <div>
                         <h2 class="heading-2">Einstein’s equations</h2>
@@ -2812,7 +2854,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="58728598-4cd8-4842-96f4-c5042fa65a68">
+				<section class="text-container-section" id="d796cd9e-cdb9-446b-b59f-33b198990d8c">
 
                     <div>
                         <h3 class="heading-3">Einstein Field Equations</h3>
@@ -2834,7 +2876,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="27857ba5-eca4-49bb-812c-7d1c6f38feff">
+				<section class="text-container-section" id="1a9d11ad-e5d6-4af5-9bd3-66a56f001d78">
 
                     <div>
                         <h3 class="heading-3">Mathematical Form</h3>
@@ -2962,7 +3004,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="429150bc-9afc-4dd6-91f6-3792bf42c282">
+				<section class="text-container-section" id="d2c496cf-e2ee-46cf-a42f-56d3fd020451">
 
                     <div>
                         <h3 class="heading-3">Sign convention</h3>
@@ -3035,17 +3077,17 @@
 
 				</section>
 
-				<section class="text-container-section" id="21399e20-c709-44b8-ba35-b7c1974a24ee">
+				<section class="text-container-section" id="1cca23da-5f9e-4032-a584-559e86897d47">
 
                     <div>
                         <h1 class="heading-1">The Cosmological Constant</h1>
                     </div>
 
-					<div class="hyperlink-container">
-						<a class="hyperlink" target="_blank" href="https://en.wikipedia.org/wiki/Cosmological_constant">
-							<img width="24px" height="24px" src="data:image/png;base64,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"> A simple web link 
-						</a>
-					</div>
+                    <a class="hyperlink" target="_blank" href="https://en.wikipedia.org/wiki/Cosmological_constant">
+                        <div class="hyperlink-container">
+                            <img width="24px" height="24px" src="data:image/png;base64,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"> A simple web link 
+                        </div>
+                    </a>
 
                     <div>
                         <p class="text-paragraph">In  <a href="https://en.wikipedia.org/wiki/Physical_cosmology" class="inline-link" target="_blank">cosmology</a>, the  cosmological constant  (usually denoted by the Greek capital letter  <a href="https://en.wikipedia.org/wiki/Lambda" class="inline-link" target="_blank">lambda</a>: Λ), alternatively called  Einstein's cosmological constant , is the constant coefficient of a term that  <a href="https://en.wikipedia.org/wiki/Albert_Einstein" class="inline-link" target="_blank">Albert Einstein</a> temporarily added to his  <a href="https://en.wikipedia.org/wiki/Field_equations" class="inline-link" target="_blank">field equations</a> of  <a href="https://en.wikipedia.org/wiki/General_relativity" class="inline-link" target="_blank">general relativity</a>. He later removed it. Much later it was revived and reinterpreted as the energy density of space, or  <a href="https://en.wikipedia.org/wiki/Vacuum_energy" class="inline-link" target="_blank">vacuum energy</a>, that arises in  <a href="https://en.wikipedia.org/wiki/Quantum_mechanics" class="inline-link" target="_blank">quantum mechanics</a>. It is closely associated with the concept of  <a href="https://en.wikipedia.org/wiki/Dark_energy" class="inline-link" target="_blank">dark energy</a>. <a href="https://en.wikipedia.org/wiki/Cosmological_constant#cite_note-CC_Definition-1" class="inline-link" target="_blank">[1]</a></p>
@@ -3077,7 +3119,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="9939c1fd-2711-4da4-aa7b-1c2bff0ad8e2">
+				<section class="text-container-section" id="25095c9f-1042-4bbe-9dfc-1c4465ecb857">
 
                     <div>
                         <h2 class="heading-2">History</h2>
@@ -3101,7 +3143,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="a8d12097-20ba-445b-bb77-736b00c8eb2a">
+				<section class="text-container-section" id="4de3d28b-b241-4141-b44e-730d850be5f9">
 
                     <div>
                         <h3 class="heading-3">Sequence of events 1915–1998</h3>
@@ -3169,7 +3211,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="5e5b9fb0-4e65-422d-bac1-c82e2f74c765">
+				<section class="text-container-section" id="d60c7afa-f634-49ed-b274-f48e43fc84a9">
 
                     <div>
                         <h2 class="heading-2">Equation</h2>
@@ -3242,7 +3284,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="c63ba8ec-7e15-4317-95c2-1be8921d29b6">
+				<section class="text-container-section" id="18bb7863-ecb8-4876-8ecf-c0088aa3ea9e">
 
                     <div>
                         <h3 class="heading-3">ΩΛ (Omega sub Lambda)</h3>
@@ -3258,7 +3300,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="c3dbe153-e05f-4b43-bdea-6b33fb458624">
+				<section class="text-container-section" id="c101e58b-20f1-46e1-a7bf-a8d716470ccd">
 
                     <div>
                         <h3 class="heading-3">Equation of state</h3>
@@ -3276,7 +3318,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="bf3ec0f8-6088-45ab-8d76-9d50c32807ef">
+				<section class="text-container-section" id="84a03731-b921-4300-849d-d4616b9b6429">
 
                     <div>
                         <h3 class="heading-3">Positive value</h3>
@@ -3303,7 +3345,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="69fb3a2c-3cd2-4a04-999c-22546f56e198">
+				<section class="text-container-section" id="31063235-2b5c-4c55-a9cd-680fc1f990ea">
 
                     <div>
                         <h2 class="heading-2">Predictions</h2>
@@ -3311,7 +3353,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="171a6d38-022d-4396-a321-8081d19f4d49">
+				<section class="text-container-section" id="bb5167ec-b617-4405-989a-c5344c0b0266">
 
                     <div>
                         <h3 class="heading-3">Quantum field theory</h3>
@@ -3368,7 +3410,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="748e136b-51ff-47ba-8d0f-1fd6c235ca30">
+				<section class="text-container-section" id="bf10954d-5a5a-404e-98de-6a6056a536bd">
 
                     <div>
                         <h3 class="heading-3">Anthropic principle</h3>
@@ -3388,7 +3430,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="feb5716c-1043-4d6e-9a21-ad28c1e7a9e2">
+				<section class="text-container-section" id="201ebafb-623a-43bc-b68d-a4315e02940f">
 
                     <div>
                         <h3 class="heading-3">Failure to detect dark energy</h3>
@@ -3401,7 +3443,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="92c94d5a-346b-4116-81d8-71392c674b18">
+				<section class="text-container-section" id="9e53930f-ef92-432c-a634-914c3c29259f">
 
                     <div>
                         <h2 class="heading-2">Einstein–Maxwell equations</h2>
@@ -3505,7 +3547,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="4b21ab94-0628-4d37-b8bb-9672f9bdf787">
+				<section class="text-container-section" id="7b11e69b-48c0-461d-b927-c14e5f2c64fc">
 
                     <div>
                         <h2 class="heading-2">The linearized EFE</h2>
@@ -3517,7 +3559,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="a4783d57-67bd-4ee9-8f6a-ee08ffa01bf5">
+				<section class="text-container-section" id="614abca4-f942-4983-9646-ed0d86da1861">
 
                     <div>
                         <h2 class="heading-2">Polynomial form</h2>
@@ -3583,17 +3625,17 @@
 
 				</section>
 
-				<section class="text-container-section" id="9273705c-3f55-4596-a1df-6893cbcb8639">
+				<section class="text-container-section" id="e7f6d457-4fb4-4cc3-9bdc-4093b653feb4">
 
                     <div>
                         <h1 class="heading-1">Higgs Mechanism</h1>
                     </div>
 
-					<div class="hyperlink-container">
-						<a class="hyperlink" target="_blank" href="https://en.wikipedia.org/wiki/Higgs_mechanism">
-							<img width="24px" height="24px" src="data:image/png;base64,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"> https://en.wikipedia.org/wiki/Higgs_mechanism
-						</a>
-					</div>
+                    <a class="hyperlink" target="_blank" href="https://en.wikipedia.org/wiki/Higgs_mechanism">
+                        <div class="hyperlink-container">
+                            <img width="24px" height="24px" src="data:image/png;base64,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"> https://en.wikipedia.org/wiki/Higgs_mechanism
+                        </div>
+                    </a>
 
                     <div>
                         <p class="text-paragraph">In the  <a href="https://en.wikipedia.org/wiki/Standard_Model" class="inline-link" target="_blank">Standard Model</a> of  <a href="https://en.wikipedia.org/wiki/Particle_physics" class="inline-link" target="_blank">particle physics</a>, the  Higgs mechanism  is essential to explain the  <a href="https://en.wikipedia.org/wiki/Mass_generation" class="inline-link" target="_blank">generation mechanism</a> of the property " <a href="https://en.wikipedia.org/wiki/Mass" class="inline-link" target="_blank">mass</a>" for  <a href="https://en.wikipedia.org/wiki/Gauge_boson" class="inline-link" target="_blank">gauge bosons</a>. Without the Higgs mechanism, all  <a href="https://en.wikipedia.org/wiki/Boson" class="inline-link" target="_blank">bosons</a> (one of the two classes of particles, the other being  <a href="https://en.wikipedia.org/wiki/Fermion" class="inline-link" target="_blank">fermions</a>) would be considered  <a href="https://en.wikipedia.org/wiki/Massless_particle" class="inline-link" target="_blank">massless</a>, but measurements show that the  <a href="https://en.wikipedia.org/wiki/W_boson" class="inline-link" target="_blank">W+, W−</a>, and  <a href="https://en.wikipedia.org/wiki/Z_boson" class="inline-link" target="_blank">Z0 bosons</a> actually have relatively large masses of around 80 GeV/ c 2. The Higgs field resolves this conundrum. The simplest description of the mechanism adds a  <a href="https://en.wikipedia.org/wiki/Quantum_field" class="inline-link" target="_blank">quantum field</a> (the  <a href="https://en.wikipedia.org/wiki/Higgs_boson" class="inline-link" target="_blank">Higgs field</a>) that permeates all space to the Standard Model. Below some extremely high temperature, the field causes  <a href="https://en.wikipedia.org/wiki/Spontaneous_symmetry_breaking" class="inline-link" target="_blank">spontaneous symmetry breaking</a> during interactions. The breaking of symmetry triggers the Higgs mechanism, causing the bosons it interacts with to have mass. In the Standard Model, the phrase "Higgs mechanism" refers specifically to the generation of masses for the  <a href="https://en.wikipedia.org/wiki/W_and_Z_bosons" class="inline-link" target="_blank">W±, and Z</a>  <a href="https://en.wikipedia.org/wiki/Weak_force" class="inline-link" target="_blank">weak</a> gauge bosons through  <a href="https://en.wikipedia.org/wiki/Electroweak_interaction" class="inline-link" target="_blank">electroweak</a> symmetry breaking. <a href="https://en.wikipedia.org/wiki/Higgs_mechanism#cite_note-PDG-1" class="inline-link" target="_blank">[1]</a> The  <a href="https://en.wikipedia.org/wiki/Large_Hadron_Collider" class="inline-link" target="_blank">Large Hadron Collider</a> at  <a href="https://en.wikipedia.org/wiki/CERN" class="inline-link" target="_blank">CERN</a> announced results consistent with the Higgs particle on 14 March 2013, making it extremely likely that the field, or one like it, exists, and explaining how the Higgs mechanism takes place in nature. The view of the Higgs mechanism as involving spontaneous symmetry breaking of a gauge symmetry is technically incorrect since by  <a href="https://en.wikipedia.org/wiki/Elitzur%27s_theorem" class="inline-link" target="_blank">Elitzur's theorem</a> gauge symmetries can never be spontaneously broken. Rather, the  <a href="https://en.wikipedia.org/wiki/J%C3%BCrg_Fr%C3%B6hlich" class="inline-link" target="_blank">Fröhlich</a>–Morchio–Strocchi mechanism reformulates the Higgs mechanism in an entirely gauge invariant way, generally leading to the same results. <a href="https://en.wikipedia.org/wiki/Higgs_mechanism#cite_note-2" class="inline-link" target="_blank">[2]</a></p>
@@ -3613,8 +3655,8 @@
 
 					<div class="column-layout-container">
 
-						<div class="column-item-container">
-							<div>
+						<div class="column-item-container rtl-direction">
+							<div class="ltr-direction">
 
                     <div class="image-block">
                         <img class="image-container lazy-load" data-src="media/149_1_1_Image.png" onclick="openModal(this)" />
@@ -3624,6 +3666,9 @@
 
 							</div>
 						</div>
+
+                        <div class="column-item-divider">
+                        </div>
 
 						<div class="column-item-container">
 							<div>
@@ -3673,7 +3718,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="117af884-ed9a-4025-92e6-afb66da395f3">
+				<section class="text-container-section" id="c4e901f5-df1c-4e6b-8f8e-2dc15ef67e2d">
 
                     <div>
                         <h2 class="heading-2">Standard Model</h2>
@@ -3704,7 +3749,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="d155265d-35bc-49bf-a3dd-f5c576ecabec">
+				<section class="text-container-section" id="e2219a1e-38be-455d-b3c5-5bb1cdf5571f">
 
                     <div>
                         <h3 class="heading-3">Structure of the Higgs field</h3>
@@ -3724,7 +3769,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="8fdfe0c2-7635-4464-b2f5-8724a073e1e0">
+				<section class="text-container-section" id="4ef9bd34-600c-4ba1-8b07-a2915ba6310f">
 
                     <div>
                         <h3 class="heading-3">The photon as the part that remains massless</h3>
@@ -3793,7 +3838,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="67cc8d33-f6a1-4d20-bfe5-7ec34692ece0">
+				<section class="text-container-section" id="cacce2c1-59fd-4964-977c-5c16fcb54a35">
 
                     <div>
                         <h3 class="heading-3">Consequences for fermions</h3>
@@ -3872,7 +3917,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="79432911-f68f-4b9d-ac23-26d7551ba125">
+				<section class="text-container-section" id="c75d5e05-1904-4e22-a035-d0aa14b8f04f">
 
                     <div>
                         <h2 class="heading-2">Examples</h2>
@@ -3884,7 +3929,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="ee866668-8a96-4196-b25c-08ac44bda1ad">
+				<section class="text-container-section" id="3069cfd2-bfe1-435c-907a-09427499c591">
 
                     <div>
                         <h3 class="heading-3">Landau model</h3>
@@ -4091,7 +4136,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="d0a76182-274e-4768-8d86-443165607c58">
+				<section class="text-container-section" id="6ccdb74a-f811-4888-b4ab-0b58c6dc8f91">
 
                     <div>
                         <h3 class="heading-3">Abelian Higgs mechanism</h3>
@@ -4203,7 +4248,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="8d2c6e05-5235-46eb-898f-09ac11db4417">
+				<section class="text-container-section" id="3d0deabd-6659-48bc-a97b-d8c0863ff060">
 
                     <div>
                         <h3 class="heading-3">Alternate form of the Abelian Higgs model action</h3>
@@ -4342,7 +4387,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="8efc027e-36ed-46ed-aa6d-cee73e2cd224">
+				<section class="text-container-section" id="b1552246-2147-4da1-ab8d-96782d9089ba">
 
                     <div>
                         <h3 class="heading-3">Lagrangian in explicit symmetry broken form</h3>
@@ -4722,7 +4767,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="551e83a7-4ec3-42bc-b138-e6dc11beca5a">
+				<section class="text-container-section" id="bfe289d3-a2e5-443a-bf82-a494b4eaabc3">
 
                     <div>
                         <h3 class="heading-3">Spontaneous symmetry breaking and trivializations</h3>
@@ -4820,7 +4865,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="861ffe83-dba6-4ee5-b10b-4c9de0bec946">
+				<section class="text-container-section" id="64a69e5d-b804-4b84-888d-35d9f22396d2">
 
                     <div>
                         <h3 class="heading-3">Non-Abelian Higgs mechanism</h3>
@@ -5180,7 +5225,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="39b9b8f7-78c3-4e48-94ec-c1508746ebbe">
+				<section class="text-container-section" id="00d58f66-22c9-4586-9e1b-bed1f21bc24c">
 
                     <div>
                         <h3 class="heading-3">Affine Higgs mechanism</h3>
@@ -5485,7 +5530,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="66bdd40b-9a20-428d-8ac2-fb413d557e24">
+				<section class="text-container-section" id="c6e49f09-16ac-45c6-baa6-7a7d889d66f9">
 
                     <div>
                         <h1 class="heading-1">Higgs Boson</h1>
@@ -5513,7 +5558,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="73e220ef-1d31-4e3a-aca3-fc68657794b5">
+				<section class="text-container-section" id="32396f5b-5806-4ad9-9cc6-c0d1d58ad487">
 
                     <div>
                         <h2 class="heading-2">Technical aspects and mathematical formulation</h2>
@@ -6090,7 +6135,7 @@ $$
 
 				</section>
 
-				<section class="text-container-section" id="d4bc2b9b-12de-475d-8283-ffb1b10e085d">
+				<section class="text-container-section" id="772e9908-9b8e-4b2e-8677-bf5b2edabbc2">
 
                     <div>
                         <h1 class="heading-1">The Mathematical Foundations of Standard Model</h1>
@@ -6104,8 +6149,8 @@ $$
 
 					<div class="column-layout-container">
 
-						<div class="column-item-container">
-							<div>
+						<div class="column-item-container rtl-direction">
+							<div class="ltr-direction">
 
                     <div class="image-block">
                         <img class="image-container lazy-load" data-src="media/357_1_1_Untitled.png" onclick="openModal(this)" />
@@ -6113,6 +6158,9 @@ $$
 
 							</div>
 						</div>
+
+                        <div class="column-item-divider">
+                        </div>
 
 						<div class="column-item-container">
 							<div>
@@ -6160,7 +6208,7 @@ $$
 
 				</section>
 
-				<section class="text-container-section" id="d8fb9cad-41b0-4f06-a237-9040dc4ee8e5">
+				<section class="text-container-section" id="bc280c26-341d-490b-b5c1-0fa649994f98">
 
                     <div>
                         <h3 class="heading-3">Free fields</h3>
@@ -6323,7 +6371,7 @@ $$
 
 				</section>
 
-				<section class="text-container-section" id="eb005cbc-2278-4079-95fe-80cba970a609">
+				<section class="text-container-section" id="3c01d084-666b-46a8-8a18-b8c76c493eab">
 
                     <div>
                         <h1 class="heading-1">A bunch of equations</h1>
@@ -6450,7 +6498,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="fbf80206-d3ce-4ecb-ad8b-bae8524d4908">
+				<section class="text-container-section" id="df6dd5e6-28fe-4853-8400-f6526ed31270">
 
                     <div>
                         <h1 class="heading-1">A bunch of repls and tweets</h1>
@@ -6503,7 +6551,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="7d949740-5ae9-40e2-b6c7-5f865dd44fdd">
+				<section class="text-container-section" id="ddc36cfd-c64d-404a-a441-72c1ed934e95">
 
                     <div>
                         <h1 class="heading-1">A bunch of other widgets</h1>
@@ -6532,7 +6580,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="6d0207be-72eb-4ad4-a966-dabcccbdab64">
+				<section class="text-container-section" id="dc7c276c-6de8-49e8-a999-b5e2fc32979b">
 
                     <div>
                         <h1 class="heading-1">Code Snippets</h1>
@@ -6540,7 +6588,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="5f63b563-3229-49dc-bb37-4befc66a23da">
+				<section class="text-container-section" id="266c3376-9011-4494-94ff-25e6342a8047">
 
                     <div>
                         <h2 class="heading-2">Python Snippets</h2>
@@ -6704,7 +6752,7 @@ for epoch in range(epochs):
 
 				</section>
 
-				<section class="text-container-section" id="1131bebe-47e3-4ed9-aff1-108e86465a0c">
+				<section class="text-container-section" id="e06431d0-944b-4bfe-87df-59c8ddf3f257">
 
                     <div>
                         <h2 class="heading-2">C++ Snippets</h2>
@@ -6805,7 +6853,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="56c7daaf-f314-4a24-8668-b2619dab07b1">
+				<section class="text-container-section" id="7ef38aec-57bd-4cef-8629-0ee6d28225a9">
 
                     <div>
                         <h2 class="heading-2">Javascript Snippets</h2>
@@ -6888,7 +6936,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="2a8df0fe-bece-49f6-9a7a-107a40af7b77">
+				<section class="text-container-section" id="b7c66042-f4ab-459c-9490-c43eddeb51b2">
 
                     <div>
                         <h2 class="heading-2">HTML Snippets</h2>
@@ -6944,7 +6992,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="1e0c0296-02a4-48d3-8c04-3d7b9815a702">
+				<section class="text-container-section" id="f7a107b9-92ca-4668-bb4a-af18f9d788a1">
 
                     <div>
                         <h2 class="heading-2">CSS Snippets</h2>
@@ -7092,7 +7140,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="f3d4c729-05a3-4776-983f-81cfd95a0beb">
+				<section class="text-container-section" id="97565d8e-3778-462c-9593-4e1fb762b77e">
 
                     <div>
                         <h1 class="heading-1">Table, File and Audio Widgets</h1>
@@ -7460,7 +7508,7 @@ With equations like
 
 				</section>
 
-				<section class="text-container-section" id="6cdaac59-5b9d-444a-8549-34f2ce10d391">
+				<section class="text-container-section" id="f46e4594-80ee-40fa-ad6f-061ba1fb69f7">
 
                     <div>
                         <h3 class="heading-3">Here is a block mention from another page</h3>
@@ -7737,7 +7785,7 @@ With equations like
 
 				</section>
 
-				<section class="text-container-section" id="f0a2d0bb-a318-4ce8-912d-4fccfc85f61e">
+				<section class="text-container-section" id="173934ab-69e8-4598-9d26-72e34a503b2d">
 
                     <div>
                         <h3 class="heading-3">Free fields</h3>
@@ -8927,7 +8975,7 @@ With equations like
             <div class="collapsible-hidden-container">
 
                     <div>
-                        <h3 class="heading-3">Toggle Body</h3>
+                        <h3 class="heading-3-recur">Toggle Body</h3>
                     </div>
 
                     <div class="image-block">
@@ -9041,11 +9089,11 @@ gitGraph
             </div>
         </div>
 
-					<div class="hyperlink-container">
-						<a class="hyperlink" target="_blank" href="https://en.wikipedia.org/wiki/Theory_of_relativity">
-							<img width="24px" height="24px" src="data:image/png;base64,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"> https://en.wikipedia.org/wiki/Theory_of_relativity
-						</a>
-					</div>
+                    <a class="hyperlink" target="_blank" href="https://en.wikipedia.org/wiki/Theory_of_relativity">
+                        <div class="hyperlink-container">
+                            <img width="24px" height="24px" src="data:image/png;base64,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"> https://en.wikipedia.org/wiki/Theory_of_relativity
+                        </div>
+                    </a>
 
                     <div>
                         <p class="text-paragraph">😁 </p>
@@ -9075,8 +9123,8 @@ gitGraph
 
 					<div class="column-layout-container">
 
-						<div class="column-item-container">
-							<div>
+						<div class="column-item-container rtl-direction">
+							<div class="ltr-direction">
 
 				<div class="audio-container">
 					<audio class="audio-player lazy-load" controls>
@@ -9099,7 +9147,7 @@ gitGraph
                     </div>
 
                     <div>
-                        <h3 class="heading-3">Heading within a column</h3>
+                        <h3 class="heading-3-recur">Heading within a column</h3>
                     </div>
 
                     <div>
@@ -9135,6 +9183,9 @@ errors that remain (and undoubtedly, some do) are the respons </p>
 
 							</div>
 						</div>
+
+                        <div class="column-item-divider">
+                        </div>
 
 						<div class="column-item-container">
 							<div>
@@ -9369,7 +9420,7 @@ def train_step(x, y):
                     </div>
 
                     <div>
-                        <h3 class="heading-3">Heading within a column</h3>
+                        <h3 class="heading-3-recur">Heading within a column</h3>
                     </div>
 
                     <div>
@@ -9626,7 +9677,7 @@ def train_step(x, y):
 					</a>
 
 		<a class="file-link" target="_blank" href="https://www.notion.so/Embedded-Page-Stuff-a0ca1ebb7c604d60bcc45d572cc3d516">
-			<div class="file-container">
+			<div class="file-container child-page-container">
 				<div>
 					<svg class="taskbar-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 48 48" style=" fill:#000000;">
 						<path fill="#fff" fill-rule="evenodd" d="M11.553,11.099c1.232,1.001,1.694,0.925,4.008,0.77 l21.812-1.31c0.463,0,0.078-0.461-0.076-0.538l-3.622-2.619c-0.694-0.539-1.619-1.156-3.391-1.002l-21.12,1.54 c-0.77,0.076-0.924,0.461-0.617,0.77L11.553,11.099z" clip-rule="evenodd"></path>
@@ -10559,11 +10610,11 @@ def train_step(x, y):
             </div>
         </div>
 
-					<div class="hyperlink-container">
-						<a class="hyperlink" target="_blank" href="">
-							<img width="24px" height="24px" src="data:image/png;base64,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"> 
-						</a>
-					</div>
+                    <a class="hyperlink" target="_blank" href="">
+                        <div class="hyperlink-container">
+                            <img width="24px" height="24px" src="data:image/png;base64,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"> 
+                        </div>
+                    </a>
 
 					<div class="math-block prevent-select">
 						<div class="block-equation" data-katex="$$|x| = x$$">
