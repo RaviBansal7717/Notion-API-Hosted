@@ -785,12 +785,12 @@
 
             .options-dropdown {
                 position: relative;
-                display: none;
+                /* display: none; */
             }
 
             .options-dropdown-icon {
                 cursor: pointer;
-                margin-left: -6px;
+                margin-left: -12px;
                 margin-top: 5px;
                 width: var(--width-dropdown-icon);
                 height: var(--height-dropdown-icon);
@@ -824,6 +824,10 @@
                 padding-bottom: 3px;
                 cursor: pointer;
                 font-size: var(--fsize-sm-dropdown-text);
+            }
+
+            .options-dropdown-hidden-lg {
+                display: none;
             }
 
             .options-dropdown-item:hover {
@@ -865,6 +869,10 @@
 
             .options-icon-bottom-2 {
                 fill: var(--color-fill-dropdown-bottom-icon);
+            }
+
+            .options-expand-icon {
+                transform: rotate(180deg);
             }
 
             /* ################################################################################ 
@@ -1192,10 +1200,18 @@
             ################################################################################
             */
 
+            .table-block-container {
+                display: flex;
+                flex-direction: row;
+                gap: 7px;
+                margin: auto;
+                margin-top: var(--gap-blocks-vertical);
+                margin-right: var(--gap-blocks-horizontal);
+                justify-content: center;
+            }
+
             .table-block {
                 margin-left: var(--gap-blocks-horizontal);
-                margin-right: var(--gap-blocks-horizontal);
-                margin-top: var(--gap-blocks-vertical);
                 max-height: 400px;
                 max-width: 100%;
                 overflow: auto;
@@ -1258,6 +1274,33 @@
                 background-color: var(--color-scroll-thumb-table);
             }
 
+            .table-expand {
+                max-height: fit-content;
+            }
+
+            .table-expand + div .table-expand-icon {
+                rotate: 180deg;
+                transition: rotate 0.4s;
+            }
+
+            .table-expand-button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                width: 34px;
+                height: 34px;
+                border-radius: 100%;
+                cursor: pointer;
+                background-color: var(--color-bg-scroll-top);
+                outline: none;
+                margin-top: 2px;
+            }
+
+            .table-expand-icon {
+                fill: var(--color-fill-scroll-top);
+                transition: rotate 0.4s;
+            }
 
             /* ################################################################################ 
                                         CSS for Video and ReplIt Blocks
@@ -1290,18 +1333,30 @@
                 font-size: var(--fsize-h1);
             }
 
+            .heading-1-recur {
+                font-size: calc(var(--fsize-h1) - 0.3rem);
+            }
+
             .heading-2, .heading-2-recur {
                 margin-left: var(--gap-blocks-horizontal);
                 color: var(--color-text-heading-2);
                 font-family: var(--font-heading);
                 font-size: var(--fsize-h2);
             }
-            
+
+            .heading-2-recur {
+                font-size: calc(var(--fsize-h2) - 0.1rem);
+            }
+
             .heading-3, .heading-3-recur {
                 margin-left: var(--gap-blocks-horizontal);
                 color: var(--color-text-heading-3);
                 font-family: var(--font-heading);
                 font-size: var(--fsize-h3);
+            }
+
+            .heading-3-recur {
+                font-size: calc(var(--fsize-h3) - 0.1rem);
             }
 
             .text-paragraph {
@@ -1556,7 +1611,6 @@
             */
 
             .hyperlink-container {
-                margin-left: var(--gap-blocks-horizontal);
                 margin-right: var(--gap-blocks-horizontal);
                 padding-top: 4px;
                 padding-bottom: 4px;
@@ -2328,6 +2382,10 @@
                     height: var(--height-sm-dropdown-item-icon);
                 }
 
+                .options-dropdown-hidden-lg {
+                    display: flex;
+                }
+                
                 .page-title {
                     font-size: var(--fsize-sm-title);
                 }
@@ -2415,6 +2473,10 @@
                 .heading-1, .heading-1-recur {
                     font-size: var(--fsize-sm-h1);
                 }
+
+                .heading-1-recur {
+                    font-size: calc(var(--fsize-sm-h1) - 0.2rem);
+                }
                 
                 .heading-2, .heading-2-recur {
                     font-size: var(--fsize-sm-h2);
@@ -2438,6 +2500,10 @@
                     display: none;
                 }
 
+                .column-item-container .file-container {
+                    width: 90%;
+                }
+                
                 .multi-file-gist-file-link {
                     font-size: 15px;
                     width: 49.5%;
@@ -2611,6 +2677,32 @@
 								<span>Page End</span>
 							</div>
 						</div>
+
+						<div class="options-dropdown-item" data-status="off" onclick="expandAllTables(this); closeOptionsDropdown();">
+							<div>
+								<svg class="options-icon" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.000000 28.000000" preserveAspectRatio="xMidYMid meet">
+									<g class="options-icon-bottom-2" transform="translate(0.000000,28.000000) scale(0.100000,-0.100000)" stroke="none">
+										<path d="M105 160 c-34 -36 -26 -53 10 -20 l25 23 25 -23 c36 -33 44 -16 10 20 -16 17 -32 30 -35 30 -3 0 -19 -13 -35 -30z"/>
+									</g>
+								</svg>
+							</div>
+							<div>
+								<span>Expand All</span>
+							</div>
+						</div>
+
+						<div id="dropdownOpenNavContainer" class="options-dropdown-item options-dropdown-hidden-lg" onclick="openSideTOCNav(); closeOptionsDropdown();">
+							<div>
+								<svg class="options-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" transform='rotate(-90)'>
+									<polygon class="options-icon-bottom-1" points="16 4 7.92 13 14 13 14 28 18 28 18 13 24.08 13 16 4"/>
+									<rect class="options-icon-bottom-2" height="2" width="4" x="14" y="26"/>
+									<line class="options-icon-bottom-3" x1="14" x2="18" y1="24.5" y2="24.5"/>
+								</svg>
+							</div>
+							<div>
+								<span>Side Nav</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -2687,7 +2779,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="0489d834-de3a-4a4e-8ef3-a76445575e7d">
+				<section class="text-container-section" id="295adcbb-c981-49a4-8124-8016b40d2751">
 
                     <div>
                         <h1 class="heading-1">Geometry of Newtonian gravity</h1>
@@ -2764,7 +2856,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="c75d8316-c254-40e0-94e2-cea3ab1516f3">
+				<section class="text-container-section" id="a0c1680f-6dee-4445-8b0c-613835ecaa3d">
 
                     <div>
                         <h2 class="heading-2">Einstein’s equations</h2>
@@ -2886,7 +2978,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="8d6c36a7-6d37-4519-a0e1-187ce6bba633">
+				<section class="text-container-section" id="b3661a9b-1896-424b-8836-2646081f06cb">
 
                     <div>
                         <h3 class="heading-3">Einstein Field Equations</h3>
@@ -2908,7 +3000,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="7f667faa-6906-4f3b-95c7-9d5e7db3ac01">
+				<section class="text-container-section" id="67605d90-4b74-4ebb-abe4-e50de2c2ae78">
 
                     <div>
                         <h3 class="heading-3">Mathematical Form</h3>
@@ -3036,7 +3128,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="b9563417-929c-4428-810c-45611f33f99e">
+				<section class="text-container-section" id="01b707b4-7d45-494f-819f-fb5a90e884b4">
 
                     <div>
                         <h3 class="heading-3">Sign convention</h3>
@@ -3109,7 +3201,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="c7d15289-6a8a-4d79-af07-dc50eb506ab0">
+				<section class="text-container-section" id="1d9be997-eb2f-4b01-9afb-dc315f37f726">
 
                     <div>
                         <h1 class="heading-1">The Cosmological Constant</h1>
@@ -3151,7 +3243,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="3655d9c2-a119-43b5-9974-302fd329bc26">
+				<section class="text-container-section" id="7b2c4401-14c7-4a14-bb58-b7097be831a3">
 
                     <div>
                         <h2 class="heading-2">History</h2>
@@ -3175,7 +3267,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="a8ca1e1e-0816-4a18-84ea-226a619f462f">
+				<section class="text-container-section" id="7dedf284-5af9-47ad-8ed2-37a8a2372030">
 
                     <div>
                         <h3 class="heading-3">Sequence of events 1915–1998</h3>
@@ -3243,7 +3335,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="8922550a-d73a-4e0d-98fe-374b6df287c0">
+				<section class="text-container-section" id="6e50fc84-8ecb-4aeb-a4be-d7810646d022">
 
                     <div>
                         <h2 class="heading-2">Equation</h2>
@@ -3316,7 +3408,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="2705ed5a-a45a-4243-ba79-5e227533d3f4">
+				<section class="text-container-section" id="04625b77-ae6e-4013-8963-210709b3bd8d">
 
                     <div>
                         <h3 class="heading-3">ΩΛ (Omega sub Lambda)</h3>
@@ -3332,7 +3424,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="641dc202-c1f5-43ec-9cfd-6a3af7333694">
+				<section class="text-container-section" id="5c4601e4-6b51-4a3e-a963-18290a4378b1">
 
                     <div>
                         <h3 class="heading-3">Equation of state</h3>
@@ -3350,7 +3442,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="13bb3e3e-f200-4fb6-96d7-cc41d111627a">
+				<section class="text-container-section" id="a9a510c2-d469-4058-927c-c8c756488b70">
 
                     <div>
                         <h3 class="heading-3">Positive value</h3>
@@ -3377,7 +3469,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="5fea1525-d5ab-43d7-bc8b-5a553deedd9d">
+				<section class="text-container-section" id="f0521e32-2309-4fc7-ba44-d1fd7b255afd">
 
                     <div>
                         <h2 class="heading-2">Predictions</h2>
@@ -3385,7 +3477,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="2a16444b-1ac4-4346-bc44-0a5be5224611">
+				<section class="text-container-section" id="449b16cc-876c-4915-a830-4c6a227f5c71">
 
                     <div>
                         <h3 class="heading-3">Quantum field theory</h3>
@@ -3442,7 +3534,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="cece130d-7a36-43be-97b6-7ff17a872704">
+				<section class="text-container-section" id="28864814-d08b-4085-b327-246d4770eab3">
 
                     <div>
                         <h3 class="heading-3">Anthropic principle</h3>
@@ -3462,7 +3554,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="c35557dc-cffd-4b78-92dc-9b7f70527cc8">
+				<section class="text-container-section" id="0855d17b-eb3c-400f-9fb4-3ebb09dbd770">
 
                     <div>
                         <h3 class="heading-3">Failure to detect dark energy</h3>
@@ -3475,7 +3567,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="3cf538c9-2997-46bb-b299-62c534ce94eb">
+				<section class="text-container-section" id="a2179530-ca70-40dd-8caa-d42525a62591">
 
                     <div>
                         <h2 class="heading-2">Einstein–Maxwell equations</h2>
@@ -3579,7 +3671,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="cba46713-54c9-456f-a61b-9618b3caf9a2">
+				<section class="text-container-section" id="287be0fc-e914-4728-b0e1-697e27340066">
 
                     <div>
                         <h2 class="heading-2">The linearized EFE</h2>
@@ -3591,7 +3683,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="444999ae-b50c-489c-8fd1-2dce50aa55e8">
+				<section class="text-container-section" id="3ecc365d-2311-43e1-a66c-3d6266046768">
 
                     <div>
                         <h2 class="heading-2">Polynomial form</h2>
@@ -3657,7 +3749,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="05e3a3ba-e239-431a-9904-6a57329109f1">
+				<section class="text-container-section" id="0dd7aee6-bbe4-494d-b141-ff4b418ae7bf">
 
                     <div>
                         <h1 class="heading-1">Higgs Mechanism</h1>
@@ -3750,7 +3842,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="fc64a5ef-61de-45f6-8b55-2dcc6ee54a34">
+				<section class="text-container-section" id="41849a14-7c62-4dc8-9855-671a8dc363e3">
 
                     <div>
                         <h2 class="heading-2">Standard Model</h2>
@@ -3781,7 +3873,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="a1bd09dd-c2ae-4b14-8ea0-7b0530ab308e">
+				<section class="text-container-section" id="4a042764-83e2-44cc-a9f1-46a104dfa799">
 
                     <div>
                         <h3 class="heading-3">Structure of the Higgs field</h3>
@@ -3801,7 +3893,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="e1a0f425-22fa-43f9-8ced-66a0d99dabdc">
+				<section class="text-container-section" id="3b0a8cd9-92e1-46d7-8012-bb582705183c">
 
                     <div>
                         <h3 class="heading-3">The photon as the part that remains massless</h3>
@@ -3870,7 +3962,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="763e5697-583a-4a87-a4db-fea1e777eceb">
+				<section class="text-container-section" id="a1808070-d114-4944-b91b-b5c3bca3c200">
 
                     <div>
                         <h3 class="heading-3">Consequences for fermions</h3>
@@ -3949,7 +4041,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="95aae46f-8b93-4cf4-9ad1-1809204f9b7f">
+				<section class="text-container-section" id="bc669df8-5330-46e4-92d7-e213ae162337">
 
                     <div>
                         <h2 class="heading-2">Examples</h2>
@@ -3961,7 +4053,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="93b06211-bbaa-4d68-9da3-a9c6e0911a4e">
+				<section class="text-container-section" id="4799c042-b797-4a9d-ae5e-a1287b689b53">
 
                     <div>
                         <h3 class="heading-3">Landau model</h3>
@@ -4168,7 +4260,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="a01ab148-bf4a-4866-af5c-bfbb849bc0ea">
+				<section class="text-container-section" id="40f4a07f-be67-48b1-a626-5df394213771">
 
                     <div>
                         <h3 class="heading-3">Abelian Higgs mechanism</h3>
@@ -4280,7 +4372,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="36d70dbc-16d4-4e82-9d08-d629a211e80f">
+				<section class="text-container-section" id="6736b6e8-750a-4cdf-919f-090e649fdd92">
 
                     <div>
                         <h3 class="heading-3">Alternate form of the Abelian Higgs model action</h3>
@@ -4419,7 +4511,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="2f01d43b-7d90-436a-ab89-0350fcc97913">
+				<section class="text-container-section" id="953c3c5f-b43e-4cb5-a380-273501907a8e">
 
                     <div>
                         <h3 class="heading-3">Lagrangian in explicit symmetry broken form</h3>
@@ -4799,7 +4891,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="9661ad6b-6932-4c40-bd09-414616db0e6c">
+				<section class="text-container-section" id="fcebc322-cff8-46c7-bcae-f99b2f090fe2">
 
                     <div>
                         <h3 class="heading-3">Spontaneous symmetry breaking and trivializations</h3>
@@ -4897,7 +4989,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="78693f56-cf20-4fc5-ac28-7267613487c5">
+				<section class="text-container-section" id="eb7e540e-3dc7-48a3-bc86-3769a4c215f0">
 
                     <div>
                         <h3 class="heading-3">Non-Abelian Higgs mechanism</h3>
@@ -5257,7 +5349,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="370ef1dd-5901-4835-a004-eb4c2c1c1e8f">
+				<section class="text-container-section" id="55c1009c-2929-41aa-9a42-90d20f8839a7">
 
                     <div>
                         <h3 class="heading-3">Affine Higgs mechanism</h3>
@@ -5562,7 +5654,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="8919370e-2198-4265-92d6-ad456c363b2d">
+				<section class="text-container-section" id="6c3e2178-73e8-43af-bf20-24df492e2082">
 
                     <div>
                         <h1 class="heading-1">Higgs Boson</h1>
@@ -5590,7 +5682,7 @@
 
 				</section>
 
-				<section class="text-container-section" id="d1814ec9-7972-40ba-9fb9-3fe506531018">
+				<section class="text-container-section" id="c8392bd9-5dc4-4537-a9d6-aedc5df68beb">
 
                     <div>
                         <h2 class="heading-2">Technical aspects and mathematical formulation</h2>
@@ -6167,7 +6259,7 @@ $$
 
 				</section>
 
-				<section class="text-container-section" id="863dead1-3976-4ac8-a732-c9f9c11f16d7">
+				<section class="text-container-section" id="0ba529de-fe4c-4aa0-a111-61859fd0289a">
 
                     <div>
                         <h1 class="heading-1">The Mathematical Foundations of Standard Model</h1>
@@ -6240,7 +6332,7 @@ $$
 
 				</section>
 
-				<section class="text-container-section" id="b29a0636-760f-4671-b250-f2288c45b078">
+				<section class="text-container-section" id="d5b3635f-0f21-47c9-a847-06ce2e011b59">
 
                     <div>
                         <h3 class="heading-3">Free fields</h3>
@@ -6457,7 +6549,7 @@ $$
 
 				</section>
 
-				<section class="text-container-section" id="1a371c40-a1dc-486b-bc31-d59f486e4514">
+				<section class="text-container-section" id="fbe50b5b-330b-4551-9f9c-794ca3277b67">
 
                     <div>
                         <h1 class="heading-1">A bunch of equations</h1>
@@ -6584,7 +6676,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="3b7294f0-d7ea-42ce-9449-066b4c1a7c08">
+				<section class="text-container-section" id="e47b34f1-2551-429d-adfd-dd7eeaa385e6">
 
                     <div>
                         <h1 class="heading-1">A bunch of repls and tweets</h1>
@@ -6637,7 +6729,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="6237f4f4-5c3e-4540-bf13-094a86d60111">
+				<section class="text-container-section" id="e568554a-a098-4b1b-848a-145682146770">
 
                     <div>
                         <h1 class="heading-1">A bunch of other widgets</h1>
@@ -6666,7 +6758,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="3201bdf1-8795-47ce-a72d-f4feb7406bae">
+				<section class="text-container-section" id="1bc97e6d-ac66-4f31-b495-b22073b186ec">
 
                     <div>
                         <h1 class="heading-1">Code Snippets</h1>
@@ -6674,7 +6766,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="2f033d5e-b455-4980-b921-6669f6c1a70f">
+				<section class="text-container-section" id="67c3d1bb-c8c4-492e-8cd2-8cff8f3be2ce">
 
                     <div>
                         <h2 class="heading-2">Python Snippets</h2>
@@ -6838,7 +6930,7 @@ for epoch in range(epochs):
 
 				</section>
 
-				<section class="text-container-section" id="812cce69-1970-43a5-94f4-8f3261db1c8a">
+				<section class="text-container-section" id="e752423d-1c73-4dfc-8086-d3b584e6369b">
 
                     <div>
                         <h2 class="heading-2">C++ Snippets</h2>
@@ -6939,7 +7031,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="186dc573-a75b-459a-b113-d619345e15ef">
+				<section class="text-container-section" id="190b1eee-1dfa-4c6c-80c0-1f3ce871cabd">
 
                     <div>
                         <h2 class="heading-2">Javascript Snippets</h2>
@@ -7022,7 +7114,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="f151cf7b-8ae7-4865-96d6-3a3538989384">
+				<section class="text-container-section" id="3cc76c9a-36fc-4e02-a6f9-fb2f4f547bef">
 
                     <div>
                         <h2 class="heading-2">HTML Snippets</h2>
@@ -7078,7 +7170,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="de942d4c-b4f3-46df-ab80-e538ddcfa216">
+				<section class="text-container-section" id="eb1005dc-e298-44f1-9278-67c5415df15c">
 
                     <div>
                         <h2 class="heading-2">CSS Snippets</h2>
@@ -7226,7 +7318,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="29f22c27-5db3-4193-94f9-6f4f636353c8">
+				<section class="text-container-section" id="3de71002-4b96-4860-a8df-2e7c756c4789">
 
                     <div>
                         <h1 class="heading-1">Table, File and Audio Widgets</h1>
@@ -7594,7 +7686,7 @@ With equations like
 
 				</section>
 
-				<section class="text-container-section" id="3c264dce-20cd-4fc3-bf3b-86a0fec99998">
+				<section class="text-container-section" id="09d14210-b6cc-49fc-918d-57baded79e21">
 
                     <div>
                         <h3 class="heading-3">Here is a block mention from another page</h3>
@@ -7871,7 +7963,7 @@ With equations like
 
 				</section>
 
-				<section class="text-container-section" id="7f5d99d2-b87c-450d-9fca-54547a9a3da5">
+				<section class="text-container-section" id="e74adef7-c9bf-4316-aa0a-277616fa70a0">
 
                     <div>
                         <h3 class="heading-3">Free fields</h3>
@@ -9793,34 +9885,35 @@ def train_step(x, y):
                         </div>
                     </div>
 
-					<div class="table-block">
-						<table>
+                    <div class="table-block-container">
+                        <div class="table-block">
+                            <table>
 
-								<thead>
+		    					<thead>
 
-								<tr>
+								    <tr>
 
-									<td><div class="table-data-cell">Company </div></td>
+									    <td><div class="table-data-cell">Company </div></td>
 
-									<td><div class="table-data-cell">Contact </div></td>
+									    <td><div class="table-data-cell">Contact </div></td>
 
-									<td><div class="table-data-cell">Country </div></td>
+									    <td><div class="table-data-cell">Country </div></td>
 
-									<td><div class="table-data-cell">Continent </div></td>
+									    <td><div class="table-data-cell">Continent </div></td>
 
-									<td><div class="table-data-cell">Symbol </div></td>
+									    <td><div class="table-data-cell">Symbol </div></td>
 
-								</tr>
+								    </tr>
 
 								</thead>
 
-								<tr>
+								    <tr>
 
-									<td><div class="table-data-cell">sfsdfsdfdsfsdfdsfsdfdsfdsfsdfsdfefewfwefwefwefwefwefwefwefwefwefwe </div></td>
+									    <td><div class="table-data-cell">sfsdfsdfdsfsdfdsfsdfdsfdsfsdfsdfefewfwefwefwefwefwefwefwefwefwefwe </div></td>
 
-									<td><div class="table-data-cell">Maria came back to home.  </div></td>
+									    <td><div class="table-data-cell">Maria came back to home.  </div></td>
 
-									<td><div class="table-data-cell">
+									    <td><div class="table-data-cell">
                         <span class="inline-math" data-katex=" ${\displaystyle {\mathcal {L}}_{\text{m}}=-m_{\text{u}}^{i}{\overline {u}}_{\text{L}}^{i}u_{\text{R}}^{i}-m_{\text{d}}^{i}{\overline {d}}_{\text{L}}^{i}d_{\text{R}}^{i}-m_{\text{e}}^{i}{\overline {e}}_{\text{L}}^{i}e_{\text{R}}^{i}+{\textrm {h.c.}},}$ ">
                             <span class="inline-math-inner"> ${\displaystyle {\mathcal {L}}_{\text{m}}=-m_{\text{u}}^{i}{\overline {u}}_{\text{L}}^{i}u_{\text{R}}^{i}-m_{\text{d}}^{i}{\overline {d}}_{\text{L}}^{i}d_{\text{R}}^{i}-m_{\text{e}}^{i}{\overline {e}}_{\text{L}}^{i}e_{\text{R}}^{i}+{\textrm {h.c.}},}$  
                                 <span class="inline-math-popup">
@@ -9833,9 +9926,9 @@ def train_step(x, y):
                         </span>
 </div></td>
 
-									<td><div class="table-data-cell"><a href="https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation" class="inline-link" target="_blank">Newton's law of universal gravitation</a>, which describes classical gravity, can be seen as a prediction of general relativity for the almost flat spacetime geometry around stationary mass distributions. Some predictions of general relativity, however, are beyond   <a href="https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation" class="inline-link" target="_blank">Newton's law of universal gravitation</a> in   <a href="https://en.wikipedia.org/wiki/Classical_physics" class="inline-link" target="_blank">classical physics</a>. These predictions concern the passage of time, the   <a href="https://en.wikipedia.org/wiki/Geometry" class="inline-link" target="_blank">geometry</a> of space, the motion of bodies in   <a href="https://en.wikipedia.org/wiki/Free_fall" class="inline-link" target="_blank">free fall</a>, and the propagation of light, and include   <a href="https://en.wikipedia.org/wiki/Gravitational_time_dilation" class="inline-link" target="_blank">gravitational time dilation</a>,   <a href="https://en.wikipedia.org/wiki/Gravitational_lens" class="inline-link" target="_blank">gravitational lensing</a>, the   <a href="https://en.wikipedia.org/wiki/Gravitational_redshift" class="inline-link" target="_blank">gravitational redshift</a> of light, the   <a href="https://en.wikipedia.org/wiki/Shapiro_time_delay" class="inline-link" target="_blank">Shapiro time delay</a> and   <a href="https://en.wikipedia.org/wiki/Gravitational_singularity" class="inline-link" target="_blank">singularities</a>/  <a href="https://en.wikipedia.org/wiki/Black_holes" class="inline-link" target="_blank">black holes</a>. So far, all   <a href="https://en.wikipedia.org/wiki/Tests_of_general_relativity" class="inline-link" target="_blank">tests of general relativity</a> have been shown to be in agreement with the theory. The time dependent solutions of general relativity enable us to talk about the history of the universe and have provided the modern framework for   <a href="https://en.wikipedia.org/wiki/Cosmology" class="inline-link" target="_blank">cosmology</a>, thus leading to the discovery of the   <a href="https://en.wikipedia.org/wiki/Big_Bang" class="inline-link" target="_blank">Big Bang</a> and   <a href="https://en.wikipedia.org/wiki/Cosmic_microwave_background" class="inline-link" target="_blank">cosmic microwave background</a> radiation. Despite the introduction of a number of   <a href="https://en.wikipedia.org/wiki/Alternatives_to_general_relativity" class="inline-link" target="_blank">alternative theories</a>, general relativity continues to be the simplest theory consistent with   <a href="https://en.wikipedia.org/wiki/Experimental_data" class="inline-link" target="_blank">experimental data</a>. </div></td>
+									    <td><div class="table-data-cell"><a href="https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation" class="inline-link" target="_blank">Newton's law of universal gravitation</a>, which describes classical gravity, can be seen as a prediction of general relativity for the almost flat spacetime geometry around stationary mass distributions. Some predictions of general relativity, however, are beyond   <a href="https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation" class="inline-link" target="_blank">Newton's law of universal gravitation</a> in   <a href="https://en.wikipedia.org/wiki/Classical_physics" class="inline-link" target="_blank">classical physics</a>. These predictions concern the passage of time, the   <a href="https://en.wikipedia.org/wiki/Geometry" class="inline-link" target="_blank">geometry</a> of space, the motion of bodies in   <a href="https://en.wikipedia.org/wiki/Free_fall" class="inline-link" target="_blank">free fall</a>, and the propagation of light, and include   <a href="https://en.wikipedia.org/wiki/Gravitational_time_dilation" class="inline-link" target="_blank">gravitational time dilation</a>,   <a href="https://en.wikipedia.org/wiki/Gravitational_lens" class="inline-link" target="_blank">gravitational lensing</a>, the   <a href="https://en.wikipedia.org/wiki/Gravitational_redshift" class="inline-link" target="_blank">gravitational redshift</a> of light, the   <a href="https://en.wikipedia.org/wiki/Shapiro_time_delay" class="inline-link" target="_blank">Shapiro time delay</a> and   <a href="https://en.wikipedia.org/wiki/Gravitational_singularity" class="inline-link" target="_blank">singularities</a>/  <a href="https://en.wikipedia.org/wiki/Black_holes" class="inline-link" target="_blank">black holes</a>. So far, all   <a href="https://en.wikipedia.org/wiki/Tests_of_general_relativity" class="inline-link" target="_blank">tests of general relativity</a> have been shown to be in agreement with the theory. The time dependent solutions of general relativity enable us to talk about the history of the universe and have provided the modern framework for   <a href="https://en.wikipedia.org/wiki/Cosmology" class="inline-link" target="_blank">cosmology</a>, thus leading to the discovery of the   <a href="https://en.wikipedia.org/wiki/Big_Bang" class="inline-link" target="_blank">Big Bang</a> and   <a href="https://en.wikipedia.org/wiki/Cosmic_microwave_background" class="inline-link" target="_blank">cosmic microwave background</a> radiation. Despite the introduction of a number of   <a href="https://en.wikipedia.org/wiki/Alternatives_to_general_relativity" class="inline-link" target="_blank">alternative theories</a>, general relativity continues to be the simplest theory consistent with   <a href="https://en.wikipedia.org/wiki/Experimental_data" class="inline-link" target="_blank">experimental data</a>. </div></td>
 
-									<td><div class="table-data-cell">This mixes both kinds of stuff.
+									    <td><div class="table-data-cell">This mixes both kinds of stuff.
 Like text and math 
  
                         <span class="inline-math" data-katex=" $\sin x = \sum\limits_{n = 1}^\infty {\frac{{\left( { - 1} \right)^{n - 1} x^{2n - 1} }}{{\left( {2n - 1} \right)!}}}$ ">
@@ -9856,13 +9949,13 @@ Here is some code also in between :
  <a href="https://en.wikipedia.org/wiki/Calabi%E2%80%93Yau_manifold" class="inline-link" target="_blank">Wikipedia Columbia Manifold
 </a></div></td>
 
-								</tr>
+								    </tr>
 
-								<tr>
+								    <tr>
 
-									<td><div class="table-data-cell">The simplest description of the mechanism adds a   <a href="https://en.wikipedia.org/wiki/Quantum_field" class="inline-link" target="_blank">quantum field</a> ( the   <a href="https://en.wikipedia.org/wiki/Higgs_boson" class="inline-link" target="_blank">Higgs field</a> ) that permeates all space to the Standard Model. Below some extremely high temperature, the field causes   <a href="https://en.wikipedia.org/wiki/Spontaneous_symmetry_breaking" class="inline-link" target="_blank">spontaneous symmetry breaking</a>  during interactions. The breaking of symmetry triggers the Higgs mechanism, causing the bosons it interacts with to have mass. </div></td>
+									    <td><div class="table-data-cell">The simplest description of the mechanism adds a   <a href="https://en.wikipedia.org/wiki/Quantum_field" class="inline-link" target="_blank">quantum field</a> ( the   <a href="https://en.wikipedia.org/wiki/Higgs_boson" class="inline-link" target="_blank">Higgs field</a> ) that permeates all space to the Standard Model. Below some extremely high temperature, the field causes   <a href="https://en.wikipedia.org/wiki/Spontaneous_symmetry_breaking" class="inline-link" target="_blank">spontaneous symmetry breaking</a>  during interactions. The breaking of symmetry triggers the Higgs mechanism, causing the bosons it interacts with to have mass. </div></td>
 
-									<td><div class="table-data-cell">, 
+									    <td><div class="table-data-cell">, 
                         <span class="inline-math" data-katex=" $\begin{bmatrix} 1 & 2 & 3 & 4 \\ a & b & c & d \\ x & y & z & w \end{bmatrix}$ ">
                             <span class="inline-math-inner"> $\begin{bmatrix} 1 & 2 & 3 & 4 \\ a & b & c & d \\ x & y & z & w \end{bmatrix}$  
                                 <span class="inline-math-popup">
@@ -9888,16 +9981,26 @@ Here is some code also in between :
                         </span>
 </div></td>
 
-									<td><div class="table-data-cell">Interactions in the Standard Model. All Feynman diagrams in the model are built from combinations of these vertices.  q  is any quark,  g  is a gluon,   X  is any charged particle, γ is a photon,  f is any fermion,  m  is any particle with mass (with the possible exception of the neutrinos),  m B is any boson with mass. In diagrams with multiple particle labels separated by / one particle label is chosen. In diagrams with particle labels separated by | the labels must be chosen in the same order. For example, in the four boson electroweak case the valid diagrams are WWWW, WWZZ, WWγγ, WWZγ. The conjugate of each listed vertex (reversing the direction of arrows) is also allowed. </div></td>
+									    <td><div class="table-data-cell">Interactions in the Standard Model. All Feynman diagrams in the model are built from combinations of these vertices.  q  is any quark,  g  is a gluon,   X  is any charged particle, γ is a photon,  f is any fermion,  m  is any particle with mass (with the possible exception of the neutrinos),  m B is any boson with mass. In diagrams with multiple particle labels separated by / one particle label is chosen. In diagrams with particle labels separated by | the labels must be chosen in the same order. For example, in the four boson electroweak case the valid diagrams are WWWW, WWZZ, WWγγ, WWZγ. The conjugate of each listed vertex (reversing the direction of arrows) is also allowed. </div></td>
 
-									<td><div class="table-data-cell">N.A. </div></td>
+									    <td><div class="table-data-cell">N.A. </div></td>
 
-									<td><div class="table-data-cell">N.A. </div></td>
+									    <td><div class="table-data-cell">N.A. </div></td>
 
-								</tr>
+								    </tr>
 
-						</table>
-					</div>
+                            </table>
+                        </div>
+                        <div>
+                            <button class="table-expand-button" onclick="this.parentElement.previousElementSibling.classList.toggle('table-expand'); ">
+                                <svg class="table-expand-icon" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.000000 28.000000" preserveAspectRatio="xMidYMid meet">
+                                    <g transform="translate(0.000000,28.000000) scale(0.100000,-0.100000)" stroke="none">
+                                        <path d="M105 160 c-34 -36 -26 -53 10 -20 l25 23 25 -23 c36 -33 44 -16 10 20 -16 17 -32 30 -35 30 -3 0 -19 -13 -35 -30z"/>
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
 
 					<div class="multi-file-gist-container" data-active-index="1" data-src="https://gist.github.com/RaviBansal7717/25c464d710971c5656cc7145df86d33f.js">
 						<div class="multi-file-gist-file-tab-dev" data-src="https://api.github.com/gists/25c464d710971c5656cc7145df86d33f">
@@ -10941,55 +11044,66 @@ def train_step(x, y):
 						</div>
 					</div>
 
-					<div class="table-block">
-						<table>
+                    <div class="table-block-container">
+                        <div class="table-block">
+                            <table>
 
-								<thead>
+		    					<thead>
 
-								<tr>
+								    <tr>
 
-									<td><div class="table-data-cell">Confidence Interval </div></td>
+									    <td><div class="table-data-cell">Confidence Interval </div></td>
 
-									<td><div class="table-data-cell">z </div></td>
+									    <td><div class="table-data-cell">z </div></td>
 
-								</tr>
+								    </tr>
 
 								</thead>
 
-								<tr>
+								    <tr>
 
-									<td><div class="table-data-cell">90% </div></td>
+									    <td><div class="table-data-cell">90% </div></td>
 
-									<td><div class="table-data-cell">1.645 </div></td>
+									    <td><div class="table-data-cell">1.645 </div></td>
 
-								</tr>
+								    </tr>
 
-								<tr>
+								    <tr>
 
-									<td><div class="table-data-cell">95% </div></td>
+									    <td><div class="table-data-cell">95% </div></td>
 
-									<td><div class="table-data-cell">1.96 </div></td>
+									    <td><div class="table-data-cell">1.96 </div></td>
 
-								</tr>
+								    </tr>
 
-								<tr>
+								    <tr>
 
-									<td><div class="table-data-cell">98% </div></td>
+									    <td><div class="table-data-cell">98% </div></td>
 
-									<td><div class="table-data-cell">2.326 </div></td>
+									    <td><div class="table-data-cell">2.326 </div></td>
 
-								</tr>
+								    </tr>
 
-								<tr>
+								    <tr>
 
-									<td><div class="table-data-cell">99% </div></td>
+									    <td><div class="table-data-cell">99% </div></td>
 
-									<td><div class="table-data-cell">2.576 </div></td>
+									    <td><div class="table-data-cell">2.576 </div></td>
 
-								</tr>
+								    </tr>
 
-						</table>
-					</div>
+                            </table>
+                        </div>
+                        <div>
+                            <button class="table-expand-button" onclick="this.parentElement.previousElementSibling.classList.toggle('table-expand'); ">
+                                <svg class="table-expand-icon" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.000000 28.000000" preserveAspectRatio="xMidYMid meet">
+                                    <g transform="translate(0.000000,28.000000) scale(0.100000,-0.100000)" stroke="none">
+                                        <path d="M105 160 c-34 -36 -26 -53 10 -20 l25 23 25 -23 c36 -33 44 -16 10 20 -16 17 -32 30 -35 30 -3 0 -19 -13 -35 -30z"/>
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
 
 					<div class="math-block prevent-select">
 						<div class="block-equation" data-katex="$$P(\bar{x} - 1.96 \frac{\sigma}{\sqrt{n}} < \mu < \bar{x} + 1.96 \frac{\sigma}{\sqrt{n}}) = 0.95$$">
@@ -11083,6 +11197,7 @@ def train_step(x, y):
 					let mermaidTheme = pageTheme === "dark" ? "dark" : "default";
 					toggleMermaidTheme(pageTheme);
                     loadFirstSlidesForSlideshows();
+                    tableExpanderRemover();
                 }
             }
 
@@ -11143,9 +11258,13 @@ def train_step(x, y):
                 if(flag.matches) {
                     sizeBef = largeFileIconSize;
                     sizeAft = smallFileIconSize;
+					document.getElementById("dropdownOpenNavContainer").style.display = "none";
                 } else {
                     sizeBef = smallFileIconSize;
                     sizeAft = largeFileIconSize;
+					if( document.getElementById("openSideTOCNav").style.display === "block") {
+						document.getElementById("dropdownOpenNavContainer").style.display = "flex";
+					}
                 }
                 let fileIcons = document.getElementsByClassName("file-icon");
                 for (element of fileIcons) {
@@ -11213,9 +11332,9 @@ def train_step(x, y):
 				modal.style.display = "flex";
 				modalImage.src = imageElement.src;
                 if(nextSiblingElement.classList.contains("block-caption")) {
-                    modalImage.nextElementSibling.innerHTML = nextSiblingElement.innerHTML;
+                    modalImage.nextElementSibling.innerText = nextSiblingElement.innerText;
                 } else {
-                    modalImage.nextElementSibling.innerHTML = "";
+                    modalImage.nextElementSibling.innerText = "";
                 }
 				modal.focus();
 				document.body.style.overflowY = "hidden";
@@ -11504,6 +11623,7 @@ def train_step(x, y):
                 openTOC.style.display = "none";
                 tableOfContents = document.getElementById("tableofContentsContainer");
                 document.getElementById("taskbarScrollTopContainer").style.display = "none";
+				document.getElementById("dropdownOpenNavContainer").style.display = "none";
             }
 
             function closeSideTOCNav() {
@@ -11515,6 +11635,7 @@ def train_step(x, y):
                 }, 301);
                 tableOfContents = document.getElementById("tableofContentsContainer");
                 document.getElementById("taskbarScrollTopContainer").style.display = "block";
+				document.getElementById("dropdownOpenNavContainer").style.display = "flex";
             }
 
             function changeGistThemes() {
@@ -11676,6 +11797,34 @@ def train_step(x, y):
                 toggleElement.classList.toggle("collapsible-hidden-open");
                 toggleElement.getElementsByTagName("svg")[0].classList.toggle("toggle-icon-rotate");
             }
+
+            function expandAllTables(expandButton) {
+                expansionStatus = expandButton.getAttribute("data-status");
+				spanElement = expandButton.getElementsByTagName("span")[0];
+                if (expansionStatus === "off") {
+                    for(tableElement of document.getElementsByClassName("table-block-container")) {
+                        tableElement.children[0].classList.add('table-expand');
+                    }
+                    expandButton.setAttribute("data-status", "on");
+                    spanElement.innerText = "Collpase All";
+                } else {
+                    for(tableElement of document.getElementsByClassName("table-block-container")) {
+                        tableElement.children[0].classList.remove('table-expand');
+                    }
+                    expandButton.setAttribute("data-status", "off");
+                    spanElement.innerText = "Expand All";
+                }
+            }
+
+            function tableExpanderRemover() {
+                for(tableElement of document.getElementsByClassName("table-block-container")) {
+                    console.log(tableElement.getElementsByTagName("table")[0].clientHeight);
+                    if (tableElement.getElementsByTagName("table")[0].clientHeight < 400) {
+                        tableElement.children[1].style.display = "none";
+                    }
+                }
+            }
+
 		</script>
 
 	</body>
