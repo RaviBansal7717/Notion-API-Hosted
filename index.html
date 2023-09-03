@@ -365,7 +365,7 @@
                 --color-bg-dropdown: var(--core-color-gray-blue);
                 --color-fill-dropdown-top-icon: var(--core-color-whitesmoke-main);
                 --color-fill-dropdown-bottom-icon: var(--core-color-whitesmoke-main);
-                --color-fill-dropdown-github-icon: var(--core-color-seagreen-main);
+                --color-fill-dropdown-github-icon: var(--core-color-purple-main);
                 --color-hover-dropdown-item: var(--core-color-gray-main);
 
                 --color-bg-inline-math-popup: var(--core-color-seagreen-main);
@@ -444,7 +444,6 @@
 
             .image-modal {
                 display: none;
-                flex-direction: column;
                 position: fixed;
                 top: 0;
                 left: 0;
@@ -457,29 +456,14 @@
                 align-items: center;
                 justify-content: center;
                 margin-top: -1px;
+            
             } 
             
-            .modal-inner-container {
-                width: 100%;
-                height: 100%;
-                text-align: center;
-            }
-
             .modal-content {
                 width: 90%;
                 max-width: 90%;
                 object-fit: cover;
                 margin: auto 0;
-            }
-
-            .modal-image-caption {
-                width: calc(90% - 2 * 10px);
-                color: whitesmoke;
-                font-size: 20px;
-                margin-top: 10px;
-                padding: 10px;
-                text-align: center;
-                margin: auto;
             }
 
             /* ################################################################################ 
@@ -1203,17 +1187,15 @@
             .table-block-container {
                 display: flex;
                 flex-direction: row;
-                gap: 7px;
+                gap: 5px;
                 margin: auto;
                 margin-top: var(--gap-blocks-vertical);
-                margin-right: var(--gap-blocks-horizontal);
                 justify-content: center;
             }
 
             .table-block {
-                margin-left: var(--gap-blocks-horizontal);
                 max-height: 400px;
-                max-width: 100%;
+                max-width: 99.5%;
                 overflow: auto;
                 text-align: center;
                 font-size: var(--fsize-table);
@@ -1283,6 +1265,14 @@
                 transition: rotate 0.4s;
             }
 
+            .table-expand + div .table-expand-icon-sm {
+                rotate: 180deg;
+                transition: rotate 0.4s;
+                margin-top: -2px;
+                margin-right: -5px;
+                margin-left: -14px;
+            }
+
             .table-expand-button {
                 display: flex;
                 align-items: center;
@@ -1299,6 +1289,17 @@
 
             .table-expand-icon {
                 fill: var(--color-fill-scroll-top);
+                transition: rotate 0.4s;
+            }
+
+            .table-expand-icon-sm {
+                display: none;
+                width: 36px;
+                height: 40px;
+                cursor: pointer;
+                margin-top: 1px;
+                margin-right: -10px;
+                margin-left: -8px;
                 transition: rotate 0.4s;
             }
 
@@ -1621,6 +1622,7 @@
             }
 
             .hyperlink {
+                margin-left: -10px;
                 margin-top: var(--gap-blocks-vertical-reduced-more);
                 font-size: var(--fsize-hyperlink);
                 text-decoration: none;
@@ -2466,6 +2468,14 @@
                     transition: rotate 0.4s;
                 }
 
+                .table-expand-icon-sm {
+                    display: block;
+                }
+
+                .table-expand-button {
+                    display: none;
+                }
+
                 .file-container {
                     width: 65%;
                 }
@@ -2572,12 +2582,8 @@
 	<body class="light-mode">
 
 		<div id="imageModal" class="image-modal" onclick="closeModal(this)" tabindex="-1">
-            <div class="modal-inner-container">
-                <img src="" id="modalImage" class="modal-content" />
-                <div class="modal-image-caption"></div>    
-            </div>
+			<img src="" id="modalImage" class="modal-content" />
 		</div>
-
 
 		<div class="progress-container" id="progressBarContainer">
 			<div class="progress-bar" id="progressBar"></div>
@@ -3692,19 +3698,26 @@ d & e & f
                             </table>
                         </div>
                         <div>
-                            <button class="table-expand-button" onclick="this.parentElement.previousElementSibling.classList.toggle('table-expand'); ">
+                            <button class="table-expand-button" onclick="this.parentElement.previousElementSibling.classList.toggle('table-expand');">
                                 <svg class="table-expand-icon" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.000000 28.000000" preserveAspectRatio="xMidYMid meet">
                                     <g transform="translate(0.000000,28.000000) scale(0.100000,-0.100000)" stroke="none">
                                         <path d="M105 160 c-34 -36 -26 -53 10 -20 l25 23 25 -23 c36 -33 44 -16 10 20 -16 17 -32 30 -35 30 -3 0 -19 -13 -35 -30z"/>
                                     </g>
                                 </svg>
                             </button>
+                            <div onclick="this.parentElement.previousElementSibling.classList.toggle('table-expand');">
+                                <svg class="table-expand-icon-sm" viewBox="0 0 40 36" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                                    <polygon class="options-icon-bottom-1" points="16 4 7.92 13 14 13 14 28 18 28 18 13 24.08 13 16 4"/>
+                                    <rect class="options-icon-bottom-2" height="2" width="4" x="14" y="26"/>
+                                    <line class="options-icon-bottom-3" x1="14" x2="18" y1="24.5" y2="24.5"/>
+                                </svg>
+                            </div>
                         </div>
                     </div>
 
 				</section>
 
-				<section class="text-container-section" id="e8b03828-4546-49c3-a2af-2e0328306836">
+				<section class="text-container-section" id="d8660149-f32c-46a4-a0ce-60a10ba4908b">
 
                     <div>
                         <h1 class="heading-1">Geometry of Newtonian gravity</h1>
@@ -4594,19 +4607,26 @@ UUUU|1\rangle &= |1\rangle \\
                             </table>
                         </div>
                         <div>
-                            <button class="table-expand-button" onclick="this.parentElement.previousElementSibling.classList.toggle('table-expand'); ">
+                            <button class="table-expand-button" onclick="this.parentElement.previousElementSibling.classList.toggle('table-expand');">
                                 <svg class="table-expand-icon" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.000000 28.000000" preserveAspectRatio="xMidYMid meet">
                                     <g transform="translate(0.000000,28.000000) scale(0.100000,-0.100000)" stroke="none">
                                         <path d="M105 160 c-34 -36 -26 -53 10 -20 l25 23 25 -23 c36 -33 44 -16 10 20 -16 17 -32 30 -35 30 -3 0 -19 -13 -35 -30z"/>
                                     </g>
                                 </svg>
                             </button>
+                            <div onclick="this.parentElement.previousElementSibling.classList.toggle('table-expand');">
+                                <svg class="table-expand-icon-sm" viewBox="0 0 40 36" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                                    <polygon class="options-icon-bottom-1" points="16 4 7.92 13 14 13 14 28 18 28 18 13 24.08 13 16 4"/>
+                                    <rect class="options-icon-bottom-2" height="2" width="4" x="14" y="26"/>
+                                    <line class="options-icon-bottom-3" x1="14" x2="18" y1="24.5" y2="24.5"/>
+                                </svg>
+                            </div>
                         </div>
                     </div>
 
 				</section>
 
-				<section class="text-container-section" id="d0c9e095-676e-4e56-ac28-b743ff4d5e75">
+				<section class="text-container-section" id="ca965019-45e9-47c1-aa10-599d7badb535">
 
                     <div>
                         <h2 class="heading-2">Einstein’s equations</h2>
@@ -4728,7 +4748,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="0f8f22c3-86fd-4d1e-95b5-4da39119476d">
+				<section class="text-container-section" id="3d1823f1-255c-4118-8163-efeeec9ca7f1">
 
                     <div>
                         <h3 class="heading-3">Einstein Field Equations</h3>
@@ -4750,7 +4770,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="deaae8ad-b2df-454a-8e36-fb7c0f66fe72">
+				<section class="text-container-section" id="1d51d607-e4b5-4bd3-b238-b1827f11c659">
 
                     <div>
                         <h3 class="heading-3">Mathematical Form</h3>
@@ -4878,7 +4898,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="8d9f7e58-441e-4812-9363-27854b0b73ef">
+				<section class="text-container-section" id="bdd9ea08-ae42-4fcf-baa5-2622e1a9a6d6">
 
                     <div>
                         <h3 class="heading-3">Sign convention</h3>
@@ -4951,7 +4971,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="37f3954f-ba63-4c54-8f90-33f6fb89f5bc">
+				<section class="text-container-section" id="efccb901-10b5-434a-9383-178ef924d6f9">
 
                     <div>
                         <h1 class="heading-1">The Cosmological Constant</h1>
@@ -4993,7 +5013,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="9810caa7-1d7c-4c13-b765-d7d2196ef146">
+				<section class="text-container-section" id="34fd2c42-7a18-41b8-911d-33f4179c6299">
 
                     <div>
                         <h2 class="heading-2">History</h2>
@@ -5017,7 +5037,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="aaa1d421-b051-4cbf-936b-6f0ca3ac61d4">
+				<section class="text-container-section" id="14e1aecb-c675-495c-9a1b-2d5822c07081">
 
                     <div>
                         <h3 class="heading-3">Sequence of events 1915–1998</h3>
@@ -5085,7 +5105,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="645ecb3d-7595-4314-a5ee-1a9b2f4ad0a2">
+				<section class="text-container-section" id="7b4dc72d-f937-421e-b03b-ed4cfa950824">
 
                     <div>
                         <h2 class="heading-2">Equation</h2>
@@ -5158,7 +5178,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="34cdb47a-a839-4371-9c66-8ec08ac50420">
+				<section class="text-container-section" id="a919e1d8-5895-4c8b-90ba-8c0ff33a466f">
 
                     <div>
                         <h3 class="heading-3">ΩΛ (Omega sub Lambda)</h3>
@@ -5174,7 +5194,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="69e4d8d3-8e87-4750-ae59-1773297a2697">
+				<section class="text-container-section" id="1d76e540-0154-40cb-8e0f-791ace2b5767">
 
                     <div>
                         <h3 class="heading-3">Equation of state</h3>
@@ -5192,7 +5212,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="54837b9b-e4f6-4c62-a7ee-044246a0834c">
+				<section class="text-container-section" id="3599ecab-3335-4635-8ede-2648ff66af28">
 
                     <div>
                         <h3 class="heading-3">Positive value</h3>
@@ -5219,7 +5239,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="764554f1-c436-4bae-b69c-40c45bfe01f7">
+				<section class="text-container-section" id="ba802fb4-71bf-4480-8079-b6c3d65c03de">
 
                     <div>
                         <h2 class="heading-2">Predictions</h2>
@@ -5227,7 +5247,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="a545910e-f7be-4826-882c-ba6029990a72">
+				<section class="text-container-section" id="45e02159-3ce5-45e4-9828-235ec7cc9657">
 
                     <div>
                         <h3 class="heading-3">Quantum field theory</h3>
@@ -5284,7 +5304,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="f18e595e-fb28-42fb-9421-641e5d40fa69">
+				<section class="text-container-section" id="12eb4d51-f9d4-4804-9132-72bad0fdce23">
 
                     <div>
                         <h3 class="heading-3">Anthropic principle</h3>
@@ -5304,7 +5324,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="444c866c-e94d-4327-b9ac-22e41554cb01">
+				<section class="text-container-section" id="bb6c323c-18df-49c5-804d-73ae5776b683">
 
                     <div>
                         <h3 class="heading-3">Failure to detect dark energy</h3>
@@ -5317,7 +5337,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="a0c8a4b3-2d22-4024-9c15-77dee415fc6a">
+				<section class="text-container-section" id="5257e32d-54c2-4600-976a-530d20b69800">
 
                     <div>
                         <h2 class="heading-2">Einstein–Maxwell equations</h2>
@@ -5421,7 +5441,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="dde7e546-7fba-4f25-8033-2edba780f828">
+				<section class="text-container-section" id="f1b840fa-73eb-4ebc-b66c-81d9b211dfbc">
 
                     <div>
                         <h2 class="heading-2">The linearized EFE</h2>
@@ -5433,7 +5453,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="0cc663d9-460a-49bd-bbdb-6abf64984ce3">
+				<section class="text-container-section" id="b1810327-e13c-464e-a684-80372166f495">
 
                     <div>
                         <h2 class="heading-2">Polynomial form</h2>
@@ -5499,7 +5519,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="0b946cba-5ad7-4d53-891c-a8ec63e30113">
+				<section class="text-container-section" id="174e1d60-c8b5-48ab-97fa-e9a52e8cebd0">
 
                     <div>
                         <h1 class="heading-1">Higgs Mechanism</h1>
@@ -5592,7 +5612,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="53a42e99-c182-437b-8dcd-0c8e1300c7f2">
+				<section class="text-container-section" id="c0bb570c-a082-4b0d-a667-1f990232c709">
 
                     <div>
                         <h2 class="heading-2">Standard Model</h2>
@@ -5623,7 +5643,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="a6d93f25-bde2-4d01-87c3-b91b2f291b76">
+				<section class="text-container-section" id="71c8e68d-5b0b-46e6-9555-61f80524ac2d">
 
                     <div>
                         <h3 class="heading-3">Structure of the Higgs field</h3>
@@ -5643,7 +5663,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="28d6e372-cdc4-4928-9880-23c3e3355e80">
+				<section class="text-container-section" id="2f2654cf-a3c3-468f-9969-923a739b6ea7">
 
                     <div>
                         <h3 class="heading-3">The photon as the part that remains massless</h3>
@@ -5712,7 +5732,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="2e138d83-6c3e-41d8-93bd-a8d89171d7cc">
+				<section class="text-container-section" id="5fbf8e4f-d595-4217-92c9-ea25de3bfab4">
 
                     <div>
                         <h3 class="heading-3">Consequences for fermions</h3>
@@ -5791,7 +5811,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="cfb566f6-ef78-47fd-a542-6829ddc3327c">
+				<section class="text-container-section" id="64471cb6-7c1f-4792-9e0c-2a305f18f6a7">
 
                     <div>
                         <h2 class="heading-2">Examples</h2>
@@ -5803,7 +5823,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="ca34728e-cba0-4b25-adb0-5bdf4bba3b82">
+				<section class="text-container-section" id="f1fe4eb3-5bee-4e5a-bc5f-4f810a7745f2">
 
                     <div>
                         <h3 class="heading-3">Landau model</h3>
@@ -6010,7 +6030,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="a8940741-9cad-4870-8964-71b18defd00f">
+				<section class="text-container-section" id="41dc545e-42a8-4a62-a55a-db6c3d8f021f">
 
                     <div>
                         <h3 class="heading-3">Abelian Higgs mechanism</h3>
@@ -6122,7 +6142,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="a3db45bb-b194-41e7-9ec7-49c5f7129a96">
+				<section class="text-container-section" id="2ed2db08-9123-4fb7-98f2-673e3de0aaa7">
 
                     <div>
                         <h3 class="heading-3">Alternate form of the Abelian Higgs model action</h3>
@@ -6261,7 +6281,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="7b29fdab-ea81-4a4c-98a9-3179f81d92f1">
+				<section class="text-container-section" id="35d3818a-2419-4ead-a859-824e337c33cf">
 
                     <div>
                         <h3 class="heading-3">Lagrangian in explicit symmetry broken form</h3>
@@ -6641,7 +6661,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="0c74a71c-bc47-4144-8b30-ee22d67e09a9">
+				<section class="text-container-section" id="db8718ad-45d6-42c1-8b37-6c2860afb44b">
 
                     <div>
                         <h3 class="heading-3">Spontaneous symmetry breaking and trivializations</h3>
@@ -6739,7 +6759,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="572b0423-df64-451c-9b1d-c28f79ede43f">
+				<section class="text-container-section" id="51ef9efe-5d65-4875-9d53-88fb96598654">
 
                     <div>
                         <h3 class="heading-3">Non-Abelian Higgs mechanism</h3>
@@ -7099,7 +7119,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="af08ff22-8dbc-4a70-8430-cfdb9a19c42e">
+				<section class="text-container-section" id="13d58382-e216-4f67-9b1d-ed0549435052">
 
                     <div>
                         <h3 class="heading-3">Affine Higgs mechanism</h3>
@@ -7404,7 +7424,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="2ca6542a-fce8-47ef-a9c5-b0aa5bce1c0f">
+				<section class="text-container-section" id="8b030c53-11ea-4ef9-929f-eba5f47f80bd">
 
                     <div>
                         <h1 class="heading-1">Higgs Boson</h1>
@@ -7432,7 +7452,7 @@ UUUU|1\rangle &= |1\rangle \\
 
 				</section>
 
-				<section class="text-container-section" id="f3e9ec78-c20b-48fb-99f5-ed13e9b1b953">
+				<section class="text-container-section" id="22128c9e-2590-4987-976d-ca083ff7e457">
 
                     <div>
                         <h2 class="heading-2">Technical aspects and mathematical formulation</h2>
@@ -8009,7 +8029,7 @@ $$
 
 				</section>
 
-				<section class="text-container-section" id="42ce204a-a85d-4747-8591-11f0b0571183">
+				<section class="text-container-section" id="7000aa40-cc5f-4058-9038-36fbf8224602">
 
                     <div>
                         <h1 class="heading-1">The Mathematical Foundations of Standard Model</h1>
@@ -8082,7 +8102,7 @@ $$
 
 				</section>
 
-				<section class="text-container-section" id="e21c49c4-d399-47b2-a04a-aca4849b46cf">
+				<section class="text-container-section" id="4b0040c6-5f7a-4905-8af0-7f6efa3642d7">
 
                     <div>
                         <h3 class="heading-3">Free fields</h3>
@@ -8299,7 +8319,7 @@ $$
 
 				</section>
 
-				<section class="text-container-section" id="86c76de2-ade3-483c-880f-8b0bd93f28c8">
+				<section class="text-container-section" id="892e2f52-6c3e-4756-94de-b77c265c3303">
 
                     <div>
                         <h1 class="heading-1">A bunch of equations</h1>
@@ -8426,7 +8446,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="1b839a08-3b02-48ec-b6cb-08b67ec3cb8b">
+				<section class="text-container-section" id="8a2d915a-6e20-412c-b9c5-03f84993cb5e">
 
                     <div>
                         <h1 class="heading-1">A bunch of repls and tweets</h1>
@@ -8479,7 +8499,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="f9d82190-e5f6-4e01-9792-2c59c7a783f8">
+				<section class="text-container-section" id="41d2ec42-eed4-4bd2-973b-c97545295cbf">
 
                     <div>
                         <h1 class="heading-1">A bunch of other widgets</h1>
@@ -8508,7 +8528,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="630d9e61-8f4a-4158-9d47-81e685592b9a">
+				<section class="text-container-section" id="7a435e7b-6239-46a3-8670-6e493e2aa9c2">
 
                     <div>
                         <h1 class="heading-1">Code Snippets</h1>
@@ -8516,7 +8536,7 @@ V(x) = \begin{cases} 0, & x \lt 0 \\ V_0, & 0 \leq x \lt L \\ 0, & x \geq L \end
 
 				</section>
 
-				<section class="text-container-section" id="502de28f-9085-4077-994d-4d23b4b0e99f">
+				<section class="text-container-section" id="9fdaae1d-722e-409c-bc08-6140538d8fab">
 
                     <div>
                         <h2 class="heading-2">Python Snippets</h2>
@@ -8680,7 +8700,7 @@ for epoch in range(epochs):
 
 				</section>
 
-				<section class="text-container-section" id="7a66d30e-b97f-423f-a0ec-dc7f288e3380">
+				<section class="text-container-section" id="fb3a3b31-3c1c-4a01-8885-8c7f8f46d0ae">
 
                     <div>
                         <h2 class="heading-2">C++ Snippets</h2>
@@ -8781,7 +8801,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="d1582fac-8ec2-4efc-98ab-0a307f3caf8c">
+				<section class="text-container-section" id="e60a4fa1-26de-48e1-b479-7a6baedd2304">
 
                     <div>
                         <h2 class="heading-2">Javascript Snippets</h2>
@@ -8864,7 +8884,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="1d887638-5885-4981-bcc8-55f29ad2f757">
+				<section class="text-container-section" id="07634629-dccc-4679-aec7-1be7e3222cef">
 
                     <div>
                         <h2 class="heading-2">HTML Snippets</h2>
@@ -8920,7 +8940,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="5542665c-2079-4f01-a80c-7620eb614b2b">
+				<section class="text-container-section" id="635f2b83-7f9d-4480-9bef-ddd61a68c6cd">
 
                     <div>
                         <h2 class="heading-2">CSS Snippets</h2>
@@ -9068,7 +9088,7 @@ int main(int argc, char **argv) {
 
 				</section>
 
-				<section class="text-container-section" id="69192736-81b5-4038-9ea6-63150bb680b3">
+				<section class="text-container-section" id="02916bb1-1e69-4533-9457-fcae4b28c8b5">
 
                     <div>
                         <h1 class="heading-1">Table, File and Audio Widgets</h1>
@@ -9436,7 +9456,7 @@ With equations like
 
 				</section>
 
-				<section class="text-container-section" id="96e7259d-13e4-4a3d-90f5-4830aa2e7408">
+				<section class="text-container-section" id="a1383ece-bac3-4b0e-ad89-2c7f7af388ff">
 
                     <div>
                         <h3 class="heading-3">Here is a block mention from another page</h3>
@@ -9713,7 +9733,7 @@ With equations like
 
 				</section>
 
-				<section class="text-container-section" id="8fdcd6cc-890f-4946-99cc-b07709774993">
+				<section class="text-container-section" id="efd1dcbc-46d3-40b0-908d-17f1827601a3">
 
                     <div>
                         <h3 class="heading-3">Free fields</h3>
@@ -11742,13 +11762,20 @@ Here is some code also in between :
                             </table>
                         </div>
                         <div>
-                            <button class="table-expand-button" onclick="this.parentElement.previousElementSibling.classList.toggle('table-expand'); ">
+                            <button class="table-expand-button" onclick="this.parentElement.previousElementSibling.classList.toggle('table-expand');">
                                 <svg class="table-expand-icon" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.000000 28.000000" preserveAspectRatio="xMidYMid meet">
                                     <g transform="translate(0.000000,28.000000) scale(0.100000,-0.100000)" stroke="none">
                                         <path d="M105 160 c-34 -36 -26 -53 10 -20 l25 23 25 -23 c36 -33 44 -16 10 20 -16 17 -32 30 -35 30 -3 0 -19 -13 -35 -30z"/>
                                     </g>
                                 </svg>
                             </button>
+                            <div onclick="this.parentElement.previousElementSibling.classList.toggle('table-expand');">
+                                <svg class="table-expand-icon-sm" viewBox="0 0 40 36" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                                    <polygon class="options-icon-bottom-1" points="16 4 7.92 13 14 13 14 28 18 28 18 13 24.08 13 16 4"/>
+                                    <rect class="options-icon-bottom-2" height="2" width="4" x="14" y="26"/>
+                                    <line class="options-icon-bottom-3" x1="14" x2="18" y1="24.5" y2="24.5"/>
+                                </svg>
+                            </div>
                         </div>
                     </div>
 
@@ -12845,13 +12872,20 @@ def train_step(x, y):
                             </table>
                         </div>
                         <div>
-                            <button class="table-expand-button" onclick="this.parentElement.previousElementSibling.classList.toggle('table-expand'); ">
+                            <button class="table-expand-button" onclick="this.parentElement.previousElementSibling.classList.toggle('table-expand');">
                                 <svg class="table-expand-icon" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.000000 28.000000" preserveAspectRatio="xMidYMid meet">
                                     <g transform="translate(0.000000,28.000000) scale(0.100000,-0.100000)" stroke="none">
                                         <path d="M105 160 c-34 -36 -26 -53 10 -20 l25 23 25 -23 c36 -33 44 -16 10 20 -16 17 -32 30 -35 30 -3 0 -19 -13 -35 -30z"/>
                                     </g>
                                 </svg>
                             </button>
+                            <div onclick="this.parentElement.previousElementSibling.classList.toggle('table-expand');">
+                                <svg class="table-expand-icon-sm" viewBox="0 0 40 36" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                                    <polygon class="options-icon-bottom-1" points="16 4 7.92 13 14 13 14 28 18 28 18 13 24.08 13 16 4"/>
+                                    <rect class="options-icon-bottom-2" height="2" width="4" x="14" y="26"/>
+                                    <line class="options-icon-bottom-3" x1="14" x2="18" y1="24.5" y2="24.5"/>
+                                </svg>
+                            </div>
                         </div>
                     </div>
 
@@ -13004,17 +13038,21 @@ def train_step(x, y):
 
             window.localStorage.setItem("notion_theme_mode", "light");
 
+			let TABLE_MAX_SIZE = 400;
+
             function handleTabletChange(flag) {
                 if(flag.matches) {
                     sizeBef = largeFileIconSize;
                     sizeAft = smallFileIconSize;
 					document.getElementById("dropdownOpenNavContainer").style.display = "none";
+					TABLE_MAX_SIZE = 300;
                 } else {
                     sizeBef = smallFileIconSize;
                     sizeAft = largeFileIconSize;
 					if( document.getElementById("openSideTOCNav").style.display === "block") {
 						document.getElementById("dropdownOpenNavContainer").style.display = "flex";
 					}
+					TABLE_MAX_SIZE = 400;
                 }
                 let fileIcons = document.getElementsByClassName("file-icon");
                 for (element of fileIcons) {
@@ -13078,14 +13116,8 @@ def train_step(x, y):
 			function openModal(imageElement) {
 				var modal = document.getElementById("imageModal");
 				var modalImage = document.getElementById("modalImage");
-                var nextSiblingElement = imageElement.parentElement.nextElementSibling;
 				modal.style.display = "flex";
 				modalImage.src = imageElement.src;
-                if(nextSiblingElement.classList.contains("block-caption")) {
-                    modalImage.nextElementSibling.innerText = nextSiblingElement.innerText;
-                } else {
-                    modalImage.nextElementSibling.innerText = "";
-                }
 				modal.focus();
 				document.body.style.overflowY = "hidden";
 			}
@@ -13570,7 +13602,7 @@ def train_step(x, y):
             function tableExpanderRemover() {
                 for(tableElement of document.getElementsByClassName("table-block-container")) {
                     console.log(tableElement.getElementsByTagName("table")[0].clientHeight);
-                    if (tableElement.getElementsByTagName("table")[0].clientHeight < 400) {
+                    if (tableElement.getElementsByTagName("table")[0].clientHeight < TABLE_MAX_SIZE) {
                         tableElement.children[1].style.display = "none";
                     }
                 }

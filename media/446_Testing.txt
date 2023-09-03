@@ -1,0 +1,23 @@
+## To develop
+--comment on stuff
+--Visual bookmarks (so either retrieve info or title of bookmark from this)
+--WIkipedia like link hover (Hover_feature.png)
+--2 or 3 column layout (if feels sustainable)
+--Image zoom with caption
+
+https://www.physicsforums.com/help/latexhelp/
+http://www.equationsheet.com/sheets/Equations-27.html
+http://dfcd.net/articles/latex/latex.html
+https://math.meta.stackexchange.com/questions/3751/select-rendered-latex-from-wikipedia-with-chrome
+
+
+https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_physics
+https://en.wikipedia.org/wiki/Cosmological_constant
+https://en.wikipedia.org/wiki/Mathematical_formulation_of_the_Standard_Model
+
+
+
+https://www.loom.com/
+And try other embdes options in Notion. Those are fantastic tools
+
+https://towardsdatascience.com/the-sparse-future-of-deep-learning-bce05e8e094a
